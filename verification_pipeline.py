@@ -306,6 +306,54 @@ class BedrockProvider(LLMProvider):
         )
 
 
+class GeminiProvider(LLMProvider):
+    """Google Gemini API provider"""
+
+    def __init__(self, api_key: str, model: str = "gemini-2.0-flash-exp"):
+        """
+        Initialize Gemini provider.
+
+        Args:
+            api_key: Google API key
+            model: Gemini model to use (options:
+                - gemini-2.0-flash-exp (Gemini 2.0 Flash - Fast)
+                - gemini-exp-1206 (Gemini 2.0 Experimental)
+                - gemini-2.5-pro-002 (Gemini 2.5 Pro)
+                - gemini-1.5-pro-002 (Gemini 1.5 Pro)
+            )
+        """
+        self.api_key = api_key
+        self.model = model
+        try:
+            import google.generativeai as genai
+            genai.configure(api_key=api_key)
+            self.client = genai.GenerativeModel(model)
+        except ImportError:
+            raise ImportError("google-generativeai package required. Install with: pip install google-generativeai")
+
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+        """Generate using Gemini API"""
+        # Combine system prompt with user prompt if provided
+        full_prompt = prompt
+        if system_prompt:
+            full_prompt = f"{system_prompt}\n\n{prompt}"
+
+        # Generate with temperature=0 for consistency
+        generation_config = {
+            "temperature": 0.0,
+            "top_p": 0.95,
+            "top_k": 40,
+            "max_output_tokens": 8192,
+        }
+
+        response = self.client.generate_content(
+            full_prompt,
+            generation_config=generation_config
+        )
+
+        return response.text
+
+
 # ============================================================================
 # BASIC VERIFICATION PIPELINE
 # ============================================================================

@@ -1,0 +1,22 @@
+{
+  "timestamp": "20251014_224558",
+  "models": [
+    {
+      "model_name": "Claude Sonnet",
+      "accuracy": 0.6666666666666666,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "calibration_error": 0.6,
+      "total_time_seconds": 60.583213090896606,
+      "avg_time_per_example": 20.194404363632202,
+      "total_examples": 3,
+      "by_label_accuracy": {
+        "entailment": 1.0,
+        "neutral": 0.0
+      }
+    }
+  ],
+  "benchmark": "contradiction_detection",
+  "num_examples": 3
+}

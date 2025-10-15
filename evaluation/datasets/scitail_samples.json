@@ -1,0 +1,702 @@
+[
+  {
+    "id":"scitail_0",
+    "premise":"Based on the list provided of the uses of substances 1-7, estimate the pH of each unknown and record the number in the data table in the estimated pH column.",
+    "hypothesis":"If a substance has a ph value greater than 7,that indicates that it is base.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_21",
+    "premise":"Reptiles are cold-blooded, or ectothermic, meaning that their heat come from their environment.",
+    "hypothesis":"Reptiles are described by the term ectothermic, which means their internal temperature depends on the temperature of their environment.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_42",
+    "premise":"A community of organisms is defined as a group of organisms or populations found living together.",
+    "hypothesis":"All of the populations that live in the same area make up a(n) community, which includes populations of different organisms.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_63",
+    "premise":"Cardiac output is the volume of blood pumped by the left ventricle into the aorta in one minute, and is equal to the produce of stroke volume x heart rate.",
+    "hypothesis":"The term cardiac output, calculated by multiplying heart contractions by stroke volume, means the volume of blood pumped by the heart in one minute.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_84",
+    "premise":"He grabs at the wheel to turn the car.",
+    "hypothesis":"The turning driveshaft causes the wheels of the car to turn.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_105",
+    "premise":"The spur-winged goose is a common bird of African wetlands.",
+    "hypothesis":"The bird ancestor that lived in trees developed wings, which is commonly associated with birds.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_126",
+    "premise":"An ORGAN is a discrete structure that performs specific functions and is composed of at least 2 tissue types.",
+    "hypothesis":"A(n) organ is a structure that is composed of one or more types of tissues.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_147",
+    "premise":"Along the length of a muscle cell, parallel actin microfilaments are interdigitated with thicker filaments made of the protein myosin ,  a motor",
+    "hypothesis":"Muscle type of cell function relies on microfilaments, which are the actin components of the cytoskeleton.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_168",
+    "premise":"Heat does flow from the hot plate, through the flask, to the system, so there is an exchange of energy.",
+    "hypothesis":"A sealed, vacuum-insulated reaction flask approximates the condition of a isolated system, in which neither matter nor heat can be exchanged between system and surroundings.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_189",
+    "premise":"The ventral surface of the liver is smooth and the right lobe is longer than the central lobe.",
+    "hypothesis":"The gallbladder is near the right lobe of the liver.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_210",
+    "premise":"Liquid water is converted to water vapor during evaporation .",
+    "hypothesis":"When liquid water changes to water vapor it is called evaporation.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_231",
+    "premise":"Likewise, infants adopted in the first half year are as likely to be securely attached as infants raised from birth by their natural parents.",
+    "hypothesis":"During the first year after birth, a baby called a(n) infant.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_252",
+    "premise":"When light (from any source) enters the eye through the pupil, a part of that light will be reflected back out of the eye by the tumors.",
+    "hypothesis":"The pupil of the eye allows light to enter.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_273",
+    "premise":"Compound containing carbon to carbon unsaturation.",
+    "hypothesis":"Compounds containing the element carbon are the basis of all known life.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_294",
+    "premise":"This is the water cycle and it just keeps repeating.",
+    "hypothesis":"The water cycle ends with it repeats itself.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_315",
+    "premise":"Most of the chemical digestion of foods takes place in the small intestine 2.",
+    "hypothesis":"In the body, chemical digestion mainly takes place in the small intestine.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_336",
+    "premise":"A front is the boundary between two different air masses.",
+    "hypothesis":"In weather terms, the boundary between two air masses is called front.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_357",
+    "premise":"Most of the universe, however, consists of matter in the plasma state .",
+    "hypothesis":"Plasma matter makes up most of the universe.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_378",
+    "premise":"Repeat cycle.",
+    "hypothesis":"The water cycle ends with it repeats itself.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_399",
+    "premise":"The ozone molecule contains three atoms (O 3 ).",
+    "hypothesis":"Water contains 3 atoms.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_420",
+    "premise":"imidazoles contain 2 nitrogen atoms, triazoles contain 3 nitrogen atoms.",
+    "hypothesis":"Water contains 3 atoms.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_441",
+    "premise":"4 ) Gametogenesis is the process of producing the gametes (eggs and sperm).",
+    "hypothesis":"Meiosis is part of the process of gametogenesis, which is the production of sperm and eggs.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_462",
+    "premise":"Resistivity is a basic property of materials, defined as electrical resistance per unit length of a wire of unit cross-sectional area.",
+    "hypothesis":"In relation to electrical current, a narrow wire will have more resistance than a wide wire.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_483",
+    "premise":"Arrow heads indicate DNA fragments with different mobilities.",
+    "hypothesis":"Reversible reactions are indicated by opposite-headed kinds of arrows.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_504",
+    "premise":"It may also help prevent heart disease, diabetes and certain types of cancer.",
+    "hypothesis":"Diabetes is unpreventable in the type one form but may be prevented by diet if it is of the second type.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_525",
+    "premise":"The cycling was repeated once more, with water in the oven.",
+    "hypothesis":"The water cycle ends with it repeats itself.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_546",
+    "premise":"as, the turn of a wheel .",
+    "hypothesis":"The turning driveshaft causes the wheels of the car to turn.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_567",
+    "premise":"FRONT (weather) Boundary of two overlapping sir masses.",
+    "hypothesis":"In weather terms, the boundary between two air masses is called front.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_588",
+    "premise":"Type 1 diabetes is such a disease.",
+    "hypothesis":"Diabetes is unpreventable in the type one form but may be prevented by diet if it is of the second type.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_609",
+    "premise":"Among these are the hypothalamus, pituitary, thyroid, pancreas and adrenal glands.",
+    "hypothesis":"The thyroid gland is controlled by a negative feedback loop that includes the hypothalamus and pituitary gland.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_630",
+    "premise":"Then at the end of summer, the cycle repeats itself.",
+    "hypothesis":"The water cycle ends with it repeats itself.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_651",
+    "premise":"The ultrastructure is shown for an axosomatic synapse on the cell body of a bulbar projection neuron.",
+    "hypothesis":"The the synapse is the space between a neuron and the next cell.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_672",
+    "premise":"Neptune Neptune is the eighth planet in the solar system.",
+    "hypothesis":"The eighth planet from our sun is neptune.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_693",
+    "premise":"The European Study for the Prevention of Renal Disease in Type 1 Diabetes (ESPRIT).",
+    "hypothesis":"Diabetes is unpreventable in the type one form but may be prevented by diet if it is of the second type.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_714",
+    "premise":"It is a circular piece of continental rocks surrounded by oceanic crust.",
+    "hypothesis":"Gabbro is a dark dense rock that can be found in the oceanic crust.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_735",
+    "premise":"The cooled water returns to the oil cooler to repeat the cycle.",
+    "hypothesis":"The water cycle ends with it repeats itself.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_756",
+    "premise":"Adaptations result from a trait being favored either for survival or reproduction",
+    "hypothesis":"A(n) favorable trait is an adaptation.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_777",
+    "premise":"Polyploids are organisms with three or more full sets of chromosomes (instead of the normal two).",
+    "hypothesis":"A(n) polyploid is an individual with more than the correct number of chromosome sets.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_798",
+    "premise":"The resistance in electrical wires consumes power, and the power consumed increases as the current going through the wires increases.",
+    "hypothesis":"In relation to electrical current, a narrow wire will have more resistance than a wide wire.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_819",
+    "premise":"This is good because hydrogen is the most abundant element in the Universe.",
+    "hypothesis":"The element hydrogen is the most abundant in the universe.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_840",
+    "premise":"The fetus, then about 21 weeks developed, was clearly visible.",
+    "hypothesis":"The development of the respiratory system in the fetus begins at about 4 weeks.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_861",
+    "premise":"Community All the populations of different species that live in the same place at the same time.",
+    "hypothesis":"All of the populations that live in the same area make up a(n) community, which includes populations of different organisms.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_882",
+    "premise":"Fluorescence of a substance is seen when the molecule is exposed to a specific wavelength of light (excitation wavelength or spectrum) and the light it emits ( the emission wavelength or spectrum) is always of a higher wavelength.",
+    "hypothesis":"When exposed to ultraviolet, some substances, such as minerals, glow in characteristic visible wavelengths, in a process called fluorescence.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_903",
+    "premise":"Thus these CBPs likely function in mediating ion transport across the plasma membrane and, like the CNG channels, may function as components of non-selective calcium-permeable ion channels and as a junction point where calcium and cyclic nucleotide second messenger systems interact.",
+    "hypothesis":"Calcium ion is an example of a second messenger.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_924",
+    "premise":"Petals are collectively called the corolla",
+    "hypothesis":"All of the petals together are called a corolla.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_945",
+    "premise":"Transmutation occurs every time the nucleus of an atom changes because of natural radioactive decay, nuclear fission, nuclear fusion, neutron capture, or numerous other processes.",
+    "hypothesis":"A neutron collides with an atom of u-235 during the basic nuclear fission process.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_966",
+    "premise":"This project aims to investigate whether the nutrients carried in dust can fertilize the oceans causing drawdown of atmospheric carbon dioxide.",
+    "hypothesis":"Ocean acidification occurs when excess carbon dioxide in the atmosphere causes the oceans to become acidic.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_987",
+    "premise":"Most of the digestion of food takes place in the small intestine.",
+    "hypothesis":"In the body, chemical digestion mainly takes place in the small intestine.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1008",
+    "premise":"We can be certain that the fetus begins to feel pain at some stage after 8 weeks of development.",
+    "hypothesis":"The development of the respiratory system in the fetus begins at about 4 weeks.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1029",
+    "premise":"Because alkaptonuria is an autosomal recessive disorder, an individual must inherit two mutated alleles to have the disease.",
+    "hypothesis":"A person affected by an autosomal dominant disorder has one mutated allele.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1050",
+    "premise":"THE OFFSHORE OCEAN ZONE The offshore ocean zone of California begins at a depth of about 100 meters and extends to the edge of the Exclusive Economic Zone (200 miles offshore).",
+    "hypothesis":"The photic zone extends 200 meters deep.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1071",
+    "premise":"more loosely, many carbon-based compounds that also contain other elements.",
+    "hypothesis":"Compounds containing the element carbon are the basis of all known life.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1092",
+    "premise":"synapse A specialized junction at which a neural cell (neuron) communicates with a target cell.",
+    "hypothesis":"The the synapse is the space between a neuron and the next cell.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1113",
+    "premise":"as, a plano-concave lens .",
+    "hypothesis":"A concave lens is thicker at the edges than it is in the middle.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1134",
+    "premise":"The head of the arrow indicates the final position of an electron pair, the tail of the arrow indicates which electron pair is being relocated.",
+    "hypothesis":"Reversible reactions are indicated by opposite-headed kinds of arrows.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1155",
+    "premise":"Step four of mitosis",
+    "hypothesis":"Mitosis actually occurs in four phases.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1176",
+    "premise":"Many Indian myths revolve around the seven seas and seven continents.",
+    "hypothesis":"Birds live and breed on seven of the continents.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1197",
+    "premise":"Cell Membrane Cell membranes or Plasma membranes are present on all cells.",
+    "hypothesis":"All types of cells are enclosed by a membrane.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1218",
+    "premise":"Develop a definition for evaporation, which is water that changes from a liquid to a gas called water vapor which cannot be seen.",
+    "hypothesis":"When liquid water changes to water vapor it is called evaporation.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1239",
+    "premise":"It is a food source for the bee and is stored in the hive.",
+    "hypothesis":"A bee will sometimes do a dance to tell other bees in the hive where to find food.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1260",
+    "premise":"Nearly all seed is viable at maturity, but about 10% of the seed may remain dormant in the soil for up to 10 years.",
+    "hypothesis":"Seeds that remain inactive until the right conditions of light, water, and soil are present are called dormant",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1281",
+    "premise":"A review of hundreds of nutrient solutions and all greenhouse growing systems showed one thing in common, the absence of silicon and a range of other naturally occurring elements.",
+    "hypothesis":"Using nutrients and growing are common to all living things.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1302",
+    "premise":"Unlike  the Sked stretcher, the Half-Sked allows the patient to bend at the hips, allowing greater flexibility to turn corners.",
+    "hypothesis":"The flexibility of an object allows it to bend.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1323",
+    "premise":"Watering during the early morning and evening cool periods will avoid evaporation in the direct heat of the sun, not only saving water but also saving money on water bills.",
+    "hypothesis":"Watering plants and grass in the early morning is a way to conserve water because smaller amounts of water evaporate in the cool morning.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1344",
+    "premise":"However, NO produced in the body helps regulate cell function and communication, particularly in the cardiovascular system.",
+    "hypothesis":"One function of the cardiovascular system is to transport gases throughout the body.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1365",
+    "premise":"Be able to combine simple machines to make complex machines.",
+    "hypothesis":"A complex machine is described by: it is made of more than one simple machine.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1386",
+    "premise":"Stacey Wiebe is a staff writer at the Merced Sun-Star Top CLASSIFIEDS Contact the Sun-Star",
+    "hypothesis":"The sun is classified as a star.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1407",
+    "premise":"Calgary Sun Toronto Star The New York Times Free access to most of each day's issue, including the classifieds.",
+    "hypothesis":"The sun is classified as a star.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1428",
+    "premise":"Also, they use heat, in the form of burning propane, to produce the cold inside the refrigerator.",
+    "hypothesis":"Heat is produced when paper is burned.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1449",
+    "premise":"We know that good eating habits and getting regular exercise are vital for long term good health.",
+    "hypothesis":"Exercising regularly is a good health habit.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1470",
+    "premise":"Thus, spiritualism, the belief in a special kind of force, and physicalism, the belief in magnetism and gravity, both received simultaneous support.",
+    "hypothesis":"Gravity and magnetism are both common forces.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1491",
+    "premise":"Plants do not grow high due to the strong winds and the permafrost preventing deep roots.",
+    "hypothesis":"Deep roots will best prevent a tree from being blown over by high winds during a storm.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1512",
+    "premise":"Water in the morning  to minimize evaporation.",
+    "hypothesis":"Watering plants and grass in the early morning is a way to conserve water because smaller amounts of water evaporate in the cool morning.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1533",
+    "premise":"Kittens are soft and fun to play with.",
+    "hypothesis":"Soft describes the texture of a kitten\u2019s fur.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1554",
+    "premise":"Some roots can grow as deep as the tree is high.",
+    "hypothesis":"Deep roots will best prevent a tree from being blown over by high winds during a storm.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1575",
+    "premise":"A prism can be used to show that white light is really a bunch of mixed colors.",
+    "hypothesis":"A prism helps people understand what makes up white light.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1596",
+    "premise":"The warm surface conditions result in locally low pressure.",
+    "hypothesis":"Cloudy conditions will most likely result from a low-pressure weather system.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1617",
+    "premise":"This simple illustration of magnetic levitation shows that the force of gravity can be counterbalanced by magnetic force.",
+    "hypothesis":"Gravity and magnetism are both common forces.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1638",
+    "premise":"The large intestine, along with the esophagus, stomach, and the small intestine, are part of the body's digestive system.",
+    "hypothesis":"Esophagus, stomach, intestines are the structures that make up the digestive system in the human body.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1659",
+    "premise":"Metabolism is commonly used to refer to the      breakdown of food and its transformation of all nutrients into energy,      but it incorporates all chemical and physiology changes that take place      within the body to enable it to grow and function.",
+    "hypothesis":"Using nutrients and growing are common to all living things.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1680",
+    "premise":"It will produce energy in the form of electricity and heat as long as its fuel--hydrogen--is supplied.",
+    "hypothesis":"Heat is produced when paper is burned.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1701",
+    "premise":"These factors have a greater influence on rooting than any tendency of a tree to develop a characteristically deep or shallow root system.",
+    "hypothesis":"Deep roots will best prevent a tree from being blown over by high winds during a storm.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1722",
+    "premise":"Campus workers should also attempt to fulfill their part in water conservation by watering the flowers and grass on campus in the early morning or late night, when water evaporation is minimal.",
+    "hypothesis":"Watering plants and grass in the early morning is a way to conserve water because smaller amounts of water evaporate in the cool morning.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1743",
+    "premise":"A descriptive presentation of the structure and function of the organ systems of the human body covering the cardiovascular, immune, respiratory, digestive, excretory and reproductive systems.",
+    "hypothesis":"One function of the cardiovascular system is to transport gases throughout the body.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1764",
+    "premise":"simple and complex machines;",
+    "hypothesis":"A complex machine is described by: it is made of more than one simple machine.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1785",
+    "premise":"Simple machines are simple machines.",
+    "hypothesis":"A complex machine is described by: it is made of more than one simple machine.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1806",
+    "premise":"For example, one can obtain a PDB file for water ( water.",
+    "hypothesis":"One example of matter is water.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1827",
+    "premise":"In selective breeding, organisms with desirable characteristics are mated to produce offspring with the same characteristics.",
+    "hypothesis":"Selective breeding involves choosing certain organisms to reproduce with one another in order to pass on specific, desirable traits to their offspring.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1848",
+    "premise":"A metal replaces a metal, and a nonmetal replaces a nonmetal.",
+    "hypothesis":"In a comparison of metals to nonmetals, metals tend to have greater conductivity and higher melting points than nonmetals.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1869",
+    "premise":"Water, for example, is the compound H2O, meaning two hydrogen atoms combined with one oxygen atom forms one molecule of water.",
+    "hypothesis":"2 hydrogen, 1 oxygen atoms combine to make up a molecule of water.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1890",
+    "premise":"3) The author does not intend to go into the details of such matters, including, for example, the place of tayammum as a substitute for ghost or wadhu when one does not have water available.",
+    "hypothesis":"One example of matter is water.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1911",
+    "premise":"This means that in order to be healthy, you need to eat certain foods that are beneficial for your body type and stay away from others.",
+    "hypothesis":"A(n) beneficial relationship exists when a certain type of tree\u2019s roots need a fungus present in order to grow normally.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1932",
+    "premise":"The Sun will expand so much that it will swallow up the planets Mercury, Venus, and the Earth.",
+    "hypothesis":"Mercury is always closer to the sun than it is to earth.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1953",
+    "premise":"Genes are located on chromosomes in the cell.",
+    "hypothesis":"A cell\u2019s chromosomes contain genes.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1974",
+    "premise":"Each water molecule contains 3 atoms, 2 of hydrogen and 1 of oxygen.",
+    "hypothesis":"2 hydrogen, 1 oxygen atoms combine to make up a molecule of water.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_1995",
+    "premise":"The Endocrine System (glands) also plays a role by producing and secreting hormones.",
+    "hypothesis":"Most hormones are produced by the endocrine system.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_2016",
+    "premise":"Chloroplasts are an important part of plant cells because they are cell structures that allow for photosynthesis.",
+    "hypothesis":"Photosynthesis occurs in the chloroplast.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_2037",
+    "premise":"Educators need to identify the unique characteristics of each child, instead of assuming that all children who share a heritage share the same complement of characteristics.",
+    "hypothesis":"All cells share the characteristic that they need energy.",
+    "label":"neutral",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_2058",
+    "premise":"Each water molecule contains one atom of oxygen and two atoms of hydrogen.",
+    "hypothesis":"2 hydrogen, 1 oxygen atoms combine to make up a molecule of water.",
+    "label":"entailment",
+    "dataset":"scitail"
+  },
+  {
+    "id":"scitail_2079",
+    "premise":"Each cell of the body contains the 46 chromosomes, each chromosome is packed with millions of genes that will determine a child's every characteristic.",
+    "hypothesis":"A cell\u2019s chromosomes contain genes.",
+    "label":"entailment",
+    "dataset":"scitail"
+  }
+]

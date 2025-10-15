@@ -253,19 +253,25 @@ class IntegratedVerificationPipeline:
 
         response = self.llm.generate(prompt)
 
-        # Try to extract JSON from response (handle markdown code fences)
+        # Try to extract JSON from response (handle markdown code fences and preamble)
         response_text = response.strip()
 
-        # Remove markdown code fences if present
-        if response_text.startswith("```json"):
-            response_text = response_text[7:]  # Remove ```json
-        elif response_text.startswith("```"):
-            response_text = response_text[3:]  # Remove ```
+        # Look for JSON object - find first { and last }
+        import re
+        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+        if json_match:
+            response_text = json_match.group(0)
+        else:
+            # Fallback: try to strip markdown fences
+            if response_text.startswith("```json"):
+                response_text = response_text[7:]
+            elif response_text.startswith("```"):
+                response_text = response_text[3:]
 
-        if response_text.endswith("```"):
-            response_text = response_text[:-3]  # Remove trailing ```
+            if response_text.endswith("```"):
+                response_text = response_text[:-3]
 
-        response_text = response_text.strip()
+            response_text = response_text.strip()
 
         # Parse and validate with Pydantic
         try:
@@ -510,15 +516,23 @@ Return JSON with results for ALL claims:
 
         response = self.llm.generate(prompt)
 
-        # Try to extract JSON from response (handle markdown code fences)
+        # Try to extract JSON from response (handle markdown code fences and preamble)
         response_text = response.strip()
-        if response_text.startswith("```json"):
-            response_text = response_text[7:]
-        elif response_text.startswith("```"):
-            response_text = response_text[3:]
-        if response_text.endswith("```"):
-            response_text = response_text[:-3]
-        response_text = response_text.strip()
+
+        # Look for JSON object - find first { and last }
+        import re
+        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+        if json_match:
+            response_text = json_match.group(0)
+        else:
+            # Fallback: try to strip markdown fences
+            if response_text.startswith("```json"):
+                response_text = response_text[7:]
+            elif response_text.startswith("```"):
+                response_text = response_text[3:]
+            if response_text.endswith("```"):
+                response_text = response_text[:-3]
+            response_text = response_text.strip()
 
         # Parse and validate with Pydantic
         try:
