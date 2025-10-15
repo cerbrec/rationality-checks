@@ -409,16 +409,16 @@ If you use this in your research, please cite:
 ```bibtex
 @software{rationality_llm,
   title={Rationality LLM: Integrated Verification Pipeline},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/yourusername/rationality-llm}
+  author={David R. Winer},
+  year={2025},
+  url={https://github.com/drwiner/rationality-llm}
 }
 ```
 
 ## Contact
 
-- Issues: [GitHub Issues](https://github.com/yourusername/rationality-llm/issues)
-- Email: your.email@example.com
+- Issues: [GitHub Issues](https://github.com/drwiner/rationality-llm/issues)
+- Email: drwiner131 at gmail.com
 
 ## Acknowledgments
 
