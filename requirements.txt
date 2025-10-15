@@ -1,0 +1,21 @@
+# Python 3.10+ required
+
+# Core dependencies
+dataclasses-json>=0.6.7  # For serialization of dataclasses
+pydantic>=2.10.0         # For data validation and JSON schema
+
+# LLM Providers (optional - install the one(s) you need)
+anthropic>=0.69.0        # For Anthropic Claude API
+openai>=2.3.0            # For OpenAI GPT API
+boto3>=1.35.0            # For AWS Bedrock Claude API
+python-dotenv>=1.0.0     # For loading .env files
+
+# Optional: Enhanced constraint solving
+# sympy>=1.12           # For symbolic mathematics and constraint solving
+# z3-solver>=4.12.0     # For SMT solving (advanced constraint checking)
+
+# Development dependencies
+pytest>=8.4.0           # For testing
+pytest-cov>=7.0.0       # For coverage reports
+black>=25.9.0           # For code formatting
+mypy>=1.18.0            # For type checking
