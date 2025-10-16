@@ -140,6 +140,16 @@ VALID CLAIM TYPES (use ONLY these):
 - "predictive" - Future predictions
 - "assumption" - Stated or implicit assumptions
 
+⚠️ CRITICAL: Formal structure propositions MUST use this EXACT schema:
+{{
+  "subject": string,
+  "predicate": string,
+  "value": any  // ← MUST be "value", NOT "object"!
+}}
+
+Example: {{"subject": "Company_X", "predicate": "valuation", "value": 50000000000}}
+WRONG: {{"subject": "Company_X", "predicate": "valuation", "object": 50000000000}}
+
 Return JSON:
 {{
   "claims": [
@@ -291,16 +301,14 @@ class IntegratedVerificationPipeline:
 
 {last_error}
 
-Remember to use ONLY these claim types:
-- "factual"
-- "quantitative"
-- "causal"
-- "logical"
-- "interpretive"
-- "predictive"
-- "assumption"
+Common mistakes to avoid:
+1. Claim types: Use ONLY "factual", "quantitative", "causal", "logical", "interpretive", "predictive", "assumption"
+2. Proposition schema: Each proposition MUST have "subject", "predicate", and "value" fields
+   - Use "value" NOT "object"!
+   - Example: {{"subject": "X", "predicate": "is", "value": "Y"}}
+3. All fields must be present - do not omit required fields
 
-Please try again with corrected output."""
+Please try again with corrected output, paying special attention to the proposition schema."""
 
             response = self.llm.generate(prompt)
 
