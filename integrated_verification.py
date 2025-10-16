@@ -3,7 +3,7 @@ Integrated Verification Pipeline
 Combines world state verification (formal) with LLM verification (interpretive)
 """
 
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Union
 from dataclasses import dataclass
 import json
 from pydantic import BaseModel, Field, validator
@@ -38,7 +38,7 @@ class FormalStructureSchema(BaseModel):
     """Schema for formal structure of a claim"""
     propositions: List[PropositionSchema] = Field(default_factory=list)
     constraints: List[ConstraintSchema] = Field(default_factory=list)
-    implications: List[str] = Field(default_factory=list)
+    implications: List[Union[str, Dict]] = Field(default_factory=list)
 
 class ClaimExtractionSchema(BaseModel):
     """Schema for a single extracted claim"""
@@ -53,12 +53,38 @@ class ClaimExtractionSchema(BaseModel):
 
     @validator('claim_type')
     def validate_claim_type(cls, v):
-        """Ensure claim_type is one of the valid ClaimType values"""
+        """Ensure claim_type is one of the valid ClaimType values, with auto-correction"""
         valid_types = {'factual', 'quantitative', 'causal', 'logical',
                       'interpretive', 'predictive', 'assumption'}
-        if v not in valid_types:
-            raise ValueError(f"claim_type must be one of {valid_types}, got '{v}'")
-        return v
+
+        if v in valid_types:
+            return v
+
+        # Map common alternatives to valid types
+        type_mapping = {
+            'hypothesis': 'assumption',
+            'hypothetical': 'assumption',
+            'speculation': 'predictive',
+            'opinion': 'interpretive',
+            'subjective': 'interpretive',
+            'objective': 'factual',
+            'numerical': 'quantitative',
+            'measurement': 'quantitative',
+            'inference': 'logical',
+            'deduction': 'logical',
+            'induction': 'logical',
+            'cause-effect': 'causal',
+            'causality': 'causal',
+            'instructional': 'interpretive',
+            'procedural': 'interpretive',
+        }
+
+        v_lower = v.lower()
+        if v_lower in type_mapping:
+            return type_mapping[v_lower]
+
+        # If no mapping found, raise error
+        raise ValueError(f"claim_type must be one of {valid_types}, got '{v}'")
 
 class ClaimExtractionResponse(BaseModel):
     """Schema for the complete claim extraction response"""
@@ -245,47 +271,85 @@ class IntegratedVerificationPipeline:
         output: str,
         query: str
     ) -> List[EnhancedClaim]:
-        """Extract claims and formal structure in one shot"""
-        prompt = self.prompts.CLAIM_EXTRACTION_WITH_STRUCTURE.format(
+        """Extract claims and formal structure with retry on validation errors"""
+        base_prompt = self.prompts.CLAIM_EXTRACTION_WITH_STRUCTURE.format(
             original_output=output,
             original_query=query
         )
 
-        response = self.llm.generate(prompt)
+        max_retries = 3
+        last_error = None
 
-        # Try to extract JSON from response (handle markdown code fences and preamble)
-        response_text = response.strip()
+        for attempt in range(max_retries):
+            # Build prompt with error feedback on retries
+            if attempt == 0:
+                prompt = base_prompt
+            else:
+                prompt = f"""{base_prompt}
 
-        # Look for JSON object - find first { and last }
-        import re
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if json_match:
-            response_text = json_match.group(0)
-        else:
-            # Fallback: try to strip markdown fences
-            if response_text.startswith("```json"):
-                response_text = response_text[7:]
-            elif response_text.startswith("```"):
-                response_text = response_text[3:]
+⚠️ PREVIOUS ATTEMPT FAILED - Please fix the following error:
 
-            if response_text.endswith("```"):
-                response_text = response_text[:-3]
+{last_error}
 
-            response_text = response_text.strip()
+Remember to use ONLY these claim types:
+- "factual"
+- "quantitative"
+- "causal"
+- "logical"
+- "interpretive"
+- "predictive"
+- "assumption"
 
-        # Parse and validate with Pydantic
-        try:
-            parsed_response = ClaimExtractionResponse.parse_raw(response_text)
-        except json.JSONDecodeError as e:
-            print(f"\n❌ Failed to parse JSON response")
-            print(f"Error: {e}")
-            print(f"Response (first 500 chars):\n{response[:500]}")
-            raise
-        except Exception as e:
-            print(f"\n❌ Failed to validate response schema")
-            print(f"Error: {e}")
-            print(f"Response (first 500 chars):\n{response[:500]}")
-            raise
+Please try again with corrected output."""
+
+            response = self.llm.generate(prompt)
+
+            # Try to extract JSON from response (handle markdown code fences and preamble)
+            response_text = response.strip()
+
+            # Look for JSON object - find first { and last }
+            import re
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                response_text = json_match.group(0)
+            else:
+                # Fallback: try to strip markdown fences
+                if response_text.startswith("```json"):
+                    response_text = response_text[7:]
+                elif response_text.startswith("```"):
+                    response_text = response_text[3:]
+
+                if response_text.endswith("```"):
+                    response_text = response_text[:-3]
+
+                response_text = response_text.strip()
+
+            # Parse and validate with Pydantic
+            try:
+                parsed_response = ClaimExtractionResponse.parse_raw(response_text)
+                # Success! Break out of retry loop
+                if attempt > 0:
+                    print(f"  ✓ Retry {attempt} succeeded")
+                break
+            except json.JSONDecodeError as e:
+                last_error = f"JSON parsing error: {e}"
+                if attempt == max_retries - 1:
+                    print(f"\n❌ Failed to parse JSON response after {max_retries} attempts")
+                    print(f"Error: {e}")
+                    print(f"Response (first 500 chars):\n{response[:500]}")
+                    raise
+                else:
+                    print(f"  ⚠️  Attempt {attempt + 1} failed: JSON parse error, retrying...")
+            except Exception as e:
+                last_error = f"Validation error: {e}"
+                if attempt == max_retries - 1:
+                    print(f"\n❌ Failed to validate response schema after {max_retries} attempts")
+                    print(f"Error: {e}")
+                    print(f"Response (first 500 chars):\n{response[:500]}")
+                    raise
+                else:
+                    print(f"  ⚠️  Attempt {attempt + 1} failed: {e}")
+                    print(f"  → Retrying with error feedback...")
 
         # Convert from Pydantic models to EnhancedClaim objects
         claims = []
@@ -469,8 +533,7 @@ class IntegratedVerificationPipeline:
         claims: List[EnhancedClaim]
     ) -> Dict[str, VerificationResult]:
         """
-        LLM-based empirical testing for non-formalizable claims.
-        Same as before - 1 batch prompt.
+        LLM-based empirical testing for non-formalizable claims with retry.
         """
         # Prepare claims for batch processing
         claims_data = [
@@ -483,7 +546,7 @@ class IntegratedVerificationPipeline:
             for c in claims
         ]
 
-        prompt = f"""You are testing whether multiple claims are logically consistent and empirically sound.
+        base_prompt = f"""You are testing whether multiple claims are logically consistent and empirically sound.
 
 CLAIMS TO TEST:
 {json.dumps(claims_data, indent=2)}
@@ -514,39 +577,68 @@ Return JSON with results for ALL claims:
   ]
 }}"""
 
-        response = self.llm.generate(prompt)
+        max_retries = 3
+        last_error = None
 
-        # Try to extract JSON from response (handle markdown code fences and preamble)
-        response_text = response.strip()
+        for attempt in range(max_retries):
+            # Build prompt with error feedback on retries
+            if attempt == 0:
+                prompt = base_prompt
+            else:
+                prompt = f"""{base_prompt}
 
-        # Look for JSON object - find first { and last }
-        import re
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if json_match:
-            response_text = json_match.group(0)
-        else:
-            # Fallback: try to strip markdown fences
-            if response_text.startswith("```json"):
-                response_text = response_text[7:]
-            elif response_text.startswith("```"):
-                response_text = response_text[3:]
-            if response_text.endswith("```"):
-                response_text = response_text[:-3]
-            response_text = response_text.strip()
+⚠️ PREVIOUS ATTEMPT FAILED - Please fix the following error:
 
-        # Parse and validate with Pydantic
-        try:
-            parsed_response = LLMVerificationResponse.parse_raw(response_text)
-        except json.JSONDecodeError as e:
-            print(f"\n❌ Failed to parse LLM empirical test JSON")
-            print(f"Error: {e}")
-            print(f"Response (first 500 chars):\n{response[:500]}")
-            raise
-        except Exception as e:
-            print(f"\n❌ Failed to validate LLM empirical test schema")
-            print(f"Error: {e}")
-            print(f"Response (first 500 chars):\n{response[:500]}")
-            raise
+{last_error}
+
+Ensure all fields match the schema exactly. Try again with corrected output."""
+
+            response = self.llm.generate(prompt)
+
+            # Try to extract JSON from response (handle markdown code fences and preamble)
+            response_text = response.strip()
+
+            # Look for JSON object - find first { and last }
+            import re
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                response_text = json_match.group(0)
+            else:
+                # Fallback: try to strip markdown fences
+                if response_text.startswith("```json"):
+                    response_text = response_text[7:]
+                elif response_text.startswith("```"):
+                    response_text = response_text[3:]
+                if response_text.endswith("```"):
+                    response_text = response_text[:-3]
+                response_text = response_text.strip()
+
+            # Parse and validate with Pydantic
+            try:
+                parsed_response = LLMVerificationResponse.parse_raw(response_text)
+                # Success! Break out of retry loop
+                if attempt > 0:
+                    print(f"  ✓ LLM empirical test retry {attempt} succeeded")
+                break
+            except json.JSONDecodeError as e:
+                last_error = f"JSON parsing error: {e}"
+                if attempt == max_retries - 1:
+                    print(f"\n❌ Failed to parse LLM empirical test JSON after {max_retries} attempts")
+                    print(f"Error: {e}")
+                    print(f"Response (first 500 chars):\n{response[:500]}")
+                    raise
+                else:
+                    print(f"  ⚠️  LLM empirical test attempt {attempt + 1} failed: JSON parse error, retrying...")
+            except Exception as e:
+                last_error = f"Validation error: {e}"
+                if attempt == max_retries - 1:
+                    print(f"\n❌ Failed to validate LLM empirical test schema after {max_retries} attempts")
+                    print(f"Error: {e}")
+                    print(f"Response (first 500 chars):\n{response[:500]}")
+                    raise
+                else:
+                    print(f"  ⚠️  LLM empirical test attempt {attempt + 1} failed: {e}")
+                    print(f"  → Retrying with error feedback...")
 
         # Map results by claim_id
         results_map = {}

@@ -58,14 +58,17 @@ class ModelComparison:
     def run_contradiction_benchmark(
         self,
         limit: int = 50,
-        verbose: bool = False
+        verbose: bool = False,
+        datasets: List[str] = None
     ) -> Dict[str, Dict]:
         """
         Run contradiction detection benchmark on all models.
 
         Args:
-            limit: Number of examples to test
+            limit: Number of examples to test per dataset
             verbose: Print detailed progress
+            datasets: List of datasets to test on. If None, uses all datasets.
+                     Options: 'anli', 'snli', 'scitail', 'vitaminc'
 
         Returns:
             Dictionary mapping model name to results
@@ -73,12 +76,18 @@ class ModelComparison:
         if not self.models:
             raise ValueError("No models added. Use add_model() first.")
 
+        # Default to all datasets
+        if datasets is None:
+            datasets = ['anli', 'snli', 'scitail', 'vitaminc']
+        elif isinstance(datasets, str):
+            datasets = [datasets]
+
         print("\n" + "=" * 80)
         print("RUNNING MODEL COMPARISON")
         print("=" * 80)
         print(f"Models: {', '.join(self.models.keys())}")
-        print(f"Benchmark: Contradiction Detection (ANLI)")
-        print(f"Examples: {limit}")
+        print(f"Datasets: {', '.join(d.upper() for d in datasets)}")
+        print(f"Examples per dataset: {limit}")
         print("=" * 80)
 
         all_results = {}
@@ -88,46 +97,62 @@ class ModelComparison:
             print(f"TESTING: {model_name}")
             print("=" * 80)
 
-            # Create pipeline for this model
-            pipeline = IntegratedVerificationPipeline(provider)
-            benchmark = ContradictionBenchmark(pipeline)
+            # Store results for all datasets
+            model_dataset_results = {}
 
-            # Run benchmark and time it
-            start_time = time.time()
-            results = benchmark.run_benchmark(limit=limit, verbose=verbose)
-            elapsed_time = time.time() - start_time
+            for dataset_name in datasets:
+                print(f"\n📊 Dataset: {dataset_name.upper()}")
+                print("-" * 80)
 
-            # Extract metrics
-            metrics = results['metrics']
-            by_label = results['by_label_accuracy']
+                # Create pipeline for this model
+                pipeline = IntegratedVerificationPipeline(provider)
+                benchmark = ContradictionBenchmark(pipeline, dataset_name=dataset_name)
 
-            # Convert by_label to simple accuracy dict
-            by_label_acc = {
-                label: stats['correct'] / stats['total'] if stats['total'] > 0 else 0
-                for label, stats in by_label.items()
-            }
+                # Run benchmark and time it
+                start_time = time.time()
+                try:
+                    results = benchmark.run_benchmark(limit=limit, verbose=verbose)
+                    elapsed_time = time.time() - start_time
 
-            # Create performance summary
-            performance = ModelPerformance(
-                model_name=model_name,
-                accuracy=metrics['accuracy'].value,
-                precision=metrics['precision'].value,
-                recall=metrics['recall'].value,
-                f1_score=metrics['f1'].value,
-                calibration_error=metrics.get('calibration', MetricResult('', 0.0)).value,
-                total_time_seconds=elapsed_time,
-                avg_time_per_example=elapsed_time / limit,
-                total_examples=limit,
-                by_label_accuracy=by_label_acc
-            )
+                    # Extract metrics
+                    metrics = results['metrics']
+                    by_label = results['by_label_accuracy']
 
-            all_results[model_name] = {
-                'performance': performance,
-                'detailed_results': results['results'],
-                'metrics': metrics
-            }
+                    # Convert by_label to simple accuracy dict
+                    by_label_acc = {
+                        label: stats['correct'] / stats['total'] if stats['total'] > 0 else 0
+                        for label, stats in by_label.items()
+                    }
 
-            print(f"\n⏱️  Time: {elapsed_time:.1f}s ({elapsed_time/limit:.2f}s per example)")
+                    # Create performance summary
+                    performance = ModelPerformance(
+                        model_name=f"{model_name} ({dataset_name.upper()})",
+                        accuracy=metrics['accuracy'].value,
+                        precision=metrics['precision'].value,
+                        recall=metrics['recall'].value,
+                        f1_score=metrics['f1'].value,
+                        calibration_error=metrics.get('calibration', MetricResult('', 0.0)).value,
+                        total_time_seconds=elapsed_time,
+                        avg_time_per_example=elapsed_time / limit,
+                        total_examples=limit,
+                        by_label_accuracy=by_label_acc
+                    )
+
+                    model_dataset_results[dataset_name] = {
+                        'performance': performance,
+                        'detailed_results': results['results'],
+                        'metrics': metrics
+                    }
+
+                    print(f"⏱️  Time: {elapsed_time:.1f}s ({elapsed_time/limit:.2f}s per example)")
+
+                except Exception as e:
+                    print(f"❌ Error on {dataset_name}: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    continue
+
+            all_results[model_name] = model_dataset_results
 
         return all_results
 
@@ -137,8 +162,11 @@ class ModelComparison:
         print("MODEL COMPARISON REPORT")
         print("=" * 80)
 
-        # Get all model performances
-        performances = [r['performance'] for r in results.values()]
+        # Flatten results: model -> dataset -> performance into list of performances
+        performances = []
+        for model_name, dataset_results in results.items():
+            for dataset_name, result_data in dataset_results.items():
+                performances.append(result_data['performance'])
 
         if not performances:
             print("No results to compare")
@@ -147,7 +175,9 @@ class ModelComparison:
         # Overall metrics comparison
         print("\n📊 OVERALL METRICS")
         print("-" * 80)
-        print(f"{'Metric':<20} " + " ".join(f"{p.model_name:>15}" for p in performances))
+        # Truncate model names to fit
+        model_names = [p.model_name[:25] for p in performances]
+        print(f"{'Metric':<20} " + " ".join(f"{name:>27}" for name in model_names))
         print("-" * 80)
 
         metrics_to_compare = [
@@ -165,13 +195,13 @@ class ModelComparison:
             print(f"{metric_name:<20} ", end="")
             for i, value in enumerate(values):
                 marker = " 🏆" if i == best_idx else "   "
-                print(f"{value:>15.4f}{marker}", end=" ")
+                print(f"{value:>27.4f}{marker}", end=" ")
             print()
 
         # Efficiency metrics
         print("\n⚡ EFFICIENCY METRICS")
         print("-" * 80)
-        print(f"{'Metric':<20} " + " ".join(f"{p.model_name:>15}" for p in performances))
+        print(f"{'Metric':<20} " + " ".join(f"{name:>27}" for name in model_names))
         print("-" * 80)
 
         efficiency_metrics = [
@@ -186,7 +216,7 @@ class ModelComparison:
             print(f"{metric_name:<20} ", end="")
             for i, value in enumerate(values):
                 marker = " 🏆" if i == best_idx else "   "
-                print(f"{value:>15.2f}{marker}", end=" ")
+                print(f"{value:>27.2f}{marker}", end=" ")
             print()
 
         # Performance by label type
@@ -198,7 +228,7 @@ class ModelComparison:
         for p in performances:
             all_labels.update(p.by_label_accuracy.keys())
 
-        print(f"{'Label':<20} " + " ".join(f"{p.model_name:>15}" for p in performances))
+        print(f"{'Label':<20} " + " ".join(f"{name:>27}" for name in model_names))
         print("-" * 80)
 
         for label in sorted(all_labels):
@@ -208,7 +238,7 @@ class ModelComparison:
 
             for i, value in enumerate(values):
                 marker = " 🏆" if i == best_idx and best_idx >= 0 else "   "
-                print(f"{value:>15.4f}{marker}", end=" ")
+                print(f"{value:>27.4f}{marker}", end=" ")
             print()
 
         # Summary recommendation
@@ -233,8 +263,8 @@ class ModelComparison:
         comparison_data = {
             'timestamp': timestamp,
             'models': [asdict(p) for p in performances],
-            'benchmark': 'contradiction_detection',
-            'num_examples': performances[0].total_examples
+            'benchmark': 'contradiction_detection_multi_dataset',
+            'num_examples_per_dataset': performances[0].total_examples
         }
 
         with open(output_file, 'w') as f:

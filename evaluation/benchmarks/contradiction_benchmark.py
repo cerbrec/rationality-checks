@@ -33,18 +33,70 @@ class ContradictionExample:
 
 class ContradictionBenchmark:
     """
-    Benchmark for testing contradiction detection using ANLI dataset.
+    Benchmark for testing contradiction detection on multiple datasets.
 
     The pipeline is given a document containing both premise and hypothesis.
     We check if it correctly identifies contradictions.
+
+    Supported datasets:
+    - ANLI: Adversarial Natural Language Inference (300 samples)
+    - SNLI: Stanford Natural Language Inference (100 samples)
+    - SciTail: Scientific entailment reasoning (100 samples)
+    - VitaminC: Fact verification dataset (100 samples)
     """
 
-    def __init__(self, pipeline: IntegratedVerificationPipeline):
+    def __init__(self, pipeline: IntegratedVerificationPipeline, dataset_name: str = "anli"):
         self.pipeline = pipeline
-        self.dataset_path = Path("evaluation/datasets/anli_samples.json")
+        self.dataset_name = dataset_name.lower()
+
+        # Map dataset names to file paths
+        dataset_files = {
+            'anli': 'evaluation/datasets/anli_samples.json',
+            'snli': 'evaluation/datasets/snli_samples.json',
+            'scitail': 'evaluation/datasets/scitail_samples.json',
+            'vitaminc': 'evaluation/datasets/vitaminc_samples.json'
+        }
+
+        if self.dataset_name not in dataset_files:
+            raise ValueError(f"Unknown dataset: {dataset_name}. Choose from: {list(dataset_files.keys())}")
+
+        self.dataset_path = Path(dataset_files[self.dataset_name])
+
+    def _normalize_label(self, label, label_name=None) -> Tuple[int, str]:
+        """
+        Normalize labels from different datasets to standard format.
+        Returns: (numeric_label, label_name)
+        - 0 = entailment
+        - 1 = neutral / not enough info
+        - 2 = contradiction / refutes
+        """
+        # If already numeric, just normalize label_name
+        if isinstance(label, int):
+            names = {0: 'entailment', 1: 'neutral', 2: 'contradiction'}
+            return label, label_name or names.get(label, 'unknown')
+
+        # String label normalization
+        label_str = str(label).lower()
+
+        # SciTail format
+        if label_str == 'entailment':
+            return 0, 'entailment'
+        elif label_str == 'neutral':
+            return 1, 'neutral'
+
+        # VitaminC format
+        elif label_str == 'supports':
+            return 0, 'entailment'
+        elif label_str == 'not enough info':
+            return 1, 'neutral'
+        elif label_str == 'refutes':
+            return 2, 'contradiction'
+
+        else:
+            raise ValueError(f"Unknown label format: {label}")
 
     def load_dataset(self, limit: int = None) -> List[ContradictionExample]:
-        """Load ANLI dataset"""
+        """Load dataset with support for different formats"""
         with open(self.dataset_path) as f:
             data = json.load(f)
 
@@ -53,12 +105,25 @@ class ContradictionBenchmark:
 
         examples = []
         for item in data:
+            # VitaminC uses claim/evidence instead of premise/hypothesis
+            if self.dataset_name == 'vitaminc':
+                premise = item['evidence']
+                hypothesis = item['claim']
+            else:
+                premise = item['premise']
+                hypothesis = item['hypothesis']
+
+            # Normalize labels
+            label_raw = item['label']
+            label_name_raw = item.get('label_name')
+            label, label_name = self._normalize_label(label_raw, label_name_raw)
+
             examples.append(ContradictionExample(
                 id=item['id'],
-                premise=item['premise'],
-                hypothesis=item['hypothesis'],
-                label=item['label'],
-                label_name=item['label_name']
+                premise=premise,
+                hypothesis=hypothesis,
+                label=label,
+                label_name=label_name
             ))
 
         return examples
@@ -125,11 +190,11 @@ Based on the premise, the hypothesis {'contradicts' if example.label == 2 else '
             Dictionary with results and metrics
         """
         print("=" * 80)
-        print("CONTRADICTION DETECTION BENCHMARK (ANLI)")
+        print(f"CONTRADICTION DETECTION BENCHMARK ({self.dataset_name.upper()})")
         print("=" * 80)
 
         examples = self.load_dataset(limit=limit)
-        print(f"\nTesting on {len(examples)} examples from ANLI dataset...")
+        print(f"\nTesting on {len(examples)} examples from {self.dataset_name.upper()} dataset...")
 
         results = []
         predictions = []
