@@ -185,11 +185,18 @@ See [.env.example](.env.example) for complete configuration options.
 
 ```python
 from integrated_verification import IntegratedVerificationPipeline
-from verification_pipeline import AnthropicProvider
+from verification_pipeline import BedrockProvider
 
-# Initialize with your LLM provider
-llm = AnthropicProvider(api_key="your-api-key")
+# Initialize with Amazon Nova Pro (recommended for best performance)
+llm = BedrockProvider(
+    region="us-east-1",
+    model="us.amazon.nova-pro-v1:0"
+)
 pipeline = IntegratedVerificationPipeline(llm)
+
+# Alternative: Use Anthropic Claude
+# from verification_pipeline import AnthropicProvider
+# llm = AnthropicProvider(api_key="your-api-key")
 
 # Verify an analysis
 report = pipeline.verify_analysis(
@@ -233,14 +240,14 @@ Recommendation: flag_uncertainty
 Compare multiple LLM providers on contradiction detection:
 
 ```bash
-# Quick test on 10 examples
-python run_comparison.py --limit 10 --models gpt4 claude
+# Quick test with Amazon Nova Pro (recommended)
+python run_comparison.py --limit 10 --models bedrock-nova-pro
 
-# Full comparison with multiple models
-python run_comparison.py --limit 20 --models gpt4o claude gemini
+# Compare Nova Pro vs others
+python run_comparison.py --limit 20 --models bedrock-nova-pro claude gpt4o
 
-# All available models
-python run_comparison.py --limit 20 --models gpt4 gpt4o gpt4-turbo claude claude-opus gemini gemini-pro
+# Full comparison with all models
+python run_comparison.py --limit 20 --models bedrock-nova-pro gpt4 gpt4o claude gemini
 ```
 
 See [CLI Tools](#cli-tools) for more details.
@@ -304,15 +311,16 @@ from verification_pipeline import BedrockProvider
 
 llm = BedrockProvider(
     region="us-east-1",
-    model="us.anthropic.claude-sonnet-4-20250514-v1:0"  # Claude Sonnet 4
+    model="us.amazon.nova-pro-v1:0"                      # Amazon Nova Pro (recommended)
+    # model="us.anthropic.claude-sonnet-4-20250514-v1:0"  # Claude Sonnet 4
     # model="us.anthropic.claude-opus-4-1-20250805-v1:0"   # Claude Opus 4
-    # model="us.amazon.nova-pro-v1:0"                      # Amazon Nova Pro
     # model="us.amazon.nova-premier-v1:0"                  # Amazon Nova Premier
 )
 ```
 
 **Setup**: Set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION` in `.env`
 **Requirements**: AWS account with Bedrock access
+**Recommended**: Amazon Nova Pro offers excellent accuracy (60-82% on benchmarks) with fast processing (8-14s per example)
 
 ### Custom Provider
 
@@ -327,12 +335,14 @@ class CustomProvider(LLMProvider):
 
 ### Provider Comparison
 
-| Provider | Models | Speed | Cost | Setup Difficulty |
-|----------|--------|-------|------|------------------|
-| **Anthropic** | Claude 3.5, Opus, Haiku | Fast | $$ | Easy |
-| **OpenAI** | GPT-4o, GPT-4, Turbo | Fast | $$ | Easy |
-| **Google** | Gemini 2.0/2.5 | Very Fast | $ | Easy |
-| **AWS Bedrock** | Claude, Nova, Llama | Medium | $-$$ | Medium |
+| Provider | Models | Speed | Cost | Accuracy (ANLI)* | Setup Difficulty | Recommended |
+|----------|--------|-------|------|-----------------|------------------|-------------|
+| **AWS Bedrock** | Claude, Nova, Llama | Fast | $-$$ | **60-82%** | Medium | ✅ **Nova Pro** |
+| **Anthropic** | Claude 3.5, Opus, Haiku | Fast | $$ | 48-56% | Easy | Claude 4.5 |
+| **OpenAI** | GPT-4o, GPT-4, Turbo | Fast | $$ | TBD | Easy | GPT-4o |
+| **Google** | Gemini 2.0/2.5 | Very Fast | $ | TBD | Easy | Gemini 2.0 |
+
+*Accuracy on ANLI contradiction detection benchmark (50 examples). See [Evaluation Results](#evaluation-results) below.
 
 See [MODELS_REFERENCE.md](MODELS_REFERENCE.md) for complete model listing and cost comparison.
 
@@ -427,19 +437,88 @@ For each model:
 ### Example Results
 
 ```
-📊 OVERALL METRICS
+📊 OVERALL METRICS (ANLI Dataset)
 --------------------------------------------------------------------------------
-Metric               GPT-4o             Claude Sonnet      Gemini Pro
+Metric               Nova Pro 🏆        Claude 3.7         GPT-4o
 --------------------------------------------------------------------------------
-Accuracy                0.86 🏆            0.82              0.79
-F1 Score                0.84 🏆            0.80              0.77
-Calibration Error       0.08               0.06 🏆           0.12
-Speed (s/example)       5.2                4.8 🏆            3.9 🏆
+Accuracy                0.60 🏆            0.48              TBD
+F1 Score                0.52 🏆            0.46              TBD
+Precision               0.41               0.33              TBD
+Recall                  0.73               0.73              TBD
+Speed (s/example)       13.9 🏆            27.1              TBD
 ```
+
+**Latest Results (50 examples, ANLI + SCITAIL):**
+- **Amazon Nova Pro**: 60% accuracy (ANLI), 82% accuracy (SCITAIL), ~2x faster than Claude
+- **Claude 3.7 Sonnet**: 48% accuracy (ANLI), 66% accuracy (SCITAIL)
 
 Results are saved to `evaluation/reports/comparison_TIMESTAMP.json`.
 
 **Documentation**: See [EVALUATION_SETUP.md](EVALUATION_SETUP.md) for complete evaluation guide.
+
+## Evaluation Results
+
+Based on standardized contradiction detection benchmarks (50 examples per dataset):
+
+### Amazon Nova Pro (AWS Bedrock) - **Recommended**
+
+**ANLI (Adversarial NLI):**
+- Accuracy: 60%
+- F1 Score: 0.52
+- Precision: 40.7%
+- Recall: 73.3%
+- Speed: 13.9s per example
+
+**SCITAIL (Scientific NLI):**
+- Accuracy: 82%
+- Speed: 8.3s per example
+- Excellent performance on scientific/technical content
+
+**Key Strengths:**
+- ✅ Best overall accuracy across tested datasets
+- ✅ 2x faster than Claude 3.7 (8-14s vs 16-27s per example)
+- ✅ Excellent recall (73%) - catches most contradictions
+- ✅ Cost-effective via AWS Bedrock
+- ⚠️ Note: May over-flag neutral statements as contradictions (lower precision)
+
+### Claude 3.7 Sonnet (Anthropic)
+
+**ANLI (Adversarial NLI):**
+- Accuracy: 48%
+- F1 Score: 0.46
+- Speed: 27.1s per example
+
+**SNLI (Stanford NLI):**
+- Accuracy: 56%
+- F1 Score: 0.48
+- Speed: 15.7s per example
+
+**SCITAIL (Scientific NLI):**
+- Accuracy: 66%
+- Speed: 16.2s per example
+
+**VITAMINC (Fact Verification):**
+- Accuracy: 66%
+- F1 Score: 0.45
+- Speed: 20.1s per example
+
+**Key Characteristics:**
+- More conservative in flagging contradictions
+- Tested across all 4 datasets
+- Slower processing speed
+- Lower accuracy compared to Nova Pro
+
+### Model Recommendations by Use Case
+
+| Use Case | Recommended Model | Why |
+|----------|------------------|-----|
+| **Production deployment** | Amazon Nova Pro | Best accuracy + speed + cost ratio |
+| **High recall needed** | Amazon Nova Pro | 73% recall, catches most issues |
+| **High precision needed** | Claude 4.5 Sonnet | Fewer false positives |
+| **Budget-conscious** | Gemini 2.0 Flash | Lowest cost, good speed |
+| **Maximum capability** | GPT-4o or Claude Opus | Latest models (benchmarks pending) |
+
+**Next Steps:** Run evaluation on GPT-4o, Claude 4.5 Sonnet, and Gemini 2.0 Flash for complete comparison.
 
 ## CLI Tools
 
@@ -702,16 +781,20 @@ Each claim is verified using one or more methods:
 
 ### Speed Benchmarks
 
-Based on evaluation results:
+Based on evaluation results (contradiction detection with verification pipeline):
 
-| Provider | Model | Speed (s/example) | Cost/1000 examples |
-|----------|-------|-------------------|-------------------|
-| Google | Gemini 2.0 Flash | 3.9 | $2 |
-| Anthropic | Claude Haiku | 4.8 | $3 |
-| OpenAI | GPT-4o | 5.2 | $10 |
-| Anthropic | Claude Sonnet | 6.1 | $10 |
-| OpenAI | GPT-4 | 7.3 | $20 |
-| Anthropic | Claude Opus | 9.4 | $30 |
+| Provider | Model | Speed (s/example) | Cost/1000 examples | Accuracy (ANLI) |
+|----------|-------|-------------------|-------------------|-----------------|
+| AWS Bedrock | **Amazon Nova Pro** | **8.3-13.9** | **$3-5** | **60%** 🏆 |
+| Google | Gemini 2.0 Flash | 3.9* | $2 | TBD |
+| Anthropic | Claude Haiku | 4.8* | $3 | TBD |
+| OpenAI | GPT-4o | 5.2* | $10 | TBD |
+| Anthropic | Claude Sonnet | 6.1* | $10 | TBD |
+| Anthropic | Claude 3.7 Sonnet | 16.2-27.1 | $15-25 | 48% |
+| OpenAI | GPT-4 | 7.3* | $20 | TBD |
+| Anthropic | Claude Opus | 9.4* | $30 | TBD |
+
+*Estimated based on typical API response times. Amazon Nova Pro and Claude 3.7 measured on actual evaluation runs.
 
 ## Limitations
 
