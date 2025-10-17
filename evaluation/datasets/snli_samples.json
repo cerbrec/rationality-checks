@@ -1,0 +1,802 @@
+[
+  {
+    "id":"snli_0",
+    "premise":"This church choir sings to the masses as they sing joyous songs from the book at a church.",
+    "hypothesis":"The church has cracks in the ceiling.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_98",
+    "premise":"A woman within an orchestra is playing a violin.",
+    "hypothesis":"A woman is playing a concert.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_196",
+    "premise":"Two men climbing on a wooden scaffold.",
+    "hypothesis":"Two women climbing on a wooden scaffold.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_294",
+    "premise":"A girl holding a beverage points at a painting.",
+    "hypothesis":"The girl is drinking an alcoholic beverage.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_392",
+    "premise":"A middle eastern marketplace.",
+    "hypothesis":"An American theater.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_490",
+    "premise":"A young girl in a yellow top and a flowered skirt is standing on a blanket and biting on a toy.",
+    "hypothesis":"A girl is standing.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_588",
+    "premise":"A white duck expanding its wings in the water.",
+    "hypothesis":"The duck is a rare breed, most thought to have been driven into extinction years ago.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_686",
+    "premise":"Here is a picture of people getting drunk at a house party.",
+    "hypothesis":"Some people are by the side of a swimming pool partying.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_784",
+    "premise":"The soccer team, clad in blue for the match, began to counter down the field in front of the defender, clad in red.",
+    "hypothesis":"A soccer team hangs out in the locker room.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_882",
+    "premise":"A brown dog carries an object in its mouth on a snowy hillside.",
+    "hypothesis":"A dog is taking something to its owner.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_980",
+    "premise":"Men in hard hats work along a wall.",
+    "hypothesis":"Guys are working near a wall and it starts raining.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1078",
+    "premise":"A person with an orange shovel is shoveling snow.",
+    "hypothesis":"The person is clearing their snowed up driveway",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1176",
+    "premise":"A man is walking in the street.",
+    "hypothesis":"A man is playing golf.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1274",
+    "premise":"A tattooed man posing with a woman carrying a yellow handbag.",
+    "hypothesis":"A couple looks at porn.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1372",
+    "premise":"A girl laying on the ground on her cellphone.",
+    "hypothesis":"a girl on her cellphone lying on the ground",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1470",
+    "premise":"One woman with jeans, gray shirt and sandals; with girl in all pink watching a white ball float in midair.",
+    "hypothesis":"The ball is on the floor.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1568",
+    "premise":"An Ambulance is passing a man wearing a bandanna and girl.",
+    "hypothesis":"The ambulance isn't stopped by heavy traffic",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1666",
+    "premise":"A woman holding bags behind plantains.",
+    "hypothesis":"The woman is holding old trashcans to carry various objecs.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1764",
+    "premise":"Rock band on stage immersed in light show.",
+    "hypothesis":"There is a light show.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1862",
+    "premise":"A man is swimming with a little girl wearing a pink life jacket in an indoor pool",
+    "hypothesis":"A boy is swimming in the ocean.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_1960",
+    "premise":"A young man, wearing a white shirt, prepares hotdogs on a small grill.",
+    "hypothesis":"A young man is grilling fish in his underwear.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2058",
+    "premise":"A nighttime street scene of a restaurant.",
+    "hypothesis":"The restaurant is open at night.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2156",
+    "premise":"A man is standing inside a building under construction filled with bricks and various tools.",
+    "hypothesis":"a contractor looks at the job",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2254",
+    "premise":"Four young children appear in this image wearing pants and shirts while they lounge in the room.",
+    "hypothesis":"Four young boys wearing blue jeans and white shirts lounge in a living room.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2352",
+    "premise":"Three men dressed in suits and ties clasps their raised hands while standing in front of corporate logos.",
+    "hypothesis":"Three men are celebrating a business achievement.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2450",
+    "premise":"A bicycle rider wearing racing gear pedals a yellow bike past the wire fence at the edge of a field, with a stand of trees in the background.",
+    "hypothesis":"Someone was trying to take a shortcut home.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2548",
+    "premise":"A person with a green backpack is riding a bike down the road.",
+    "hypothesis":"The person is riding there bike to lunch.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2646",
+    "premise":"A man stands by a load of boxes near a pizza restaurant.",
+    "hypothesis":"A man stands near a load of boxes on fire.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2744",
+    "premise":"Young boy plays with a truck outdoors, while a woman waits.",
+    "hypothesis":"Young boy has many toy trucks",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2842",
+    "premise":"Mother and daughter are meeting for the first time.",
+    "hypothesis":"The mother and daughter are fighitn.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_2940",
+    "premise":"A kneeling man bends his ear to listen on another in front of a guitar and audio equipment.",
+    "hypothesis":"Two men are near audio equipment.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3038",
+    "premise":"Children are playing and swimming in a boy of water with a footbridge in the background.",
+    "hypothesis":"Children are swimming in cold water.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3136",
+    "premise":"A young man with glasses and his companion are attempting to do laundry in a public place.",
+    "hypothesis":"A person with glasses",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3234",
+    "premise":"A white and a black dog fighting in a fenced in room.",
+    "hypothesis":"the black and white dogs are playing.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3332",
+    "premise":"A young man wearing goggles is putting some liquid in a beaker while a young girl wearing blue gloves looks down while holding a pen.",
+    "hypothesis":"Two people are in the same area.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3430",
+    "premise":"There are children playing in the snow and one of them is making a snowball.",
+    "hypothesis":"Two children fight over the remote.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3528",
+    "premise":"Two men in punk-style clothing stand in front of a wall.",
+    "hypothesis":"Two men standing in front of a wall looking for trouble.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3626",
+    "premise":"Little girl with very curly hair drinking her cup of juice.",
+    "hypothesis":"A girl with curly hair is drinking through a straw.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3724",
+    "premise":"Four cyclists are racing on an indoor racetrack all wearing the same red, white, and blue uniforms.",
+    "hypothesis":"The racetrack is outdoors.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3822",
+    "premise":"Blond women working wearing gloves.",
+    "hypothesis":"A woman wearing gloves to hide her injuries.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_3920",
+    "premise":"People at a farmer's market.",
+    "hypothesis":"The family is near a farmer market.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4018",
+    "premise":"A woman wearing an elaborate array of feathers in her hair, a bead necklace, a medallion, and an aqua, brown, and olive-green dress and looks off to her left, smiling slightly.",
+    "hypothesis":"A woman looks to her left",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4116",
+    "premise":"A boy wearing a yellow shirt, khaki pants, and blue and yellow shoes is hitting a tennis ball off a wall with a tennis racket.",
+    "hypothesis":"A child in a colorful outfit, holds a piece of sporting equipment and uses it to propel an orb against a vertical surface.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4214",
+    "premise":"Five People are kneeling between two park cars, and one man is approaching with his arm raised into the air.",
+    "hypothesis":"Six people have an absolutely normal poker game.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4312",
+    "premise":"A cement worker is working on a new sidewalk outside of a clothing store.",
+    "hypothesis":"A worker is working in a restuarant.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4410",
+    "premise":"Two people walking outside in the woods in the winter time wearing jackets with hoods on them.",
+    "hypothesis":"Two people are soaking up the sun in the summer time.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4508",
+    "premise":"A person in an orange shirt reaching up.",
+    "hypothesis":"A person is reaching up.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4606",
+    "premise":"A group of children sitting on the ground laughing as another boy jumps over the group.",
+    "hypothesis":"They are playing a game.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4704",
+    "premise":"A lady, dressed in a costume, is posing with an axe in the middle of the woods.",
+    "hypothesis":"A lady with an axe is posing in the middle of the woods.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4802",
+    "premise":"The blond boy is riding roller-coaster with his mouth wide open.",
+    "hypothesis":"a woman is riding a roller-coaster",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4900",
+    "premise":"Five boys in blue shirts drawing at a table.",
+    "hypothesis":"The boys are working on an art project.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_4998",
+    "premise":"Two boys in front of a soda machine.",
+    "hypothesis":"Two boys are going to purchase sodas.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5096",
+    "premise":"People are riding their bikes down a road.",
+    "hypothesis":"People are having fun.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5194",
+    "premise":"Several cartoon characters are behind a young girl sitting in a highchair with a bucket and SpongeBob in front of her.",
+    "hypothesis":"One of the cartoon character is upset.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5292",
+    "premise":"A young, well-dressed black man seated behind a drum set and smiling.",
+    "hypothesis":"the man is naked",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5390",
+    "premise":"A woman in orange sunglasses is playing the drums while speaking into a microphone in front of a large sign.",
+    "hypothesis":"A woman is yelling at a crowd and they cannot hear her because she has no microphone.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5488",
+    "premise":"A couple of females are talking to each other while one is flicking her cigarette.",
+    "hypothesis":"The other likes to smoke as well.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5586",
+    "premise":"a teenager laying down with paper crafts strewn about the floor",
+    "hypothesis":"The teen is dancing in her room.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5684",
+    "premise":"Two distinguished older gentlemen stand outside a house, trees in background, both with white hair, the taller man having his arm about the other man's shoulder as they face the camera from behind their corrective lenses.",
+    "hypothesis":"The older men are colleagues.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5782",
+    "premise":"two white dogs fighting with each other",
+    "hypothesis":"The two dogs are having a brawl.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5880",
+    "premise":"A child with wet hair is holding a butterfly decorated beach ball.",
+    "hypothesis":"The child is dry.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_5978",
+    "premise":"A white and black spotted dog is running through a grassy area.",
+    "hypothesis":"A dog is asleep on the couch.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6076",
+    "premise":"A man with white hair wearing a gray suit speaks into a microphone with a metal jug sitting in front of him.",
+    "hypothesis":"A man is riding in a spaceship to the moon.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6174",
+    "premise":"A dog plays with a stuffed animal.",
+    "hypothesis":"The dog is chewing on his toy.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6272",
+    "premise":"A black-haired woman with her hair in a high bun is having her head shaved by another woman.",
+    "hypothesis":"A person with hair",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6370",
+    "premise":"A man wearing a business suit holds up a drink as the other laughs.",
+    "hypothesis":"the man is crying and writing",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6468",
+    "premise":"A man in a construction vest is looking at a vehicle.",
+    "hypothesis":"A construction worker is looking at a car.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6566",
+    "premise":"A young girl is laughing and chasing pigeons on the street where other people are walking nearby.",
+    "hypothesis":"A young girl chases some birds.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6664",
+    "premise":"A woman in blue pants and a light-blue top looks down at her hand while standing near a dirty gray truck and surrounded by muddy ground.",
+    "hypothesis":"The woman in blue pants and shirt looks up at the truck with disgust, as she has never seen anything so dirty.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6762",
+    "premise":"A man with a cowboy hat and a gentleman with sunglasses on his head are seated next to each other.",
+    "hypothesis":"The two friends are reunited after years apart",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6860",
+    "premise":"A young man dressed in a dark bathing suit exits from a swimming pool while water drips off his head and body.",
+    "hypothesis":"The man competed in the swimming competition.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_6958",
+    "premise":"A man in summer clothing skiing on thin snow.",
+    "hypothesis":"There is a man on skis.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7056",
+    "premise":"A photographer is taking photos of a hockey game, but he is protecting himself from harm by wearing a helmet.",
+    "hypothesis":"A photographer is taking photos of a hockey game",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7154",
+    "premise":"A group of Amish people, men and women, standing at a fence overlooking a forest and river.",
+    "hypothesis":"The people are from the same family.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7252",
+    "premise":"Two kids in their pajamas.",
+    "hypothesis":"Two kids are wearing PJs on pajama day at school.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7350",
+    "premise":"A young girl with purple pants, a striped jacket, and a white hat is climbing up a ladder made of logs.",
+    "hypothesis":"A girl is climbing up to see scenery.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7448",
+    "premise":"A group of people having a conversation.",
+    "hypothesis":"Multiple people talk to each other.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7546",
+    "premise":"A man is wearing protective hair and face coverings.",
+    "hypothesis":"A person is covering their face and hair.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7644",
+    "premise":"A man wearing a black sweater and a knit cap sits in front of mountain scenery, with a cloudy sky overhead.",
+    "hypothesis":"A man is outdoors.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7742",
+    "premise":"A woman in a white dress with a white umbrellas is giving something to a woman in dark blue.",
+    "hypothesis":"A friend in white givers her blue dressed friend something.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7840",
+    "premise":"Man seated in a uniform that says \"Polizes\" on the shoulder looking out a window with a clipboard, some papers, and a computer in front of him.",
+    "hypothesis":"The man is playing a guitar.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_7938",
+    "premise":"Bespectacled man in suit opens wallet while a younger lady in formal wear laughs with him.",
+    "hypothesis":"A man shows his girlfriend the contents of his wallet.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8036",
+    "premise":"A man in a blue jacket leans on a post and talks on the phone while an old man carries yellow bags.",
+    "hypothesis":"Chew Wrigley's Spearmint beer.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8134",
+    "premise":"Man on phone in business suit walking down a busy street.",
+    "hypothesis":"A person on a phone is outdoors",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8232",
+    "premise":"A brown dog wearing a collar is chasing and biting on a red broom.",
+    "hypothesis":"An animal is sleeping outside.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8330",
+    "premise":"Several people are playing an intense game of paintball while others watch from the sidelines.",
+    "hypothesis":"The people watching from the sidelines cheer.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8428",
+    "premise":"Four women carrying shoulder bags are walking down a city sidewalk.",
+    "hypothesis":"Four women are running away from a man in the city.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8526",
+    "premise":"Two men are loading bales of wheat on top of a high structure on a cloudy day.",
+    "hypothesis":"The two men are not wearing shirts.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8624",
+    "premise":"A worker shoveling dirt into a wheelbarrow.",
+    "hypothesis":"A worker uses a shovel.",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8722",
+    "premise":"Pedestrians use the crosswalks as traffic awaits their turn to drive through an intersection.",
+    "hypothesis":"Traffic is stopped at a red light.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8820",
+    "premise":"The little boy is smiling as he crosses a rope on an assault course.",
+    "hypothesis":"The girl tries on the blue dress at the store.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_8918",
+    "premise":"A dog with a ball in his mouth running down a road covered in leaves.",
+    "hypothesis":"A dog running down a leaf covered road carrying a ball in it's mouth",
+    "label":0,
+    "label_name":"entailment",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9016",
+    "premise":"Two men wearing black smile while a seated woman behind them looks tired.",
+    "hypothesis":"The woman had a long day.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9114",
+    "premise":"A man is dancing in front of a band.",
+    "hypothesis":"The man is buying groceries.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9212",
+    "premise":"A woman is leaning against a wall with her shoe off.",
+    "hypothesis":"A woman has her shoe off to adjust her sock.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9310",
+    "premise":"A boy plays basketball.",
+    "hypothesis":"A boy is playing football.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9408",
+    "premise":"While traveling, a woman in a black jacket is resting on the shoulder of a man in a black jacket.",
+    "hypothesis":"A man's wife lays on his shoulder",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9506",
+    "premise":"A city street with market vendors and children being pushed in strollers with a large cathedral in the background.",
+    "hypothesis":"The cathedral is small.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9604",
+    "premise":"An emergency worker directs a man pulling a sled with emergency equipment on a snowy path.",
+    "hypothesis":"An emergency worker works at a crash scene.",
+    "label":1,
+    "label_name":"neutral",
+    "dataset":"snli"
+  },
+  {
+    "id":"snli_9702",
+    "premise":"A man wearing a black hat and coat makes a face with a crowd behind him.",
+    "hypothesis":"A man is taking a shower.",
+    "label":2,
+    "label_name":"contradiction",
+    "dataset":"snli"
+  }
+]

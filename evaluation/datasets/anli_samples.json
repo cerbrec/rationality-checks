@@ -1,0 +1,2702 @@
+[
+  {
+    "id":"anli_test_r1_4aae63a8-fcf7-406c-a2f3-50c31c5934a9",
+    "premise":"Ernest Jones is a British jeweller and watchmaker. Established in 1949, its first store was opened in Oxford Street, London. Ernest Jones specialises in diamonds and watches, stocking brands such as Gucci and Emporio Armani. Ernest Jones is part of the Signet Jewelers group.",
+    "hypothesis":"The first Ernest Jones store was opened on the continent of Europe.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_2d7d635b-2bb4-43c5-910e-cc96b974abf2",
+    "premise":"About to Crack is the fifth studio album by Dutch punk hardcore band Vitamin X. Released through Tankcrimes on September 11, 2012 in the US, Agipunk in Europe and Peculio Discos in Brazil. The album was recorded at Electrical Audio in Chicago by Steve Albini who previously recorded Nirvana, Neurosis, PJ Harvey, High on Fire, Iggy Pop & The Stooges. Art is by John Dyer Baizley.",
+    "hypothesis":"Vitamin X made four albums before About to Crack.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_7f25b2bb-4c41-4587-a0a2-db0d647d0800",
+    "premise":"Liar is the third album by Vancouver indie band Fake Shark \u2013 Real Zombie!. It was released on February 14, 2013. The album is a bit of direction change for the band, and the first with label, Light Organ Records. Guests include Care Failure of the band Die Mannequin, Jimmy Urine of Mindless Self Indulgence, Steve Bays of Hot Hot Heat, and Henry Rollins.",
+    "hypothesis":"Fake Shark had an album in 2015",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_7a5dc933-f3da-49ae-abe4-fde91ec6756c",
+    "premise":"San Marco 1, also known as San Marco A, was the first Italian satellite, and the first non-Soviet\/US spacecraft. Built in-house by the Italian Space Research Commission (Italian: \"Commissione per le Ricerche Spaziali\" , CRS) on behalf of the National Research Council, it was the first of five as part of the Italian-US San Marco programme.",
+    "hypothesis":"Tthe Italian-US San Marco programme was deemed a failure.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_bb9a6943-0397-4274-ae78-b1b48faf885b",
+    "premise":"Ruth Mott (5 February 1917 \u2013 28 July 2012) was an English domestic servant who became a television cook and personality. Mott spent most of her life working in country houses with her television work not beginning until the age of 70 when her knowledge of a working Victorian kitchen was utilized for the television show \"The Victorian Kitchen\".",
+    "hypothesis":"Ruth Mott was not an author",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_de4b228b-d736-493e-b277-4dde33ef3168",
+    "premise":"WSJD (100.5 FM, \"True Oldies 100.5\") is a radio station serving the Evansville, Indiana area with an oldies format. It broadcasts on FM frequency 100.5 MHz and is under self ownership. Majority of the programming is featured from ABC Radio's \"The True Oldies Channel\" satellite feed. The station broadcasts Major League Baseball games as a member of the Los Angeles Dodgers Radio Network.",
+    "hypothesis":"Los Angeles Dodgers Radio Network want to separate from the WSJD ",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_a544bd49-9b4b-4649-a8c9-3b71aef5799b",
+    "premise":"State Highway 34 (abbreviated SH-34) is a state highway in the U.S. state of Oklahoma. It runs for 188.3 mi south-to-north in the western part of the state. The highway begins northeast of Eldorado, in the southwest corner of the state, and extends north to the Kansas state line between Woodward and Coldwater, Kansas.",
+    "hypothesis":"SH-34 connects Oklahoma and Arkansas.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_4e6c9ef6-eb91-4633-9961-fd6f8cc5c62e",
+    "premise":"The Three Musketeers is a 1993 Austrian-American action-adventure comedy film from Walt Disney Pictures, Caravan Pictures, and The Kerner Entertainment Company, directed by Stephen Herek from a screenplay by David Loughery. It stars Charlie Sheen, Kiefer Sutherland, Chris O'Donnell, Oliver Platt, Tim Curry and Rebecca De Mornay.",
+    "hypothesis":"Walt Disney pictures makes films other than romance films",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_7d8c5e80-3b96-4fa9-ab30-cabedcbeccdd",
+    "premise":"Alba is a female given name of Latin origin meaning \"dawn\". It can also be used as a Spanish surname, as in the actress Jessica Alba, or a title, as in the Spanish Dukedom of Alba. It may also be considered a feminine version of Albert or Albinus or of names beginning with the Germanic Alf.",
+    "hypothesis":"Alba means morning in Latin",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_28c10e6e-1069-4477-b9ee-edfbead16318",
+    "premise":"Christopher Crosby Farley (February 15, 1964 \u2013 December 18, 1997) was an American actor and comedian. Farley was known for his loud, energetic comedic style, and was a member of Chicago's Second City Theatre and later a cast member of the NBC sketch comedy show \"Saturday Night Live\" between 1990 and 1995. Farley died of a drug overdose in 1997 at the age of 33.",
+    "hypothesis":"Chris Farley starred on SNL",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_8965c833-f670-46e9-b65d-bf3a187d4a37",
+    "premise":"New Art Riot E.P. is an EP by Welsh alternative rock band Manic Street Preachers. Released on 22 June 1990 by the Damaged Goods record label, it was the band's first release to feature the four-piece line-up of James Dean Bradfield, Nicky Wire, Richey Edwards and Sean Moore.",
+    "hypothesis":"New Art Riot E.P was released on a even numbered day",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_572d356a-b386-4968-9106-390726c8b0ab",
+    "premise":"Fast low angle shot magnetic resonance imaging (FLASH MRI) is a particular sequence of magnetic resonance imaging. It is a gradient echo sequence which combines a low-flip angle radio-frequency excitation of the nuclear magnetic resonance signal (recorded as a spatially encoded gradient echo) with a rapid repetition time. It is the generic form of steady-state free precession imaging.",
+    "hypothesis":"FLASH comes from the light emitted with an MRI.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_11879dea-41a0-4ed9-9231-ef4a1ea0a281",
+    "premise":"Lloyd Webber Plays Lloyd Webber is a 2001 album by British cellist Julian Lloyd Webber. For the album, the musician chose to interpret songs written by his older brother, the popular musical theatre composer Andrew Lloyd Webber. The album was recorded with the Royal Philharmonic Orchestra. The album primarily featured classical musicians with the notable exception of Rod Argent of The Zombies.",
+    "hypothesis":"Lloyd Webber Plays Lloyd Webber is a 20011 album",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_813b2659-af60-49f8-bff0-a1ebf4d7d077",
+    "premise":"Eleftheria Arvanitaki (Greek: \u0395\u03bb\u03b5\u03c5\u03b8\u03b5\u03c1\u03af\u03b1 \u0391\u03c1\u03b2\u03b1\u03bd\u03b9\u03c4\u03ac\u03ba\u03b7) (born October 17, 1957 in Piraeus) is a Greek folk singer. She originates from the island of Icaria. Arvanitaki has worked with important musicians, such as Ces\u00e1ria \u00c9vora, Arto Tun\u00e7boyac\u0131yan, Ara Dinkjian. On 14 March 2010, Alpha TV ranked her the sixth top-certified female artist in the nation's phonographic era (since 1960).",
+    "hypothesis":"Arto Tun\u00e7boyac\u0131yan went to Icaria to work with Eleftheria Arvanitaki.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9f52fa06-87cc-46fd-8ae0-7c0fa3e9d31d",
+    "premise":"Adlumia is a genus of two species in the Papaveraceae family. One species, \"A. fungosa\", is commonly known as the Allegheny vine, climbing fumitory, or mountain fringe. It is found in the eastern US, north of VA and TN, as far west as IA and MN, as well as in eastern Canada. The other species, \"A. asiatica\", is native to Korea and immediately neighbouring parts of China and southeast Russia.",
+    "hypothesis":"The abbreviation for Minnesota is IA.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_fcc73a13-f452-4618-abe5-744c7ff04da9",
+    "premise":"Augusto Jos\u00e9 Ram\u00f3n Pinochet Ugarte (] or ] ; 25 November 1915 \u2013 10 December 2006) was a Chilean general, politician and the dictator of Chile between 1973 and 1990; he remained the Commander-in-Chief of the Chilean Army until 1998. He was also president of the Government Junta of Chile between 1973 and 1981. His rule of Chile was a dictatorship.",
+    "hypothesis":"Augusto Jose Ramon Pinochet Ugarte was born on November 25 1915.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_642d09aa-a928-41ae-9795-7dbc9b15b6a5",
+    "premise":"Born in Huoqiu County, Anhui Province, Tao Yong (21.01.1913-21.01.1967), whose former name used to be Zhang Daoyong, was the Deputy Commander of the People's Liberation Army Navy, also known as PLA Navy, also the Lieutenant General of the People's Liberation Army.",
+    "hypothesis":"Born in Huoqiu County, Anhui Province, Tao Yong was the Deputy Commander of the People's Liberation Army Force",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_06e4ac13-7a10-4fbd-ab9f-628b36657056",
+    "premise":"Ezhou () is a prefecture-level city in eastern Hubei Province, China. As of the 2010 census, the city had a population of 1,048,668, of which 668,727 lived in the core Echeng District. The Ezhou - Huanggang built-up (\"or metro\") area was home to 1,035,496 inhabitants from the Echeng and Huangzhou, Huanggang Districts.",
+    "hypothesis":"As of 2010 census, 1,048,668 people occupy the Echeng District of Ezhou. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_d860acd0-878a-45e6-849a-2cc92ffa4b99",
+    "premise":"A trumpet concerto is a concerto for solo trumpet and instrumental ensemble, customarily the orchestra. Such works have been written from the Baroque period, when the solo concerto form was first developed, up through the present day. Some major composers have contributed to the trumpet concerto repertoire, with the best known work being Joseph Haydn's Trumpet Concerto in E-flat.",
+    "hypothesis":"Joseph Haydn was the first composer of a trumpet concerto.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_995638f3-28f5-4553-85a8-4259af6cbb25",
+    "premise":"Under the Skin is a 2000 novel by Michel Faber. Set in northern Scotland, it traces an extraterrestrial who, manifesting in human form, drives around the Scottish countryside picking up male hitchhikers whom she drugs and delivers to her home planet. The novel, which was Faber's debut, was shortlisted for the 2000 Whitbread Award. It was later adapted into a feature film by Jonathan Glazer.",
+    "hypothesis":"Michel Faber was born in 1975.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_1fdd18d2-215a-40df-bf48-d60e05b5f981",
+    "premise":"The 29th Los Angeles Film Critics Association Awards, given by the Los Angeles Film Critics Association (LAFCA) on January 7, 2004, honored the best in film for 2003. The ceremony was originally called off because of the MPAA screener ban as members felt they could not see all the movies in time for their awards but when that was removed the show was back on.",
+    "hypothesis":"Though the ban was removed not all movies from that year where able to be honored in the awards",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_4b27f319-2657-4bbf-9da7-a0d401b6016e",
+    "premise":"The Four Cs of 21st century learning, also known as the Four Cs or 4 Cs, are four skills that have been identified by the United States-based Partnership for 21st Century Skills (P21) as the most important skills required for 21st century education: critical thinking, communication, collaboration, and creativity.",
+    "hypothesis":"Cooperation is one of the Four Cs of 21st century learning.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_74d5e2e0-0c7e-425f-aebe-97c504881bf7",
+    "premise":"\"Mr. Vain\" is a song by German Eurodance group Culture Beat. It was released in April 1993 as the lead single from the album \"Serenity\". The song achieved huge success worldwide, reaching number one in Australia, Austria, Germany, Ireland, Italy, the Netherlands, Norway, Switzerland, and the United Kingdom. It also spent ten weeks at number one on the \"RPM\" Dance chart in Canada.",
+    "hypothesis":"\"Mr. Vain\" was the top song in Canada for at least two months.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_f3c6d50f-e75c-410e-a632-90b5a01c2796",
+    "premise":"Madeline Brewer (born May 1, 1992) is an American actress, best known for her roles in the Netflix original series \"Orange Is the New Black\" and \"Hemlock Grove\". Prior to being cast in \"Orange Is the New Black\", Brewer was crowned Miss Pitman in 2010. In 2016, she appeared in \"Men Against Fire\", an episode of the anthology series \"Black Mirror\".",
+    "hypothesis":"Madeline Brewer wants to branch out from TV.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_57867595-fa5e-487a-951e-551e0902a257",
+    "premise":"A scrum machine, or scrummaging machine, is a padded, weighty device against which a pack of rugby football forwards can practice scrummaging and rucking. The purpose of the scrum machine is to provide teams with a safe tool with which to improve the strength and skills of their players.",
+    "hypothesis":"At least one specific type of machine was successfully developed to make practicing rugby safer. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_7d86e367-4f1f-4bae-a971-0cc13c381a7f",
+    "premise":"Michael T. Scuse (born 1954) is an American public official. He was the acting United States Deputy Secretary of Agriculture, and, following the resignation of Tom Vilsack on January 13, 2017, was acting United States Secretary of Agriculture until Donald Trump took office as President. He also served as Under Secretary of Agriculture for Farm and Foreign Agricultural Services since 2012.",
+    "hypothesis":"Michael T. Scuse (born 1954) is an American public official. He is 65. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_e8a89f6c-bf8f-4c43-97a6-1cf0f431d93e",
+    "premise":"Dr. Lendley C. (Lynn) Black began his tenure as Chancellor of the University of Minnesota Duluth on August 1, 2010. Before becoming Chancellor at UMD he worked for Kennesaw State University in Kennesaw, Georgia, where he served as vice president for academic affairs from 2002 until he was promoted in 2006 to provost and vice president for academic affairs.",
+    "hypothesis":"Dr. Black waited at least 2 years before being promoted to provost.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_628975ab-a64f-4171-b991-0f6cbe878610",
+    "premise":"Alexander is the first solo album by American musician Alex Ebert, lead singer of Edward Sharpe and the Magnetic Zeros and Ima Robot. It was released on March 1, 2011 under the Community Records label. The song \"Truth\" was featured in the season 4 premiere of AMC's \"Breaking Bad\" titled \"Box Cutter\".",
+    "hypothesis":"Alexander is the full name of Alex Ebert.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_56e74843-06cf-48c4-a6ed-9211ee2f2192",
+    "premise":"Kwadjokrom is a small town and is the capital of Sene District in the Brong-Ahafo Region of Eastern Region in south Ghana. Kwadjokrom is in the east of Brong-Ahafo Region, and is situated by Lake Volta. Kwadjokrom is connected by road highway to Ejura and Yeji. Kwadjokrom is connected by a ferry to the town of Kete Krachi.",
+    "hypothesis":"The capital of Sene District has a less than medium sized population. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_f53b0cef-1820-445b-9617-765ff04a99ba",
+    "premise":"Red Shirts (Italian:Camicie rosse) is a 1952 French-Italian historical drama film directed by Goffredo Alessandrini and Francesco Rosi and starring Anna Magnani, Raf Vallone and Alain Cuny. The title refers to the historical Redshirts. It is also known as Anita Garibaldi. The film portrays the life of Anita Garibaldi (1821\u20131849), the wife of Italian unification leader Giuseppe Garibaldi.",
+    "hypothesis":"Red Shirts was directed by Goffredo Alessandrini and Anita Garibaldi",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9e370707-59f3-4294-9ea7-b25bf5c73604",
+    "premise":"The Lady Vanishes is a 1979 English comedy mystery film directed by Anthony Page. Its screenplay by George Axelrod was based on the novel \"The Wheel Spins\" by Ethel Lina White (1876\u20131944). It stars Elliott Gould as Robert, Cybill Shepherd as Amanda (Iris), Angela Lansbury as Miss Froy, Herbert Lom, Arthur Lowe and Ian Carmichael as Charters and Caldicott.",
+    "hypothesis":"George Axelrod was very familiar with the Novel The Wheel Spins.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_5efca092-3181-401e-8f3f-ae1b77b38617",
+    "premise":"California Chrome (foaled February 18, 2011) is an American Thoroughbred racehorse. He was named the 2014 and 2016 American Horse of the Year. He won the 2014 Kentucky Derby, the Preakness Stakes, and the 2016 Dubai World Cup. In 2016, he surpassed Curlin as the all-time leading North American horse in earnings won.",
+    "hypothesis":"California Chrome won competitions in 2018.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_d3847389-1883-41df-bcda-7a82dcc58aac",
+    "premise":"Clifton George Bailey III (born 13 April 1967), better known by the stage name Capleton, is a Jamaican reggae and dancehall artist. He is also referred to as King Shango, King David, The Fireman and The Prophet. His record label is called David House Productions. He is known for his Rastafari movement views expressed in his songs.",
+    "hypothesis":"The artist Capleton is more well  known by the name Clifton George Bailey III.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_34bcbe7a-b485-4a7b-ba30-2fd096040422",
+    "premise":"Susan Marie Olsen (born August 14, 1961) is an American former child actress, animal welfare advocate, artist, and former radio host. Olsen is known for her role as Cindy Brady, the youngest Brady child in the sitcom \"The Brady Bunch\" for the full run of the show, from 1969 to 1974.",
+    "hypothesis":"Olsen had siblings on a sitcom.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_2f56846b-7efb-47d9-a130-200882157ac7",
+    "premise":"Golden Hoofs is a 1941 American comedy film directed by Lynn Shores and written by Ben Grauman Kohn. The film stars Jane Withers, Charles 'Buddy' Rogers, Kay Aldridge, George Irving, Buddy Pepper and Cliff Clark. The film was released on February 14, 1941, by 20th Century Fox.",
+    "hypothesis":"Golden Hoofs is less than fifty years old.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_6394c764-ddc0-41a7-8b92-60ed60ad8188",
+    "premise":"Canning Fok Kin-ning () (born 1951 in Hong Kong) is a Hong Kong entrepreneur. He is a director or chair of numerous management board in companies of Cheung Kong Holdings and Hutchison Whampoa. He is hailed as the \"King of Employees\" since he has been one of the Hong Kong's top-five taxpayers in the past few years.",
+    "hypothesis":"Canning Fok Kin-ning lives in a country near China",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_8d92e620-4c44-4bf4-ad4f-d37947851c1e",
+    "premise":"Stephen and Timothy Quay ( ; born June 17, 1947) are American identical twin brothers better known as the Brothers Quay or Quay Brothers. They are influential stop-motion animators. They are also the recipients of the 1998 Drama Desk Award for Outstanding Set Design for their work on the play \"The Chairs\".",
+    "hypothesis":"Quay Brothers received a nomination for a Tony Award for Best Scenic Design.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_99d61229-1fe7-4a1c-8aba-36bf6064fe2a",
+    "premise":"Johnny Allegro is a black and white 1949 American film noir, starring George Raft, Nina Foch, Will Geer, and George Macready. An ex-gangster (Raft) working as a federal agent runs afoul of a crime lord (Macready) who enjoys hunting humans for sport. The picture was directed by Ted Tetzlaff and produced by Columbia Pictures.",
+    "hypothesis":"The picture was directed by Columbia Pictures and produced by Ted Tetzlaff.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_fb2441fb-606f-436f-9993-bc5684e34a15",
+    "premise":"USS \"Ludlow\" (DD-438), a \"Gleaves\"-class destroyer , was the third ship of the United States Navy to bear the name. The second and third \"Ludlow\" ships were named for Lieutenant Augustus C. Ludlow, second in command of USS\u00a0\"Chesapeake\" . He was, like his captain, mortally wounded in their ship's engagement with HMS\u00a0\"Shannon\" on 1 June 1813, and died at Halifax, Nova Scotia on 13 June.",
+    "hypothesis":"Lieutenant Augustus C. Ludlow died at Halifax on 13 June 1812.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_cf092d71-23e8-4177-bd80-5abd13ee0dde",
+    "premise":"The literature of England is literature written in what is now England, or by English writers. It consists mainly of English literature - i.e. literature written in the English language - but there are important examples of literature from England written in other languages.",
+    "hypothesis":"The literature of England has been written in French.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9d5a39ab-d452-47ec-9313-b8e2f0c7abf9",
+    "premise":"Una is an American-British-Canadian drama film directed by Benedict Andrews based upon the play \"Blackbird\" by David Harrower, who also wrote the film's screenplay. It stars Rooney Mara, Ben Mendelsohn, Riz Ahmed, Ruby Stokes, Tara Fitzgerald, Natasha Little, and Tobias Menzies.",
+    "hypothesis":"Una was written and directed by Benedict Andrews.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_04a45ecb-d325-4695-b12d-9fe2ee1e3fd6",
+    "premise":"Touch Up is Mother Mother's debut album released on February 27, 2007 on Last Gang Records. The album was self-titled when it was originally released in 2005. Two tracks were added when the band signed with Last Gang Records and the album was re-released in 2007. A video has been made for the song \"Touch Up\".",
+    "hypothesis":"The video for touch up was created during the first release of the album.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_e0f1f1a2-3c71-415f-b888-9c1f0b07f042",
+    "premise":"Thomas C. Fletcher House is a historic home located at Hillsboro, Jefferson County, Missouri. It was built about 1850, and is a two-story, log dwelling with later frame additions. It sits on a limestone and concrete block foundation. It was the home of Thomas C. Fletcher, Missouri's first Republican governor and the first native-born Missourian elected governor.",
+    "hypothesis":"Thomas C. Fletcher House was home of Thomas B. Fletcher ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_2b4b45aa-62dd-4eb0-b68f-4e65a453b69f",
+    "premise":"Sir John Peebles Arbuthnott, PPRSE, FRCPSG, FMedSci, FRCPath (born 8 April 1939) is a Scottish microbiologist, and was Principal of the University of Strathclyde. He succeeded Lord Wilson of Tillyorn as President of The Royal Society of Edinburgh in October 2011 and was succeeded by Dame Jocelyn Bell Burnell in October 2014.",
+    "hypothesis":"Sir John Peebles Arbuthnott was born in April",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_1bb771ca-8bc6-4b36-a98d-bb9d1b209cfd",
+    "premise":"Neha Sharma (] ; born 21 November 1987) is an Indian film actress and model. A native of Bihar, Sharma attended the Mount Carmel School in Bhagalpur and pursued a course in fashion design from the National Institute of Fashion Technology (NIFT) in New Delhi.",
+    "hypothesis":"Neha Sharma is college educated",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_07b3660a-a3fa-430b-aab5-ec8a4cf44250",
+    "premise":"Abies spectabilis (East Himalayan fir) is a conifer species in the family Pinaceae and the genus firs. It is sometimes held to include the Bhutan fir (\"A. densa\") as a variety. It is found in Afghanistan, China (Tibet), northern India, Nepal, and Pakistan. It is a large tree, up to 50 m tall.",
+    "hypothesis":"Abies spectabilis are usually 40m tall.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_263ba0bc-d885-409b-85e9-2562ff77104c",
+    "premise":"John Kerry Davis (born March 14, 1927) is a retired United States Marine Corps four-star general. Davis, a Vietnam War veteran and naval aviator, served as the Commanding General of the 3rd Marine Aircraft Wing (1977\u20131978) and the 1st Marine Aircraft Wing (1978-1978). His final assignment was as the Assistant Commandant of the Marine Corps from July 1, 1983 to June 1, 1986.",
+    "hypothesis":"Davis Served was serving in the Marine Corps on February 29th, 1984",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_eedda01b-734f-4787-b1e4-baa7c4a3d41a",
+    "premise":"Elwood Curtin Zimmerman (born in Spokane, Washington on December 8, 1912; died in Tura Beach, New South Wales on June 18, 2004) was an American entomologist best known for his two multivolume series: \"Insects of Hawaii\" published by the University of Hawai\u02bb i Press and \"Australian Weevils (Coleoptera: Curculionoidea)\" published by Australia's CSIRO.",
+    "hypothesis":"Elwood Curtin Zimmerman grew up on Spokane, Washington.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_314e78b6-4dbe-47cb-8bf2-1a7667b30a8b",
+    "premise":"Sentimentally Yours is the third studio album by American country music singer, Patsy Cline, released August 7, 1962. The album was the final studio album Cline would release before her death in a plane crash less than a year later. (Her last album was recorded in 1963",
+    "hypothesis":"Patsy Cline is a failed opera singer.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9daaa440-9150-403e-99b8-70642d25a893",
+    "premise":"Skillington is a village and civil parish in the South Kesteven district of Lincolnshire, England. The population of the civil parish at the 2011 census was 345. It is situated 1.5 mi west from the A1 road, 6 mi south from Grantham, and is within 3 mi of the Leicestershire border.",
+    "hypothesis":"Skillington is a small village that have 345 people ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_36257db2-cd75-4995-bc2a-0842daf9646c",
+    "premise":"The following list contains the aircraft used by the Royal Danish Air Force or its predecessors, the Danish Army Air Corps and Royal Danish Naval Aviation. During the Nazi occupation from 1940 to 1945, Danish military aviation was prohibited. The aircraft currently in use are highlighted in blue.",
+    "hypothesis":"Denmark was occupied for half a decade in the middle of the twentieth century.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_ecc7ec6d-74ed-4793-bed2-72e81a1c39d7",
+    "premise":"The Southern Renaissance (also known as Southern Renascence) was the reinvigoration of American Southern literature that began in the 1920s and 1930s with the appearance of writers such as William Faulkner, Thomas Wolfe, Caroline Gordon, Elizabeth Madox Roberts, Katherine Anne Porter, Allen Tate, Tennessee Williams, Robert Penn Warren, and Zora Neale Hurston, among others.",
+    "hypothesis":"Katherine Ann Porter was not the only American Southern female literature author.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_a40ac845-ceb1-41a6-9e5a-b9436143677a",
+    "premise":"Janez Pi\u0161ek was a Slovenian football manager and former player. He played for A\u0160K Primorje most of his career and later managed various clubs in the Yugoslav Second League. He became first professional Slovenian football coach and first president of Slovenian Football Coach Association in 1953. After his death he received a Blodek plaque for life work in Slovenian football.",
+    "hypothesis":"Janez Pi\u0161ek w never received the Blodek plaque for life work in Slovenian football when he was alive. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_6c24ae91-9ba6-4003-b535-269ca5c8a3a2",
+    "premise":"Joshua O'Neal Jackson (born February 10, 1997) is an American basketball player for the Phoenix Suns of the National Basketball Association (NBA). He played college basketball for one season with the Kansas Jayhawks before declaring for the 2017 NBA draft, where he was selected fourth overall by the Phoenix Suns.",
+    "hypothesis":"Joshua O'Neal Jackson was 21 when he was selected to play for the Phoenix Suns.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_ca3b55f0-b6a7-489b-b52d-3f3f759250f8",
+    "premise":"Jamaal RaShaad Jones Charles (born December 27, 1986) is an American football running back for the Denver Broncos of the National Football League (NFL). He played college football for the University of Texas, and was drafted by the Kansas City Chiefs in the third round of the 2008 NFL Draft.",
+    "hypothesis":"Jamaal RaShaad Jones Charles is a high school graduate.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_3768c901-212c-4361-8fa4-f9dbe4b8c492",
+    "premise":"The Robinson R44 is a four-seat light helicopter produced by Robinson Helicopter Company since 1992. Based on the company's two-seat Robinson R22, the R44 features hydraulically assisted flight controls. It was first flown on 31 March 1990 and received FAA certification in December 1992, with the first delivery in February 1993.",
+    "hypothesis":"It took three years for the Robinson R44 to receive certification from the FAA from the time it was first flown until the time certification was granted.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_bc12dd51-8d15-4b91-9ba3-e78ee7235a22",
+    "premise":"Choi Jong-hoon (Korean: \ucd5c\uc885\ud6c8; hanja: \u5d14\u9418\u8a13) ] ; Japanese: \u30c1\u30a7\u2022\u30b8\u30e7\u30f3\u30d5\u30f3; born March 7, 1990) is a South Korean guitarist, musician and actor. He is the leader of the South Korean rock band F.T. Island, where he serves as the lead guitarist, keyboardist, lyricist and composer.",
+    "hypothesis":"Choi Jong-hoon's leading role is as a guitarist",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_d5cae55c-6f48-4c9f-8f80-a95af46242b9",
+    "premise":"Gunsmoke Western was an American comic book series published initially by Atlas Comics, the 1950s forerunner of Marvel Comics, and then into the 1960s by Marvel. A Western anthology that ran 46 issues, it featured early stories of the Marvel Old West heroes Kid Colt and the Two-Gun Kid, and work by such artists as Jack Kirby, John Severin, Joe Maneely, Doug Wildey, and many others.",
+    "hypothesis":"Gunsmoke Western was a follower of Marvel Comics.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_5bc13146-1563-4b7d-a997-91f7114fb2b8",
+    "premise":"Give Us Our Skeletons! (Antakaa Meille Luurankomme in Finnish, Oaivveskaldjut in North Sami) is a 1999 documentary film directed by Paul-Anders Simma about Niillas Somby, a Sami man who retraces his family ancestry as he searches for the head of his ancestor, Mons Somby.",
+    "hypothesis":"Give Us Our Skeletons! was released more than 10 years ago.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_125093a2-16f8-4764-9917-e37da5d2b480",
+    "premise":"PDQ Chocolate was a popular drink mix in the 1960s and 1970s. It was manufactured by Ovaltine. It has been sold as \"PDQ Chocolate Flavor Beads\" and \"PDQ Choco Chips.\" \"Egg Nog Flavored PDQ\" and \"Strawberry PDQ\" were also available. These flavored beads and chips were used to mix with milk or to sprinkle over ice cream.",
+    "hypothesis":"PDQ Chocolate was a very popular soda in the 1960s and 1970s.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_349c1aba-6013-452c-8060-9578d3b91dc4",
+    "premise":"The Britain Burma Society (BBS) is a society founded in 1957 under the distinguished patronage of Earl Mountbatten of Burma, Sir Hubert Rance (formerly Governor of Burma), Miss Dorothy Woodman, the Rt. Hon. Malcolm MacDonald, the Rt. Hon. Arthur Bottomley and others.",
+    "hypothesis":"Earl Mountbatten of Burma died in 1957.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_dd6b9557-f9a2-40f6-8c4f-5760ecc8e0de",
+    "premise":"Kevin Sloan is a retired American soccer player who played professionally in the American Soccer League, American Professional Soccer League and Major Indoor Soccer League. He has also coached professionally and is currently the head coach of the Neumann College men's soccer team.",
+    "hypothesis":"When Kevin Sloan retired from professional soccer he planned to eventually coach the Nuemann College men's soccer team.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9ce13e44-d12e-4483-a3b3-3548a69acfcd",
+    "premise":"Andrey Ermakov (Russian: \u0410\u043d\u0434\u0440\u0435\u0439 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447 \u0415\u0440\u043c\u0430\u043a\u043e\u0432 ), (born May 27, 1987) is a Russian ballet dancer, a winner of 'Soul of Dance' award (Russian 'Ballet' magazine, 2013), who performs as a soloist with the Mariinsky Ballet (formerly the Kirov Ballet).",
+    "hypothesis":"Russian ballet dancer \u0410\u043d\u0434\u0440\u0435\u0439 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447 \u0415\u0440\u043c\u0430\u043a\u043e\u0432 won a Great Dance award featured in a 2013 edition of a magazine.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_16d296d3-ac46-42ac-bfe7-150bd8db4919",
+    "premise":"Zazie Beetz (born 1991) is a German-born, American actress best known for the role of Vanessa on \"Atlanta\". In 2016, she also appeared in the Netflix anthology series \"Easy\". Beetz has been cast as the Marvel Comics character Neena Thurman \/ Domino in \"Deadpool 2\".",
+    "hypothesis":"Zazie Beetz played the dual role of Neena Thurman \/ Domino in the Marvel Comics film Deadpool 2",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_a936bada-1612-4951-9cd1-6ed89aaf30ef",
+    "premise":"Crawford County (county code CR) is a county located in Southeast Kansas. As of the 2010 census, the county population was 39,134. Its county seat is Girard, and its most populous city is Pittsburg. The county was named in honor of Samuel J. Crawford, Governor of Kansas.",
+    "hypothesis":"The 2010 census determined that Crawford County has 39,134, just shy of 40,000",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_ed728036-f50a-4e46-a662-a99642c6006f",
+    "premise":"The Stick People is an American alternative rock\/punk rock band formed in 2008 in Hollywood, CA, which plays a fusion of alternative rock, punk rock, metal, and other musical styles. Best known for guitarist duo Bernie Godwin, son of producer Dito Godwin, and Mike Stone, former Queensr\u00ffche guitarist.",
+    "hypothesis":"2008 saw a record formation of American alternative rock\/punk bands.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_1fe355a7-e977-4b19-81a6-a264c86fb185",
+    "premise":"Findabair or Finnabair (modern Irish Fionnabhair ] ) was a daughter of Ailill and Queen Medb of Connacht in Irish mythology. The meaning of the name is \"white phantom\" (etymologically cognate with \"Gwenhwyfar\", the original Welsh form of Guinevere). The Dindsenchas also mention a Findabair that is the daughter of Lugaid Laigde.",
+    "hypothesis":"The Queen of Irish mythology passed her daughter off the maids and not be bothered.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_3a595f3b-6efa-43de-882f-8ae7dc7ade1e",
+    "premise":"Fatburger Inc. is an American fast casual restaurant chain. Its tagline is \"The Last Great Hamburger Stand\". While it is a fast food restaurant, the food is cooked and made to order. Some Fatburger restaurants have a liquor license, as well as Fat Bars. Its franchise headquarters are in Beverly Hills, California. In addition to the United States, the chain operates in 19 other countries.",
+    "hypothesis":"Fatburger food is cooked prior to the customer ordering it.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_3ad52465-4b54-40fc-9443-69f2014739fd",
+    "premise":"The Chief of Defence of Denmark (Danish: Forsvarschefen ), under responsibility of the Defence minister, is the Chief of Defence and commander of the Royal Danish Army, the Royal Danish Navy and the Royal Danish Air Force. The Chief of Defence is the military adviser to the Defence minister and head of the Defence Command.",
+    "hypothesis":"The Defence Command reports to the Air Force minister",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_3ef03038-cc87-4c0b-85c4-8ecd66af7c04",
+    "premise":"George Gipp (February 18, 1895 \u2013 December 14, 1920), nicknamed \"The Gipper\", was a college football player who played for the University of Notre Dame. Gipp was selected as Notre Dame's first Walter Camp All-American. Gipp played several positions, particularly halfback, quarterback, and punter.",
+    "hypothesis":"Gipp was selected as Notre Dame's only Walter Camp All-American",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_e565857b-e5b5-42a5-ab27-514f9e6a463b",
+    "premise":"Diane Edith Watson (born November 12, 1933) is a former US Representative for California 's 33 congressional district , serving from 2003 until 2011. She is a member of the Democratic Party. The district is located entirely in Los Angeles County and includes much of Central Los Angeles, as well as such wealthy neighborhoods as Los Feliz.",
+    "hypothesis":"Diane Edith Watson was 65 years old when she became the US Representative for California's 33 congressional district.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_ad327f1d-49ce-4a50-b5f9-bf9278a9371f",
+    "premise":"Sir John Hawkins (29 March 1719 \u2013 21 May 1789) was an English author and friend of Dr Samuel Johnson and Horace Walpole. He was part of Johnson's various clubs but later left The Literary Club after a disagreement with some of Johnson's other friends. His friendship with Johnson continued and he was made one of the executors of Johnson's will.",
+    "hypothesis":"Sir John Hawkins continued his friendship with Horace Walpole after leaving The Literary Club",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_847c207d-2494-4d67-a3db-9960170c6f64",
+    "premise":"The Hill 50 Gold Mine is a gold mine located 4\u00a0km north-west of Mount Magnet, Western Australia. The mine was, until July 2010, owned by Harmony Gold and had been placed in care and maintenance since 2007. In July 2010, Harmony sold the mine to Ramelius Resources, owner of the Wattle Dam Gold Mine, for A$40 million.",
+    "hypothesis":"Ramelius Resources will never sell the Hill 50 Gold Mine. ",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_d4026a46-5f78-484f-bbf5-35bce647679b",
+    "premise":"Titus is the original soundtrack to the 1999 motion picture \"Titus\". Elliot Goldenthal wrote the score for the film, an adaptation of Shakespeare's first, and bloodiest, tragedy \"Titus Andronicus\"; written and directed by Julie Taymor, Goldenthal's long-time friend and partner. The only non-Goldenthal piece is an old Italian song called \"\"Vivere\"\" performed by Italian singer Carlo Buti.",
+    "hypothesis":"The only non-Goldenthal piece is an old Italian song called \"\"Vivere\"\" performed by Italian singer Carlo Buti. The rest of the pieces are Goldenthal's.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_afa6badb-6c38-402a-8e7a-ed9c45aac3d5",
+    "premise":"Sam (November 7, 1990 \u2013 November 18, 2005) was a blind pure-bred Chinese Crested hairless and toothless dog, and three time champion of the annual Sonoma-Marin Fair World's Ugliest Dog Contest in Northern California in 2003\u20132005. His ugliness gained him international fame and celebrity \u2013 his death was a top headline on major news websites.",
+    "hypothesis":"Sam lived in Northern California. ",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_e6879c9b-719b-48de-8eea-a55536902383",
+    "premise":"PDQ Chocolate was a popular drink mix in the 1960s and 1970s. It was manufactured by Ovaltine. It has been sold as \"PDQ Chocolate Flavor Beads\" and \"PDQ Choco Chips.\" \"Egg Nog Flavored PDQ\" and \"Strawberry PDQ\" were also available. These flavored beads and chips were used to mix with milk or to sprinkle over ice cream.",
+    "hypothesis":"Ovaltine didn't manufacture any other drinks in this time period.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_5ca3e983-8663-425b-a008-faf470adbf36",
+    "premise":"Warwick Todd is a fictional character created by author and comedian Tom Gleisner. Todd is the author of four fictional cricket diaries: \"The Warwick Todd Diaries\" (1997), \"\" (1998), \"Warwick Todd Goes the Tonk\" (2001) and \"Warwick Todd - Up in the Block Hole\" (2009). The first 3 books in the series were Australian bestsellers.",
+    "hypothesis":"Tom Gleisner is done writing Warwick Todd novels.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_025d3f4d-ef4e-4750-9185-849625208edd",
+    "premise":"Andy Borowitz (born January 4, 1958) is an American writer, comedian, satirist, and actor. Borowitz is a \"New York Times\"-bestselling author who won the first National Press Club award for humor. He is known for creating \"The Fresh Prince of Bel-Air\" and the satirical column \"The Borowitz Report\". In a profile on \"CBS News Sunday Morning\", he was called \"one of the funniest people in America\".",
+    "hypothesis":"Andy Borowitz often worked in continental Europe.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_455f95d4-bacc-4d0f-a484-fc2215c42877",
+    "premise":"Miss Per\u00fa 2010, the 58th Miss Per\u00fa pageant was held at the on May 22, 2010. That year, 22 candidates were competing for the national crown. The chosen winner represented Peru at the Miss Universe 2010 and Miss World 2010. The rest of the finalists would enter in different pageants.",
+    "hypothesis":"The Miss Per\u00fa pageant will be cancelled in 2020.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_8a672830-fa08-4a48-8642-dd918eadab9b",
+    "premise":"Lydia Davis (born July 15, 1947) is an American writer noted for literary works of extreme brevity (commonly called \"flash fiction\"). Davis is also a short story writer, novelist, essayist, and translator from French and other languages, and has produced several new translations of French literary classics, including \"Swann\u2019s Way\" by Marcel Proust and \"Madame Bovary\" by Gustave Flaubert.",
+    "hypothesis":"Davis wrote the book Swann's Way.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_38ce7144-a8a0-4d51-808e-bec201edcf2d",
+    "premise":"Richard A. Ludwin (born May 27, 1948) is an American television executive and former vice president at NBC Television. He is notable as the executive who backed Jerry Seinfeld's series \"Seinfeld\", which went on to become one of the most popular and successful television sitcoms of all time. He was also the head of NBC's late night programming during the Conan O'Brien and Jay Leno conflict in 2010.",
+    "hypothesis":" He was also the head of NBC's late night programming during the Conan O'Brien and Jay Leno conflict in 2010 and was responsible for the conflict.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9046725b-b16a-4ee3-adc1-58d0bc6dddaf",
+    "premise":"The Big Salmon River is a small river in southern New Brunswick, Canada, that flows south into the Bay of Fundy. The river has its source to the southwest of Sussex, New Brunswick. The river flows into the Bay of Fundy near St. Martins, New Brunswick, and serves as the endpoint of the Fundy Trail.",
+    "hypothesis":"The Big Salmon River's source is the Bay of Fundy.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_fc92d774-2640-4b42-b450-8c2b13d6a737",
+    "premise":"Gaddo Gaddi (c. 1239, Florence \u2013 c. 1312, Florence) was an Italian painter and mosaicist of Florence in a gothic art style. Almost no works survive. He was the father of Taddeo Gaddi. He completed mosaics on facade of Santa Maria Maggiore in Rome. The \"Coronation of the Virgin\" mosaic over the inside door of Florence Cathedral, dated 1307, is also attributed to Gaddo Gaddi.",
+    "hypothesis":"Taddeo and Gaddo Gaddi are siblings.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_37143b00-eb5b-48a8-a48a-ff8c0a3f6dad",
+    "premise":"The 2019 FIFA U-20 World Cup will be the 22nd edition of the FIFA U-20 World Cup, the biennial international men's youth football championship contested by the under-20 national teams of the member associations of FIFA, since its inception in 1977 as the FIFA World Youth Championship.",
+    "hypothesis":"The FIFA U-20 World Cup started as a competition for young people.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_242c7030-596d-4242-937f-97797481cb83",
+    "premise":"The Last King of Scotland is a 2006 historical drama film based on Giles Foden's novel \"The Last King of Scotland\" (1998), adapted by screenwriters Peter Morgan and Jeremy Brock, and directed by Kevin Macdonald. The film was a co-production between companies from the United Kingdom and Germany.",
+    "hypothesis":"The Last King of Scotland is a 2006 historical drama film based on Giles Foden's novel \"The Last King of Scotland\" (1998), adapted by screenwriters Peter Morgan and kevin Macdonald.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_f582f8af-8956-4b60-a563-2935ccf1168f",
+    "premise":"Doom (stylized as DOOM) is a series of first-person shooter video games developed by id Software. The series focuses on the exploits of an unnamed space marine operating under the auspices of Union Aerospace Corporation (UAC), who fights hordes of demons and the undead in order to survive.",
+    "hypothesis":"If fighting hordes of demons and the undead sounds like fun, Doom may be the game for you. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_2960fab2-e70c-4543-86e7-11b77cad30cb",
+    "premise":"Lysichiton is a genus in the family Araceae. These plants are known commonly as skunk cabbage or less often as swamp lantern. The spelling Lysichitum is also found. The genus has two species, one found in north-east Asia (Japan and Russian Far East), the other in north-west America (Aleutians to Santa Cruz County in California).",
+    "hypothesis":"The genus has two species, one found in north-west Asia , the other in north-west America (Aleutians to Santa Cruz County in California).\n",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_0a5581ee-f890-4561-bd4f-5aa659225061",
+    "premise":"The Quiet Family () is a 1998 South Korean comedy horror film. It was director Kim Jee-woon's feature film debut. The story centers on a family who owns a hunting lodge in a remote area, whose customers always happen to end up dying. Among the film's main cast are pre-stardom Choi Min-sik and Song Kang-ho.",
+    "hypothesis":"The Quiet Family was filmed in 1997.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_c061706a-fff5-4536-9c7f-eb4331f48984",
+    "premise":"Akiva Grunblatt is an Orthodox rabbi who as co-rosh yeshiva (dean) heads the Yeshivas Rabbeinu Yisrael Meir HaKohen. (Yeshivas Chofetz Chaim) in Flushing, New York. (The other co-rosh yeshiva is Rabbi Dovid Harris.) Before being appointed to his current position in 2000, he was a rosh yeshiva at Yeshiva Toras Chaim in Miami, Florida.",
+    "hypothesis":"Rabbi Dovid Harris knew Grunblatt before 2000",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_c4aae7e7-1a23-4baa-af65-341ac9e4efbe",
+    "premise":"The Cooper\u2013Frost\u2013Austin House is a historic Colonial American house, built in 1681. It is located at 21 Linnaean Street, Cambridge, Massachusetts. It is the oldest extant home in Cambridge and is owned and operated as a non-profit museum by Historic New England. The house is rarely open for public tours, but private tours can be arranged during the summer months.",
+    "hypothesis":"The Cooper-Frost-Austin House is very popular online.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_03848ad3-477c-4031-afd0-ba2ff48ddb61",
+    "premise":"Finding Neverland, a British-American historical fantasy drama film released in 2004, is about playwright J. M. Barrie and his relationship with a family who inspired him to create \"Peter Pan\", directed by Marc Forster. The screenplay by David Magee is based on the play \"The Man Who Was Peter Pan\" by Allan Knee.",
+    "hypothesis":"Finding Neverland is an American historical fantasy drama film released in 2004.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_518b22e4-e586-40de-b168-e72c4fcc4f59",
+    "premise":"Sutton-on-Sea (originally Sutton in the Marsh or Sutton le Marsh) is a small coastal village in the East Lindsey district of Lincolnshire, England. It is situated at the junction of the A52 and A1111 roads, 6 mi north-east from Alford and 2 mi south from Mablethorpe. The village is part of the civil parish of Mablethorpe and Sutton (where the population is listed).",
+    "hypothesis":"Alford is a part of Lincolnshire, England.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_9e8f59e1-7f6b-4870-9205-3f3d1c3139fc",
+    "premise":"Club Andino Bariloche is a mountaineering organisation based in San Carlos de Bariloche, in the Argentinian Andes. It was founded on the 13th of August 1931 by Otto Meiling, Emilio Frey, Juan Javier Neumeyer and Reinaldo Knapp, a group of friends who were exploring the region and making first ascents. Emilio Frey became its first president and continued in this role during 30 years.",
+    "hypothesis":"Emilio Frey was the club's president for the first ten years.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_fd7d7ab5-0c81-416b-afff-3c32335ea38d",
+    "premise":"Mustapha Haida (born 12 October 1988) is a Moroccan Muay Thai kickboxer who competes in the middleweight and welterweight divisions. He fought for GLORY, SUPERKOMBAT, Kunlun Fight and Bellator Kickboxing. Haida holds notable wins over fighters like Andy Souwer, Enriko Kehl, Dzianis Zuev or Abdallah Mabel.",
+    "hypothesis":"Kunlun Fight is named after the fictional place in Iron Fist.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_c5c12855-77dd-4aed-a037-dcebc8e7fd8a",
+    "premise":"In the Company of Men is a 1997 Canadian\/American black comedy written and directed by Neil LaBute and starring Aaron Eckhart, Matt Malloy, and Stacy Edwards. The film, which was adapted from a play written by LaBute, and served as his feature film debut, won him the Independent Spirit Award for Best First Screenplay.",
+    "hypothesis":" Company of Men was written in the United States.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_3e5fee8a-2c21-4a33-875e-3416f1666504",
+    "premise":"Hikari is the second full-length album by British metalcore band Oceans Ate Alaska, released on July 28th 2017 through Fearless Records. It is the first album released by the band without original vocalist James Harrison, and instead it was recorded with Jake Noakes, who joined the band shortly after Harrison's departure.",
+    "hypothesis":"Hikari is the second full-length album by British metalcore band Oceans Ate Alaska, released in the seventh month of a year",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_f1e5aaf5-a928-4be8-a5d7-fc0bf5ecdb80",
+    "premise":"Scott Devours (born December 15, 1966) is an American drummer and songwriter based in Long Beach, California. Devours has played drums for the post-grunge bands Oleander, IMA Robot and Long Beach bands like Speaker and Shave, worked on over thirty albums and toured with a number of well-known artists, including The Who.",
+    "hypothesis":"Scott Devours has worked on at least twenty albums",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_4576bb47-ddd0-4a48-b4be-3a5159985820",
+    "premise":"Julia Gjika (born 1949) is an Albanian-born poet living in the United States. She is one of the few writers publishing in the Albanian language and writes poetry as well working as a journalist. Her poems have been praised by her peers and have been included in several publications of collected works.",
+    "hypothesis":"Julia Gjika lives in Albania.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_3fe0b490-ec2a-47e2-ad70-7ea58be610ba",
+    "premise":"Rudyard Kipling: A Remembrance Tale was a 1-hour 2006 BBC documentary on the life of Rudyard Kipling, particularly as relating to his loss of his son during the First World War. It was presented by Griff Rhys Jones and starred Peter Guinness as Kipling. It premiered on BBC One on Remembrance Sunday 2006.",
+    "hypothesis":"Rudyard Kipling: A Remembrance Tale ran for 90 minutes on BBC in 2006",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r1_417f9b78-de5d-4588-9ebf-4c1f352bb50d",
+    "premise":"Jim Wilson was an Oklahoma Senator from District 3, which includes Adair, Cherokee and Sequoyah counties, from 2004 to 2012. He earlier was a member of the Oklahoma House of Representatives from 2000 through 2004. He ran unsuccessfully against Democratic Incumbent US Rep. Dan Boren in Oklahoma's 2nd Congressional District in the July 27 Democratic primary.",
+    "hypothesis":"Jim Wilson lived in North America.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r1",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7165747b-c5c7-400f-952d-b65d0169fa3a",
+    "premise":"There is a little Shia community in El Salvador. There is an Islamic Library operated by the Shia community, named \"Fatimah Az-Zahra\". They published the first Islamic magazine in Central America: \"Revista Biblioteca Isl\u00e1mica\". Additionally, they are credited with providing the first and only Islamic library dedicated to spreading Islamic culture in the country.",
+    "hypothesis":"The community is south of the United States.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7477697c-0cf8-484f-8bd3-c9accbff8969",
+    "premise":"William V. Bidwill Sr. (born July 31, 1931) is the principal owner and chairman of the board of the Arizona Cardinals of the National Football League (NFL). He was co-owner from 1962 for ten seasons with his brother Charles Jr. and has been sole owner since 1972.",
+    "hypothesis":"William V. Bidwill Sr. had more than one brother",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_cd5ed5ce-c07b-4b8e-b8e3-0354c3d1cd66",
+    "premise":"Haverstraw is a village incorporated in 1854 in the town of Haverstraw in Rockland County, New York, United States. It is located north of Congers, southeast of West Haverstraw, east of Garnerville, northeast of New City, and west of the Hudson River at its widest point. According to the 2013 U.S. Census estimate, the population was 12,102, an increase from the 2010 Census population of 11,910.",
+    "hypothesis":"The population for Haverstraw had a higher census estimate in 2011 than the year before, 2010. ",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_1c83b1db-bec4-4e72-80a2-14251a56c7da",
+    "premise":"The Volkswagen Citi Golf was a car produced by Volkswagen in South Africa from 1984 until 21 August 2009. It was a face-lifted version of the original Volkswagen Golf Mk1 hatchback, which ceased production in Germany in 1983. The car was produced only with right-hand drive.",
+    "hypothesis":"The Volkswagen Citi Golf was designed to drive on the left side of the road",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_806fca25-9b11-4e54-95f0-8f406222e586",
+    "premise":"Big Bad Voodoo Daddy is a contemporary swing revival band from Southern California. Their notable singles include \"Go Daddy-O\", \"You & Me & the Bottle Makes 3 Tonight (Baby)\", and \"Mr. Pinstripe Suit\". The band played at the Super Bowl XXXIII half-time show in 1999.",
+    "hypothesis":"Big Bad Voodoo Daddy played at the 33rd Super Bowl.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_c0dbf3c3-ca79-432e-860b-e79d3db8e0b3",
+    "premise":"Red Earth, White Lies: Native Americans and the Myth of Scientific Fact is a book by Native American author Vine Deloria, originally published in 1995. The book's central theme is to criticize the scientific consensus which has, in his words, created \"a largely fictional scenario describing prehistoric North America\".",
+    "hypothesis":"Red Earth, White Lies: Native Americans and the Myth of Scientific Fact has an A.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_2d9ca8c1-adb1-44dd-9e4d-5a26247b803e",
+    "premise":"The Angel on the Roof: The Stories of Russell Banks (2000) is a collection of short stories by Russell Banks. It consists of a total of thirty-one previously published stories, including twenty-two stories that appeared in earlier short story collections, along with nine that were previously uncollected.",
+    "hypothesis":"The Angel on the Roof consists of 30 published stories ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_1efe297e-a047-4ccb-a32c-b70fd9c7b6e8",
+    "premise":"High Noon Toons was a 3-hour programming block of cartoons hosted by two cowboy hand puppets named Haas and Lil' Jo (a Bonanza pun) shown on Cartoon Network in the mid-1990s. The series was made by Matt Thompson and Adam Reed, who later went on to create adult-themed cartoon series such as \"Sealab 2021\" and \"Frisky Dingo\" for Adult Swim and \"Archer\" for FX.",
+    "hypothesis":"Cartoon Network first started in nineteen hundred eighty five.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_26c4dd32-219f-4a27-9d54-9858384ccaa0",
+    "premise":"Phil Lloyd is an Australian actor and scriptwriter and partner in the production company Jungleboys. He is best known for his acting role as Myles Barlow in the Australian TV series, \"Review with Myles Barlow\" and the comedy series \"At Home with Julia\", where he played Tim Mathieson, the partner of prime minister Julia Gillard.",
+    "hypothesis":"\"At Home with Julia\" starred prime minister Julia Gillard",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_5f7bb931-1d1e-4203-96ac-ba130a6102bb",
+    "premise":"The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.",
+    "hypothesis":"Ross Andru created the look of the Metal Men superheroes that appear in DC Comics. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_e032ef75-ec17-4aaf-98da-f55194d8f8ac",
+    "premise":"It's OK! is a musical group formed by Redd Kross members Robert Hecker (guitar, vocals) and Victor Indrizzo (drums), along with bassist Abby Travis and the late Greg White on vocals. This initial line up of the band released the self-titled debut album \"It's OK!\".",
+    "hypothesis":"It's OK had several members, they included Hecker (drums) Indrizzo (vocals) Travis (guitar, vocals) and White bassist.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7cb3105a-e3b7-4b24-b0e5-ebd64bd8d671",
+    "premise":"Brandon Tyler McManus (born July 25, 1991) is an American football placekicker for the Denver Broncos of the National Football League (NFL). He was a member of their Super Bowl 50 championship team, beating the Carolina Panthers. He played college football at Temple and was signed by the Indianapolis Colts as an undrafted free agent in 2013.",
+    "hypothesis":"Brandon Tyler McManus met with Amy.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7c1563c3-48cb-49f8-afd8-294fe72018f5",
+    "premise":"Peter L. N. Padfield (born 1932) is a British author, biographer, historian, and journalist who specializes in naval history and in the Second World War period. His early journalism appeared under the name P. L. N. Padfield. As well as his non-fiction work, he has also published four novels.",
+    "hypothesis":"Peter Padfield is a European novelist.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_db933c0e-4949-496b-bd37-26287e10ae48",
+    "premise":"Staunton Mall is a shopping mall in Augusta County, Virginia, United States. It is slightly outside the city limits of Staunton, Virginia. It has 4 anchors in operation include Belk, JCPenney, Peebles and Gold's Gym (previously Sears Surplus and Goody's Family Clothing), with former anchors including Books-A-Million and Steve & Barry's.",
+    "hypothesis":"Staunton Mall is a mall in , Virginia, United States",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_54502c13-de31-4a29-b728-572b6395c4da",
+    "premise":"Alice Sue Claeys (born February 24, 1975) is a former competitive figure skater. Representing Belgium, she won silver at the 1992 Skate Canada International and finished in the top ten at three ISU Championships \u2014 the 1992 World Junior Championships (4th), the 1992 World Championships (7th), and the 1993 European Championships (8th).",
+    "hypothesis":"Alice Sue Claeys continued to play professional figure skating past 1993.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_f2e8f042-e7ae-476c-b5dc-7f5b584f5690",
+    "premise":"For Those Who Think Young is a 1964 beach party film shot in Techniscope, directed by Leslie H. Martinson and featuring James Darren, Pamela Tiffin, Paul Lynde, Tina Louise, Bob Denver, Nancy Sinatra, Robert Middleton, Ellen Burstyn (billed as Ellen McRae), Claudia Martin and Woody Woodbury.",
+    "hypothesis":"For Those Who Think Young was shot on Techniscope beach as a 1964 party film directed by Leslie Martinson.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_ec824105-ccc0-4e0f-8d97-c8108bfc92e8",
+    "premise":"The 2017\u201318 Puebla season is the 70th professional season of Mexico's top-flight football league. The season is split into two tournaments\u2014the Torneo Apertura and the Torneo Clausura\u2014each with identical formats and each contested by the same eighteen teams.The Club will also play Copa MX.Rafael Garc\u00eda Torres was named the club head coach on June 5, 2017, taking over for sacked coach Jos\u00e9 Cardozo.",
+    "hypothesis":"The 2017\u201318 Puebla season was unsuccessful",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_1cf2e12a-1eed-42db-9d60-badcbed06a50",
+    "premise":"Laura Elena Z\u00fa\u00f1iga Huizar (born January 3, 1985) is a Mexican model and beauty queen, center of a drug trafficking scandal in December 2008. The critically acclaimed 2011 film \"Miss Bala\" (\"Miss Bullet\") is loosely based on Z\u00fa\u00f1iga and her involvement in the events of December 2008.",
+    "hypothesis":"Huizar was born the year after 1983.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8870e446-c34f-46df-a069-4896236a0407",
+    "premise":"WCBC is an AM radio station that serves the greater area of Cumberland, Maryland. Founded in April, 1976, WCBC provides news coverage: locally, regionally, and nationally; weather forecasts; participation in major community events to promote the area and its organizations by way of remote broadcasts and community service announcements.",
+    "hypothesis":"The radio station has many listeners.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_9e18f868-a08f-43a2-bc90-aaa6ab42246e",
+    "premise":"Matsuri Mizuguchi (\u6c34\u53e3 \u307e\u3064\u308a , Mizuguchi Matsuri , born October 28, 1986 in Yamagata Prefecture) is a Japanese voice actress who started her career in 2007. She is affiliated with Yellowtail. This voice actress shares the same exact date of birth and age as another unrelated Japanese voice actress and singer, Aki Toyosaki.",
+    "hypothesis":"Matsuri Mizuguchi and Aki Toyosaki were born in the same place on the same day.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_fd1e4ff0-cf60-4f07-8e02-8121dc01eb5b",
+    "premise":"In theoretical physics, particularly in discussions of , Mach's principle (or Mach's conjecture) is the name given by Einstein to an imprecise hypothesis often credited to the physicist and philosopher Ernst Mach. The idea is that local inertial frames are determined by the large scale distribution of matter, as exemplified by this anecdote:",
+    "hypothesis":"Mach did not name Mach's principle.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_0bd86630-1c34-4530-a6b0-124234c0b087",
+    "premise":"Foals are an English indie rock band from Oxford, England formed in 2005, consisting of lead vocalist and lead guitarist Yannis Philippakis, drummer and percussionist Jack Bevan, rhythm guitarist Jimmy Smith, bassist Walter Gervers, and keyboardist Edwin Congreave. Since the band's formation, their line-up has remained constant, except for the departure of former lead singer Andrew Mears.",
+    "hypothesis":"Yannis Philippakis was born in nineteen hundred seventy five.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_2c14c1e8-a883-41f1-9fc2-bd3e8bee8958",
+    "premise":"The 39th People's Choice Awards ceremony, honoring the best in popular culture for 2012, was held January 9, 2013 at the Nokia Theatre in Los Angeles, and was broadcast live on CBS and simulcast over Xbox Live at 9:00 pm EST. The ceremony was hosted by Kaley Cuoco. The nominees were announced in November, 2012.",
+    "hypothesis":"The nominees for the 39th People's Choice Awards were announced during the same year that the ceremony was held",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_228ce063-564a-4ceb-b28f-f903fed7fb23",
+    "premise":"A cardigan is a type of knitted garment that has an open front. Commonly cardigans have buttons: a garment that is tied is instead considered a robe. A more modern version of the garment has no buttons and hangs open by design. By contrast, a pullover does not open in front but must be \"pulled over\" the head to be worn. It may be machine- or hand-knitted.",
+    "hypothesis":"A cardigan has buttons.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8fb65d2a-3278-4a9c-813a-dfed60246589",
+    "premise":"\"Day In, Day Out\" is a song written by Marv Green and Thom McHugh, and recorded by American country music artist David Kersh. It was released in May 1997 as the fourth single from his album \"Goodnight Sweetheart\". The song reached number 11 on the \"Billboard\" Hot Country Singles & Tracks chart in September 1997.",
+    "hypothesis":"\"Day In, Day Out\" is by an American Band",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_3984cbce-574f-4d9f-a47c-5026eadd5d31",
+    "premise":"Warriors of Virtue is a 1997 Chinese-American martial arts fantasy film directed by Ronny Yu and starring Angus Macfadyen, Mario Yedidia, and Marley Shelton. It was released in English, Mandarin and Cantonese-language versions. The creature effects were designed by Academy Award-nominated special effect production house Alterian, Inc.",
+    "hypothesis":"Alterian Inc have been nominated for many awards in the past.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_55c6fa5f-4ea1-474f-80ca-fc59d970ad4a",
+    "premise":"The Circuit Gilles Villeneuve (also spelled Circuit Gilles-Villeneuve in French) is a motor racing circuit in Montreal, Quebec, Canada. It is the venue for the FIA Formula One Canadian Grand Prix. It has previously hosted the FIA World Sportscar Championship, the Champ Car World Series, the NASCAR Canadian Tire Series, the NASCAR Xfinity Series and the Grand-Am Rolex Sports Car Series.",
+    "hypothesis":"The Circuit Gilles Villeneuve once had a massive world championship at it",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_fd74fa89-a877-4bf7-9c77-48492517fafc",
+    "premise":"Brandon Tyler McManus (born July 25, 1991) is an American football placekicker for the Denver Broncos of the National Football League (NFL). He was a member of their Super Bowl 50 championship team, beating the Carolina Panthers. He played college football at Temple and was signed by the Indianapolis Colts as an undrafted free agent in 2013.",
+    "hypothesis":"Brandon Tyler McManus was born after the 17th century",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_55adf5d2-ddca-45bb-98ef-b9e039570b59",
+    "premise":"\"Anna Sun\" is a song by American rock band Walk the Moon, originally for their 2010 album \"I Want! I Want!\". The song was written by band members Adrian Galvin, Nick Lerangis, Nicholas Petricca and Adam Reifsnyder about Adrian's ex-girlfriend, Anna Ceravolo. It was included on the band's 2012 major-label debut album, \"Walk the Moon\". It was released as a commercial single on February 7, 2012.",
+    "hypothesis":"Adrian Galvin was born in nineteen hundred eighty three.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7048cb2e-222c-4455-96ea-97caa862ecd4",
+    "premise":"Aloe ( or ), also written \"Alo\u00eb\", is a genus containing over 500 species of flowering succulent plants. The most widely known species is \"Aloe vera\", or \"true aloe\", so called because it is cultivated as the standard source of so-called \"aloe vera\" for assorted pharmaceutical purposes. Other species, such as \"Aloe ferox\", also are cultivated or harvested from the wild for similar applications.",
+    "hypothesis":"Aloe has between 400 and 490 total species.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_2d8b4d16-5a2c-471d-80cf-a89a126cb1ef",
+    "premise":"Oasis was a literary anthology published in Cairo during World War II. It was edited by Denis Saunders, David Burk, and Victor Selwyn. The introduction was written by General Henry Maitland Wilson, who was at this time Commander-in-Chief of the Middle East.",
+    "hypothesis":"Oasis had two people whose names started with the letter D who had worked on editing it.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_c7379eb2-f7dd-43fb-8571-3ecb19c147eb",
+    "premise":"Wind power in Montana is a growing industry. At a nameplate capacity of 210 megawatts (MW), the $500 million Glacier Wind Farm, which is located in Toole and Glacier counties, became Montana's largest in October 2009, surpassing the 135 MW Judith Gap Wind Farm in Wheatland County.",
+    "hypothesis":"Wheatland County borders Toole and Glacier County's in Montana",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_afb6f34b-4447-4585-b292-d22200129ef5",
+    "premise":"Shehzad Sheikh or Shahzad Sheikh is a Pakistani film and television actor and model, known for playing the lead role in the 2015 film \"Karachi Se Lahore\". He also starred in the series \"Annie Ki Ayegi Baraat\", \"Mi Raqsam\", and \"Mere Hamrahi\", and a TV film \"Main Kukkoo Aur woh\". He is the son of well-known actor Javed Sheikh.",
+    "hypothesis":"Shehzad Sheikh and Javed Sheikh have both acted in the same film.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_455905d0-6c49-4937-9671-755105a5c919",
+    "premise":"The Tuancheng Fortress or Tuan Cheng Fortress (Chinese:\u00a0\u00a0\u5718\u57ce\u6f14\u6b66\u5ef3 , \u00a0\u56e2\u57ce\u6f14\u6b66\u5385 , \u00a0\"Tu\u00e1nch\u00e9ng Y\u01cenw\u01d4t\u012bng\", \u00a0\"Round Wall Fortress\") is a historic 18th-century fortress located near the Fragrant Hills in the Haidian District of Beijing, China. Today, the fortress is a national museum and is also known as the Tuancheng Exhibition Hall.",
+    "hypothesis":"Tuancheng Fortress is in the Northern Hemisphere.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_4c38c28f-e41a-4b41-abfa-847586fdd4c3",
+    "premise":"Amdoxovir is a nucleoside reverse transcriptase inhibitor (NRTI) undergoing research for the treatment of HIV\/AIDS. It was discovered by Raymond F. Schinazi (Emory University) and C.K. Chu (University of Georgia). It is being developed by RFS Pharma. Currently, it is in Phase II clinical studies.",
+    "hypothesis":"Amdoxovir is available with a prescription. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7edcd32f-4aa9-4fd0-9a3e-c7782bc8f62f",
+    "premise":"The 1982 Bavarian Tennis Championships was a men's Grand Prix tennis circuit tournament held in Munich, West Germany which was played on outdoor clay courts. It was the 66th edition of the tournament and was held form 17 May through 23 May 1982. Gene Mayer won the singles title.",
+    "hypothesis":"Gene Mayer doesn't compete in doubles tennis.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_6134f2ea-bda0-4c8e-9e31-9a8ef43cee58",
+    "premise":"Ripponlea is an inner suburb of Melbourne, Victoria, Australia, named after the adjoining Rippon Lea Estate. It is 7\u00a0km south east of Melbourne's Central Business District. Its local government area is the City of Port Phillip. At the 2011 Census, Ripponlea had a population of 1,478.",
+    "hypothesis":"8 years ago, Ripponlea had a population of about seventeen hundred",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_e77cee02-5155-42c2-9384-5eefdf43fcdf",
+    "premise":"\"Merry Christmas, Charlie Manson!\" is the sixteenth episode in the second season of the American animated television series \"South Park\". The 29th episode of the series overall, it originally aired on Comedy Central in the United States on December 9, 1998. The episode was written by series co-creator Trey Parker, along with Nancy M. Pimental, and directed by Eric Stough.",
+    "hypothesis":"At least three dozen episodes of South Park aired in the United States before \"Merry Christmas, Charlie Manson!\" originally aired.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_3aff95ef-b300-4546-9e58-959903fd6422",
+    "premise":"Valan is a small coastal village on the island of Mager\u00f8ya in Nordkapp Municipality in Finnmark county in far northern Norway. Honningsv\u00e5g Airport, the local airport for the town of Honningsv\u00e5g is located in Valan. The town lies a few kilometres south of Valan.",
+    "hypothesis":"Valan is inaccessible by road",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_612b4d70-7e9d-49dc-8b01-3799fae65253",
+    "premise":"Regent Power is a Private Limited company incorporated in 2007 and a concern of Habib Group of Chittagong. The plant is located at Barabkunda in Chittagong under independent power producers (IPP) arrangement of the government. Regent Power is operating on natural gas with the capacity to produce 22 MW per day.",
+    "hypothesis":"The government organizes independent power producers for Reagent Power company.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_25bac7df-9f7c-4b1f-bd11-f24cb4fe5469",
+    "premise":"The Path Between the Seas: The Creation of the Panama Canal, 1870\u20131914 (1977) is a book by the American historian David McCullough, published by Simon & Schuster. It won the U.S. National Book Award in History, the Francis Parkman Prize, the Samuel Eliot Morison Award and the Cornelius Ryan Award.",
+    "hypothesis":"The Panama Canal was completed before David McCullough was born.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_9c4f5b52-15fa-407f-94d3-18c7b367abe6",
+    "premise":"Howard Culver (June 4, 1918 - August 4, 1984) was an American radio and television actor, best known as hotel clerk Howie Uzzell during the entire run of TV's \"Gunsmoke\". On radio he starred in the title role of the Western adventure series \"Straight Arrow\", which aired on Mutual from May 6, 1948 to June 21, 1951.",
+    "hypothesis":"His radio show was on the air for over 3 years.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_edacc4ea-87a2-4ea3-a237-dd324272e2da",
+    "premise":"State Highway\u00a0128 (SH-128) is a 2.198 mi state highway in the U.S. state of Idaho, serving the city of Lewiston in Nez Perce County. The highway travels east along the Clearwater River within Lewiston from Washington State Route\u00a0128 (SR\u00a0128) to U.S. Route\u00a012 (US-12).",
+    "hypothesis":"Highway 128 traverses several states",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_c88bc92a-3828-478e-bc80-30204f5acb86",
+    "premise":"James Hagan (21 January 1918 \u2013 26 February 1998), known as Jimmy Hagan, was an English football player and manager born in Washington, County Durham, England. He played between 1938 and 1958 for Sheffield United and once for England. As manager he had his greatest successes with S.L. Benfica in the early 1970s.",
+    "hypothesis":"Sheffield United was formed in nineteen hundred twenty one.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_504658e6-2da5-4b66-8ace-055d4bd5ea40",
+    "premise":"The Six-Day War (Hebrew: \u05de\u05dc\u05d7\u05de\u05ea \u05e9\u05e9\u05ea \u05d4\u05d9\u05de\u05d9\u05dd , \"Milhemet Sheshet Ha Yamim\"; Arabic: \u0627\u0644\u0646\u0643\u0633\u0629 , \"an-Naksah\", \"The Setback\" or \u062d\u0631\u0628 \u06f1\u06f9\u0666\u06f7 , \"\u1e24arb 1967\", \"War of 1967\"), also known as the June War, 1967 Arab\u2013Israeli War, or Third Arab\u2013Israeli War, was fought between June 5 and 10, 1967 by Israel and the neighboring states of Egypt (known at the time as the United Arab Republic), Jordan, and Syria.",
+    "hypothesis":"Israel and the neighboring states of Egypt signed a peace treaty.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_2cb42e25-2f94-41d7-b53a-c2652a37a059",
+    "premise":"Datong () is a prefecture-level city in northern Shanxi province, People's Republic of China, located in a basin at an elevation of 1040 m and bordering Inner Mongolia to the north and west and Hebei to the east. It had a population of 3,318,057 at the 2010 census of whom 1,629,035 lived in the built up area made of 3 out of 4 urban districts, namely Chengqu, Kuangqu and Nanjiao District.",
+    "hypothesis":"At the 2010 census more than 2 million people lived in the built up area made of 3 out of 4 urban districts.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8d9af307-169a-456a-a253-ff8dadf6e768",
+    "premise":"Hearts of Stone is the fifth studio album by American rock band Stoneground, released in 1978 on Warner Bros. Produced by Bob Gaudio, it marked Stoneground's return to a major label, having released their previous album, \"Flat Out\" (1976), on their own label. \"Prove It\" was released as the first single from \"Hearts of Stone\".",
+    "hypothesis":"Stoneground released their first studio album in 1970 ",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_756c61de-698c-4301-8778-a024c3d91f82",
+    "premise":"Babes in Arms is a 1937 musical comedy with music by Richard Rodgers, lyrics by Lorenz Hart and book by Rodgers and Hart. It concerns a group of small-town Long Island teenagers who put on a show to avoid being sent to a work farm by the town sheriff when their actor parents go on the road for five months in an effort to earn some money by reviving vaudeville.",
+    "hypothesis":"Rodgers and Hart wrote a funny musical ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_5cde9c80-0cf1-43f8-84a6-d04beea365af",
+    "premise":"The Samsung Galaxy Tab 7.7 is a tablet computer of a series of Android-based tablet computer produced by Samsung, introduced on 1 September 2011 at IFA in Berlin. Related models are the Galaxy Tab 7.0 Plus, Samsung Galaxy Tab 2 7.0, and Samsung Galaxy Tab 3 7.0.",
+    "hypothesis":"The Samsung Galaxy 7.7 came out on the market following the release of related models Galaxy Tab 7.0 Plus, Samsung Galaxy Tab 2 7.0, and Samsung Galaxy Tab 3 7.0, all Android-based tablets. Samsung will introduce a Galaxy Tab in Berlin on 1 September, 2111. ",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_3253412e-c73a-48a1-ad6e-4d1ab1dd778b",
+    "premise":"Operation Mojo is part documentary and part rock-mockumentary musical comedy of the TEENick series The Naked Brothers Band. It's the sixth television movie of \"The Naked Brothers Band\", and the second of season 3. The movie aired on Nickelodeon on November 22, 2008",
+    "hypothesis":"The Naked Brothers Band was popular for teens.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_ef0063f3-80b8-49b0-b51a-dec42132bb8b",
+    "premise":"The 2017 Congolese police decapitation attacks occurred on 23 March 2017 in the DR Congo. About 40 police officers were ambushed then decapitated. Six police officers were released. All of the surviving police spoke the Tshiluba language. The Kamwina Nsapu terrorist group attacked the police convoy.",
+    "hypothesis":"The Kamwina Nsapu group spoke the Tshiluba language.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7ae1cac4-7019-4285-aae5-fcdb256ac1d1",
+    "premise":"Mineral County Airport (FAA LID: 9S4) is a county-owned public-use airport located two nautical miles (3.7 km) southeast of the central business district of Superior, a town in Mineral County, Montana, United States. According to the FAA's National Plan of Integrated Airport Systems for 2011-2015, it is categorized as a \"general aviation\" facility.",
+    "hypothesis":"Mineral County Airport is in the southern hemisphere.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_949a2b63-ccdc-486f-8bba-892d25d5a79e",
+    "premise":"Escape from Suburbia: Beyond the American Dream is a 2007 Canadian documentary film written and directed by Gregory Greene, as a sequel to Greene's film \"The End of Suburbia\", and set to address what is termed \"the upcoming energy crisis\". Through interviews with individuals, Gregory Greene outlines potential solutions to the coming energy crisis.",
+    "hypothesis":"Escape from Suburbia: Beyond the American Dream was written right after The End of Suburbia",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8e3cddb6-1cf3-44e0-8da5-e27ccdb89211",
+    "premise":"PLU Crew is the varsity rowing program for Pacific Lutheran University in Tacoma, Washington. The team was founded in 1964 as a joint program with University of Puget Sound. Today the team consists of Men's and Women's programs for both Varsity and Novice rowers, and competes as a member of the Northwest Collegiate Rowing Conference (NCRC) and Western Intercollegiate Rowing Association (WIRA).",
+    "hypothesis":"PLU Crew never won a match",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_5e2422a4-48cf-4e78-a362-f0ae45163ae0",
+    "premise":"Dr. Jeckyll & Mr. Hyde was an American 1980s hip-hop group consisting of Andre \"Dr. Jeckyll\" Harrell and Alonzo \"Mr. Hyde\" Brown. The group was known for its corporate business image, wearing designer suits and ties while they rapped. The group first performed under the name Harlem World Crew and recorded on Tayster and Rojac Records in 1980.",
+    "hypothesis":"The group first performed under the name Harlem World Crew and recorded on Tayster and Rojac Records more than 1980 years ago.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7b282669-3bf0-43c3-ba57-e1e5fa95d1f9",
+    "premise":"The final of the 1983 Prudential Cup was played between India and West Indies at the Lord's Cricket Ground on 25 June 1983. This was the third consecutive World Cup final appearance for West Indies. India playing their first finals defeated the West Indies to claim the title. It was the first world cup win for India.",
+    "hypothesis":"India and West Indies both made three consecutive world cup final appearances",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_06474b39-9ef4-4d94-8f2e-5ef873e93c7d",
+    "premise":"Criminal Mindscape is a television documentary series on MSNBC that profiles the minds of extreme criminals. Different interviewers interview subjects such as Ron Luff and Joseph Paul Franklin. Interviewers are often from various fields of criminal justice as opposed to journalism. Interviewers attempt to develop psychological profiles of individual criminals.",
+    "hypothesis":"Criminal Mindscape's interviewers all come from different fields of criminal justice",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_9711c370-c6d3-49b5-83ee-72ac569a771f",
+    "premise":"Hudepohl Brewing Company is a brewery established in Cincinnati, Ohio in 1885 by founder Ludwig Hudepohl II. Hudepohl was the son of Bavarian immigrants and had worked in the surgical tool business before starting his brewery. Hudepohl combined with Schoenling Brewing Company in 1986. Today, the Hudepohl-Schoenling Brewing Company is a wholly owned subsidiary of Christian Moerlein Brewing Co..",
+    "hypothesis":"Hudepohl Brewing Company was founded by Ludpig",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_f16ee5b0-bfe4-4b5a-8113-e3933e026edf",
+    "premise":"Via Dante is an important and elegant pedestrian street in central Milan, Italy, connecting Piazzale Cordusio (Cordusio (Milan Metro)) and Largo Cairoli (Cairoli (Milan Metro)). It is very near to the city's Castello Sforzesco and is named after the Florentine poet Dante Alighieri. It is known for containing several theatres, shops, restaurants, caf\u00e9s, palaces and bars.",
+    "hypothesis":"Milan's streets are named after poets.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_d4219720-7833-49e5-a995-40f982eada12",
+    "premise":"Svensk Hyllningsfest (] , \"Swedish Honoring Festival\") is a biennial celebration held in Lindsborg, Kansas, in October of odd-numbered years since 1941 to celebrate the town's Swedish heritage. The festival includes Swedish dancing, foods including \"lutfisk\", cooking demonstrations, arts and crafts, entertainment by local artists and musicians, a parade, and a sm\u00f6rg\u00e5sbord.",
+    "hypothesis":"Svensk Hyllningsfest started the year after 1939.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_0086ad0b-5ff5-425d-83b8-95771cd45ff7",
+    "premise":"Johns Creek is a city located in Fulton County in the U.S. state of Georgia. According to the 2010 U.S. Census, the population was 76,728. The city is an affluent northeastern suburb of Atlanta. In 2017 Johns Creek ranked third on the \"USA TODAY\" list of \"50 best cities to live in.\"",
+    "hypothesis":"Johns Creek has a population of 92,000.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_5cbc3f54-4b57-480e-8bd1-79ce894cab65",
+    "premise":"Martin Joseph O'Malley (born January 18, 1963) is an American politician and attorney who served as the 61st Governor of Maryland from 2007 to 2015. He previously served as the Mayor of Baltimore from 1999 to 2007, and was a councilman from the Third Councilmanic District in the northeast section of the city on the Baltimore City Council from 1991 to 1999.",
+    "hypothesis":"Martin Joseph O'Malley did not live in baltimore when he was the mayor",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_6e03f9ad-aab9-44b6-97b5-920ecffc5b23",
+    "premise":"Father Xmas is a 2001 short film from director Marie Rose and the American Film Institute's Directing Workshop for Women starring Dakota Fanning as six-year-old Clairee who learns from her older brother (Stephen Fanning) that Santa Claus is not real and that their father is fighting in the Vietnam War.",
+    "hypothesis":"Father Xmas is a 2001 short film from director Marie Rose and the American Movie Institute's Directing Workshop for Women",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_173e9f1c-3545-4f4a-ac32-397c074fa9d2",
+    "premise":"The following is a list of ongoing civil unrest or ongoing protests that are taking place around the world. This list is for the sole purpose of identifying present-day civil unrest and protests and the death toll and number of protesters associated with each event.",
+    "hypothesis":"This is a bar graph.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_3ffc3935-c01f-4e3f-a3ca-1a1091e9b6cb",
+    "premise":"Steve Koren is an Emmy Award winning writer\/producer and screenwriter. Most notably he\u2019s written for \"Saturday Night Live\", \"Seinfeld\", and \"Veep\". He also wrote or co-wrote the movies \"Bruce Almighty\", \"Click\", \"A Night at the Roxbury\" and \"Superstar\".",
+    "hypothesis":"The co-writer for Superstar also wrote for Seinfeld.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_0476c2a7-da23-401f-a956-82769fb78cb2",
+    "premise":"No Said Date is the debut studio album by American rapper and Wu-Tang Clan member Masta Killa. The album was released on June 1, 2004, by Nature Sounds. The album features guest appearances from Raekwon, Ghostface Killah, Streetlife, Prodigal Sunn, Killah Priest, Method Man, Ol' Dirty Bastard, Allah Real, Inspectah Deck and GZA.",
+    "hypothesis":"Wu-Tang Clan, as a rap group, released the album No Said Date in June 2004.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_db26a8f6-7e7e-445b-a012-39cb28380aef",
+    "premise":"Prince Karl Alfred of Liechtenstein (Karl Alfred Maria Johannes Baptista Heinrich Aloys Georg Hartmann Ignatius; 16 August 1910 \u2013 17 November 1985) was a Liechtensteiner prince and brother of Franz Joseph II. He was the third child and second son of Prince Aloys of Liechtenstein and Archduchess Elisabeth Amalie of Austria.",
+    "hypothesis":"Karl Alfred of Liechtenstein was a prince from Liechtenstein whose birth was trending all over social media from the moment he was born",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_d0993c1e-ffd3-4f46-a867-8b5ed8336ace",
+    "premise":"Erik Jacobsen (born May 19, 1940) is an American record producer, song publisher and artist manager. He is best known for his work in the 1960s with Tim Hardin, The Lovin' Spoonful, The Charlatans, Sopwith Camel, and later with Norman Greenbaum and Chris Isaak. Though semi-retired, Jacobsen continues to manage many of his published songs and masters for various uses.",
+    "hypothesis":"Erik Jacobsen worked in the 1950s.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_ca710afc-dab6-43f4-9018-3012190b34af",
+    "premise":"The Kur\u0161ininkai (Curonians; German: \"Kuren\" ; Lithuanian: \"kur\u0161ininkai, kur\u0161iai\" ; Latvian: \"kursenieki, kur\u0161i\" ; Polish: \"kuronowie pruscy\" ) are a nearly extinct Baltic ethnic group living along the Curonian Spit. \"Kur\u0161ininkai\" refers only to inhabitants of Lithuania and former East Prussia that speak a dialect of Latvian.",
+    "hypothesis":"The Curonians were linguistically influenced by the Latvians.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_655a7c6e-dec5-48fa-83b3-a353176adfd5",
+    "premise":"The 2013 Canadian Olympic Curling Trials were held from December 1 to 8 at the MTS Centre in Winnipeg, Manitoba. The event is also known and advertised as the Tim Hortons Roar of the Rings. The winners of the men's and women's events were chosen to represent Canada at the 2014 Winter Olympics.",
+    "hypothesis":"Tim Horton did not donate any amount of money to curling trials",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_a9a723ed-1891-452d-b58a-ad989698a151",
+    "premise":"Brown University is a private Ivy League research university in Providence, Rhode Island, United States. Founded in 1764 as the College in the English Colony of Rhode Island and Providence Plantations, Brown is the seventh-oldest institution of higher education in the United States and one of the nine colonial colleges chartered before the American Revolution.",
+    "hypothesis":"Brown was founded before the All star Yankees game.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_0ea77c83-fe5b-4490-a3a7-180d6b065d9c",
+    "premise":"The Brandon Learning Centre is the first school in Hong Kong to offer public speaking classes based around English Speaking Board assessments. The English Speaking Board was founded in 1954 and the qualifications are regulated by the UK Office of Qualifications and Examinations Regulation <ref>",
+    "hypothesis":"The Brandon Learning Centre wanted to institute Taco Tuesday at the center, but it was vetoed by the founders",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_fee26a68-f424-455c-b16c-6e8096d3065d",
+    "premise":"The United Nations Peacekeepers Medal (Irish: \"An Bonn Chosant\u00f3ir\u00ed Sioch\u00e1na na N\u00e1isi\u00fan Aontaithe\" ) is awarded to those members of the Irish Defence Forces or Chaplaincy Service who have served overseas on a United Nation Mission or United Nations Mandated Mission.",
+    "hypothesis":"All members of the Irish Defence Forces have received the United Nations Peacekeepers Medal.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_bcc0c362-7be6-4c81-8543-e524080ad49e",
+    "premise":"American Motors Incorporated (AMI) designed, manufactured, and sold a mini-van for commercial delivery use. This company was not related to the American Motors Corporation (AMC), a major automaker formed in 1954 by the merger of the Nash-Kelvinator Corporation and the Hudson Motor Car Company.",
+    "hypothesis":"American Motors Incorporated (AMI) is a canadian company",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8e49eeb1-7bb7-4bba-9864-81d6a2335f6a",
+    "premise":"Nabokov's Congeries was a collection of work by Vladimir Nabokov published in 1968 and reprinted in 1971 as \"The Portable Nabokov\". Because Nabokov supervised its production less than a decade before he died, it is useful in attempting to identify which works Nabokov considered to be his best, especially among his short stories.",
+    "hypothesis":"Vladimir Nabokov published his \"best-of\" collection in the late 60s.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_672d707a-ae59-4f3b-92bb-fa39364b81af",
+    "premise":"Aleksandr Danilovich Aleksandrov (Russian: \u0410\u043b\u0435\u043a\u0441\u0430\u0301\u043d\u0434\u0440 \u0414\u0430\u043d\u0438\u0301\u043b\u043e\u0432\u0438\u0447 \u0410\u043b\u0435\u043a\u0441\u0430\u0301\u043d\u0434\u0440\u043e\u0432 , alternative transliterations: \"Alexandr\" or \"Alexander\" (first name), and \"Alexandrov\" (last name)) (August 4, 1912 \u2013 July 27, 1999), was a Soviet\/Russian mathematician, physicist, philosopher and mountaineer.",
+    "hypothesis":"Aleksandr was an intelligent person, and also adventurous. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_eb7b8646-434e-4056-8f9c-171899234180",
+    "premise":"The Pistol model 2000 (also \"md. 2000\") is a semi-automatic pistol designed and manufactured by RomArm via the Cugir Arsenal of Romania. The pistol, chambered in 9\u00d719mm Luger is an almost-identical copy of the Magnum Research Jericho 941 (Baby Eagle). The pistol is the standard sidearm of the Romanian Army.",
+    "hypothesis":"The Romanian Army does not use the Pistol model 2000 very often.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7405c23f-a3ab-42f6-bb6b-1b3b50d38672",
+    "premise":"Bad Family () is a South Korean television series starring Kim Myung-min, Nam Sang-mi, Im Hyun-sik, Yeo Woon-kay, Kang Nam-gil, Geum Bo-ra, Kim Heechul and Lee Young-yoo. It aired on SBS from March 22 to May 11, 2006 on Wednesdays and Thursdays at 21:55 for 16 episodes.",
+    "hypothesis":"New episodes of Bad Family are still being made.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_850751a1-4ada-42d7-8dc5-4ba0d61e8f1f",
+    "premise":"J\u00e1nos G\u00e1lv\u00f6lgyi (born 26 May 1948) is a Hungarian actor and comedian. First appearing in 1968's Ki Mit Tud? talent show, he gained national fame for making numerous comedy sketches in the Hungarian National Television, becoming one of the best known comedy actors in the country.",
+    "hypothesis":"J\u00e1nos G\u00e1lv\u00f6lgyi first appeared on a talent show twenty years after the year he was born.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_997cabf4-0a74-4101-9861-725e2027b316",
+    "premise":"Udinese Channel is a subscription-based channel, entirely dedicated to the Italian football team Udinese Calcio. The channel offers Udinese Calcio fans exclusive interviews with players and staff, full matches, including replays of all Serie A, Coppa Italia, and UEFA Cup games, in addition to vintage matches, footballing news, and other themed programming.",
+    "hypothesis":"The channel features baseball once a month.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_6e069af0-5b1a-445a-98ff-af90bf2e2877",
+    "premise":"Ronald Reagan is a bronze sculpture depicting the American politician of the same name by Chas Fagan, installed at the United States Capitol's rotunda, in Washington, D.C., as part of the National Statuary Hall Collection. The statue was donated by the U.S. state of California in 2009, and replaced one depicting Thomas Starr King, which the state had gifted in 1931.",
+    "hypothesis":"The new sculpture replaces one that stood for eighty years.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_2b48db7d-77f0-40b1-8be9-04163664be68",
+    "premise":"169th Street is a local station on the IND Queens Boulevard Line of the New York City Subway. Located at the intersection of 169th Street and Hillside Avenue in Queens, it is served by the F train at all times. This is the closest subway station to the 165th Street Bus Terminal after the closure of the nearby 168th Street BMT Station on Jamaica Avenue in 1977.",
+    "hypothesis":"169th Street is served by the train that is the sixth letter of the alphabet. ",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_f9490184-f790-44f3-956a-cb43c48ab1e6",
+    "premise":"The Chinese University of Hong Kong (CUHK) is a public research university in Shatin, Hong Kong formally established in 1963 by a charter granted by the Legislative Council of Hong Kong. It is the territory's second oldest university and was founded as a federation of three existing colleges \u2013 Chung Chi College, New Asia College and United College \u2013 the oldest of which was founded in 1949.",
+    "hypothesis":"It took CUHK over a decade to get their charter from the Legislative Council of Hong Kong.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8b765c53-f454-4724-9372-0158a2ea4554",
+    "premise":"In the Ugric mythology, Kaltes-Ekwa (Khanty, Kaltes Ankw) was the mother of the hero Mir-Susne-Hum and the wife of the god Num-Torum, who defeated her in heaven. She was also a goddess of the moon associated with the month April; a birth giving goddess (she is called upon by women in child-birth); goddess of fate; goddess of dawn and a shape-shifter, often shown manifested as a hare.",
+    "hypothesis":"Num-Torum is the god of June.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_60152949-ff2e-4bf5-ba54-e443438ab3fe",
+    "premise":"Ernest Guiraud (] ; 26 June 1837 \u2013 6 May 1892) was a French composer and music teacher born in New Orleans, Louisiana. He is best known for writing the traditional orchestral recitatives used for Bizet's opera \"Carmen\" and for Offenbach's opera \"Les contes d'Hoffmann\" (\"The Tales of Hoffmann\").",
+    "hypothesis":"Ernest Guiraud wrote his final piece in 1892.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_42ba0f46-607b-4b7b-928d-32e39705c1cb",
+    "premise":"Abdessadeq Cheqara (1931 \u2013 October 31, 1998) (in Arabic: \u0639\u0628\u062f \u0627\u0644\u0635\u0627\u062f\u0642 \u0634\u0642\u0627\u0631\u0629) was a Moroccan singer of traditional Andalusian classical music and Moroccan folk music. Known as the \"grand master of al-Ala (Andalusian music)\", he was also a violin and oud virtuoso.",
+    "hypothesis":"He was well-regarded in his field.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_694a60c9-fa72-4409-bdea-17a5892df04a",
+    "premise":"Invitation to Sociology: A Humanistic Perspective is a 1963 book about sociology by sociologist Peter L. Berger, in which Berger sets out the intellectual parameters and calling of the scientific discipline of sociology. Many of the themes presented in this book were later developed in his 1966 book \"The Social Construction of Reality\", coauthored with Thomas Luckmann.",
+    "hypothesis":"Peter L. Berger died in 1966.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_49054820-7717-44a1-83e9-7ee360223a78",
+    "premise":"Fuhrmann & Schmidt Brewing Company was formed in 1906 and was located at Commerce and Washington Streets in Shamokin, Pennsylvania. Fuhrmann & Schmidt was the successor company to the Eagle Brewing Company (1854 \u2013 1878), the M. Markel & Company (1878 \u2013 1893) and Phillip H Fuhrmann (1893 \u2013 1906).",
+    "hypothesis":"Fuhrmann & Schmidt Brewing Company has in its name only one of the three entities it was named after.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_c9b19099-4272-41ed-901c-8e8b8dd4a6f6",
+    "premise":"The 1998 Idaho Vandals football team represented the University of Idaho in the 1998 NCAA Division I-A football season. The Vandals, led by fourth-year head coach Chris Tormey, were members of the Big West Conference and played their home games at the Kibbie Dome, an indoor facility on campus in Moscow, Idaho.",
+    "hypothesis":"The 1998 Idaho Vandals football team was formed after nineteen ninety nine.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_da0c18ca-6565-403b-90f1-55f3413f4bdf",
+    "premise":"Diorama is the fourth studio album by Australian alternative rock band Silverchair. Released on 31 March 2002 by Atlantic\/. It won the 2002 ARIA Music Award for Best Group and Best Rock Album. The album was co-produced by Daniel Johns and David Bottrill. While Bottrill had worked on albums for a variety of other bands, \"Diorama\" marked the first production credit for lead singer Johns.",
+    "hypothesis":"Daniel Johns and David Bottrill have spoken to each other",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_2abdee62-f46c-4a0f-9897-6ed98e521eb1",
+    "premise":"Nate Albert (born 1970) is an American music executive, songwriter, producer and guitar player. He is currently the Executive Vice President of A&R at Capitol Records a division of Universal Music Group. He was formerly Senior Vice President of A&R at Republic Records, where he worked with such artists as The Weeknd, Florence & the Machine, Phantogram and the Lonely Island.",
+    "hypothesis":"Nate Albert was born within the last 100 years.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_f00ede19-7f2d-47e8-aec6-e697972d3b10",
+    "premise":"The City of Canada Bay is a local government area in the Inner West of Sydney, New South Wales, Australia. The city was formed on 1 December 2000, following the merger of Concord and Drummoyne councils. The city covers an area of 19.82 km2 and as at the 2016 census had a resident population of . The city is ultimately named after Canada Bay, a bay on the Parramatta River.",
+    "hypothesis":"The City of Canada Bay covers more than 11 miles.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_cd5d8795-dcea-4c73-9efe-7e1277781e38",
+    "premise":"Thomas Cooper (9 April 1904 \u2013 25 June 1940) was an England international footballer who played for Port Vale, Derby County, and Liverpool. He won 15 caps, and played 430 league games in a 16-year career in the Football League. He helped Derby to finish second in the Second Division in 1925\u201326 and second in the First Division in 1929\u201330.",
+    "hypothesis":"Thomas Cooper was born over 15,000 days ago.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_7c45fc10-f2e0-4b13-92c8-06ae903f16b4",
+    "premise":"The 2016 City of Onkaparinga ATP Challenger was a professional tennis tournament played on hard courts. It was the second edition of the tournament which was part of the 2016 ATP Challenger Tour. It took place in Happy Valley, Australia between 2\u201310 January 2016.",
+    "hypothesis":"A professional tennis tournament played on soft courts took place in Australia.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_1e1dcd73-82a9-4e3e-b87e-7d885d1f33cd",
+    "premise":"Van Cleef & Arpels is a French jewelry, watch, and perfume company. It was founded in 1896 by Alfred Van Cleef and his uncle Salomon Arpels in Paris. Their pieces often feature flowers, animals, and fairies, and have been worn by style icons such as Farah Pahlavi, the Duchess of Windsor, Grace Kelly, and Elizabeth Taylor.",
+    "hypothesis":"Van Cleef & Arpels was favoured by royalty",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_9e2f9029-9dd5-4c28-aab5-d567ea0bda2a",
+    "premise":"\"Duffle Bag Boy\" is a song by American hip hop duo Playaz Circle, released as the debut lead single from their debut album, \"Supply & Demand\" (2007). The song features a guest appearance from fellow American rapper Lil Wayne and was produced by M16 and Liam Kantwill. The song peaked in the Top 40 of the U.S. \"Billboard\" Hot 100, reaching number 15.",
+    "hypothesis":"Duffle Bag Boy had their first Top 10 Billboard song in 2010",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_5b6b9719-0ccb-4751-a601-1d9fbeed7278",
+    "premise":"Vincent Edward \"Bo\" Jackson (born November 30, 1962) is a former baseball and American football player. He is one of the few athletes to be named an All-Star in two major sports, and the only one to do so in both baseball and football. He is widely considered one of the greatest athletes of all time.",
+    "hypothesis":"Bo Jackson was called Vincent when he played baseball.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_4a144acd-dea1-4911-ad55-8c21b89228b9",
+    "premise":"Engine is the second album by American Music Club. It was jointly released by Frontier and Grifter in the US and by Zippo in the UK and Europe in 1987. The 1998 Warner Bros. Records reissue added three additional tracks from the same period. The artwork for the Zippo UK release features an incorrect track listing, putting the songs in the wrong order.",
+    "hypothesis":"American Music Club released an album in 1986.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_8b27649b-a984-443e-8459-4788369ae237",
+    "premise":"Manos Krystalis (Greek: \u039c\u03ac\u03bd\u03bf\u03c2 \u039a\u03c1\u03c5\u03c3\u03c4\u03ac\u03bb\u03b7\u03c2; born November 30, 1989) is a Greek actor, performer, model and businessman who became particularly popular in Greece as a model while he worked as a runway model for a top Greek modeling agency since 2004. He participated in several international film projects as a lead main actor.",
+    "hypothesis":"Manos Krystalis was a lead main actor before 2004.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r2_28e472b5-0201-493e-92aa-a9875684ee86",
+    "premise":"Peter Joseph Wysocki (October 3, 1948 \u2013 June 14, 2003) was an American football linebacker who played his entire six-year career with the Washington Redskins from 1975 to 1980 in the National Football League (NFL). Wysocki previously played four seasons in the Canadian Football League (CFL) for the Hamilton Tiger-Cats, Toronto Argonauts and Saskatchewan Roughriders.",
+    "hypothesis":"Peter Joseph Wysocki played for more than 3 teams",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r2",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b0e63408-53af-4b46-b33d-bf5ba302949f",
+    "premise":"It is Sunday today, let's take a look at the most popular posts of the last couple of days. Most of the articles this week deal with the iPhone, its future version called the iPhone 8 or iPhone Edition, and new builds of iOS and macOS. There are also some posts that deal with the iPhone rival called the Galaxy S8 and some other interesting stories. The list of the most interesting articles is available below. Stay tuned for more rumors and don't forget to follow us on Twitter.",
+    "hypothesis":"The day of the passage is usually when Christians praise the lord together",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_ec8e2a30-c20b-4b7b-af9d-fccbbb2d9906",
+    "premise":"The consultation on the redevelopment of Wan Chai Sports Ground has been conducted, Secretary for Home Affairs Lau Kong-wah says. Speaking to the media after attending a radio programme today, Mr Lau said a concrete timetable has yet been made on Wan Chai Sports Ground's redevelopment as the plan is still at a preliminary stage. The Home Affairs Bureau will assess the plan's impact on the sports sector once a proposal from the Trade Development Council is released and stakeholders' views are collected, he added.",
+    "hypothesis":"Wan Chai Sports Ground has a s",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_00af415a-4998-47ad-987a-9db4571fe592",
+    "premise":"The 2019 Cedar Commissions artists have each received $4,500 to create over 30 minutes of new music, drawing from their lives and experiences to create bold new works. Over the course of six months, they have been composing, exploring new ideas, and assembling musicians to bring their work to fruition on February 1st and 2nd. On night one, the artists Tarek Abdelqader, Antoine Martinneau, and Brianna Lane will perform their work.",
+    "hypothesis":"Cedar Commissions artists make subjective art",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_7d82a700-f01a-473a-a58d-fdfeb88c0462",
+    "premise":"Shares of power producers ticked down as traders rotated into more economically sensitive areas. Shares of PG&E recouped some of their recent losses, amid hopes that investment firm BlueMountain Capital Management would prevail in its efforts to dissuade the owner of Pacific Gas & Electric from filing for bankruptcy protection. -Rob Curran, rob.curran@dowjones.com",
+    "hypothesis":"Rob Curran has been contacted by BlueMountain Capital Management",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_544e51d9-fb57-4291-ac88-a052616b3c3f",
+    "premise":"Man Utd news: Jose Mourinho reveals which three players will miss Man Utd vs Arsenal Mourinho\u2019s Manchester United drew 2-2 with Southampton on the south coast, falling 16 points behind leaders Manchester City. And they go into a blockbuster clash with Arsenal on Wednesday night in poor form. United have managed just one win in their last four games - against Young Boys in the Champions League. And Mourinho has revealed he will be without at least three first team players on Wednesday and possibly another two.",
+    "hypothesis":"Jose Mourinho worships the dark lord Sauron.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_2c7576ec-b4cb-4e9c-bb2b-a67a55fc2759",
+    "premise":"STATE TIMES NEWS SRINAGAR: Police arrested a drug peddler and recovered contraband substance from his possession in Budgam. Police during Naka at Adina Bridge Magam intercepted a Sumo vehicle bearing registration number JK01K-3772. On checking of the vehicle 260 gr3ams of contraband substance was recovered. Driver of the vehicle identified as Shabir Ahmad Wani, son of Mohammad Abdulla Wani, resident of Dalwich Khag was taken into custody. A case FIR number 77\/2017 was registered against the accused driver and further investigation has been taken up.",
+    "hypothesis":"the peddler was disabled.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_798b797e-7dda-420b-8887-87a534abc9af",
+    "premise":"Follow KDKA-TV: Facebook | Twitter EAST PITTSBURGH (KDKA) \u2014 Three people were injured in a two-vehicle crash on Route 30 Monday evening. It happened around 7 p.m. in East Pittsburgh. At least three people have been transported from the scene. Emergency dispatchers say Route 30 is expected to be closed in both directions \u201cfor quite some time\u201d between Electric Avenue and the Westinghouse Bridge. State police are taking over the investigation. Further details have not yet been released. Stay With KDKA.com For More Details",
+    "hypothesis":"there were 3 people involved",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_f0c446ad-fd34-41d1-b029-de4b92cef8b9",
+    "premise":"Lough signed with the Tigers on a minor league contract, Jerry Crasnick of ESPN reports. The journeyman outfielder spent a good chunk of time at the major league level with the Phillies last season, although he was ultimately released in August due to posting a sub-.700 OPS both in the majors and with Triple-A Lehigh Valley. Although Detroit's center field situation is still pretty murky, it would take an uncharacteristically strong spring from Lough for him to supplant Tyler Collins, Mikie Mahtook, or JaCoby Jones for big-league playing time.",
+    "hypothesis":"Tyler Collins, Mikie Mahtook, and JaCoby Jones are center-fielders.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_8a422143-47a4-4206-91f6-39c51094e2f2",
+    "premise":"Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.",
+    "hypothesis":"The sender would have accepted $20,000 in any crypto-currency.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_9dbdc868-4d5c-457e-82c1-9f5dbf006887",
+    "premise":"Date Filed Monday, November 7, 2016 Case Number 2016EST220804 Bond 1 Bond Status ORD Bond Amount $55,000.00 Date Died February 13, 2015 Filing Code ADM Text 2016 EST 220804\u2014Estate of Walter T. Kozlowski. Application to administer estate filed. Granted on giving bond of $55,000.00. A. J. Costello, atty.",
+    "hypothesis":"The case was filed 12 months after Walter T. Kozlowski passed away.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_ca3c2b2d-c896-432f-8163-a6cb46cd8b9e",
+    "premise":"KISS 99.9 Welcomes Trisha Yearwood, Food Network's Standout and bestselling author to William Sonoma located at 1691 Michigan Ave. Ste. 116 in Miami on Saturday, February 24th from 1p-3p. Trisha Yearwood will be signing her New Book, Trisha's Table. This is a ticketed event. Secure a ticket by visiting Eventbrite or contacting the hosting store and purchasing a ticket. Proof of purchase required. Returns prohibited. Darlene will have your chance to win your copy each weekday Monday, February 19th \u2013 Friday, February 23rd at 11:20am. BUY YOUR TICKETS HERE",
+    "hypothesis":"The event takes place in the third month.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_cffee2e1-5374-4b82-94d9-e36a69d39c41",
+    "premise":"Follow KDKA-TV: Facebook | Twitter EAST PITTSBURGH (KDKA) \u2014 Three people were injured in a two-vehicle crash on Route 30 Monday evening. It happened around 7 p.m. in East Pittsburgh. At least three people have been transported from the scene. Emergency dispatchers say Route 30 is expected to be closed in both directions \u201cfor quite some time\u201d between Electric Avenue and the Westinghouse Bridge. State police are taking over the investigation. Further details have not yet been released. Stay With KDKA.com For More Details",
+    "hypothesis":"This report is from station SDMA.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_632a8962-5c37-4d22-ab41-06c035c6821d",
+    "premise":"A 'devastated' father has described the loss of his eight-year-old daughter to the flu in Melbourne. Rosie's father Christian Brealey, of Upper Ferntree Gully, thanked the public for their support, describing his daughter as his 'loving little angel'. SHARE Share on Facebook SHARE Share on Twitter TWEET Link Rosie who died of the flu in Melbourne \"We are devastated by the loss of our beautiful, loving little angel,\" Mr Brealey said in a statement released to News Corp. More to come",
+    "hypothesis":"Brealey likens his daughter to a winged creature that lives in heaven.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_95e639f9-acd9-4afb-abef-69a1135f1af0",
+    "premise":"Shares of tech companies rose as a rebound in risk appetite stoked demand for the sector. The Nasdaq Composite closed at a record high as comments from Federal Reserve Jerome Powell alleviated worries about the effects of higher interest rates on growth. Microsoft is being investigated by U.S. authorities over potential bribery and corruption related to software sales in Hungary, The Wall Street Journal reported. A fire on the grounds of Tesla's car factory in California on Thursday burned a scrap pile but was extinguished before it could cause major damage. Rob Curran, rob.curran@dowjones.com",
+    "hypothesis":"Being wary of a large tech company agents investigate it",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_dbaf990c-78b2-4128-bfb6-c87ca0022609",
+    "premise":"DONETSK, Ukraine Aug 19 Artillery fire could be heard on Tuesday in the settlement of Makiivka, on the eastern outskirts of the rebel-controlled city of Donetsk, Reuters reporters at the scene said. Residents said it was the first time there had been shelling in the area. Two minivans and one car with about a dozen separatist fighters were heading to the area where the sound of the blasts was coming from. Two ambulances were seen coming from the neighbourhood. (Reporting by Maria Tsvetkova; Writing by Christian Lowe; Editing by Alissa de Carbonnel)",
+    "hypothesis":"There were reporters there from CNN.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_937e9ad9-3540-4f31-9b8e-5626ed03edeb",
+    "premise":"LyndsayGill wrote: Combined Affiliated States. The players are drawn from local competitions in Northern Territory, South Australia, Victoria and Western Australia. So basically the equivalent of us sticking a 'best of NCL' side in against the Australian national team? Can't complain about the performance so far but not sure what anyone is learning from this.",
+    "hypothesis":"Players are drawn from local competitions in the Northern Hemisphere.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_404a99fa-652a-4c20-a576-69574fcdc429",
+    "premise":"The latest Newspoll, published in the Australian, reveals Bill Shorten is now the nation's preferred Prime Minister, a result which hasn't been seen in 3 years. The Coalition has dropped 4 points in the primary vote while Labor gained 6, now leading 41-33 per cent. The Newspoll show popular support for the Coalition are at a ten-year-low following last week's leadership coup that saw Scott Morrison replace Malcolm Turnbull as Prime Minister. Image: Kym Smith \/ News Corp Australia",
+    "hypothesis":" According to the Newspoll, Labor gained 6 points while the Coalition dropped slightly, by a single point",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_6ef01b21-7bf9-4d22-ab78-31026350b704",
+    "premise":"Helen could say no more ; she kissed and comforted the faithful little soul , feeling all the while such sympathy and tenderness that she wondered at herself , for with this interest in the love of another came a sad sense of loneliness , as if she was denied the sweet experience that every woman longs to know .<br>Amy never could remain long under a cloud , and seeing Helen 's tears , began to cheer both her cousin and herself .<br>`` Hoffman said he might live with care , do n't you remember ?<br>and Hoffman knows the case better than we .<br>Let us ask him if Casimer is worse .",
+    "hypothesis":"There aren't any people mentioned whose name starts with the letter J.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_5bf36520-6db3-4d75-bcfd-8b8732385814",
+    "premise":"Breaking Up<br>Tom hated his girlfriend. He kept trying to break up with her. She never really let him. Tom eventually moved away. He ignored her completely.",
+    "hypothesis":"Tom stopped all communication with his girlfriend after he moved away.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b46cd843-0b0d-4732-a8e8-234b6f83cef7",
+    "premise":"Marching Band<br>I always wanted to be in a marching band. The only instrument I played was piano. My friend told the instructor I wanted to be in the band. He handed me a baritone and told me to learn it. I took it home and learned it and then I was in the band!",
+    "hypothesis":"He did not play the piano in band",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_e2cb65af-fc8b-448c-8f1b-ea9fed2c60be",
+    "premise":"Swarthy Jones<br>Swarthy Jones was a bouncer at a local club. He turned down a girl because she was too ugly. Her boyfriend returned minutes later. Swarthy Jones had never seen someone bigger than him. Swarthy Jones was afraid, and let the girlfriend in.",
+    "hypothesis":"Swarthy would have let in a prettier girl.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_43a1fd39-69b5-4f30-9205-52aae3f0ab83",
+    "premise":"Jack Vettriano Prints<br>My niece was a big fan of Jack Vettriano fan. She put several framed prints up on her wall. She moved recently to a new apartment. There were no Vettriano prints in the new place. I found out her son had destroyed them in a fit of anger.",
+    "hypothesis":"Jack Vettriano identifies as male",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_7644d55f-6b45-4d79-b86a-8b5594d96829",
+    "premise":"Lost Mom<br>Danielle loves to travel with her mom. One year they went to Mt Pilatus in Switzerland. At the top Danielle got separated from her mom. After two hours of searching she gave up and went down to the bottom. There was her mom relaxing in a local cafe.",
+    "hypothesis":"Danielle's mother left the peak of Mt. Pilatus as soon as she reached it.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_75313d31-b804-4ca8-8b3a-6528b685af42",
+    "premise":"Sometimes he looked longingly at his mother , and sometimes he looked longingly at the window .<br>Certainly it would be pleasant to be her boy again , but on the other hand , what times those had been in the Gardens !<br>Was he so sure that he should enjoy wearing clothes again ?<br>He popped off the bed and opened some drawers to have a look at his old garments .<br>They were still there , but he could not remember how you put them on .<br>The socks , for instance , were they worn on the hands or on the feet ?<br>He was about to try one of them on his hand , when he had a great adventure .",
+    "hypothesis":"He enjoyed being naked.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_832642d3-8587-43a7-be1b-8fa138f92914",
+    "premise":"The Pickles<br>Ethan had cucumbers growing in his garden. He decided to make pickles with them. He chopped them and soaked them in vinegar. He added a few herbs, too. The pickles were delicious!",
+    "hypothesis":"He chopped the herbs",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_ba09cbc2-f6c1-4621-b24c-d0b6f73e1bf0",
+    "premise":"Missing Brush<br>Kelli was getting ready for school in the morning. She couldn't find the brush. It was almost time for school. Kelli brushed her hair back with her fingers. She pulled her hair back in a ponytail.",
+    "hypothesis":"Kelli had time to find her brush. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_021c8e57-9953-44d5-8aa1-e941f513f84e",
+    "premise":"Norge<br>A year after my boyfriend was killed, I met another man. He was ten years older than me, and from Norway. We got along very well. We ended up getting married. I left him a few years later after he cheated on me.",
+    "hypothesis":"She left him for another man.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4fd41f81-ee4b-42d4-927d-23444c58a655",
+    "premise":"Backyard Camping<br>John and his friends were camping in his backyard. Late that night, the boys heard a growling noise. A large shadow appeared on the tent door. The tent flap flew open and the boys screamed. John's father laughed hysterically at their reaction.",
+    "hypothesis":"John's father could not have been the source of the growling noise and large shadow.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_35038a6f-ea4e-4cf6-8b25-ed0fc7a30cba",
+    "premise":"downton abbey<br>Rachael really wanted Amy to watch downton abbey. It was a show that took place in the 20th century. Amy finally agreed to watch this show. Once she started watching it she was hooked. They would then have parties where they would watch it together.",
+    "hypothesis":"Rachael really wanted Amy to watch It Chapter 2.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_9d6eeeb5-4172-42dd-972b-7a208f825aa9",
+    "premise":"Source<br>Ray grabbed a pair of pants to wear for the day. He noticed there was a big red stain on them. Upon further investigation, he saw more of his clothes were stained. Ray went to his dryer for more answers. Inside was two broken red pens.",
+    "hypothesis":"Ray had a father",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b88b7cb8-8c1a-4c7d-b68b-c6ed404eb3cc",
+    "premise":"The Award<br>Kelsey was at a local community benefit. She was clapping for some people being honored for humanitarianism. Suddenly she was surprised to hear her name called. She learned that her award was for excellent teaching skills. She proudly accepted it and thanked everyone.",
+    "hypothesis":"Kelsey does not know the people being honored for humanitarianism.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_0eaf907d-af08-4ec3-975a-bcc5c221bcb4",
+    "premise":"Lost Wedding Ring<br>Tammy lost her wedding ring. She freaked out all day looking for it. Her husband helped her look. Finally they checked the garbage disposal. It had fallen there when she washed dishes.",
+    "hypothesis":"Tammy did not look for her wedding ring very well",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_231a8357-cb8a-4b6c-bd3b-fa26672b0f5f",
+    "premise":"The Pig<br>Kent loved animals. He especially loved his pet pig. The pig was named Charlie and he was big and fat. Kent took great care of the pig. He loved having him around the house.",
+    "hypothesis":"Kent loved other animals more than Charlie",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4370b739-e6d0-437f-ba5d-111077991f27",
+    "premise":"But I could n't understand why , Mrs. Blythe .<br>I felt awful thankful , and it must have been God that saved Stripey , because that Mead dog had ` normous jaws , and oh , how it shook poor Stripey .<br>And so why could n't I thank Him ?<br>` Course , '' added Bruce reminiscently , `` maybe I said it too loud -- 'cause I was awful glad and excited when I found Stripey was all right .<br>I ` most shouted it , Mrs. Blythe .<br>Maybe if I 'd said it sort of whispery like you and father it would have been all right .",
+    "hypothesis":"The Mead dog shook Stripey with its enormous jaws and poor Stripey died.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_207180da-f28b-4e85-b3db-29e671318d93",
+    "premise":"How to improve your computer performance<br>Perform \" disk cleanup \" regularly. The disk cleanup utility is an excellent way to get rid of temporary files, recycle bin, system logs and other non essential files that build up and take up memory. To perform a disk cleanup perform the following steps: start] control panel] system and security] administrative tools] disk clean up.",
+    "hypothesis":"Failure to implement the disk cleanup utility will slow down your computer.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_24fd1b4b-3819-4eab-83ea-0f69ce15c9fd",
+    "premise":"How to choose the healthiest salad greens<br>Look for low-calorie greens. If your idea of healthy is synonymous with low in calories, you might choose red leaf lettuce. This lettuce, like all varieties of lettuce, is mostly water.",
+    "hypothesis":"All lettuce is not red.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_ddc7331b-dfdb-4c7d-bdbd-d2fa711e575d",
+    "premise":"How to run for mayor<br>Become involved in community initiatives. As mayor, you'll be involved in numerous aspects of the local community. You can get a head-start in local politics and government by becoming involved in community initiatives.",
+    "hypothesis":"The local community's support is an ideal way to win votes.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_746b9e83-a3cd-459c-816b-7c18afdea7b3",
+    "premise":"How to tan a deer hide<br>Remove all flesh and fat from the deer skin. Do this after the skin has cooled and you are able to lay it out on a flat rock or cool concrete. Use a knife or a flesher to remove every little bit.",
+    "hypothesis":"You shouldn't remove the flesh and fat until after the skin has cooled.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_f6eb8f84-85cf-4f0f-bdd9-80af161f124c",
+    "premise":"How to come out to your best friend without giving her the wrong idea<br>Ask your friend to meet you someplace. Call her up, send her a text on her cell, email her, or ask her to meet you in person. Say this or something similar to this: \" jessica, can you meet me at the coffee shop on belmont tomorrow after you get off work? \" Give her a moment to settle in.",
+    "hypothesis":"The narrator is female.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_83aa4b07-50ca-4dd0-9d53-6804542ab08b",
+    "premise":"How to get a bank account<br>Choose a banking institution. Perhaps the most important step in opening an account is deciding which bank to do business with. Compare several banks in your area using criteria that are important to you, such as the branch hours and the availability of atms.",
+    "hypothesis":"You can only open it in a branch",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_c0ac633a-2554-4e6d-9a09-b702940579e0",
+    "premise":"How to determine the sex of a cat<br>Approach the cat or kitten with care. To ascertain the sex of a cat or kitten, it's necessary to pick the cat up. Some cats don't like to be handled, so take a little time to let him or her get comfortable around you.",
+    "hypothesis":"If you pick up a cat you will know what gender it is.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4055497e-3182-4153-84b2-437536606beb",
+    "premise":"How to treat ms hug<br>See your doctor the first time you experience an ms hug. Even if you've already been diagnosed with ms, your doctor will want to know that your symptoms have changed. Tell your doctor approximately how long the hug lasted, the degree and type of pain you experienced, and how long it lasted for.",
+    "hypothesis":"MS patients get MS hug.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_c393071e-7570-4b9e-a074-a274c1df2578",
+    "premise":"How to stop a dog chase from becoming an attack<br>Stand still and stay calm. If a dog is chasing you, standing still is probably the last thing you think you should do. You may feel like you're now an easy target for the dog.",
+    "hypothesis":"if you standstill when being chased by a dog you become an easy target for the dog",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_5ae18f95-5c42-4529-9426-63d049887e7e",
+    "premise":"How to be a kidney donor<br>Decide between deceased and living donation. There are two different ways to become a kidney donor. The first is known as deceased donation, which means that the kidney is harvested from your body after your death.",
+    "hypothesis":"Living donors cannot donate kidneys.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_3ed2ac93-7f86-437a-af6e-e43a8efe9b07",
+    "premise":"How to make a putt under pressure<br>Make sure you hit the green, preferably on the upslope as close to the hole as possible. You want to give yourself a make-able putt if a tournament is on the line. Aim towards the hole and try to hit your shot onto the upslope because they are easier putts to make opposed to downhill putts.",
+    "hypothesis":"Downhill putts is not an option.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4fdb13a2-723a-479b-8564-894ddc0186a5",
+    "premise":"How to invite friends to like your page on facebook pages manager<br>Download and install the application. Facebook pages manager is available on both itunes app store and google play for android. Log in your personal facebook account.",
+    "hypothesis":"You have to sign in order to use the application effectively",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b9d55a80-6b89-4d3d-8978-1a164a05c6eb",
+    "premise":"How to recognize and treat salivary mucocele in dogs<br>Look for swelling of the chin. One of the major signs that a dog might have a salivary mucocele is swelling under the chin. The swelling occurs in the angle of the jaw.",
+    "hypothesis":"One, but certainly not the only one of the signs of salivary mucocele (a disease that can affect dogs) is a swelling under the chin",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b0bfa6d4-bec5-4a03-9c3d-ffc8e06bde31",
+    "premise":"How to blow a bubble with bubblegum<br>Buy some bubblegum. You can buy gum at pretty much every corner store. Chewing gums can be used to make bubbles, but they won't be as big, and they'll usually pop too easily.",
+    "hypothesis":"Kids can learn to blow bubbles.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_0c4a2972-e27f-4aac-9c1a-042fa936fdd2",
+    "premise":"How to treat fever in dogs<br>Wipe your dog's ears and paws with a tepid, wet cloth. Make sure the cloth is not cool or cold. Wipe its ear area and paws several times to help bring its body temperature down.",
+    "hypothesis":"A dog's fever isn't that important to treat.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_0463de58-85e7-4d2a-b367-8465f94f233a",
+    "premise":"How to make google your homepage on chrome<br>Click on the chrome menu icon. Doing so will cause a drop-down menu to appear. [substeps] The menu icon is a small button with three horizontal lines.",
+    "hypothesis":"The graphic referenced is large ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b84e00a3-5012-4da2-979f-e8a7a2006f31",
+    "premise":"The key is of course in the words of section 93 which are rooted in 19th century history and, to some extent of course, in 18th century history because that is where these particular provisions flowed from, the capitulations of 1759, the Treaty of Paris of 1763 and the Quebec Act of 1774.",
+    "hypothesis":"the key is course in words of section 93 which gives the details of treaty of paris of 1763",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_688ee9d2-4957-4206-b62c-ae24539a1cea",
+    "premise":"Oh, yes. There were not many meetings where Bill Buckingham did not speak. And, actually, at that meeting -- I believe the beginning of the meeting was an apology, actually, which he had prepared in advance apologizing to the members of the community if he had said anything that offended them.",
+    "hypothesis":"Buckingham is his last name.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_bfb36bc7-2bd3-4a5b-958b-9595abe20fed",
+    "premise":"The first priority has to be on ending the violence, dampening down the tensions that have arisen there. We need to call upon Syria to release the three Israeli soldiers who have been captured. We need to insist that Arafat send out instructions to halt some of the provocative acts of violence that have been going on.",
+    "hypothesis":"Syria needs to release exactly three soldiers.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_e298a6ec-5f2b-4499-a928-dacf86a29db9",
+    "premise":"That's got to mean something, and if it means that we are limited in our ability to agree with the Europeans as they continually expand the term in light of their own vision of what copyright is about, then that's the meaning of a constitutional restriction.",
+    "hypothesis":"it is the meaning of constitutional restriction",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_d3211f10-90e7-43dd-b816-665375385302",
+    "premise":"Can I say, if I could just say a word about a woman that you didn't ask about, but my mom passed away a couple years ago, just before I was deciding to run. And she was in the hospital, and I went in to talk to her and tell her what I was thinking of doing.",
+    "hypothesis":"I decided to run after my mother passed away.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_06d3969a-6e36-4f98-9bd1-441a870d78be",
+    "premise":"It is quite unfortunate that some members of this House feel they have a hierarchy that is higher than the ordinary Canadian, better than most members of Parliament, that they are in a preferred category of having the ideologies that speak better to all Canadians than other members.",
+    "hypothesis":"Canadians are put in ice floes to die when they retire.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_a3290d64-7281-4426-a0e4-438821c46b4e",
+    "premise":"The wrong impression that many have is that somehow through some sanctions a person will be brought into court if their child has been accused or is being charged with an offence before the courts and that somehow the courts will actually be able to hold the parent or guardian accountable.",
+    "hypothesis":"Children can be given the death penalty.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4ce229f5-939e-47d4-8d01-8debf43f1be2",
+    "premise":"What a slap in the face to many of the parents and taxpayers of the Dover area. How sad that a member of our own school board would be so closed-minded and not want to carry on the mission of Dover schools. \"His ignorance will not only hold back children attending Dover area schools, but also reinforce other communities' views that Dover is a backwards, close-minded community.",
+    "hypothesis":"Dover is located in Colorado.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_3e45ac5f-45d5-4cd3-a8cc-9cdfb159da41",
+    "premise":"Based upon this possibility and given that the government has wasted almost $1 billion on cancellation fees and will spend much more on lawsuits, will the government attempt to save the Canadian taxpayer a large sum of money by purchasing the same helicopter for both search and rescue and maritime operations - in other words, return to commonality?",
+    "hypothesis":"The government has wasted more than $1.01 billion on cancellation fees.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_75c62ec0-b8f4-4f27-abc2-d231187346ed",
+    "premise":"General Olson, you say that the functional equivalent of an unlimited time would be a violation, but that's precisely the argument that's being made by petitioners here, that a limited time which is extendable is the functionable, functional equivalent of an unlimited time, a limited time that 10 years from now can be extended, and then extended again, and extended again. Why -- their argument is precisely that, a limited time doesn't mean anything unless it means, once you have established the limit for works that have been created under that limit, that's the end.",
+    "hypothesis":"The petitioners argue that a time limit that can be continuously extended is limited.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_833c1ed5-ef12-4e8e-ac3d-00303fd724fb",
+    "premise":"But I feel very strongly about that. And if I'm elected president, I will do something about that. But I think that we -- I think we have to start with better parenting. But I don't think that we can ignore the role played by guns. I mean, the fact is that there -- even though no state wants them, there are guns in some schools.",
+    "hypothesis":"president has a q",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_f03799a8-10f4-4929-ad03-925a074ea785",
+    "premise":"In support of international efforts, we are prepared to take the following steps today: to put a halt to any export credit through the Export Development Corporation; to put on hold any negotiations with the Yugoslav airlines for landing rights; to put on hold any discussions on bilateral efforts; and to consider what kind of support we might provide on a humanitarian basis.",
+    "hypothesis":"To support international efforts, we are ready to put on hold considering humanitarian support we can provide.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_1a85c382-c92d-40b0-b9b1-b00357171282",
+    "premise":"We expect an order that is consistent with our understanding of an agreement that we reached -- I will let it to you to address that. And my intention would not be to address this again in open court this afternoon. We would just move on. You have other witnesses, I assume, to present, and we can move through this. I'm simply saying I don't want wiggle room that we're waiting to see, because I've had that experience now before.",
+    "hypothesis":"There will be open court this afternoon.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4bb88012-0d89-4456-9fdd-d0325a032c05",
+    "premise":"The leadership in advocating these Young Offenders Act reforms has been provided in particular by the hon. member for Crowfoot, the hon. member for West Vancouver-Sunshine Coast, the hon. member for Surrey North, the hon. member for Langley-Abbotsford and many others of my colleagues.",
+    "hypothesis":"The leadership includes four individuals.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_e13c681f-67c4-4b26-aa47-9c6b7708d5e9",
+    "premise":"-- what weighs in that balance, because to go back for one second, in practical, economic terms I gather the difference between a copyright that lasts for 100 years, lasts for 1,000 years, lasts forever, is probably something less than 1,000 -- on $1,000 a penny.",
+    "hypothesis":"Going back one second is important.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_f1f2277d-5728-4192-9d67-3ca3e896addb",
+    "premise":"New question, new subject. Vice President Gore, on the environment. In your 1992 book you said, quote, \"We must make the rescue of our environment the central organizing principle for civilization and there must be a wrenching transformation to save the planet.\" Do you still feel that way?",
+    "hypothesis":"It isn't known where the quote came from.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_362e2665-599c-4359-8eba-217b40638e9d",
+    "premise":"I recall my husband speaking. In fact, he hadn't prepared to speak, but he was very upset, as many people in the audience were, and he stood up to speak. I don't remember his exact comments, but, again, it was a warning to the school board and -actually, not necessarily a warning, but just sort of reiterating what science teachers do in their science classes and how there is really no conflict here with the textbook.",
+    "hypothesis":"The husband only spoke about one of the subjects of textbooks and science but not both. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_a5092a54-e141-46c2-88cc-20971bdd1af8",
+    "premise":"Nagasa District was one of the four districts created in former Awa Province on April 1, 1889. Much of the area of the district was part of the former Hanabusa Domain. At the time of its foundation, the district consisted of two towns (Kamogawa and Amatsu) and nine villages. On April 1, 1897, Nagasa District was merged into Awa District, Chiba.",
+    "hypothesis":"Nagasa District was created more than 1 million seconds ago.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_63503976-f7c1-46e4-9c2c-5dccfecf4ebe",
+    "premise":"Christopher Ryan Collins (born April 19, 1974) is an American basketball player and coach from Northbrook, Illinois. He is currently the head coach at Northwestern University. Collins previously served as associate head coach of the Duke University men's basketball team and is the son of National Basketball Association (NBA) player, coach, and commentator Doug Collins.",
+    "hypothesis":"Chris Collins used to visit Duke campus.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_876feb2f-c73e-4c7b-b995-5b1308b59a0c",
+    "premise":"So Solid Crew are an English garage, grime and hip hop group originating from Battersea, London which achieved wide success in the early 2000s. The group consisted of a large number of members, the most notable being Lisa Maffia, Romeo and Harvey. They are generally credited with having paved the way for the current generation of crossover UK hip hop stars.",
+    "hypothesis":"Other bands looked to So Solid Crew for inspiration.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_dead7703-f3fa-4302-9f5c-9ef328ef162e",
+    "premise":"Interlude in Prague is a 2017 film about Wolfgang Amadeus Mozart starring Aneurin Barnard, James Purefoy, Samantha Barks, Morfydd Clark, Adrian Edmondson and Anna Rust. It was directed by John Stephenson, written by Brian Ashby, and screenplay by Brian Ashby, Helen Clare Cromarty, and John Stephenson.",
+    "hypothesis":"The agent mentions six actors of the movie",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_04d2511a-107a-4246-941a-a9373a46a14d",
+    "premise":"OKCoin is a Bitcoin company in China with core product lines of a Bitcoin exchange, and a mobile consumer payment and lending app. OKCoin Exchange China operates CNY\/BTC spot pair with margin trading from its Beijing entity, while OKCoin International operates USD\/BTC spot pair with margin trading and BTC\/USD futures from its Singapore entity.",
+    "hypothesis":"chinas currency is the yen",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4e69b75a-45fb-4aec-b79f-e39965d49c1d",
+    "premise":"Windows and Walls is the eighth album by American singer-songwriter Dan Fogelberg, released in 1984 (see 1984 in music). The first single, \"The Language of Love\", reached \u00a013 on the U.S. \"Billboard\" Hot 100 chart. Although the follow-up, \"Believe in Me\", missed the Top 40 of the pop chart, peaking at No.\u00a048, it became the singer's fourth No.\u00a01 song on the \"Billboard\" adult contemporary chart.",
+    "hypothesis":"Dan Fogelberg never was able to make much money from singing.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_44af199f-038a-4aa7-8e6b-1d16b0cb5fff",
+    "premise":"Methyl vinyl ether is an organic compound with the chemical formula CHO. It is the simplest chemical that contains both an alkene group and an alkyl group with an ether linkage. The compound can be made by reaction of acetylene and methanol in presence of a base.",
+    "hypothesis":"Methyl vinyl ether is simple to make",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_1f94d696-99a2-4445-bcf8-f3557f47f019",
+    "premise":"Meshuggah is a Swedish experimental metal and death metal quintet formed in 1987 in Ume\u00e5. Meshuggah is known for its use of extended polymetric passages, complex time signatures, dissonant guitar riffs, and harsh vocals. As of 2008, the band consists of vocalist Jens Kidman, guitarists Fredrik Thordendal and M\u00e5rten Hagstr\u00f6m, bassist Dick L\u00f6vgren and drummer Tomas Haake.",
+    "hypothesis":"Meshuggah could never be a sextet.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_da3a7245-52e9-4594-91fe-b01d8225ae49",
+    "premise":"Major General John Craig Lawrence {'1': \", '2': \", '3': \", '4': \"} (born 18 October 1963), also known as Craig Lawrence or J. C. Lawrence, is a retired British Army officer whose last appointment was as the Director of Joint Warfare in the Joint Forces Command. He left the army on 6 June 2016 and is now a writer.",
+    "hypothesis":"Major General John Craig Lawrence was dishonorably discharged",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_5a67b18a-4240-497f-8e70-bee3c3905948",
+    "premise":"Squashed entanglement, also called CMI entanglement (CMI can be pronounced \"see me\"), is an information theoretic measure of quantum entanglement for a bipartite quantum system. If formula_1 is the density matrix of a system formula_2 composed of two subsystems formula_3 and formula_4, then the CMI entanglement formula_5 of system formula_2 is defined by",
+    "hypothesis":"Squashed entanglement is called quantum entanglement.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_0ce4da01-4806-4cca-9de3-221942a7e892",
+    "premise":"Jagdfliegerf\u00fchrer Oberitalien (Fighter Leader Northern Italy) was part of Luftflotte 2 (Air Fleet 2), one of the primary divisions of the German Luftwaffe in World War II. It was formed in July 1943 in Bologna and subordinated to the Luftflotte 2. The headquarters were located at Bologna and moved to Pontecchio on March 18, 1944, moved again on July 15, 1944 to Verona.",
+    "hypothesis":"The headquarters were located at  Verona in the fourth month of the year 1944. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_b4ca81a9-4712-44ac-9621-ca2665ec069c",
+    "premise":"Ratnasimha (IAST: Ratna-Si\u1e43ha, r. c. 1302-1303 CE) was a ruler of the Medapata (Mewar) kingdom in present-day Rajasthan, India. He belonged to the Rawal branch of the Guhila dynasty, which ruled from the Chitrakuta fort (modern Chittorgarh). The last ruler of this branch, he was defeated by Alauddin Khalji in 1303 CE.",
+    "hypothesis":"Ratnasimha's reign lasted a decade.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_48adf3c2-c3ed-41ab-9be6-cba521b4bcc5",
+    "premise":"Shadow: Five Presidents and the Legacy of Watergate is a 1999 book by Washington Post journalist Bob Woodward, written with a narrative voice while utilizing firsthand interviews and news reports for its historical basis. For the 608-page book, Woodward used extensive notes and also interviewed President Ford, President Bush's chief of staff, James Baker, and other people of focus.",
+    "hypothesis":"Woodward had important connections that he tapped into while writing the book",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_350c10cf-07f7-4b00-a044-5cad5acca83c",
+    "premise":"USS \"Scott\" (DE-214), a \"Buckley\"-class destroyer escort of the United States Navy, was named in honor of Machinist's Mate First Class Robert R. Scott (1915\u20131941, who was killed in action during the Japanese attack on Pearl Harbor on 7 December 1941, while serving aboard the battleship USS\u00a0\"California\" . He was posthumously awarded the Medal of Honor for his heroism.",
+    "hypothesis":"USS \"Scott\" (DE-214) is part of a blue water fleet",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_71c12710-d0be-406b-a7b0-568d00e335d2",
+    "premise":"\"Still Standing\" is a song by American R&B singer Monica, written by Christopher Bridges, Adonis Shropshire, Bryan-Michael Cox and Monica for her sixth studio album, \"Still Standing\" (2010). Produced by Bryan-Michael Cox, it features guest vocals by her cousin and rapper Ludacris.",
+    "hypothesis":"\"Still Standing\" was not a financial bomb",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_40a6535f-83e0-4d65-9e1b-99c2e8bac843",
+    "premise":"\"Tryin' to Hide a Fire in the Dark\" is a song co-written and recorded by American country music artist Billy Dean. It was released in November 1992 as the first single from Dean's album \"Fire in the Dark\". The song reached number 6 on the \"Billboard\" Hot Country Singles & Tracks chart in March 1993 and number 1 on the \"RPM\" Country Tracks chart in Canada. It was written by Dean and Tim Nichols.",
+    "hypothesis":"Tryin' to Hide a Fire in the Dark is an awesome song recorded by the talented Billy Dean, released in 1992, more specifically in march of that year",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_bd456a6e-d31f-4fc0-9dc3-45a4377e6839",
+    "premise":"Elliot Junior Uyi Omozusi (born 15 December 1988) is an English footballer who plays for Chelmsford City. Omozusi had two spells with Leyton Orient, playing over 100 games. He also played for Fulham, Norwich City and Charlton Athletic. Omozusi plays primarily at right back, but can also play in the centre of defence or in midfield.",
+    "hypothesis":"He plays for Chemsfor city",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_a1445c66-ab43-462d-8130-7b900a450c8e",
+    "premise":"The land claims agreement must still be approved by the Canadian House of Commons , but has already passed through the House of Assembly of Newfoundland and Labrador.",
+    "hypothesis":"American house of commons is not mentioned",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_26ba0ddc-5e41-4244-874b-a4c82f4c9f92",
+    "premise":"Meanwhile, thousands of soldiers from the first Gulf War are still suffering from severe symptoms that have been linked to what is now known as Gulf War illness, say veterans advocates.",
+    "hypothesis":"A least three soldiers are still suffering from severe symptoms that have been linked to what is now known as Gulf War illness.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_1eca046c-6a93-4787-a7d1-ca147a0e7e11",
+    "premise":"John and Frances Galyean are partners in life and now both share a passion for photography. The Galyeans, married for more than 46 years, have been involved in photography since 1999.",
+    "hypothesis":"The Galyeans have been married for at least 0 days",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_f2886dd6-a250-4775-b77c-e5dccde8beec",
+    "premise":"With Washington hinting it might soften its tough stance to break the deadlock, top US negotiator, Christopher Hill, said the two sides needed to review the situation.",
+    "hypothesis":"The deadlock must be addressed by all parties involved to reach resolution.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_76073df1-f6da-4d35-8323-b259d0f01a65",
+    "premise":"The ruling Popular Party proposed the ban of Batasuna after the 24-year-old Basque party refused to condemn the terrorist bombing the ETA carried out on Aug. 4 against civilians.",
+    "hypothesis":"This was written in may",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_d6120f25-4bcb-4254-94b7-bca20ded5a89",
+    "premise":"Mr Ferdinand Piech said that the German company did not have any confidential plans or documents about GM's ultra-low-cost factory project.",
+    "hypothesis":"Ferdinand Piech is no longer alive.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_5a639e81-63d9-4ecf-ae9e-203157318fee",
+    "premise":"NASA's Saturn exploration spacecraft, Cassini , has discovered an atmosphere about the moon Enceladus . This is the first such discovery by Cassini, other than Titan , of the presence of an atmosphere around a Saturn moon.",
+    "hypothesis":"Enceladus was discovered by NASA.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_f6634fa9-6062-47f1-8275-c46464a8e502",
+    "premise":"Clint Brown, sports presenter for 3 News on TV3 in New Zealand has resigned amid the allegations that he had verbally attacked a taxi driver which resulted in him being admitted to hospital with a concussion and a broken eye socket. TV3 has confirmed that they have accepted the resignation of Brown. Rick Friesen, Chief Operating Officer of the TV Works division of CanWest MediaWorks NZ, that runs TV3, said: \"We wish to acknowledge Clint's significant skills as a sports broadcaster, and thank him for his 17 years of very loyal service to TV3. Clint Brown is a passionate New Zealand sports fan, and he has been at the forefront of some of New Zealand's biggest sporting moments.\"",
+    "hypothesis":"Clint Brown likes Australian sports.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_4f0d732a-0431-4a7d-ae4d-2de0bd4c5930",
+    "premise":"World leaders expressed concern on Thursday that North Korea will quit six-party nuclear disarmament talks and will  bolster its nuclear weapons arsenal.",
+    "hypothesis":"North Korea is south of South Korea.",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_28f0f740-bbda-4f85-a6cd-10f22365c8de",
+    "premise":"The Beetle has achieved an unbelievable cult status across the world, not least because its creation marked the launch of what has since become the largest car company in Europe.",
+    "hypothesis":"The Beetle launch the largest car company in the world. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_1dcb570a-61d5-4b88-a38a-652c1d32fd5f",
+    "premise":"In 1955, the Aurora Borealis, a coating applied to crystal stones to produce a \"rainbow of colors\" effect was introduced.",
+    "hypothesis":"The Aurora Borealis coating is 50 years old. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_9ba2a9c1-2dc2-4388-bfc0-424e0a38a061",
+    "premise":"Earlier this year reporter Judith Miller was jailed for refusing to name the US-government source who identified a member of the US Central Intelligence Agency (CIA), Valerie Plame.",
+    "hypothesis":"Judith Miller has accepted jail time instead of revealing information.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_163510c7-1b00-4924-82c3-bd5c1ca0080b",
+    "premise":"Miles of Australia's most pristine coastline have been declared a disaster zone following a large oil spill from a storm-damaged cargo ship. At least 60 kilometres of Queensland's southeastern shore were contaminated when at least 42 tonnes of oil spilled into the ocean from MV Pacific Adventurer on Wednesday night.  The ship, which had sailed into cyclonic weather, lost 31 containers aboard, one of which pierced the ship's hull and a fuel tank.  Anna Bligh, the Queensland premier, has declared Moreton Island, Bribie Island and southern parts of the Sunshine Coast disaster zones.",
+    "hypothesis":"The beaches have been damaged.",
+    "label":0,
+    "label_name":"entailment",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_75065351-2ad2-4df3-be08-66980194eafb",
+    "premise":"\"These new results from Cassini may be the first evidence of gases originating either from the surface or possibly from the interior of Enceladus,\" said Dr. Michele Dougherty, principal investigator for the Cassini magnetometer and professor at Imperial College in London. Scientists have suspected Enceladus as geologically active and a possible source of Saturn's icy E ring. Enceladus is the most reflective object in the solar system, reflecting about 90 percent of the sunlight that hits it.",
+    "hypothesis":"This is incorrect.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_8033dc6b-e291-4b0f-bd9f-2e37236bfb5b",
+    "premise":"The magazine said the number of billionaires worldwide increased by 102 people in 2006 to 793, a record number, largely due to bullish global stock markets. Their total net worth jumped 18 percent to $2.6 trillion.",
+    "hypothesis":"Fewer people are opening businesses.",
+    "label":1,
+    "label_name":"neutral",
+    "round":"test_r3",
+    "dataset":"anli"
+  },
+  {
+    "id":"anli_test_r3_d469aabc-dd2a-4bd7-b840-ab39764b6625",
+    "premise":"Clinton informed the two parties that in the absence of an agreement, a public announcement would be made, with the apparent objective of applying pressure to both sides, particularly the Israelis.",
+    "hypothesis":"Clinton doesn't want an agreement to be happen. ",
+    "label":2,
+    "label_name":"contradiction",
+    "round":"test_r3",
+    "dataset":"anli"
+  }
+]

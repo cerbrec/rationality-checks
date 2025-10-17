@@ -143,11 +143,15 @@ class OpenAIProvider(LLMProvider):
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-            temperature=0.0
-        )
+        # GPT-5 only supports default temperature of 1.0
+        kwargs = {
+            "model": self.model,
+            "messages": messages,
+        }
+        if not self.model.startswith("gpt-5"):
+            kwargs["temperature"] = 0.0
+
+        response = self.client.chat.completions.create(**kwargs)
         return response.choices[0].message.content
 
 
@@ -186,7 +190,7 @@ class BedrockProvider(LLMProvider):
         aws_access_key_id: Optional[str] = None,
         aws_secret_access_key: Optional[str] = None,
         region_name: str = "us-east-1",
-        model_id: str = "us.anthropic.claude-sonnet-4-20250514-v1:0"
+        model_id: str = "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
     ):
         """
         Initialize Bedrock provider
@@ -195,9 +199,10 @@ class BedrockProvider(LLMProvider):
             aws_access_key_id: AWS access key (defaults to env var)
             aws_secret_access_key: AWS secret key (defaults to env var)
             region_name: AWS region
-            model_id: Bedrock model ID (options:
-                - us.anthropic.claude-sonnet-4-20250514-v1:0 (Sonnet 4)
-                - us.anthropic.claude-opus-4-1-20250805-v1:0 (Opus 4)
+            model_id: Bedrock inference profile ID (options:
+                - us.anthropic.claude-sonnet-4-5-20250929-v1:0 (Sonnet 4.5 - Latest)
+                - us.anthropic.claude-opus-4-1-20250805-v1:0 (Opus 4.1 - Most capable)
+                - us.anthropic.claude-3-7-sonnet-20250219-v1:0 (Sonnet 3.7 - Reasoning)
             )
         """
         import os
@@ -252,6 +257,15 @@ class BedrockProvider(LLMProvider):
         Returns:
             Generated text response
         """
+        # Determine max tokens based on model
+        # Claude models support 32k, Llama/Nova models support 8k
+        if 'claude' in self.model_id.lower():
+            max_tokens = 32000
+        elif 'llama' in self.model_id.lower() or 'nova' in self.model_id.lower():
+            max_tokens = 8192
+        else:
+            max_tokens = 4096  # Conservative default
+
         # Build messages
         messages = [
             {
@@ -265,7 +279,7 @@ class BedrockProvider(LLMProvider):
             "modelId": self.model_id,
             "messages": messages,
             "inferenceConfig": {
-                "maxTokens": 32000,
+                "maxTokens": max_tokens,
                 "temperature": 0.0
             }
         }
@@ -290,7 +304,7 @@ class BedrockProvider(LLMProvider):
         raise ValueError("No text content in Bedrock response")
 
     @classmethod
-    def from_env(cls, model_id: str = "us.anthropic.claude-sonnet-4-20250514-v1:0"):
+    def from_env(cls, model_id: str = "us.anthropic.claude-sonnet-4-5-20250929-v1:0"):
         """
         Create provider from environment variables
 
@@ -304,6 +318,76 @@ class BedrockProvider(LLMProvider):
             region_name=os.getenv("AWS_REGION", os.getenv("AWS_DEFAULT_REGION", "us-east-1")),
             model_id=model_id
         )
+
+
+class GeminiProvider(LLMProvider):
+    """Google Gemini API provider"""
+
+    def __init__(self, api_key: str, model: str = "gemini-2.0-flash"):
+        """
+        Initialize Gemini provider.
+
+        Args:
+            api_key: Google API key
+            model: Gemini model to use (options:
+                - gemini-2.0-flash (Gemini 2.0 Flash - Fast, stable)
+                - gemini-2.5-flash (Gemini 2.5 Flash)
+                - gemini-2.5-pro (Gemini 2.5 Pro - Most capable)
+                - gemini-2.0-pro-exp (Gemini 2.0 Pro Experimental)
+            )
+        """
+        self.api_key = api_key
+        self.model = model
+        try:
+            import google.generativeai as genai
+            genai.configure(api_key=api_key)
+            self.client = genai.GenerativeModel(model)
+        except ImportError:
+            raise ImportError("google-generativeai package required. Install with: pip install google-generativeai")
+
+    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+        """Generate using Gemini API with retry on timeout"""
+        import time
+        from google.api_core import exceptions as google_exceptions
+
+        # Combine system prompt with user prompt if provided
+        full_prompt = prompt
+        if system_prompt:
+            full_prompt = f"{system_prompt}\n\n{prompt}"
+
+        # Generate with temperature=0 for consistency
+        generation_config = {
+            "temperature": 0.0,
+            "top_p": 0.95,
+            "top_k": 40,
+            "max_output_tokens": 8192,
+        }
+
+        max_retries = 3
+        base_delay = 2.0
+
+        for attempt in range(max_retries):
+            try:
+                response = self.client.generate_content(
+                    full_prompt,
+                    generation_config=generation_config
+                )
+                return response.text
+            except google_exceptions.DeadlineExceeded as e:
+                if attempt == max_retries - 1:
+                    print(f"\n❌ Gemini API timeout after {max_retries} attempts")
+                    raise
+                delay = base_delay * (2 ** attempt)
+                print(f"  ⚠️  Gemini timeout (attempt {attempt + 1}), retrying in {delay}s...")
+                time.sleep(delay)
+            except google_exceptions.ResourceExhausted as e:
+                # Rate limit or quota exceeded
+                if attempt == max_retries - 1:
+                    print(f"\n❌ Gemini API resource exhausted after {max_retries} attempts")
+                    raise
+                delay = base_delay * (2 ** attempt) * 2  # Longer delay for rate limits
+                print(f"  ⚠️  Gemini rate limit (attempt {attempt + 1}), retrying in {delay}s...")
+                time.sleep(delay)
 
 
 # ============================================================================

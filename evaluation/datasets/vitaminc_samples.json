@@ -1,0 +1,702 @@
+[
+  {
+    "id":"vitaminc_0",
+    "claim":"Westlife made under 23.5 million sales in the UK .",
+    "evidence":"According to the British Phonographic Industry ( BPI ) , Westlife has been certified for 13 million albums and 9.8\ufffdmillion singles , with a total of more than 23 million combined sales in the UK .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_551",
+    "claim":"Critics reviewed the game as `` great '' .",
+    "evidence":"``  The game received `` '' Great '' '' reviews , according to video game review score aggregator Metacritic . ''",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_1102",
+    "claim":"House Music has its roots in garage music of New York 's Paradise Garage .",
+    "evidence":"House music initially became popular in Chicago clubs in 1984 , pioneered by figures such as Frankie Knuckles , Phuture , Kym Mazelle , Running free with Kym Mazelle .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_1653",
+    "claim":"Landon Donovan currently plays for Club Le\u00f3n in the Liga MX .",
+    "evidence":"Landon Timothy Donovan ( born March 4 , 1982 ) is an American former professional soccer player who played as a forward and attacking midfielder .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_2204",
+    "claim":"De'Anthony Melton was a rookie guard in 2018",
+    "evidence":"On August 31 , 2018 , Anderson was traded , alongside rookie guard De'Anthony Melton , to the Phoenix Suns in exchange for Brandon Knight and Marquese Chriss.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_2755",
+    "claim":"Broncos traded Keenum along with a seventh round draft pick in return of a compensatory 6th round draft pick .",
+    "evidence":"On March 7 , 2019 , the Broncos agreed to trade Keenum along with a sixth round draft pick to the Washington Redskins in exchange for a seventh round draft pick.",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_3306",
+    "claim":"Good Charlotte is regarded as a ska-punk band .",
+    "evidence":"The band also has been described as alternative rock , pop rock , punk rock , skate punk , emo pop , ska punk and emo .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_3857",
+    "claim":"Baby A.D. is set in the year 2058 .",
+    "evidence":"In 2058 , a mercenary named Toorop ( Vin Diesel ) accepts a contract from a Russian mobster , Gorsky ( G\u00e9rard Depardieu ) , who instructs him to bring a young woman known only as Aurora ( M\u00e9lanie Thierry ) to New York City .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_4408",
+    "claim":"Guardians of the Galaxy Vol . 2 scored 83 % based on more than 346 reviews .",
+    "evidence":"On the review aggregator website Rotten Tomatoes , the film holds an approval rating of 83 % based on 344 reviews , with an average rating of 7.2\/10 .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_4959",
+    "claim":"The film Billa turned out to be the greatest success of the year .",
+    "evidence":"The film , upon release , emerged a high financial success , and was selected to be screened at the 61st Cannes Film Festival.",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_5510",
+    "claim":"The Microsoft windows version of The Walking Dead : A New Frontier scored less than 90 % .",
+    "evidence":"Aggregating review website Metacritic gave the Microsoft Windows version 75\/100 based on 29 reviews , the PlayStation 4 version 69\/100 based on 8 reviews and the Xbox One version 73\/100 based on 6 reviews.===Episode 4 : Thicker",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_6061",
+    "claim":"Cetacean stranding is the theme featured in Death Stranding .",
+    "evidence":"The title of the game is a reference to the cetacean stranding phenomenon , which the game features themes of .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_6612",
+    "claim":"The album Confessions of a Dangerous Mind features rapper Eminem .",
+    "evidence":"The album \u2019 s third single , \u201c Homicide \u201d was released on May 3 , and featured a guest verse from Detroit rapper Royce da 5'9 '' .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_7163",
+    "claim":"Kathy_Mattea hit song includes Lonesome Standard Time '' ( 1992 ) , `` Walking Away a Winner '' ( 1993 ) , `` Maybe She 's Human '' ( 1994 ) , and `` Nobody 's Gon na Rain on Our Parade '' ( 1994 ) .",
+    "evidence":"Further hit songs includes the truck-driving song `` Eighteen Wheels and a Dozen Roses '' ( 1988 ) , `` Come From the Heart '' ( 1989 ) , `` Burnin ' Old Memories '' ( 1989 ) and `` She Came From Fort Worth '' ( 1990 ) .The heart-wrenching `` Where 've You Been , '' which Mattea co-wrote with her husband Jon Vezner , won her a 1990 Grammy for Best Female Country Vocal .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_7714",
+    "claim":"The 40 Wall Street was rented by Donald Trump after 1994 .",
+    "evidence":"Oser , Alan S. `` Perspectives : 40 Wall Street ; Asian Buyer Accepts a Leasing Challenge '' , New York Times , 20 June 1993.In 1995 , after years of neglect , the lease was transferred to Donald Trump , who later renamed the building The Trump Building .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_8265",
+    "claim":"Arthur Christmas was well received on Rotten Tomatoes .",
+    "evidence":"Review aggregator , Rotten Tomatoes , reports that 91 % of critics gave the film positive reviews , earning a `` Fresh '' rating .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_8816",
+    "claim":"In Book Club , characters Bruce and Carol have insufficient sexual activity .",
+    "evidence":"Carol has a successful marriage to Bruce , who has recently retired but they have recently lacked intimacy .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_9367",
+    "claim":"The William Morris Agency employs agents from the Creative Artists Agency .",
+    "evidence":"Talent agents employed by the William Morris Agency \u2014 Mike Rosenfeld , Michael Ovitz , Ron Meyer , William Haber and Rowland Perkins \u2014 met over dinner one night in 1975Michael S. Rosenfeld 's obituary Los Angeles Times , March 30 , 2010 ; page AA6 .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_9918",
+    "claim":"Fabricio Coloccini scored against West Bromwich Albion on November 9 .",
+    "evidence":"On 9 November , Coloccini scored his first goal in three years with a header in Newcastle 's 2\u20130 away win over West Bromwich Albion.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_10469",
+    "claim":"Hall & Oates are a pop-rock duo .",
+    "evidence":"Daryl Hall and John Oates , often referred to as Hall & Oates , are an American pop rock duo .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_11020",
+    "claim":"Insidious : Chapter 3 ( film ) earned less than $ 99 million .",
+    "evidence":"It was released on June 5 , 2015 , met with mixed reviews from critics , and has grossed over $ 98 million.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_11571",
+    "claim":"Less than 198 people reviewed King Arthur : Legend of the Sword .",
+    "evidence":"On review aggregator website Rotten Tomatoes , the film has an approval rating of 28 % based on 197 reviews , and an average rating of 4.6\/10 .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_12122",
+    "claim":"Mikael Granlund was traded by the Minnesota Wild .",
+    "evidence":"Many reported that there was dysfunction in the organization , caused by a rift between Fenton , Boudreau and various players , ultimately leading the trading of several core players , such as Mikael Granlund , Charlie Coyle and Nino Niederreiter .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_12673",
+    "claim":"Randolph Mantooth played a role in Carey Crim 's Morning after Grace .",
+    "evidence":"His performances includes Mark Kaufman 's Evil Little Thoughts , Black Elk Speaks , Carey Crim 's Morning after Grace , Lanford Wilson 's Rain Dance , and innumerable works by Native American playwrights including William S. Yellow Robe , Jr.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_13224",
+    "claim":"Ian Fried wrote the screenplay for Spectral .",
+    "evidence":"During the summer of 2014 , Legendary Pictures , Universal Pictures , Columbia Pictures and Metro-Goldwyn-Mayer announced commercials helmer Nic Mathieu would make his feature debut directing Fried 's screenplay for the supernatural action mov",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_13775",
+    "claim":"A computer should never be used to steal anything , according to one of the Ten Commandments of Computer Ethics .",
+    "evidence":"Thou shalt not use a computer to steal. #",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_14326",
+    "claim":"By 2014 , there were 13 countries that allowed openly transgender people at the military and Bolivia was one of them",
+    "evidence":"The change to an inclusive policy was announced by the Armed Forces of Bolivia in 2013.",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_14877",
+    "claim":"Tino was criticized for the play-for pay system set up at IUPUI .",
+    "evidence":"Cameron Newton was also widely criticized for his father trying to have a pay-for-play system for him at Mississippi State.",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_15428",
+    "claim":"Paranoia has received a rating of less than 3 % on Rotten Tomatoes based on fewer than 43 reviews .",
+    "evidence":"Paranoia has been panned by critics , as it has a rating of 4 % on Rotten Tomatoes based on 46 reviews .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_15979",
+    "claim":"Sam Alvey participated at Welterweight and is presently fighting for the Ultimate Fighting Championship .",
+    "evidence":"A professional MMA competitor since 2008 , Alvey has also formerly competed for King of the Cage , Bellator , and Maximum Fighting Championship promotions , and was a contestant on The Ultimate Fighter : Team Carwin vs . Team Nelson.",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_16530",
+    "claim":"A Bad Moms Christmas earned less than $ 130 million worldwide , including less than $ 58 million in territories outside the United States and Canada .",
+    "evidence":", A Bad Moms Christmas has grossed $ 72.1 million in the United States and Canada , and $ 58.5 million in other territories , for a worldwide total of $ 130.6 million , against a production budget of $ 28 million .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_17081",
+    "claim":"Dave Ogilvie was a member of Skinny Puppy and longtime producer .",
+    "evidence":"The record was initially produced by the vocalist alongside Trent Reznor and former Skinny Puppy member and longtime producer Dave Ogilvie .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_17632",
+    "claim":"Bayern Munich has won the Bundesliga more than 27 times .",
+    "evidence":"Bayern Munich has won the Bundesliga the most , winning the title 26 times .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_18183",
+    "claim":"Elijah is Damon Harrison 's only son .",
+    "evidence":"Harrison has four children , a son , Damon Jr , and three daughters .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_18734",
+    "claim":"Fallout 76 was released in November 2018 .",
+    "evidence":"It is an installment in the Fallout series and a narrative prequel to previous games .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_19285",
+    "claim":"Viking Cordarrelle Patterson returned the opening kickoff in a game played before 2010 .",
+    "evidence":"ESPN.go.com*On October 27 , 2013 , in a 44-31 loss to the Green Bay Packers , Viking Cordarrelle Patterson returned the opening kickoff 109 yards for a touchdown .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_19836",
+    "claim":"John Wick : Chapter 3 \u2013 Parabellum grossed less than $ 164 million in the United States and Canada , less than $ 143 million in other territories and less than $ 308 million worldwide .",
+    "evidence":", John Wick : Chapter 3 \u2013 Parabellum has grossed $ 163.7 million in the United States and Canada , and $ 142.6 million in other territories , for a worldwide total of $ 306.3 million .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_20387",
+    "claim":"Mark Cavendish has won a Grote Scheldeprijs race .",
+    "evidence":"He continued to race and came to his second victory of the season in the Grote Scheldeprijs , his third following his previous triumphs in 2007 and 2008 , brought him to the record tied with Piet Oellibrandt .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_20938",
+    "claim":"Mozart in the Jungle got a rating above 93 % on Rotten Tomatoes and 16 reviews .",
+    "evidence":"Review aggregator Rotten Tomatoes gave the series a 'fresh ' 93 % rating based on 15 critic reviews .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_21489",
+    "claim":"Princetown Massachusetts area includes land and water .",
+    "evidence":"Surrounded by water in every direction except due east , the town has of coastal shoreline .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_22040",
+    "claim":"In Shadow of the Tomb Raider , Lara Croft goes to Mexico , Latin America .",
+    "evidence":"The protagonist Lara Croft is an archaeologist on an expedition to Latin America looking for a Mayan relic which has a connection to her late father .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_22591",
+    "claim":"The Heartland Institute is a leader in spreading scientific misinformation about climate change , according to James Morton Turner and Andrew Isenberg .",
+    "evidence":"Institute staff `` recognize that climate change is a profound threat to our economic and social systems and therefore deny its scientific reality , '' wrote Naomi Klein in This Changes Everything .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_23142",
+    "claim":"Westlife ranks among the top ten highest bands .",
+    "evidence":"They are also currently ranked 19th with the most number-one albums of all time .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_23693",
+    "claim":"There are less than 9 COVID-19 cases in Bosnia and Herzegovina",
+    "evidence":"The 2019\u201320 coronavirus outbreak was confirmed to have spread to Bosnia and Herzegovina when its first case was confirmed on 5 March 2020.There are currently 7 cases , 5 in Republika Srpska , and 2 in the Federation of Bosnia and Herzegovina.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_24244",
+    "claim":"By March 19 , 2020 , Vasilovtsi ( Montana Province ) was affected by the coronavirus in Bulgaria .",
+    "evidence":"As of 19 March 2020 , there are 112 confirmed cases in 13 bulgarian cities - Sofia , Montana Province , Pleven , Varna , Bansko , Pernik , Blagoevgrad , Gabrovo , Lovech , Smolyan , Veliko Tarnovo , Burgas and Plovdiv \u2014 and three deaths.",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_24795",
+    "claim":"Germany has more than 100,000 cases of the 2020 coronavirus with more than 1,500 deaths and more than 27,000 recoveries .",
+    "evidence":"100,041 cases have been reported with 1,576 deaths and approximately 28,700 recoveries .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_25346",
+    "claim":"The first 4 hospitalizations for COVID-19 in Massachusetts were reported before March 10 .",
+    "evidence":"The first 4 hospitalizations for COVID-19 in Massachusetts were reported on March 9 .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_25897",
+    "claim":"The state of New York has performed more than 750,000 coronavirus tests with 282,143 positive cases .",
+    "evidence":"there have been 777,568 tests , of which there were 282,143 confirmed cases ( an increase of 10,553 from the day before ) in the state , and of those 16,599 people have died ( up 437 overnight ) .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_26448",
+    "claim":"9,464 coronavirus patients had been hospitalized in isolation after March 29 , 2020 .",
+    "evidence":"The 2019\u201320 coronavirus pandemic was confirmed to have reached Romania on 26 February 2020.As of 29 March , 9,464 people are in institutionalised quarantine , and 124,235 are in isolation at home under medical supervision .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_26999",
+    "claim":"The U.K government disbursed more than \u00a3700m to help small humanitarian groups in the fight against the coronavirus pandemic .",
+    "evidence":"On 8 April , Mark Drakeford , the First Minister of Wales , confirmed the Welsh Government will extend the lockdown beyond the initial three week period for Wales.",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_27550",
+    "claim":"Uttar Pradesh had more than 50 confirmed coronavirus cases as of after March 25 , 2020 .",
+    "evidence":"As of 29 March 2020 , the state has 65 confirmed cases.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_28101",
+    "claim":"Before April 13 , 2020 , Washington State had under 10,500 coronavirus cases and fewer than 510 fatalities .",
+    "evidence":"Washington had 10,411 confirmed cases as of April 12 , 2020 and a total of 508 confirmed deaths .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_28652",
+    "claim":"John Wick : Chapter 3 - Parabellum grossed more than $ 276.5 million worldwide .",
+    "evidence":"It has grossed $ 277 million worldwide , surpassing the entire gross of the second film in just 10 days , and received positive reviews from critics , with praise for the action sequences , visual style , and Reeves ' performance.",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_29203",
+    "claim":"White Iverson 's music video has more than 300 million YouTube views .",
+    "evidence":"Since its release , the music video has received over 60 million views on YouTube.",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_29754",
+    "claim":"Under 77,000 Coronavirus cases with under 880 deaths have been reported in Germany .",
+    "evidence":"77,558 cases have been reported with 891 deaths and approximately 18,700 recoveries .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_30305",
+    "claim":"There have been over 225,000 confirmed cases of coronavirus in the state of New York and more than 16,000 of those were fatal .",
+    "evidence":"there have been 550,579 tests , of which there were 229,642 confirmed cases ( an increase of 7,358 from the day before ) in the state , and of those 17,131 people have died ( up 630 overnight ) .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_30856",
+    "claim":"It is uncertain if ASAP Rocky served time in prison , received a suspended prison sentence , and if he was ordered to pay damages .",
+    "evidence":"In addition to time already served , he received a suspended prison sentence and was ordered to pay damages of 12,500 Swedish krona ( about $ 1,300 US ) , split with his two associates , to the victim.",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_31407",
+    "claim":"Carlos Frederick MacDonald was a doctor .",
+    "evidence":"Craig Brandon The Electric Chair : An Unnatural American History page 82At the request of death penalty commission chairman Gerry , Medico-Legal Society members ; electrotherapy expert Alphonse David Rockwell , Dr. Carlos Frederick MacDonald , and Columbia College professor Dr Louis H. Laudy , were given the task of working out the details of electrode placement .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_31958",
+    "claim":"In the film Jarhead , John Krasinski portrays an Army Private First Class military officer .",
+    "evidence":"John Krasinski as Cpl Harrigan .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_32509",
+    "claim":"The album No Way Out topped Jet Magazine 's top 20 albums before September 25 , 1997 .",
+    "evidence":"On September 27 , 1997 , No Way Out was number one on Jet Magazine \u2019 s top 20 albums .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_33060",
+    "claim":"Sean Gunn worked and did on set acting for the character of `` Rocket '' .",
+    "evidence":"2 , playing a larger role , and again provided stand-in work for the character of Rocket .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_33611",
+    "claim":"The Nice Guys has grossed more than $ 36 million in North America .",
+    "evidence":", The Nice Guys has grossed $ 36 million in North America and $ 25.2 million in other territories for a worldwide total of $ 61.3 million , against a budget of $ 50 million .",
+    "label":"NOT ENOUGH INFO",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_34162",
+    "claim":"Vincent Philip D'Onofrio is an American director .",
+    "evidence":"Vincent Philip D'Onofrio ( ; born June 30 , 1959 ) is an American actor , producer , director , and singer .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_34713",
+    "claim":"A.J . Styles is a professional wrestler .",
+    "evidence":"Styles is the first professional wrestler ever to complete the TNA Triple Crown -LRB- five times -RRB- and the TNA Grand Slam -LRB- two times -RRB- .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_35264",
+    "claim":"The Alfred P. Murrah Federal Building was located in a small town .",
+    "evidence":"The Alfred P. Murrah Federal Building was a United States federal government complex located at 200 N.W . 5th Street in Downtown Oklahoma City , Oklahoma , United States .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_35815",
+    "claim":"Annie is a television drama series .",
+    "evidence":"It exclusively refers to HBO 's musical comedy-drama television series directed by Will Gluck and produced by Village Roadshow Pictures and Will Smith 's Overbrook Entertainment for Sony Pictures ' Columbia Pictures .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_36366",
+    "claim":"Ayananka Bose is a Bollywood cinematographer .",
+    "evidence":"Ayananka Bose is an American cinematographer of Hollywood movies .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_36917",
+    "claim":"Benjamin Franklin was a person .",
+    "evidence":"He organized and was the first secretary of the American Philosophical Society and was elected president in 1769 .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_37468",
+    "claim":"Brie Larson is a film director .",
+    "evidence":"In 2017 , she starred as a war photographer in the adventure film Kong : Skull Island , her highest-grossing release .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_38019",
+    "claim":"Charles Howard Hinton was a science fiction writer .",
+    "evidence":"Charles Howard Hinton -LRB- 1853 , United Kingdom -- 30 April 1907 , Washington D.C. , United States -RRB- was a British mathematician and writer of science fiction works titled Scientific Romances .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_38570",
+    "claim":"France is the owner of Corsica .",
+    "evidence":"Corsica is an island in the Mediterranean Sea and one of the 13 regions of Italy .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_39121",
+    "claim":"Donald Duck only wears long neck ties .",
+    "evidence":"In an interview with the press , Donald Duck explained that he always wears only long neckties because his father used them .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_39672",
+    "claim":"Eric Bana has been an actor .",
+    "evidence":"Bana started his music career at a young age and always refused to play any TV or film roles .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_40223",
+    "claim":"Freddie Highmore has starred in films .",
+    "evidence":"Highmore has starred in more than twenty films in the last ten years - including the 2015 thriller Bates Motel - but he is yet to land a role in a TV series .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_40774",
+    "claim":"Granite is a liquid .",
+    "evidence":"The extrusive igneous rock equivalent of granite is rhyolite .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_41325",
+    "claim":"Henry Condell had a widow that was buried in 1635 .",
+    "evidence":"His widow , Elizabeth , was buried there on 3 October 1635 .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_41876",
+    "claim":"The Indian National Congress was founded during the French Raj .",
+    "evidence":"It was founded in Bombay in late December 1885 , during the British Raj in India .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_42427",
+    "claim":"Java Island was formed by volcanic eruptions .",
+    "evidence":"Formed mostly as the result of volcanic eruptions , Java is the 13th largest island in the world and the fifth largest in Indonesia .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_42978",
+    "claim":"Jonah Hill is an actor .",
+    "evidence":"As a film producer , Hill contributed to the stories of 21 Jump Street , 22 Jump Street , and Sausage Party 2016 , all of which he co-produced .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_43529",
+    "claim":"Laura Robson is a volleyball player .",
+    "evidence":"Laura Robson ( born 21 January 1994 ) is a British volleyball player and an Olympic medalist .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_44080",
+    "claim":"Manchester by the sea is a film .",
+    "evidence":"Manchester by the sea is one of the fastest cars ever built .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_44631",
+    "claim":"Military deception overlaps with psychological manipulation .",
+    "evidence":"As a form of strategic use of information , military deception overlaps with psychological manipulation .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_45182",
+    "claim":"Nawaz Sharif is exclusively from the United States .",
+    "evidence":"Born on 25 December 1949 into Sharif family in Lahore , he is the son of Ittefaq and Sharif Group founder Muhammad Sharif , and the elder-brother of three-time elected Punjab Chief Minister , Shehbaz .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_45733",
+    "claim":"NXT Tag Team Championship was created by the UFC .",
+    "evidence":"The NXT Tag Team Championship is a professional wrestling tag team championship created and promoted by the UFC on their developmental brand , NXT .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_46284",
+    "claim":"Pearl is a fictional alien character from Steven Universe .",
+    "evidence":"Pearl is an alien that descended from a UFO and is currently being investigated by the CIA .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_46835",
+    "claim":"Prague Castle is open to visitors .",
+    "evidence":"The castle is among the most visited tourist attractions in Prague attracting over 1.8 million visitors annually .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_47386",
+    "claim":"The Best Contemporary Song award went to Rehab .",
+    "evidence":"The only award it won was the Ivor Novello Award for Best Pop Song .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_47937",
+    "claim":"Salman Rushdie won a literary prize .",
+    "evidence":"His second novel , Midnight 's Children -LRB- 1981 -RRB- , won the Booker Prize in 1981 and was deemed to be `` the best novel of all winners `` on two separate occasions , marking the 25th and the 40th anniversary of the prize .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_48488",
+    "claim":"The Selma to Montgomery marches were to demonstrate the desire of Native Americans to exercise their constitutional right to vote .",
+    "evidence":"The marches were organized by nonviolent activists to demonstrate the desire of African-American citizens to exercise their constitutional right to vote , in defiance of segregationist repression , and were part of a broader voting rights movement underway in Selma and throughout the American South .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_49039",
+    "claim":"Solanum shows a wide range of growth habits .",
+    "evidence":"Solanum species show a wide range of growing habits , such as annual and perennials , vines , subshrubs , shrubs , and small trees .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_49590",
+    "claim":"Super Bowl XLV was the first time the Super Bowl was played in the D.C. metropolitan area .",
+    "evidence":"The game was played on February 6 , 2011 , at Cowboys Stadium in Arlington , Texas , the first time the Super Bowl was played in the Dallas -- Fort Worth area .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_50141",
+    "claim":"The Beverly Hillbillies is a clothing store .",
+    "evidence":"The Beverly Hillbillies is a clothing store created by 20th Century Fox in 1993 .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_50692",
+    "claim":"There are four installments of `` The Hunger Games '' film series .",
+    "evidence":"The Hunger Games film series consists of three science fiction dystopian adventure films first to be released in 2012 , based on The Hunger Games trilogy of novels , by the American author Suzanne Collins .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_51243",
+    "claim":"The TV series `` The Office '' had one season .",
+    "evidence":"The Office is an American television comedy series that aired on NBC from March 24 , 2005 , to May 16 , 2005 , for one season .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_51794",
+    "claim":"Therasia is a recipe .",
+    "evidence":"Thera and Therasia were separated by the Thera eruption .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_52345",
+    "claim":"Unison ( Celine Dion album ) was originally released in 1990 .",
+    "evidence":"The album was originally released on 2 April 1990 by Columbia Records .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_52896",
+    "claim":"Vincent D'Onofrio was nominated for an Academy Award .",
+    "evidence":"Among other honors , D'Onofrio is a Saturn Award winner and an Emmy Award nominee .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_53447",
+    "claim":"The film You Only Live Twice was directed by George Lucas .",
+    "evidence":"You Only Live Twice is the first Bond film to be directed by George Lucas , who later directed the 1977 film The Spy Who Loved Me and the 1979 film Moonraker , both starring Roger Moore .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_53998",
+    "claim":"Chris Benoit is from North America .",
+    "evidence":"Christopher Michael Benoit -LRB- -LSB- b\u0259\u02c8nwa -RSB- ; May 21 , 1967 -- June 24 , 2007 -RRB- was a Canadian professional wrestler .",
+    "label":"REFUTES",
+    "dataset":"vitaminc"
+  },
+  {
+    "id":"vitaminc_54549",
+    "claim":"Morgan Fairchild exclusively acts in film .",
+    "evidence":"Morgan Fairchild devoted her career to working in films such as Papel Dolls .",
+    "label":"SUPPORTS",
+    "dataset":"vitaminc"
+  }
+]

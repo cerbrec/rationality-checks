@@ -1,0 +1,23 @@
+{
+  "anli": {
+    "dataset": "ANLI",
+    "total_samples": 300,
+    "label_distribution": {
+      "neutral": 109,
+      "entailment": 101,
+      "contradiction": 90
+    },
+    "rounds": [
+      "test_r1",
+      "test_r2",
+      "test_r3"
+    ],
+    "description": "Adversarial Natural Language Inference for contradiction detection"
+  },
+  "fever": {
+    "error": "Dataset scripts are no longer supported, but found fever.py"
+  },
+  "logiqa": {
+    "error": "Dataset scripts are no longer supported, but found logiqa.py"
+  }
+}
