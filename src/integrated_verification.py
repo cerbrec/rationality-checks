@@ -9,11 +9,11 @@ import json
 from pydantic import BaseModel, Field, validator
 
 # Import from previous modules
-from verification_pipeline import (
+from .verification_pipeline import (
     Claim, ClaimType, VerificationMethod, VerificationResult,
     ClaimAssessment, VerificationReport, Evidence, LLMProvider
 )
-from world_state_verification import (
+from .world_state_verification import (
     WorldState, WorldStateVerifier, ConsistencyIssue,
     Proposition, Constraint, ClaimInterpreter
 )

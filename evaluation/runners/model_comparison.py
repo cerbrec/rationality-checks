@@ -14,8 +14,8 @@ import sys
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from integrated_verification import IntegratedVerificationPipeline
-from verification_pipeline import LLMProvider
+from src.integrated_verification import IntegratedVerificationPipeline
+from src.verification_pipeline import LLMProvider
 from evaluation.benchmarks.contradiction_benchmark import ContradictionBenchmark
 from evaluation.metrics.accuracy_metrics import MetricResult
 
@@ -276,7 +276,7 @@ class ModelComparison:
 def main():
     """Example usage: Compare OpenAI and Claude"""
     import os
-    from verification_pipeline import OpenAIProvider, AnthropicProvider
+    from src.verification_pipeline import OpenAIProvider, AnthropicProvider
 
     # Check for API keys
     openai_key = os.getenv("OPENAI_API_KEY")
