@@ -9,10 +9,14 @@ import json
 import sys
 from typing import Dict, List, Optional, Tuple
 from dataclasses import asdict
+from pathlib import Path
 
-from integrated_verification import IntegratedVerificationPipeline, EnhancedClaim
-from verification_pipeline import LLMProvider, ClaimType
-from world_state_verification import WorldState, Proposition, format_value
+# Add parent directory to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from src.integrated_verification import IntegratedVerificationPipeline, EnhancedClaim
+from src.verification_pipeline import LLMProvider, ClaimType
+from src.world_state_verification import WorldState, Proposition, format_value
 
 
 # ============================================================================
@@ -389,7 +393,7 @@ class InteractiveVerificationTest:
 def main():
     """Example usage"""
     import argparse
-    from verification_pipeline import MockLLMProvider
+    from src.verification_pipeline import MockLLMProvider
 
     parser = argparse.ArgumentParser(description="Interactive verification test")
     parser.add_argument(

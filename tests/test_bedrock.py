@@ -29,7 +29,10 @@ print(f"  Region: {os.getenv('AWS_REGION', 'us-east-1')}")
 print(f"  Access Key ID: {os.getenv('AWS_ACCESS_KEY_ID')[:10]}...")
 
 # Import after loading env vars
-from verification_pipeline import BedrockProvider
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from src.verification_pipeline import BedrockProvider
 
 # Test basic connection
 print("\n" + "=" * 80)

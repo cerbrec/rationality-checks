@@ -13,10 +13,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from test_interactive_verification import InteractiveVerificationTest
-from verification_pipeline import AnthropicProvider, OpenAIProvider, BedrockProvider, MockLLMProvider
+from tests.test_interactive_verification import InteractiveVerificationTest
+from src.verification_pipeline import AnthropicProvider, OpenAIProvider, BedrockProvider, MockLLMProvider
 
 
 # ============================================================================

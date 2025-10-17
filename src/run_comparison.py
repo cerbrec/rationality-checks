@@ -17,10 +17,10 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Add current directory to path
-sys.path.insert(0, str(Path(__file__).parent))
+# Add parent directory to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from verification_pipeline import OpenAIProvider, AnthropicProvider, GeminiProvider, BedrockProvider
+from src.verification_pipeline import OpenAIProvider, AnthropicProvider, GeminiProvider, BedrockProvider
 from evaluation.runners.model_comparison import ModelComparison
 
 

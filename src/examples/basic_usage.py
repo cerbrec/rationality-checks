@@ -10,10 +10,10 @@ import sys
 from typing import Optional
 
 # Add parent directory to path to import modules
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from integrated_verification import IntegratedVerificationPipeline
-from verification_pipeline import AnthropicProvider, OpenAIProvider, MockLLMProvider
+from src.integrated_verification import IntegratedVerificationPipeline
+from src.verification_pipeline import AnthropicProvider, OpenAIProvider, MockLLMProvider
 
 
 # ============================================================================

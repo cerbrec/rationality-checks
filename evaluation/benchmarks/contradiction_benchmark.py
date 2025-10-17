@@ -14,7 +14,7 @@ from dataclasses import dataclass
 # Add parent directory to path to import from rationality-llm
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from integrated_verification import IntegratedVerificationPipeline
+from src.integrated_verification import IntegratedVerificationPipeline
 from evaluation.metrics.accuracy_metrics import (
     evaluate_contradiction_detection,
     print_evaluation_report
@@ -259,7 +259,7 @@ Based on the premise, the hypothesis {'contradicts' if example.label == 2 else '
 
 def main():
     """Example usage"""
-    from verification_pipeline import AnthropicProvider
+    from src.verification_pipeline import AnthropicProvider
     import os
 
     # Initialize pipeline

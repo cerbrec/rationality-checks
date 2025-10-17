@@ -1,0 +1,329 @@
+Using AWS Bedrock with model: us.amazon.nova-pro-v1:0
+
+================================================================================
+ATHLETE REPORT VERIFICATION TEST
+================================================================================
+
+Report: /Users/drw/cerbrec/code-conversion/resources/flx-resources/flx-report-payload.json
+Provider: BedrockProvider
+
+================================================================================
+
+================================================================================
+STEP 1: INPUT REPORT
+================================================================================
+================================================================================
+ATHLETE PERFORMANCE REPORT
+================================================================================
+
+BASIC INFORMATION:
+School: Corner Canyon (Utah)
+Class: 2025
+Position: QB – Dual Threat
+Size: 6'0", 190 lbs
+
+PERFORMANCE METRICS:
+40-yard: 4.72 sec
+Shuttle: 4.31 sec
+Vertical: 31"
+Bench Press: 235 lbs
+
+GRIT PROFILE:
+Type: Silent Assassin
+Description: Leads with presence, not noise. Low ego, high fire. Consistent, locked-in, and calm in chaos. Doesn't need to talk—his tape does that for him.
+
+ANALYSIS:
+
+Helaman, you're not just explosive on the field—you're a field general with elite spatial awareness, quick-twitch decision-making, and the ability to stay cool when the pressure rises. You don't flinch when things break down. You read it. React. Extend. Strike.What sets you apart isn't just mobility or mechanics—it's the way you think. The way you anticipate. You play like someone who's already watched the game before it happened.
+
+You’re among the rare <2 % of high school players whose measurables align with collegiate-level prospects. Division I programs, especially in FBS, are the most likely fit: they offer up to 85 full scholarships (head-count) and are beginning to shift to more flexible models that may open even more opportunities starting in 2025. Division I FCS is another viable path, with up to 63 full scholarship equivalents that can be divided among more players.Division II remains on the table as well, offering up to 36 equivalency scholarships that coaches often slice into partial awards—useful for multifaceted players like you. Division III—and those Ivy League or Pioneer League FCS schools—don’t offer athletic scholarships and rely solely on academic or need-based aid
+
+Here’s how we’ll separate you from the competition: by amplifying those elite measurables, sharpening your pre-snap reads and anticipation, and crafting high-impact film that demonstrates your elite de...
+
+================================================================================
+STEP 2: CLAIM EXTRACTION
+================================================================================
+Extracting claims and formal structures...
+Found 18 claims (13 formalizable, 5 interpretive)
+
+  CLAIM 1: "School: Corner Canyon (Utah)"
+    Type: FACTUAL
+    Source: BASIC INFORMATION
+    Formalizable: YES
+    Propositions:
+      • {Helaman.school = Corner Canyon (Utah)}
+
+  CLAIM 2: "Class: 2025"
+    Type: FACTUAL
+    Source: BASIC INFORMATION
+    Formalizable: YES
+    Propositions:
+      • {Helaman.class = 2025}
+
+  CLAIM 3: "Position: QB – Dual Threat"
+    Type: FACTUAL
+    Source: BASIC INFORMATION
+    Formalizable: YES
+    Propositions:
+      • {Helaman.position = QB – Dual Threat}
+
+  CLAIM 4: "Size: 6'0", 190 lbs"
+    Type: QUANTITATIVE
+    Source: BASIC INFORMATION
+    Formalizable: YES
+    Propositions:
+      • {Helaman.height = 72}
+      • {Helaman.weight = 190}
+
+  CLAIM 5: "40-yard: 4.72 sec"
+    Type: QUANTITATIVE
+    Source: PERFORMANCE METRICS
+    Formalizable: YES
+    Propositions:
+      • {Helaman.40-yard dash time = 4.72}
+
+  CLAIM 6: "Shuttle: 4.31 sec"
+    Type: QUANTITATIVE
+    Source: PERFORMANCE METRICS
+    Formalizable: YES
+    Propositions:
+      • {Helaman.shuttle run time = 4.31}
+
+  CLAIM 7: "Vertical: 31""
+    Type: QUANTITATIVE
+    Source: PERFORMANCE METRICS
+    Formalizable: YES
+    Propositions:
+      • {Helaman.vertical jump = 31}
+
+  CLAIM 8: "Bench Press: 235 lbs"
+    Type: QUANTITATIVE
+    Source: PERFORMANCE METRICS
+    Formalizable: YES
+    Propositions:
+      • {Helaman.bench press = 235}
+
+  CLAIM 9: "Type: Silent Assassin"
+    Type: INTERPRETIVE
+    Source: GRIT PROFILE
+    Formalizable: NO
+
+  CLAIM 10: "You’re among the rare <2 % of high school players whose measurables align with collegiate-level prospects."
+    Type: QUANTITATIVE
+    Source: ANALYSIS
+    Formalizable: YES
+    Propositions:
+      • {Helaman.percentage among high school players = 2}
+
+  CLAIM 11: "Division I programs, especially in FBS, are the most likely fit: they offer up to 85 full scholarships (head-count) and are beginning to shift to more flexible models that may open even more opportunities starting in 2025."
+    Type: FACTUAL
+    Source: ANALYSIS
+    Formalizable: YES
+    Propositions:
+      • {Division I programs.number of full scholarships = 85}
+
+  CLAIM 12: "Division I FCS is another viable path, with up to 63 full scholarship equivalents that can be divided among more players."
+    Type: FACTUAL
+    Source: ANALYSIS
+    Formalizable: YES
+    Propositions:
+      • {Division I FCS.number of full scholarship equivalents = 63}
+
+  CLAIM 13: "Division II remains on the table as well, offering up to 36 equivalency scholarships that coaches often slice into partial awards—useful for multifaceted players like you."
+    Type: FACTUAL
+    Source: ANALYSIS
+    Formalizable: YES
+    Propositions:
+      • {Division II.number of equivalency scholarships = 36}
+
+  CLAIM 14: "Division III—and those Ivy League or Pioneer League FCS schools—don’t offer athletic scholarships and rely solely on academic or need-based aid"
+    Type: FACTUAL
+    Source: ANALYSIS
+    Formalizable: YES
+    Propositions:
+      • {Division III.offer athletic scholarships = False}
+      • {Ivy League or Pioneer League FCS schools.offer athletic scholarships = False}
+
+  CLAIM 15: "At 6'0", 190 lbs, Helaman Casuga already carries a compact, well-built frame that holds up under pressure."
+    Type: INTERPRETIVE
+    Source: FRAME PROJECTION
+    Formalizable: NO
+
+  CLAIM 16: "With a 31" vertical and 4.72 40-time, his profile leans into fluid mobility, short-area explosiveness, and pocket durability—ideal traits for a modern QB."
+    Type: INTERPRETIVE
+    Source: FRAME PROJECTION
+    Formalizable: NO
+
+  CLAIM 17: "While not towering in height, his compact structure and center of gravity allow for excellent balance and twitch."
+    Type: INTERPRETIVE
+    Source: FRAME PROJECTION
+    Formalizable: NO
+
+  CLAIM 18: "With the right development plan, Helaman's frame is built to absorb volume and sharpen under elite-level training."
+    Type: INTERPRETIVE
+    Source: FRAME PROJECTION
+    Formalizable: NO
+
+================================================================================
+STEP 3: CLAIM CLASSIFICATION
+================================================================================
+Formalizable claims: 13
+Interpretive claims: 5
+
+--------------------------------------------------------------------------------
+Formalizable Claims (→ World State Verification)
+--------------------------------------------------------------------------------
+  • School: Corner Canyon (Utah)
+  • Class: 2025
+  • Position: QB – Dual Threat
+  • Size: 6'0", 190 lbs
+  • 40-yard: 4.72 sec
+  • Shuttle: 4.31 sec
+  • Vertical: 31"
+  • Bench Press: 235 lbs
+  • You’re among the rare <2 % of high school players whose measurables align with collegiate-level prospects.
+  • Division I programs, especially in FBS, are the most likely fit: they offer up to 85 full scholarships (head-count) and are beginning to shift to more flexible models that may open even more opportunities starting in 2025.
+  • Division I FCS is another viable path, with up to 63 full scholarship equivalents that can be divided among more players.
+  • Division II remains on the table as well, offering up to 36 equivalency scholarships that coaches often slice into partial awards—useful for multifaceted players like you.
+  • Division III—and those Ivy League or Pioneer League FCS schools—don’t offer athletic scholarships and rely solely on academic or need-based aid
+
+--------------------------------------------------------------------------------
+Interpretive Claims (→ LLM Verification)
+--------------------------------------------------------------------------------
+  • Type: Silent Assassin
+  • At 6'0", 190 lbs, Helaman Casuga already carries a compact, well-built frame that holds up under pressure.
+  • With a 31" vertical and 4.72 40-time, his profile leans into fluid mobility, short-area explosiveness, and pocket durability—ideal traits for a modern QB.
+  • While not towering in height, his compact structure and center of gravity allow for excellent balance and twitch.
+  • With the right development plan, Helaman's frame is built to absorb volume and sharpen under elite-level training.
+
+================================================================================
+STEP 4: WORLD STATE CONSTRUCTION
+================================================================================
+
+--------------------------------------------------------------------------------
+Building World State from Formalizable Claims
+--------------------------------------------------------------------------------
+Processing 13 formalizable claims...
+
+  Processing: School: Corner Canyon (Utah)
+✓     Added: Helaman.school = Corner Canyon (Utah)
+
+  Processing: Class: 2025
+✓     Added: Helaman.class = 2025
+
+  Processing: Position: QB – Dual Threat
+✓     Added: Helaman.position = QB – Dual Threat
+
+  Processing: Size: 6'0", 190 lbs
+✓     Added: Helaman.height = 72
+✓     Added: Helaman.weight = 190
+
+  Processing: 40-yard: 4.72 sec
+✓     Added: Helaman.40-yard dash time = 4.72
+
+  Processing: Shuttle: 4.31 sec
+✓     Added: Helaman.shuttle run time = 4.31
+
+  Processing: Vertical: 31"
+✓     Added: Helaman.vertical jump = 31
+
+  Processing: Bench Press: 235 lbs
+✓     Added: Helaman.bench press = 235
+
+  Processing: You’re among the rare <2 % of high school players whose measurables align with collegiate-level prospects.
+✓     Added: Helaman.percentage among high school players = 2
+
+  Processing: Division I programs, especially in FBS, are the most likely fit: they offer up to 85 full scholarships (head-count) and are beginning to shift to more flexible models that may open even more opportunities starting in 2025.
+✓     Added: Division I programs.number of full scholarships = 85
+
+  Processing: Division I FCS is another viable path, with up to 63 full scholarship equivalents that can be divided among more players.
+✓     Added: Division I FCS.number of full scholarship equivalents = 63
+
+  Processing: Division II remains on the table as well, offering up to 36 equivalency scholarships that coaches often slice into partial awards—useful for multifaceted players like you.
+✓     Added: Division II.number of equivalency scholarships = 36
+
+  Processing: Division III—and those Ivy League or Pioneer League FCS schools—don’t offer athletic scholarships and rely solely on academic or need-based aid
+✓     Added: Division III.offer athletic scholarships = False
+✓     Added: Ivy League or Pioneer League FCS schools.offer athletic scholarships = False
+
+--------------------------------------------------------------------------------
+Final World State
+--------------------------------------------------------------------------------
+================================================================================
+WORLD STATE
+================================================================================
+
+Entities: 6
+Propositions: 15
+Constraints: 0
+Issues: 0
+
+Division I FCS:
+  • number of full scholarship equivalents: 63
+
+Division I programs:
+  • number of full scholarships: 85
+
+Division II:
+  • number of equivalency scholarships: 36
+
+Division III:
+  • offer athletic scholarships: False
+
+Helaman:
+  • school: Corner Canyon (Utah)
+  • class: 2025
+  • position: QB – Dual Threat
+  • height: 72
+  • weight: 190
+  • 40-yard dash time: 4.72
+  • shuttle run time: 4.31
+  • vertical jump: 31
+  • bench press: 235
+  • percentage among high school players: 2
+
+Ivy League or Pioneer League FCS schools:
+  • offer athletic scholarships: False
+
+✓ No consistency issues detected
+
+================================================================================
+
+================================================================================
+STEP 5: CONSISTENCY ANALYSIS
+================================================================================
+✓ World State: CONSISTENT
+Propositions: 15 added, 0 conflicts
+Constraints: 0 added, 0 violations
+
+================================================================================
+STEP 6: COMPLETE VERIFICATION
+================================================================================
+Running full verification pipeline...
+
+--------------------------------------------------------------------------------
+Verification Summary
+--------------------------------------------------------------------------------
+Total Claims: 22
+✓ ├─ KEEP: 20 (high confidence)
+⚠️  ├─ FLAG: 1 (moderate uncertainty)
+❌ ├─ REVISE: 0 (issues found)
+❌ └─ REMOVE: 1 (low confidence)
+
+--------------------------------------------------------------------------------
+Problematic Claims
+--------------------------------------------------------------------------------
+
+  ❌ Type: Silent Assassin
+     Confidence: 0.30
+     Recommendation: REMOVE
+     Issue: Lacks specific empirical evidence or context to support the claim.
+     Issue: The term 'Silent Assassin' is vague and subjective.
+
+================================================================================
+VERIFICATION COMPLETE
+================================================================================
+
+Full report saved to: verification_report.json
+
+✓ Test completed successfully!
