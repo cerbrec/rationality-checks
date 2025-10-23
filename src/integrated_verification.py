@@ -676,8 +676,15 @@ Ensure all fields match the schema exactly. Try again with corrected output."""
         claims: List[EnhancedClaim],
         enable_tool_use: bool
     ) -> Dict[str, VerificationResult]:
-        """Batch fact checking - unchanged from original"""
-        # Same implementation as before
+        """
+        Batch fact checking with optional web search tool use.
+
+        Uses web search to verify factual claims when enable_tool_use=True
+        and the LLM provider supports tool use (BedrockProvider).
+        """
+        from .verification_pipeline import BedrockProvider
+        from .web_search import get_web_search_tool
+
         claims_data = [
             {
                 "id": c.id,
@@ -688,27 +695,118 @@ Ensure all fields match the schema exactly. Try again with corrected output."""
             for c in claims
         ]
 
-        prompt = f"""Fact-check these claims:
+        prompt = f"""Fact-check these claims using web search when necessary:
 
 CLAIMS TO VERIFY:
 {json.dumps(claims_data, indent=2)}
 
-For EACH claim:
-1. What factual elements can be verified?
-2. Are there any obvious factual errors?
-3. What is the confidence level?
+For EACH claim, you should:
+1. Determine if web search would help verify factual elements
+2. Use the web_search tool to find supporting or refuting evidence if needed
+3. Assess confidence based on evidence found
 
-Return JSON with results for ALL claims."""
+Return your analysis as JSON with this structure:
+{{
+  "results": [
+    {{
+      "claim_id": "claim_1",
+      "passed": true/false,
+      "confidence": 0.0-1.0,
+      "evidence": [
+        {{
+          "source": "web search / logical analysis / etc",
+          "content": "description of evidence",
+          "supports": true/false,
+          "confidence": 0.0-1.0
+        }}
+      ],
+      "issues_found": ["list of any issues"],
+      "suggested_revision": "optional improved version"
+    }}
+  ]
+}}
 
-        system_prompt = None
-        if enable_tool_use:
-            system_prompt = "You have access to web search. Use it to verify factual claims."
+IMPORTANT: Return results for ALL {len(claims)} claims."""
 
-        response = self.llm.generate(prompt, system_prompt=system_prompt)
+        system_prompt = """You are a rigorous fact-checker. Use the web_search tool to verify factual claims.
+When you find claims that need verification:
+- Search for authoritative sources
+- Look for recent, reliable information
+- Cross-reference multiple sources when possible
+Be thorough but efficient with your searches."""
 
-        # Parse and return (simplified for brevity)
-        # Full implementation same as original pipeline
-        return {}
+        # Check if we can use tool use
+        response_text = None
+        tool_calls = []
+
+        if enable_tool_use and isinstance(self.llm, BedrockProvider):
+            # Use tool-enabled generation
+            web_search = get_web_search_tool()
+            tools = [web_search.get_tool_definition()]
+
+            try:
+                response_text, tool_calls = self.llm.generate_with_tools(
+                    prompt=prompt,
+                    tools=tools,
+                    system_prompt=system_prompt,
+                    max_tool_uses=10
+                )
+
+                if tool_calls:
+                    print(f"  [Fact Check] Web search performed {len(tool_calls)} searches")
+
+            except Exception as e:
+                print(f"  [Fact Check] Tool use failed, falling back to standard generation: {e}")
+                response_text = self.llm.generate(prompt, system_prompt=system_prompt)
+        else:
+            # Standard generation without tools
+            response_text = self.llm.generate(
+                prompt,
+                system_prompt="You are a rigorous fact-checker analyzing claims for accuracy."
+            )
+
+        # Parse response
+        try:
+            # Extract JSON from response
+            json_start = response_text.find("{")
+            json_end = response_text.rfind("}") + 1
+            if json_start != -1 and json_end > json_start:
+                json_str = response_text[json_start:json_end]
+                parsed = json.loads(json_str)
+                results_list = parsed.get("results", [])
+            else:
+                results_list = []
+
+        except json.JSONDecodeError as e:
+            print(f"  [Fact Check] Failed to parse JSON response: {e}")
+            results_list = []
+
+        # Map results by claim_id
+        results_map = {}
+        for result_data in results_list:
+            claim_id = result_data.get("claim_id")
+            if not claim_id:
+                continue
+
+            results_map[claim_id] = VerificationResult(
+                claim_id=claim_id,
+                method=VerificationMethod.FACT_CHECK,
+                passed=result_data.get("passed", True),
+                confidence=result_data.get("confidence", 0.5),
+                evidence=[
+                    Evidence(
+                        source=e.get("source", "unknown"),
+                        content=e.get("content", ""),
+                        supports=e.get("supports", True),
+                        confidence=e.get("confidence", 0.5)
+                    )
+                    for e in result_data.get("evidence", [])
+                ],
+                issues_found=result_data.get("issues_found", []),
+                suggested_revision=result_data.get("suggested_revision")
+            )
+
+        return results_map
 
     def _batch_adversarial_review(
         self,

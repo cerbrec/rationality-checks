@@ -303,6 +303,128 @@ class BedrockProvider(LLMProvider):
 
         raise ValueError("No text content in Bedrock response")
 
+    def generate_with_tools(
+        self,
+        prompt: str,
+        tools: List[Dict],
+        system_prompt: Optional[str] = None,
+        max_tool_uses: int = 10
+    ) -> tuple[str, List[Dict]]:
+        """
+        Generate using AWS Bedrock with tool use support
+
+        Args:
+            prompt: The prompt to send
+            tools: List of tool definitions
+            system_prompt: Optional system prompt
+            max_tool_uses: Maximum number of tool use iterations
+
+        Returns:
+            Tuple of (final_text_response, list_of_tool_calls_made)
+        """
+        # Determine max tokens
+        if 'claude' in self.model_id.lower():
+            max_tokens = 32000
+        else:
+            max_tokens = 8192
+
+        # Initialize conversation
+        conversation_history = [{
+            "role": "user",
+            "content": [{"text": prompt}]
+        }]
+
+        tool_calls_made = []
+        tool_use_count = 0
+
+        # Import web search tool
+        from .web_search import get_web_search_tool
+        web_search = get_web_search_tool()
+
+        while tool_use_count < max_tool_uses:
+            # Build request
+            request_kwargs = {
+                "modelId": self.model_id,
+                "messages": conversation_history,
+                "inferenceConfig": {
+                    "maxTokens": max_tokens,
+                    "temperature": 0.0
+                },
+                "toolConfig": {"tools": tools}
+            }
+
+            if system_prompt:
+                request_kwargs["system"] = [{"text": system_prompt}]
+
+            # Call Bedrock
+            response = self.client.converse(**request_kwargs)
+
+            output = response.get("output", {})
+            message = output.get("message", {})
+            content_items = message.get("content", [])
+
+            # Check for tool use
+            tool_results = []
+            has_final_answer = False
+
+            for content_item in content_items:
+                if "toolUse" in content_item:
+                    tool_use = content_item["toolUse"]
+                    tool_name = tool_use.get("name")
+                    tool_input = tool_use.get("input", {})
+                    tool_use_id = tool_use.get("toolUseId")
+
+                    # Handle web search
+                    if tool_name == "web_search":
+                        search_result = web_search.execute_from_tool_use(tool_input)
+                        tool_calls_made.append({
+                            "tool": "web_search",
+                            "input": tool_input,
+                            "result": search_result
+                        })
+
+                        tool_results.append({
+                            "toolResult": {
+                                "toolUseId": tool_use_id,
+                                "content": [{"text": search_result}]
+                            }
+                        })
+                    else:
+                        # Unknown tool
+                        tool_results.append({
+                            "toolResult": {
+                                "toolUseId": tool_use_id,
+                                "content": [{"text": f"Error: Unknown tool '{tool_name}'"}]
+                            }
+                        })
+
+                elif "text" in content_item:
+                    has_final_answer = True
+
+            # Add assistant message to history
+            conversation_history.append(message)
+
+            # If there were tool calls, add results and continue
+            if tool_results:
+                conversation_history.append({
+                    "role": "user",
+                    "content": tool_results
+                })
+                tool_use_count += 1
+                has_final_answer = False
+
+            # If we have a final answer, break
+            if not has_final_answer:
+                continue
+            break
+
+        # Extract final text response
+        for content_item in message.get("content", []):
+            if "text" in content_item:
+                return content_item["text"], tool_calls_made
+
+        raise ValueError("No text content in final Bedrock response")
+
     @classmethod
     def from_env(cls, model_id: str = "us.anthropic.claude-sonnet-4-5-20250929-v1:0"):
         """
