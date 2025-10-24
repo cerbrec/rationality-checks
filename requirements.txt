@@ -10,6 +10,9 @@ openai>=2.3.0            # For OpenAI GPT API
 boto3>=1.35.0            # For AWS Bedrock Claude API
 python-dotenv>=1.0.0     # For loading .env files
 
+# Web search (for fact-checking)
+requests>=2.32.0         # For web search API calls
+
 # Optional: Enhanced constraint solving
 # sympy>=1.12           # For symbolic mathematics and constraint solving
 # z3-solver>=4.12.0     # For SMT solving (advanced constraint checking)
