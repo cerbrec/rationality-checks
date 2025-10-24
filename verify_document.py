@@ -88,6 +88,17 @@ def format_assessment(assessment, index):
     lines.append(f"   Confidence: {assessment.overall_confidence:.2f}")
     lines.append(f"   Recommendation: {assessment.recommendation.upper()}")
 
+    # Show web search evidence if available
+    for result in assessment.verification_results:
+        if result.method.value == 'fact_check' and result.evidence:
+            web_evidence = [e for e in result.evidence if 'Web Search:' in e.source or e.source.startswith('http')]
+            if web_evidence:
+                lines.append(f"   Web Search Evidence:")
+                for evidence in web_evidence[:3]:  # Show top 3 sources
+                    lines.append(f"     • {evidence.source}")
+                    if evidence.content:
+                        lines.append(f"       {evidence.content[:200]}...")
+
     # Show issues if any
     has_issues = not all(r.passed for r in assessment.verification_results)
     if has_issues:

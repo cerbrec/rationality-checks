@@ -220,20 +220,53 @@ class IntegratedVerificationPipeline:
         self,
         original_output: str,
         original_query: str,
-        enable_tool_use: bool = True
+        enable_tool_use: bool = True,
+        enable_dynamic_claims: bool = True
     ) -> VerificationReport:
         """
         Main pipeline with integrated world state verification.
 
-        Prompt count: 7 prompts total
+        Prompt count: 7 prompts total (+ optional dynamic claim discovery)
         1. Enhanced claim extraction (claims + formal structure)
-        2. World state verification (0 prompts - pure computation)
-        3. LLM empirical testing (non-formalizable claims only)
-        4. Fact checking (all factual/quantitative claims)
-        5. Adversarial review (all claims)
-        6. Completeness check
-        7. Synthesis
+        2. [OPTIONAL] Dynamic claim pattern discovery
+        3. World state verification (0 prompts - pure computation)
+        4. LLM empirical testing (non-formalizable claims only)
+        5. Fact checking (all factual/quantitative claims) + targeted web search
+        6. Adversarial review (all claims)
+        7. Completeness check
+        8. Synthesis
+
+        Args:
+            original_output: Document to verify
+            original_query: Context about the document
+            enable_tool_use: Enable web search for fact-checking
+            enable_dynamic_claims: Enable LLM-powered discovery of time-sensitive claims
         """
+
+        # Phase 0 (Optional): Dynamic claim pattern discovery
+        dynamic_claims = []
+        if enable_dynamic_claims:
+            print(f"[DEBUG] Dynamic claims enabled, provider type: {type(self.llm)}")
+            try:
+                from .dynamic_claim_types import discover_and_extract_claims
+                from .verification_pipeline import BedrockProvider
+
+                # Only use dynamic discovery with Bedrock (for now)
+                if isinstance(self.llm, BedrockProvider):
+                    print("[Dynamic Claims] Discovering time-sensitive claim patterns...")
+                    _, dynamic_claims, _ = discover_and_extract_claims(
+                        original_output,
+                        self.llm,
+                        enable_dynamic_discovery=True
+                    )
+                    print(f"[Dynamic Claims] Found {len(dynamic_claims)} high-priority claims for targeted verification")
+                else:
+                    print(f"[DEBUG] Skipping dynamic claims - provider is not BedrockProvider: {type(self.llm)}")
+            except Exception as e:
+                print(f"[Dynamic Claims] Discovery failed, continuing with standard pipeline: {e}")
+                import traceback
+                traceback.print_exc()
+                dynamic_claims = []
 
         # Phase 1: Extract claims WITH formal structure (1 prompt)
         claims = self._extract_claims_with_structure(original_output, original_query)
@@ -250,7 +283,7 @@ class IntegratedVerificationPipeline:
             )
 
         # Phase 2: Hybrid verification (2-3 prompts)
-        assessments = self._hybrid_verify_claims(claims, enable_tool_use)
+        assessments = self._hybrid_verify_claims(claims, enable_tool_use, dynamic_claims)
 
         # Phase 3: Completeness check (1 prompt)
         missing_elements = self._check_completeness(
@@ -394,13 +427,23 @@ Please try again with corrected output, paying special attention to the proposit
     def _hybrid_verify_claims(
         self,
         claims: List[EnhancedClaim],
-        enable_tool_use: bool
+        enable_tool_use: bool,
+        dynamic_claims: List[Dict] = None
     ) -> List[ClaimAssessment]:
         """
         Verify claims using appropriate method:
         - Formalizable → World state verification
         - Non-formalizable → LLM verification
+        - Dynamic claims → Enhanced fact-checking with targeted web search
+
+        Args:
+            claims: Standard extracted claims
+            enable_tool_use: Whether to enable web search
+            dynamic_claims: High-priority time-sensitive claims from dynamic discovery
         """
+
+        if dynamic_claims is None:
+            dynamic_claims = []
 
         # Separate claims by formalizability
         formal_claims = [c for c in claims if c.is_formalizable]
@@ -426,7 +469,8 @@ Please try again with corrected output, paying special attention to the proposit
         if factual_claims:
             fact_check_results_map = self._batch_fact_check(
                 factual_claims,
-                enable_tool_use
+                enable_tool_use,
+                dynamic_claims
             )
 
         # Step 4: Adversarial review for ALL claims (1 prompt)
@@ -674,16 +718,30 @@ Ensure all fields match the schema exactly. Try again with corrected output."""
     def _batch_fact_check(
         self,
         claims: List[EnhancedClaim],
-        enable_tool_use: bool
+        enable_tool_use: bool,
+        dynamic_claims: List[Dict] = None
     ) -> Dict[str, VerificationResult]:
         """
         Batch fact checking with optional web search tool use.
 
         Uses web search to verify factual claims when enable_tool_use=True
         and the LLM provider supports tool use (BedrockProvider).
+
+        For dynamic claims (time-sensitive), uses three-tier verification:
+        1. Direct fact lookup
+        2. Cross-reference verification
+        3. Negative evidence search
+
+        Args:
+            claims: Standard factual claims to verify
+            enable_tool_use: Enable web search
+            dynamic_claims: High-priority time-sensitive claims with targeted queries
         """
         from .verification_pipeline import BedrockProvider
         from .web_search import get_web_search_tool
+
+        if dynamic_claims is None:
+            dynamic_claims = []
 
         claims_data = [
             {
@@ -695,7 +753,33 @@ Ensure all fields match the schema exactly. Try again with corrected output."""
             for c in claims
         ]
 
+        # Add information about dynamic claims (time-sensitive)
+        dynamic_info = ""
+        if dynamic_claims:
+            dynamic_info = f"""
+
+**PRIORITY VERIFICATION NEEDED** - The following claims have been identified as TIME-SENSITIVE and require careful verification:
+
+"""
+            for dc in dynamic_claims[:10]:  # Limit to first 10
+                verification_plan = dc.get('verification_plan')
+                if verification_plan:
+                    dynamic_info += f"""
+Claim: "{dc['claim_text']}"
+Pattern: {dc['pattern_name']} ({dc['pattern'].description})
+Severity: {dc['severity']}
+Time Sensitivity: {dc['time_sensitivity']}
+
+SUGGESTED SEARCHES for this claim:
+Tier 1 (Direct Verification): {', '.join(verification_plan.tier1_queries[:3])}
+Tier 3 (Negative Evidence): {', '.join(verification_plan.tier3_queries[:2])}
+
+Entities extracted: {json.dumps(dc['entities'])}
+---
+"""
+
         prompt = f"""Fact-check these claims using web search when necessary:
+{dynamic_info}
 
 CLAIMS TO VERIFY:
 {json.dumps(claims_data, indent=2)}
@@ -729,10 +813,18 @@ Return your analysis as JSON with this structure:
 IMPORTANT: Return results for ALL {len(claims)} claims."""
 
         system_prompt = """You are a rigorous fact-checker. Use the web_search tool to verify factual claims.
-When you find claims that need verification:
-- Search for authoritative sources
-- Look for recent, reliable information
+
+CRITICAL: For TIME-SENSITIVE claims (marked above), use the suggested search queries provided:
+- First try Tier 1 queries (direct verification)
+- If results are ambiguous, try Tier 3 queries (negative evidence)
+- Negative evidence (transfer announcements, departures, changes) is STRONG evidence the claim is false
+
+For all claims:
+- Search for authoritative sources (official websites, press releases, verified news)
+- Look for recent, reliable information (especially for time-sensitive claims)
 - Cross-reference multiple sources when possible
+- Pay special attention to roster changes, employment changes, partnership status
+
 Be thorough but efficient with your searches."""
 
         # Check if we can use tool use
@@ -788,20 +880,35 @@ Be thorough but efficient with your searches."""
             if not claim_id:
                 continue
 
+            # Start with evidence from LLM response
+            evidence_list = [
+                Evidence(
+                    source=e.get("source", "unknown"),
+                    content=e.get("content", ""),
+                    supports=e.get("supports", True),
+                    confidence=e.get("confidence", 0.5)
+                )
+                for e in result_data.get("evidence", [])
+            ]
+
+            # Add web search tool calls as evidence
+            for tool_call in tool_calls:
+                if tool_call.get("tool") == "web_search":
+                    query = tool_call.get("input", {}).get("query", "")
+                    result_text = tool_call.get("result", "")
+                    evidence_list.append(Evidence(
+                        source=f"Web Search: {query}",
+                        content=result_text[:500],  # Limit length
+                        supports=True,
+                        confidence=0.8
+                    ))
+
             results_map[claim_id] = VerificationResult(
                 claim_id=claim_id,
                 method=VerificationMethod.FACT_CHECK,
                 passed=result_data.get("passed", True),
                 confidence=result_data.get("confidence", 0.5),
-                evidence=[
-                    Evidence(
-                        source=e.get("source", "unknown"),
-                        content=e.get("content", ""),
-                        supports=e.get("supports", True),
-                        confidence=e.get("confidence", 0.5)
-                    )
-                    for e in result_data.get("evidence", [])
-                ],
+                evidence=evidence_list,
                 issues_found=result_data.get("issues_found", []),
                 suggested_revision=result_data.get("suggested_revision")
             )
