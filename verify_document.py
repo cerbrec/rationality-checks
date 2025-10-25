@@ -120,12 +120,17 @@ Examples:
   python verify_document.py analysis.md
   python verify_document.py report.txt --provider bedrock --model nova-pro
   python verify_document.py data.md --output results.json --verbose
+  python verify_document.py report.docx --provider bedrock
 
 Available providers:
   anthropic  - Claude models (default: claude-3-5-sonnet-20241022)
   openai     - GPT models (default: gpt-4o)
   bedrock    - AWS Bedrock (default: nova-pro)
   gemini     - Google Gemini (default: gemini-2.0-flash-exp)
+
+Supported formats:
+  Text files: .md, .txt, .csv, .html (all providers)
+  Binary docs: .docx, .doc, .pdf, .xlsx, .xls (bedrock only, max 4.5 MB)
         """
     )
 
@@ -151,14 +156,52 @@ Available providers:
     print("=" * 80)
     print(f"\n📄 Document: {doc_path}")
 
+    # Detect file format and read accordingly
+    document_text = None
+    document_bytes = None
+    document_format = None
+
+    file_extension = doc_path.suffix.lower()
+
+    # Supported binary document formats for Bedrock
+    BINARY_FORMATS = {
+        '.docx': 'docx',
+        '.doc': 'doc',
+        '.pdf': 'pdf',
+        '.xlsx': 'xlsx',
+        '.xls': 'xls'
+    }
+
     try:
-        with open(doc_path, 'r', encoding='utf-8') as f:
-            document_text = f.read()
+        if file_extension in BINARY_FORMATS:
+            # Read as binary for document attachment
+            with open(doc_path, 'rb') as f:
+                document_bytes = f.read()
+            document_format = BINARY_FORMATS[file_extension]
+
+            # Check size limit (4.5 MB for Bedrock)
+            size_mb = len(document_bytes) / (1024 * 1024)
+            if size_mb > 4.5:
+                print(f"❌ Error: Document size ({size_mb:.2f} MB) exceeds 4.5 MB limit")
+                sys.exit(1)
+
+            print(f"   Format: {document_format.upper()}")
+            print(f"   Size: {len(document_bytes)} bytes ({size_mb:.2f} MB)")
+
+            # Check if provider supports document attachments
+            if args.provider != 'bedrock':
+                print(f"⚠️  Warning: {document_format.upper()} files only supported with Bedrock provider")
+                print(f"   Current provider: {args.provider}")
+                print(f"   Please use --provider bedrock for document attachments")
+                sys.exit(1)
+        else:
+            # Read as text for traditional processing
+            with open(doc_path, 'r', encoding='utf-8') as f:
+                document_text = f.read()
+            print(f"   Size: {len(document_text)} characters")
     except Exception as e:
         print(f"❌ Error reading file: {e}")
         sys.exit(1)
-
-    print(f"   Size: {len(document_text)} characters")
 
     # Initialize provider
     print(f"\n🤖 Provider: {args.provider}")
@@ -189,7 +232,16 @@ Available providers:
     print("-" * 80)
 
     try:
-        report = pipeline.verify_analysis(document_text, query)
+        # Pass document bytes if available (for DOCX, PDF, etc.)
+        if document_bytes is not None:
+            report = pipeline.verify_analysis(
+                document_text=document_text,
+                query=query,
+                document_bytes=document_bytes,
+                document_format=document_format
+            )
+        else:
+            report = pipeline.verify_analysis(document_text, query)
     except Exception as e:
         print(f"\n❌ Error during verification: {e}")
         import traceback

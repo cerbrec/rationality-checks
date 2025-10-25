@@ -221,7 +221,9 @@ class IntegratedVerificationPipeline:
         original_output: str,
         original_query: str,
         enable_tool_use: bool = True,
-        enable_dynamic_claims: bool = True
+        enable_dynamic_claims: bool = True,
+        document_bytes: Optional[bytes] = None,
+        document_format: Optional[str] = None
     ) -> VerificationReport:
         """
         Main pipeline with integrated world state verification.
@@ -237,11 +239,17 @@ class IntegratedVerificationPipeline:
         8. Synthesis
 
         Args:
-            original_output: Document to verify
+            original_output: Document to verify (text content or None if document_bytes provided)
             original_query: Context about the document
             enable_tool_use: Enable web search for fact-checking
             enable_dynamic_claims: Enable LLM-powered discovery of time-sensitive claims
+            document_bytes: Optional document bytes for DOCX/PDF attachments
+            document_format: Format of the document (e.g., 'docx', 'pdf')
         """
+
+        # Store document info for passing to LLM calls
+        self._document_bytes = document_bytes
+        self._document_format = document_format
 
         # Phase 0 (Optional): Dynamic claim pattern discovery
         dynamic_claims = []
@@ -315,10 +323,17 @@ class IntegratedVerificationPipeline:
         query: str
     ) -> List[EnhancedClaim]:
         """Extract claims and formal structure with retry on validation errors"""
-        base_prompt = self.prompts.CLAIM_EXTRACTION_WITH_STRUCTURE.format(
-            original_output=output,
-            original_query=query
-        )
+        # For document attachments, modify the prompt to reference the attached document
+        if hasattr(self, '_document_bytes') and self._document_bytes:
+            base_prompt = self.prompts.CLAIM_EXTRACTION_WITH_STRUCTURE.format(
+                original_output="[See attached document]",
+                original_query=query
+            )
+        else:
+            base_prompt = self.prompts.CLAIM_EXTRACTION_WITH_STRUCTURE.format(
+                original_output=output,
+                original_query=query
+            )
 
         max_retries = 3
         last_error = None
@@ -343,7 +358,16 @@ Common mistakes to avoid:
 
 Please try again with corrected output, paying special attention to the proposition schema."""
 
-            response = self.llm.generate(prompt)
+            # Pass document bytes if available (for DOCX/PDF attachments)
+            from .verification_pipeline import BedrockProvider
+            if isinstance(self.llm, BedrockProvider) and hasattr(self, '_document_bytes') and self._document_bytes:
+                response = self.llm.generate(
+                    prompt,
+                    document_bytes=self._document_bytes,
+                    document_format=self._document_format
+                )
+            else:
+                response = self.llm.generate(prompt)
 
             # Try to extract JSON from response (handle markdown code fences and preamble)
             response_text = response.strip()

@@ -13,6 +13,9 @@ python-dotenv>=1.0.0     # For loading .env files
 # Web search (for fact-checking)
 requests>=2.32.0         # For web search API calls
 
+# Document processing
+python-docx>=1.1.0       # For creating and reading DOCX files
+
 # Optional: Enhanced constraint solving
 # sympy>=1.12           # For symbolic mathematics and constraint solving
 # z3-solver>=4.12.0     # For SMT solving (advanced constraint checking)

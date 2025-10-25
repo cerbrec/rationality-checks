@@ -246,13 +246,21 @@ class BedrockProvider(LLMProvider):
             region_name=self.region_name,
         )
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+    def generate(
+        self,
+        prompt: str,
+        system_prompt: Optional[str] = None,
+        document_bytes: Optional[bytes] = None,
+        document_format: Optional[str] = None
+    ) -> str:
         """
         Generate using AWS Bedrock Converse API
 
         Args:
             prompt: The prompt to send
             system_prompt: Optional system prompt
+            document_bytes: Optional document bytes for attachment (DOCX, PDF, etc.)
+            document_format: Format of the document (e.g., 'docx', 'pdf')
 
         Returns:
             Generated text response
@@ -266,11 +274,26 @@ class BedrockProvider(LLMProvider):
         else:
             max_tokens = 4096  # Conservative default
 
+        # Build message content
+        content = [{"text": prompt}]
+
+        # Add document attachment if provided
+        if document_bytes is not None and document_format is not None:
+            content.append({
+                "document": {
+                    "format": document_format,
+                    "name": "input_document",
+                    "source": {
+                        "bytes": document_bytes
+                    }
+                }
+            })
+
         # Build messages
         messages = [
             {
                 "role": "user",
-                "content": [{"text": prompt}]
+                "content": content
             }
         ]
 
@@ -308,7 +331,9 @@ class BedrockProvider(LLMProvider):
         prompt: str,
         tools: List[Dict],
         system_prompt: Optional[str] = None,
-        max_tool_uses: int = 10
+        max_tool_uses: int = 10,
+        document_bytes: Optional[bytes] = None,
+        document_format: Optional[str] = None
     ) -> tuple[str, List[Dict]]:
         """
         Generate using AWS Bedrock with tool use support
@@ -318,6 +343,8 @@ class BedrockProvider(LLMProvider):
             tools: List of tool definitions
             system_prompt: Optional system prompt
             max_tool_uses: Maximum number of tool use iterations
+            document_bytes: Optional document bytes for attachment (DOCX, PDF, etc.)
+            document_format: Format of the document (e.g., 'docx', 'pdf')
 
         Returns:
             Tuple of (final_text_response, list_of_tool_calls_made)
@@ -328,10 +355,25 @@ class BedrockProvider(LLMProvider):
         else:
             max_tokens = 8192
 
+        # Build initial message content
+        content = [{"text": prompt}]
+
+        # Add document attachment if provided
+        if document_bytes is not None and document_format is not None:
+            content.append({
+                "document": {
+                    "format": document_format,
+                    "name": "input_document",
+                    "source": {
+                        "bytes": document_bytes
+                    }
+                }
+            })
+
         # Initialize conversation
         conversation_history = [{
             "role": "user",
-            "content": [{"text": prompt}]
+            "content": content
         }]
 
         tool_calls_made = []
