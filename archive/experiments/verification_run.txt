@@ -1,0 +1,517 @@
+================================================================================
+DOCUMENT VERIFICATION - RATIONALITY CHECK
+================================================================================
+
+📄 Document: /Users/drw/Downloads/BYU_Football_NIL_Analysis.md
+   Size: 12287 characters
+
+🤖 Provider: bedrock
+   Model: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+🔧 Initializing verification pipeline...
+
+🔍 Running verification...
+   This may take 2-3 minutes depending on document length...
+   Processing steps:
+   • Extracting claims
+   • Classifying claim types
+   • Verifying mathematical consistency
+   • Checking logical contradictions
+   • Assessing confidence levels
+--------------------------------------------------------------------------------
+[DEBUG] Dynamic claims enabled, provider type: <class 'src.verification_pipeline.BedrockProvider'>
+[Dynamic Claims] Discovering time-sensitive claim patterns...
+[Dynamic Claims] Extracting document context...
+[Dynamic Claims] Context: {'domain': 'sports business and marketing', 'primary_subjects': ['BYU Football', 'NIL opportunities', 'Utah businesses', 'Vivint Smart Home', 'Qualtrics', 'Nu Skin Enterprises', 'college athletes'], 'time_period': '2025 season (with 2024 historical data)', 'geographic_focus': 'Utah, specifically Provo, UT', 'document_type': 'business analysis report'}
+[Dynamic Claims] Discovering claim patterns...
+[Dynamic Claims] Discovered 12 patterns
+[Dynamic Claims] Extracting claims based on patterns...
+[Dynamic Claims] Processing pattern 1/5: company_headquarters_location...
+[Dynamic Claims]   Found 6 matching claims, processing top 3...
+[Dynamic Claims] Processing pattern 2/5: company_employee_count...
+[Dynamic Claims]   Found 4 matching claims, processing top 3...
+[Dynamic Claims] Processing pattern 3/5: prior_nil_spending...
+[Dynamic Claims]   Found 6 matching claims, processing top 3...
+[Dynamic Claims] Processing pattern 4/5: estimated_nil_budget_range...
+[Dynamic Claims]   Found 6 matching claims, processing top 3...
+[Dynamic Claims] Processing pattern 5/5: company_ownership_affiliation...
+[Dynamic Claims]   Found 6 matching claims, processing top 3...
+[Dynamic Claims] Extracted 15 verifiable claims
+[Dynamic Claims] Found 15 high-priority claims for targeted verification
+  [Fact Check] Tool use failed, falling back to standard generation: No text content in final Bedrock response
+
+================================================================================
+📊 VERIFICATION RESULTS
+================================================================================
+
+Total claims analyzed: 118
+  ✅ Passed: 57
+  ⚠️  Flagged: 56
+  ❌ Failed: 5
+
+Accuracy Rate: 48.3%
+
+================================================================================
+❌ FAILED CLAIMS (Require Revision)
+================================================================================
+
+1. 📍 68 businesses scored 8+ on alignment, representing 46% high-alignment rate
+   Type: quantitative
+   Confidence: 0.20
+   Recommendation: REMOVE
+   Issues:
+     • ConsistencyIssue(issue_type='constraint_violation', description='Constraint violated: rate == (high_align / qualified) * 100 (46 ≠ 31.292517006802722)', involved_propositions=[Proposition(subject='high_alignment_rate', predicate='percentage', value=46, source_claim_id='claim_46', metadata={}), Proposition(subject='qualified_brands', predicate='count', value=147, source_claim_id='claim_2', metadata={}), Proposition(subject='high_alignment_rate', predicate='percentage', value=46, source_claim_id='claim_46', metadata={})], involved_constraints=[Constraint(constraint_type='equation', variables=['high_align', 'qualified', 'rate'], formula='rate == (high_align / qualified) * 100', source_claim_id='claim_46', metadata={})], severity=1.0)
+     • Mathematical inconsistency with claims 43 and 44
+     • Should be 147 businesses scoring 7+, not 68 scoring 8+
+
+2. 📍 Total qualified brands across all industries equals 147
+   Type: logical
+   Confidence: 0.00
+   Recommendation: REMOVE
+   Issues:
+     • ConsistencyIssue(issue_type='constraint_violation', description='Constraint violated: total == tech + food + retail + prof + health + other (2400000 ≠ 147)', involved_propositions=[Proposition(subject='total_NIL_potential', predicate='amount_USD', value=2400000, source_claim_id='claim_3', metadata={}), Proposition(subject='qualified_brands_technology', predicate='count', value=42, source_claim_id='claim_47', metadata={}), Proposition(subject='qualified_brands_food_beverage', predicate='count', value=28, source_claim_id='claim_48', metadata={}), Proposition(subject='qualified_brands_retail', predicate='count', value=23, source_claim_id='claim_49', metadata={}), Proposition(subject='qualified_brands_professional_services', predicate='count', value=18, source_claim_id='claim_50', metadata={}), Proposition(subject='qualified_brands_healthcare', predicate='count', value=15, source_claim_id='claim_51', metadata={}), Proposition(subject='qualified_brands_other', predicate='count', value=21, source_claim_id='claim_52', metadata={})], involved_constraints=[Constraint(constraint_type='equation', variables=['total', 'tech', 'food', 'retail', 'prof', 'health', 'other'], formula='total == tech + food + retail + prof + health + other', source_claim_id='claim_53', metadata={})], severity=1.0)
+
+3. 📍 Total deal types breakdown equals $2.4M
+   Type: logical
+   Confidence: 0.00
+   Recommendation: REMOVE
+   Issues:
+     • ConsistencyIssue(issue_type='constraint_violation', description='Constraint violated: total == social + exclusivity + appearances + merchandise + team (2400000 ≠ 83594)', involved_propositions=[Proposition(subject='total_NIL_potential', predicate='amount_USD', value=2400000, source_claim_id='claim_3', metadata={}), Proposition(subject='Jake_Retzlaff', predicate='social_media_followers', value=48500, source_claim_id='claim_56', metadata={}), Proposition(subject='Tier_1_base_exclusivity_fee', predicate='min_USD', value=30000, source_claim_id='claim_72', metadata={}), Proposition(subject='Cafe_Rio_Tyler_Batty_deal', predicate='restaurant_appearances', value=4, source_claim_id='claim_90', metadata={}), Proposition(subject='Tier_1_merchandise_rights', predicate='min_USD', value=5000, source_claim_id='claim_75', metadata={}), Proposition(subject='Nu_Skin_team_wellness_match', predicate='confidence_percent', value=90, source_claim_id='claim_92', metadata={})], involved_constraints=[Constraint(constraint_type='equation', variables=['total', 'social', 'exclusivity', 'appearances', 'merchandise', 'team'], formula='total == social + exclusivity + appearances + merchandise + team', source_claim_id='claim_109', metadata={})], severity=1.0)
+
+4. 📍 Technology companies dominate due to Utah's strong tech ecosystem and high concentration of LDS-owne...
+   Type: causal
+   Confidence: 0.35
+   Recommendation: REMOVE
+   Issues:
+     • Causal claim lacks mechanism explanation - why does LDS ownership specifically lead to dominance?
+     • Conflates correlation with causation
+
+5. 📍 Retzlaff's leadership qualities align with Qualtrics' brand values
+   Type: interpretive
+   Confidence: 0.25
+   Recommendation: REMOVE
+   Issues:
+     • Completely vague - no specific leadership qualities identified
+     • No specific brand values mentioned
+
+================================================================================
+⚠️  FLAGGED CLAIMS (Need Additional Evidence)
+================================================================================
+
+1. 📍 2,500 Utah businesses were analyzed
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal analysis number
+     • No source or methodology provided
+
+2. 📍 147 qualified brands were identified
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Dependent on unverifiable claim
+     • No independent verification possible
+
+3. 📍 Total NIL Potential is $2.4M
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable projection
+     • No methodology provided
+
+4. 📍 42 high-confidence matches were identified
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal metric
+     • No clear definition provided
+
+5. 📍 42 active partnerships exist
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify number of active partnerships
+     • NIL deals are typically private
+
+6. 📍 68 athletes are receiving NIL
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable specific count
+
+7. 📍 Vivint Smart Home has an alignment score of 9/10
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective internal scoring
+     • No methodology disclosed
+
+8. 📍 Vivint Smart Home had prior NIL activity of $450K in 2024
+   Type: quantitative
+   Confidence: 0.55
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify specific NIL spending amount
+     • No public disclosure found
+
+9. 📍 Qualtrics has an alignment score of 10/10 (Perfect)
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective scoring
+     • No methodology disclosed
+
+10. 📍 Qualtrics had prior NIL activity of $320K in 2024
+   Type: quantitative
+   Confidence: 0.55
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify specific NIL spending
+     • No public disclosure found
+
+11. 📍 Nu Skin Enterprises has an alignment score of 8/10
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective scoring
+     • No methodology
+
+12. 📍 Nu Skin Enterprises had prior NIL activity of $180K in 2024
+   Type: quantitative
+   Confidence: 0.55
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify specific NIL spending
+
+13. 📍 Café Rio has an alignment score of 9/10
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective scoring
+
+14. 📍 Café Rio had prior NIL activity of $85K in 2024
+   Type: quantitative
+   Confidence: 0.55
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify specific NIL spending
+
+15. 📍 Domo Technologies has an alignment score of 7/10
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective scoring
+
+16. 📍 Domo Technologies had prior NIL activity of $45K in 2024
+   Type: quantitative
+   Confidence: 0.55
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify specific NIL spending
+
+17. 📍 Guru's Café has an alignment score of 8/10
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective scoring
+
+18. 📍 Guru's Café had prior NIL activity of $12K in 2024
+   Type: quantitative
+   Confidence: 0.55
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify specific NIL spending
+
+19. 📍 185 businesses scored 0-2 on alignment (poor fit)
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Dependent on unverifiable data
+
+20. 📍 520 businesses scored 3-4 on alignment (below average)
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Dependent on unverifiable data
+
+21. 📍 1,648 businesses scored 5-6 on alignment (moderate fit)
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Dependent on unverifiable data
+
+22. 📍 79 businesses scored 7-8 on alignment (high alignment)
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Dependent on unverifiable data
+
+23. 📍 68 businesses scored 9-10 on alignment (perfect fit)
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Dependent on unverifiable data
+
+24. 📍 42 Technology businesses are among qualified brands
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal breakdown
+
+25. 📍 28 Food & Beverage businesses are among qualified brands
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal breakdown
+
+26. 📍 23 Retail businesses are among qualified brands
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal breakdown
+
+27. 📍 18 Professional Services businesses are among qualified brands
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal breakdown
+
+28. 📍 15 Healthcare businesses are among qualified brands
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal breakdown
+
+29. 📍 21 Other industry businesses are among qualified brands
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverifiable internal breakdown
+
+30. 📍 Jake Retzlaff's Fair Market Value is $50K - $75K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective valuation
+     • No source provided
+
+31. 📍 Jake Retzlaff has 6.8% engagement rate
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify engagement rate without analytics access
+
+32. 📍 LJ Martin's Fair Market Value is $40K - $60K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective valuation
+
+33. 📍 LJ Martin has 7.2% engagement rate
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify engagement rate
+
+34. 📍 Tyler Batty's Fair Market Value is $35K - $55K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective valuation
+
+35. 📍 Tyler Batty has 5.4% engagement rate
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Cannot verify engagement rate
+
+36. 📍 Tier 1 Base Exclusivity Fee range is $30K - $50K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective pricing model
+     • No industry standard
+
+37. 📍 Tier 1 Social Media Posts range is $2K - $4K per post
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective pricing
+
+38. 📍 Tier 1 Appearances/Events range is $3K - $6K per event
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective pricing
+
+39. 📍 Tier 1 Merchandise Rights range is $5K - $15K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective pricing
+
+40. 📍 Tier 1 Performance Bonuses range is $5K - $20K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Subjective pricing
+
+41. 📍 Qualtrics × Jake Retzlaff match has 95% confidence
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Internal algorithmic score
+     • No methodology disclosed
+
+42. 📍 Qualtrics × Jake Retzlaff deal includes 12 social media posts
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal, not an existing deal
+
+43. 📍 Qualtrics × Jake Retzlaff deal includes 3 corporate events
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal, not an existing deal
+
+44. 📍 Vivint Smart Home × LJ Martin match has 92% confidence
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Internal algorithmic score
+
+45. 📍 Vivint Smart Home × LJ Martin deal includes 10 social media posts
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal
+
+46. 📍 Vivint Smart Home × LJ Martin deal includes 2 events
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal
+
+47. 📍 Café Rio × Tyler Batty match has 88% confidence
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Internal algorithmic score
+
+48. 📍 Café Rio × Tyler Batty deal includes 8 social media posts
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal
+
+49. 📍 Café Rio × Tyler Batty deal includes 4 restaurant appearances
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal
+
+50. 📍 Nu Skin × Full Team Wellness Partnership match has 90% confidence
+   Type: quantitative
+   Confidence: 0.60
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Internal algorithmic score
+
+51. 📍 Nu Skin × Full Team Wellness Partnership involves 85 players
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • This is a proposal
+     • 85 players is approximate roster size
+
+52. 📍 Tier 1 (Top 10 athletes) receives 52% of total NIL value
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Based on unverified total
+     • Internal distribution model
+
+53. 📍 Tier 2 (Athletes 11-30) receives 28% of total NIL value
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Based on unverified total
+     • Internal distribution model
+
+54. 📍 Tier 3 (Athletes 31-85) receives 20% of total NIL value
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Based on unverified total
+     • Internal distribution model
+
+55. 📍 Martin's work ethic and reliability mirror Vivint's brand promise of consistent home security
+   Type: interpretive
+   Confidence: 0.70
+   Recommendation: FLAG_UNCERTAINTY
+
+56. 📍 Move quickly on tier 1 partnerships - competitors are actively recruiting same brands
+   Type: assumption
+   Confidence: 0.40
+   Recommendation: FLAG_UNCERTAINTY
+   Issues:
+     • Unverified assumption about competitor activity
+     • Creates artificial urgency without evidence
+
+================================================================================
+📝 RECOMMENDATIONS
+================================================================================
+
+⚠️  CRITICAL: Review and revise failed claims before publishing
+   These claims have logical contradictions or unsupported assertions
+
+================================================================================
+Verification complete!
+================================================================================

@@ -1,0 +1,63 @@
+{
+  "domain": "nil",
+  "goal": {
+    "objective": "Evaluate college QB prospects for NIL value",
+    "domain": "nil",
+    "constraints": [],
+    "success_criteria": [],
+    "required_data_types": [],
+    "verification_requirements": [],
+    "predicted_output_format": "structured report"
+  },
+  "strategy": {
+    "approach": "Standard analytical approach",
+    "phases": [
+      "data collection",
+      "analysis",
+      "recommendation"
+    ],
+    "data_requirements": {},
+    "processing_pipeline": [],
+    "verification_checkpoints": [],
+    "validation_checkpoints": []
+  },
+  "collected_data": {
+    "collected_data": {},
+    "data_quality_score": 0.5,
+    "missing_data": [],
+    "collection_notes": "Error parsing collection results"
+  },
+  "processed_data": {
+    "processed_data": {},
+    "transformations_applied": [],
+    "data_statistics": {},
+    "quality_metrics": {}
+  },
+  "connections": {
+    "data_strategy_mapping": {},
+    "logical_connections": [],
+    "relevance_scores": {}
+  },
+  "prediction": {
+    "predicted_outcome": "TBD",
+    "confidence_score": 0.7,
+    "success_probability": 0.75,
+    "risk_factors": [],
+    "recommendation": "Proceed with caution"
+  },
+  "final_recommendation": "Based on analysis, recommend proceeding with outlined strategy",
+  "implementation_plan": [
+    "Step 1: Initialize data collection",
+    "Step 2: Execute processing pipeline",
+    "Step 3: Monitor and adjust"
+  ],
+  "verification_summary": {
+    "total_verifications": 0,
+    "passed": 0,
+    "failed": 0,
+    "average_confidence": 0.7,
+    "issues_found": 0
+  },
+  "overall_confidence": 0.7,
+  "verified_claims": []
+}

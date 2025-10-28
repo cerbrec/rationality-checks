@@ -498,54 +498,66 @@ Only return valid JSON."""
         print("STEP 4: Data Processing + World State Verification")
         print("=" * 70)
 
-        prompt = f"""Process this data according to steps:
+        collected_data = raw_data.get('collected_data', {})
+        verified_facts = raw_data.get('verified_facts', [])
 
-Raw Data: {json.dumps(raw_data.get('collected_data', {}))[:1500]}
-Steps: {json.dumps(processing_steps)}
-
-Return JSON with:
-{{
-    "processed_data": {{"key": "processed value", ...}},
-    "transformations_applied": ["transformation 1", ...],
-    "data_statistics": {{"stat": value, ...}},
-    "quality_metrics": {{"metric": value, ...}},
-    "quantitative_claims": [
-        {{
-            "text": "claim text",
-            "propositions": [{{"subject": "X", "predicate": "value", "value": 100}}, ...],
-            "constraints": [{{"variables": ["X", "Y"], "formula": "X == Y * 2"}}, ...]
-        }},
-        ...
-    ]
-}}
-
-Only return valid JSON."""
-
-        response_text = self._call_llm(prompt)
-
-        processed = self._extract_json(response_text)
-
-        if not processed:
-            print("  ⚠️  JSON parsing failed, using fallback")
-            processed = {
-                "processed_data": {},
-                "transformations_applied": [],
-                "data_statistics": {},
-                "quality_metrics": {}
+        # Simplified processing - extract and structure the key data points
+        processed = {
+            "processed_data": {},
+            "transformations_applied": ["Extracted social media metrics", "Identified verified facts"],
+            "data_statistics": {
+                "verified_facts_count": len(verified_facts),
+                "data_points_collected": len(collected_data)
+            },
+            "quality_metrics": {
+                "data_quality_score": raw_data.get("data_quality_score", 0.5),
+                "verification_coverage": len(verified_facts) / max(len(collected_data), 1)
             }
-        else:
-            # World state verification for quantitative claims
-            if self.enable_verification and "quantitative_claims" in processed:
-                claims = processed.get("quantitative_claims", [])
-                if claims:
-                    print(f"\n  🔍 Verifying {len(claims)} quantitative claims...")
-                    result = self.world_state_skill.execute(claims=claims)
-                    for claim in claims:
-                        self._record_verification("step4_processing", claim.get("text", ""), result)
-                    if not result.get("passed", True):
-                        print(f"  ⚠️  Issues found: {len(result.get('issues', []))}")
+        }
 
-            print(f"✓ Data processed")
+        # Extract quantitative claims for verification
+        quantitative_claims = []
+
+        # Look for numerical data in collected data
+        for key, value in collected_data.items():
+            if isinstance(value, (int, float)):
+                quantitative_claims.append({
+                    "id": f"claim_{key}",
+                    "text": f"{key}: {value}",
+                    "propositions": [{
+                        "subject": "data",
+                        "predicate": key,
+                        "value": value
+                    }],
+                    "constraints": []
+                })
+            elif isinstance(value, str) and any(char.isdigit() for char in value):
+                # Try to extract numbers from strings like "2M followers"
+                import re
+                numbers = re.findall(r'[\d.]+[KMB]?', value)
+                if numbers:
+                    quantitative_claims.append({
+                        "id": f"claim_{key}",
+                        "text": f"{key}: {value}",
+                        "propositions": [{
+                            "subject": "data",
+                            "predicate": key,
+                            "value": value
+                        }],
+                        "constraints": []
+                    })
+
+        # World state verification for quantitative claims
+        if self.enable_verification and quantitative_claims:
+            print(f"\n  🔍 Verifying {len(quantitative_claims)} quantitative data points...")
+            result = self.world_state_skill.execute(claims=quantitative_claims)
+            for claim in quantitative_claims:
+                self._record_verification("step4_processing", claim.get("text", ""), result)
+            if not result.get("passed", True):
+                print(f"  ⚠️  Issues found: {len(result.get('issues', []))}")
+
+        processed["quantitative_claims"] = quantitative_claims
+        print(f"✓ Data processed ({len(quantitative_claims)} quantitative data points)")
 
         return processed
 
@@ -581,39 +593,157 @@ Only return valid JSON."""
         print("STEP 5: Rational Connection + Consistency Checks")
         print("=" * 70)
 
-        # Simplified for now
-        print("✓ Connections established")
-        return {
-            "data_strategy_mapping": {},
-            "logical_connections": [],
-            "relevance_scores": {}
-        }
+        # Use collected data to map to strategy
+        collected_data = processed_data.get("collected_data", {})
+
+        prompt = f"""Map the collected data to the resolution strategy and identify logical connections:
+
+Goal: {goal.get('objective', 'N/A')[:200]}
+Strategy Phases: {json.dumps(strategy.get('phases', []))[:500]}
+Collected Data: {json.dumps(collected_data, indent=2)[:2000]}
+
+Analyze how the collected data supports or relates to each strategy phase.
+Identify gaps where data is missing.
+
+Return JSON with:
+{{
+    "data_strategy_mapping": {{
+        "phase_name": {{
+            "available_data": ["data point 1", "data point 2", ...],
+            "data_sufficiency": 0.0-1.0,
+            "gaps": ["missing data 1", ...]
+        }},
+        ...
+    }},
+    "logical_connections": [
+        {{
+            "data_point": "specific data",
+            "supports_phase": "phase name",
+            "connection_type": "direct_evidence|supporting|contextual",
+            "strength": 0.0-1.0
+        }},
+        ...
+    ],
+    "relevance_scores": {{
+        "overall_data_coverage": 0.0-1.0,
+        "critical_data_available": 0.0-1.0,
+        "data_quality": 0.0-1.0
+    }},
+    "key_insights": ["insight 1", "insight 2", ...]
+}}
+
+Only return valid JSON."""
+
+        response_text = self._call_llm(prompt)
+        connections = self._extract_json(response_text)
+
+        if not connections:
+            print("  ⚠️  JSON parsing failed, using fallback")
+            # Create basic mapping from available data
+            connections = {
+                "data_strategy_mapping": {
+                    "social_media_analysis": {
+                        "available_data": list(collected_data.keys())[:5],
+                        "data_sufficiency": 0.6,
+                        "gaps": ["detailed engagement metrics", "competitor analysis"]
+                    }
+                },
+                "logical_connections": [],
+                "relevance_scores": {
+                    "overall_data_coverage": 0.5,
+                    "critical_data_available": 0.6,
+                    "data_quality": 0.7
+                },
+                "key_insights": []
+            }
+
+        coverage = connections.get("relevance_scores", {}).get("overall_data_coverage", 0.5)
+        print(f"✓ Connections established (data coverage: {coverage:.1%})")
+        return connections
 
     def _step6_ai_prediction(
         self,
         connection_data: Dict[str, Any],
-        strategy: Dict[str, Any]
+        strategy: Dict[str, Any],
+        collected_data: Dict[str, Any],
+        goal: Dict[str, Any]
     ) -> Dict[str, Any]:
         """Generate predictions with adversarial review"""
         print("\n" + "=" * 70)
         print("STEP 6: AI Prediction + Adversarial Review")
         print("=" * 70)
 
-        # Simplified for now
-        print("✓ Predictions generated")
-        return {
-            "predicted_outcome": "TBD",
-            "confidence_score": 0.7,
-            "success_probability": 0.75,
-            "risk_factors": [],
-            "recommendation": "Proceed with caution"
-        }
+        # Extract verified facts for prediction
+        verified_facts = collected_data.get("verified_facts", [])
+        data_summary = collected_data.get("collected_data", {})
+
+        prompt = f"""Based on the collected and verified data, predict the outcome:
+
+Goal: {goal.get('objective', 'N/A')[:200]}
+Strategy: {strategy.get('approach', 'N/A')[:300]}
+
+Verified Facts:
+{json.dumps(verified_facts, indent=2)}
+
+Data Summary:
+{json.dumps(data_summary, indent=2)[:1500]}
+
+Data Coverage: {connection_data.get('relevance_scores', {}).get('overall_data_coverage', 0.5)}
+
+For NIL domain: Estimate market value based on social media following, performance, and comparables.
+
+Return JSON with:
+{{
+    "predicted_outcome": "specific prediction with numbers/ranges",
+    "confidence_score": 0.0-1.0,
+    "success_probability": 0.0-1.0,
+    "value_range": {{"low": number, "high": number, "currency": "USD"}},
+    "key_value_drivers": ["driver 1", "driver 2", ...],
+    "risk_factors": ["risk 1", "risk 2", ...],
+    "assumptions": ["assumption 1", "assumption 2", ...],
+    "recommendation": "recommendation text",
+    "confidence_reasoning": "why this confidence level"
+}}
+
+Only return valid JSON."""
+
+        response_text = self._call_llm(prompt)
+        prediction = self._extract_json(response_text)
+
+        if not prediction:
+            print("  ⚠️  JSON parsing failed, using fallback")
+            prediction = {
+                "predicted_outcome": "Unable to generate detailed prediction due to limited data",
+                "confidence_score": 0.5,
+                "success_probability": 0.6,
+                "value_range": {"low": 0, "high": 0, "currency": "USD"},
+                "key_value_drivers": [],
+                "risk_factors": ["Insufficient data for accurate prediction"],
+                "assumptions": [],
+                "recommendation": "Collect more data before making final determination"
+            }
+
+        # Adversarial review
+        if self.enable_verification and prediction.get("assumptions"):
+            print("\n  🔍 Adversarial review of assumptions...")
+            for assumption in prediction.get("assumptions", [])[:3]:
+                result = self.adversarial_skill.execute(
+                    claim=assumption,
+                    assumptions=[]
+                )
+                self._record_verification("step6_prediction", assumption, result)
+
+        confidence = prediction.get("confidence_score", 0.5)
+        print(f"✓ Prediction generated (confidence: {confidence:.1%})")
+        return prediction
 
     def _step7_final_artifact(
         self,
         goal: Dict[str, Any],
         strategy: Dict[str, Any],
+        collected_data: Dict[str, Any],
         processed_data: Dict[str, Any],
+        connections: Dict[str, Any],
         prediction: Dict[str, Any]
     ) -> Dict[str, Any]:
         """Generate final artifact with completeness check and synthesis"""
@@ -621,16 +751,68 @@ Only return valid JSON."""
         print("STEP 7: Final Artifact + Synthesis")
         print("=" * 70)
 
-        # Simplified for now
-        print("✓ Final artifact generated")
-        return {
-            "final_recommendation": "Based on analysis, recommend proceeding with outlined strategy",
-            "implementation_plan": [
-                "Step 1: Initialize data collection",
-                "Step 2: Execute processing pipeline",
-                "Step 3: Monitor and adjust"
-            ]
-        }
+        # Synthesize all findings into final recommendation
+        verified_facts = collected_data.get("verified_facts", [])
+        data_coverage = connections.get("relevance_scores", {}).get("overall_data_coverage", 0.5)
+
+        prompt = f"""Generate a comprehensive final recommendation based on the complete analysis:
+
+Goal: {goal.get('objective', 'N/A')[:200]}
+
+Verified Facts:
+{json.dumps(verified_facts, indent=2)}
+
+Prediction:
+{json.dumps(prediction, indent=2)[:1000]}
+
+Data Coverage: {data_coverage:.1%}
+Missing Data: {json.dumps(collected_data.get('missing_data', [])[:5])}
+
+Return JSON with:
+{{
+    "final_recommendation": "comprehensive recommendation with specific actions and numbers",
+    "implementation_plan": [
+        "Step 1: specific action",
+        "Step 2: specific action",
+        ...
+    ],
+    "success_factors": ["factor 1", "factor 2", ...],
+    "next_steps": ["next step 1", "next step 2", ...],
+    "caveats": ["caveat 1", "caveat 2", ...],
+    "confidence_assessment": "overall assessment of recommendation quality"
+}}
+
+Be specific and actionable. Reference actual data points collected.
+Only return valid JSON."""
+
+        response_text = self._call_llm(prompt)
+        artifact = self._extract_json(response_text)
+
+        if not artifact:
+            print("  ⚠️  JSON parsing failed, using fallback")
+            artifact = {
+                "final_recommendation": f"Prediction: {prediction.get('predicted_outcome', 'N/A')}. Confidence: {prediction.get('confidence_score', 0.5):.1%}. Based on {len(verified_facts)} verified facts.",
+                "implementation_plan": [
+                    "Review and validate all collected data",
+                    "Fill critical data gaps identified in analysis",
+                    "Execute strategy with adjusted expectations based on data quality"
+                ],
+                "success_factors": verified_facts[:3] if verified_facts else [],
+                "next_steps": [],
+                "caveats": collected_data.get("missing_data", [])[:3]
+            }
+
+        # Completeness check
+        if self.enable_verification:
+            print("\n  🔍 Completeness check...")
+            result = self.completeness_skill.execute(
+                analysis=artifact.get("final_recommendation", ""),
+                required_elements=goal.get("success_criteria", [])
+            )
+            self._record_verification("step7_artifact", "Final recommendation", result)
+
+        print(f"✓ Final artifact generated")
+        return artifact
 
     # ========================================================================
     # MAIN EXECUTION
@@ -663,9 +845,13 @@ Only return valid JSON."""
             collected_data,
             strategy.get("processing_pipeline", [])
         )
+
+        # Pass collected_data through for processing steps
+        processed_data["collected_data"] = collected_data.get("collected_data", {})
+
         connections = self._step5_rational_connection(processed_data, strategy, goal)
-        prediction = self._step6_ai_prediction(connections, strategy)
-        artifact = self._step7_final_artifact(goal, strategy, processed_data, prediction)
+        prediction = self._step6_ai_prediction(connections, strategy, collected_data, goal)
+        artifact = self._step7_final_artifact(goal, strategy, collected_data, processed_data, connections, prediction)
 
         # Calculate overall confidence from verification results
         if self.verification_results:

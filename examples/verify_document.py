@@ -234,9 +234,10 @@ Supported formats:
     try:
         # Pass document bytes if available (for DOCX, PDF, etc.)
         if document_bytes is not None:
+            # For binary documents, we pass empty text and the document bytes
             report = pipeline.verify_analysis(
-                document_text=document_text,
-                query=query,
+                original_output="",  # Empty since document is attached
+                original_query=query,
                 document_bytes=document_bytes,
                 document_format=document_format
             )

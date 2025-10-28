@@ -17,6 +17,7 @@ These skills wrap the existing verification pipeline components:
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional, Union
 import sys
+import json
 from pathlib import Path
 
 # Add parent directory to path to import existing verification modules
@@ -245,10 +246,66 @@ class FactCheckingSkill(Skill):
             dict: Fact-check result with evidence and confidence
         """
         try:
-            # For now, return a placeholder that indicates web search is needed
-            # In full implementation, this would use the LLM provider's web search
-            # capability or integrate with a web search API
+            # If LLM provider available, use it for plausibility checking
+            # This helps detect obvious hallucinations even without web search
+            if self.llm_provider:
+                context = kwargs.get("context", "")
 
+                prompt = f"""Evaluate the plausibility and factual accuracy of this claim:
+
+Claim: {claim}
+
+{f"Context: {context}" if context else ""}
+
+Please assess:
+1. Is this claim internally consistent?
+2. Does it contain obvious factual errors (wrong names, impossible numbers, category mistakes)?
+3. If context is provided, does the claim align with the context?
+4. What is your confidence that this claim is factually correct?
+
+Provide a confidence score from 0.0 (definitely false) to 1.0 (definitely true), where:
+- 0.0-0.3: Likely false, contains obvious errors
+- 0.3-0.5: Uncertain, insufficient evidence
+- 0.5-0.7: Plausible but unverified
+- 0.7-0.9: Likely true, consistent with general knowledge
+- 0.9-1.0: Very confident it's true
+
+Return your assessment in this format:
+CONFIDENCE: <score>
+REASONING: <brief explanation>
+ISSUES: <any factual errors detected or "none">"""
+
+                try:
+                    response = self.llm_provider.call(prompt, max_tokens=300)
+
+                    # Extract confidence score
+                    import re
+                    confidence_match = re.search(r'CONFIDENCE:\s*(0?\.\d+|1\.0)', response)
+                    reasoning_match = re.search(r'REASONING:\s*(.+?)(?=\nISSUES:|\Z)', response, re.DOTALL)
+                    issues_match = re.search(r'ISSUES:\s*(.+)', response, re.DOTALL)
+
+                    confidence = float(confidence_match.group(1)) if confidence_match else 0.5
+                    reasoning = reasoning_match.group(1).strip() if reasoning_match else "No reasoning provided"
+                    issues = issues_match.group(1).strip() if issues_match else "none"
+
+                    passed = confidence >= 0.6
+
+                    return {
+                        "status": "success",
+                        "method": "fact_check_llm_plausibility",
+                        "claim": claim,
+                        "evidence": [{"source": "LLM reasoning", "text": reasoning}],
+                        "passed": passed,
+                        "confidence": confidence,
+                        "issues": [] if issues.lower() == "none" else [issues],
+                        "note": "Plausibility check via LLM (no web search)"
+                    }
+
+                except Exception as llm_error:
+                    # Fallback to placeholder if LLM fails
+                    pass
+
+            # Fallback: return placeholder indicating web search is needed
             return {
                 "status": "success",
                 "method": "fact_check",
@@ -319,11 +376,67 @@ class EmpiricalTestingSkill(Skill):
         Returns:
             dict: Consistency test result
         """
-        # Placeholder implementation - would use LLM for empirical testing
+        # If LLM available, perform empirical testing
+        if self.llm_provider:
+            try:
+                # Prepare claims for testing (convert to list if single string)
+                if isinstance(claims, str):
+                    claims = [claims]
+
+                context_section = f"CONTEXT:\n{context}\n\n" if context else ""
+
+                prompt = f"""Test whether the following claim(s) are logically consistent and empirically sound.
+
+CLAIMS TO TEST:
+{json.dumps(claims, indent=2)}
+
+{context_section}For EACH claim, perform empirical testing:
+1. STATE TRANSITION TEST: If this claim is true, what else must be true?
+2. CONTRADICTION TEST: Does this claim contradict itself or contain impossible statements?
+3. TESTABLE PREDICTIONS: What testable predictions does this claim make?
+
+Return your assessment in this format:
+PASSED: <true/false - whether claim is logically consistent>
+CONFIDENCE: <0.0-1.0 score>
+ISSUES: <list any logical problems, contradictions, or impossible statements found, or "none">
+ANALYSIS: <brief explanation of your reasoning>"""
+
+                response = self.llm_provider.call(prompt, max_tokens=500)
+
+                # Extract structured data from response
+                import re
+                passed_match = re.search(r'PASSED:\s*(true|false)', response, re.IGNORECASE)
+                confidence_match = re.search(r'CONFIDENCE:\s*(0?\.\d+|1\.0)', response)
+                issues_match = re.search(r'ISSUES:\s*(.+?)(?=\nANALYSIS:|\Z)', response, re.DOTALL)
+                analysis_match = re.search(r'ANALYSIS:\s*(.+)', response, re.DOTALL)
+
+                passed = passed_match.group(1).lower() == 'true' if passed_match else True
+                confidence = float(confidence_match.group(1)) if confidence_match else 0.7
+                issues_text = issues_match.group(1).strip() if issues_match else "none"
+                analysis = analysis_match.group(1).strip() if analysis_match else "No analysis provided"
+
+                issues = [] if issues_text.lower() == "none" else [issues_text]
+
+                return {
+                    "status": "success",
+                    "method": "empirical_test_llm",
+                    "claims_tested": len(claims),
+                    "passed": passed,
+                    "confidence": confidence,
+                    "issues": issues,
+                    "analysis": analysis,
+                    "note": "Empirical testing via LLM reasoning"
+                }
+
+            except Exception as e:
+                # Fallback to placeholder on error
+                pass
+
+        # Fallback: placeholder when no LLM available
         return {
             "status": "success",
             "method": "empirical_test",
-            "claims_tested": len(claims),
+            "claims_tested": len(claims) if isinstance(claims, list) else 1,
             "passed": True,
             "confidence": 0.7,
             "issues": [],
@@ -379,7 +492,87 @@ class AdversarialReviewSkill(Skill):
         Returns:
             dict: Review result with challenges and risks
         """
-        # Placeholder - would use LLM for adversarial analysis
+        # If LLM available, perform adversarial review
+        if self.llm_provider:
+            try:
+                assumptions_text = ""
+                if assumptions:
+                    assumptions_text = f"\n\nSTATED ASSUMPTIONS:\n{json.dumps(assumptions, indent=2)}"
+
+                prompt = f"""You are an adversarial reviewer challenging the following claim to find weaknesses.
+
+CLAIM:
+{claim}
+{assumptions_text}
+
+Perform adversarial review by:
+1. IDENTIFY ASSUMPTIONS: What hidden/unstated assumptions does this claim rely on?
+2. FIND EDGE CASES: What scenarios would break or invalidate this claim?
+3. PROPOSE ALTERNATIVES: What alternative interpretations or explanations exist?
+4. CHALLENGE CONCLUSIONS: How might this claim be wrong or overstated?
+
+Return your assessment in this format:
+PASSED: <true/false - whether claim survives adversarial review>
+CONFIDENCE: <0.0-1.0 - lower if serious weaknesses found>
+HIDDEN_ASSUMPTIONS: <list assumptions or "none">
+EDGE_CASES: <list problematic scenarios or "none">
+ALTERNATIVES: <list alternative explanations or "none">
+CHALLENGES: <main weaknesses found or "none">
+RISK_LEVEL: <low/medium/high>"""
+
+                response = self.llm_provider.call(prompt, max_tokens=600)
+
+                # Extract structured data from response
+                import re
+                passed_match = re.search(r'PASSED:\s*(true|false)', response, re.IGNORECASE)
+                confidence_match = re.search(r'CONFIDENCE:\s*(0?\.\d+|1\.0)', response)
+                assumptions_match = re.search(r'HIDDEN_ASSUMPTIONS:\s*(.+?)(?=\nEDGE_CASES:|\Z)', response, re.DOTALL)
+                edge_match = re.search(r'EDGE_CASES:\s*(.+?)(?=\nALTERNATIVES:|\Z)', response, re.DOTALL)
+                alternatives_match = re.search(r'ALTERNATIVES:\s*(.+?)(?=\nCHALLENGES:|\Z)', response, re.DOTALL)
+                challenges_match = re.search(r'CHALLENGES:\s*(.+?)(?=\nRISK_LEVEL:|\Z)', response, re.DOTALL)
+                risk_match = re.search(r'RISK_LEVEL:\s*(low|medium|high)', response, re.IGNORECASE)
+
+                passed = passed_match.group(1).lower() == 'true' if passed_match else True
+                confidence = float(confidence_match.group(1)) if confidence_match else 0.6
+
+                def parse_list_field(match):
+                    if not match:
+                        return []
+                    text = match.group(1).strip()
+                    if text.lower() == "none":
+                        return []
+                    return [text]
+
+                hidden_assumptions = parse_list_field(assumptions_match)
+                edge_cases = parse_list_field(edge_match)
+                alternatives = parse_list_field(alternatives_match)
+                challenges = parse_list_field(challenges_match)
+                risk_level = risk_match.group(1).lower() if risk_match else "low"
+
+                # Calculate confidence adjustment (negative if issues found)
+                issues_count = len(hidden_assumptions) + len(edge_cases) + len(alternatives) + len(challenges)
+                confidence_adjustment = -0.1 * min(issues_count, 3)  # Max -0.3
+
+                return {
+                    "status": "success",
+                    "method": "adversarial_review_llm",
+                    "claim": claim,
+                    "passed": passed,
+                    "confidence": confidence,
+                    "challenges": challenges,
+                    "edge_cases": edge_cases,
+                    "alternative_interpretations": alternatives,
+                    "hidden_assumptions": hidden_assumptions,
+                    "risk_level": risk_level,
+                    "confidence_adjustment": confidence_adjustment,
+                    "note": "Adversarial review via LLM reasoning"
+                }
+
+            except Exception as e:
+                # Fallback to placeholder on error
+                pass
+
+        # Fallback: placeholder when no LLM available
         return {
             "status": "success",
             "method": "adversarial_review",

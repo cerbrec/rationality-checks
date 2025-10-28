@@ -1,0 +1,122 @@
+[
+  {
+    "knowledge": "Kayithi Narsi Reddy is an Indian politician initially associated with INC and then with YSR Congress Party. Founded in 1885, it was the first modern nationalist movement to emerge in the British Empire in Asia and Africa.",
+    "question": "The political party that Kayithi Narsi Reddy associates with was founded in what year?",
+    "right_answer": "1885",
+    "hallucinated_answer": "Kayithi Narsi Reddy moved to the YSRCP after founding the first modern nationalist movement in the British Empire in Asia and Africa in 1885."
+  },
+  {
+    "knowledge": "Watchers is a 1988 science fiction horror film starring Corey Haim, Michael Ironside, Barbara Williams and Lala Sloatman. She is frequently billed by her first name only, and sometimes as Lala Zappa.",
+    "question": "Watchers is a film starring which actress?",
+    "right_answer": "Lala Sloatman",
+    "hallucinated_answer": "Watchers is a film starring Lala Zappa."
+  },
+  {
+    "knowledge": "\"Timber!\" is a song recorded by the Bee Gees, written by Barry Gibb.Barry Alan Crompton Gibb, {'1': \", '2': \", '3': \", '4': \"} (born 1 September 1946) is a singer, songwriter, musician, and record producer who rose to worldwide fame as a co-founder of the group Bee Gees, one of the most commercially successful and critically acclaimed groups in the history of popular music, with his brothers, Robin and Maurice Gibb.",
+    "question": "Timber! was written by a singer who had a group with his brothers, Robin and who?",
+    "right_answer": "Maurice Gibb",
+    "hallucinated_answer": "Timber! was written by a singer who had a group with his brothers, Robin and Barry."
+  },
+  {
+    "knowledge": "The Harajuku Lovers Tour was the first solo concert tour of American recording artist Gwen Stefani. In 2006 Stefani released her second studio album \"The Sweet Escape\".",
+    "question": "What was the second studio album of the singer featured in the Harajuku Lovers Tour?",
+    "right_answer": "\"The Sweet Escape\"",
+    "hallucinated_answer": "\"Harajuku Love\" was her second album."
+  },
+  {
+    "knowledge": " Michael Helliet Management currently manages more boxers than any other agency within the UK. A veteran of the sport since 1995, he held the British heavyweight title twice between 2000 and 2010, and the Commonwealth heavyweight title twice between 1999 and 2006.",
+    "question": "Michael Helliet Management represents the British heavyweight title holder who held the title how many times between 2000 and 2010?",
+    "right_answer": "twice",
+    "hallucinated_answer": "Michael Helliet Management represents the British heavyweight title holder who held the title once between 2000 and 2010."
+  },
+  {
+    "knowledge": "Juliet Snowden is an American screenwriter, film director, and producer, best known for writing \"Knowing\" and \"Ouija\".Knowing (stylized as KNOW1NG) is a 2009 science fiction thriller film directed by Alex Proyas and starring Nicolas Cage.",
+    "question": "which film dirtected by Alex Proyas and starring Nicolas Cage was written by Juliet Snowden?",
+    "right_answer": "Knowing",
+    "hallucinated_answer": "Juliet Snowden co-directed Knowing with Alex Proyas."
+  },
+  {
+    "knowledge": "The Dhanush is a 155 mm towed howitzer used by the Indian Army.The Indian Army is the land-based branch and the largest component of the Indian Armed Forces.",
+    "question": "The Dhanush is a 155 mm towed howitzer used by which land-based branch and the largest component of the Indian Armed Forces?",
+    "right_answer": "Indian Army",
+    "hallucinated_answer": "The Dhanush is a 155 mm towed howitzer used by the Indian Navy."
+  },
+  {
+    "knowledge": "G\u00fclhane Park (Turkish: \"G\u00fclhane Park\u0131\" , \"Rosehouse Park\"; from Persian: \"Gulkh\u0101na\", \"house of flowers\") is a historical urban park in the Emin\u00f6n\u00fc district of Istanbul, Turkey; it is located adjacent to and on the grounds of the Topkap\u0131 Palace.Zografeion Lyceum (Turkish: \"\u00d6zel Zo\u011frafyon Rum Lisesi\" , Greek: \u0396\u03c9\u03b3\u03c1\u03ac\u03c6\u03b5\u03b9\u03bf\u03bd \u039b\u03cd\u03ba\u03b5\u03b9\u03bf\u03bd ) is one of the remaining open Greek schools in Istanbul.",
+    "question": "G\u00fclhane Park and Zografeion Lyceum, are located in which country?",
+    "right_answer": "Turkey",
+    "hallucinated_answer": "G\u00fclhane Park and Zografeion Lyceum are located in Europe."
+  },
+  {
+    "knowledge": "Breach of Promise is a 1942 British romance film directed by Harold Huth and starring Clive Brook, Judy Campbell, C.V. France, Marguerite Allan and Percy Walsh. Her daughter is the actress and singer Jane Birkin, her son the screenwriter and director Andrew Birkin, and among her grandchildren are the actresses Charlotte Gainsbourg and Lou Doillon, the late poet Anno Birkin, the artist David Birkin and the late photographer Kate Barry.",
+    "question": "In what 1942 British romance film did actress/singer Jane Birkin's mother star in?",
+    "right_answer": "Breach of Promise",
+    "hallucinated_answer": "Jane Birkin's mother starred in Jane Eyre."
+  },
+  {
+    "knowledge": "The 1955 Scottish League Cup Final was played on 22 October 1955, at Hampden Park in Glasgow and was the final of the 10th Scottish League Cup competition.Hampden Park (often referred to as Hampden) is a football stadium in the Mount Florida area of Glasgow, Scotland.",
+    "question": "The 1955 Scottish League Cup Final was played on 22 October 1955, at Hampden Park, a football stadium in the Mount Florida area of Glasgow, in which country?",
+    "right_answer": "Scotland",
+    "hallucinated_answer": "The 1955 Scottish League Cup Final was played at Hampden Park, which is located in England."
+  },
+  {
+    "knowledge": "Melvin Earl Duncan (born May 22, 1950 in Davenport, Iowa) is the founding Executive Director of Nonviolent Peaceforce (NP), a civilian peacekeeping organization based in Brussels. He holds a bachelor's degree in Political Science from Macalester College in St. Paul, Minnesota and a Master of Arts in Humanities and Leadership from New College of California.Macalester College ( ) is a private, coeducational liberal arts college located in Saint Paul, Minnesota, US.",
+    "question": "Mel Duncan holds a degree from what private, coeducational liberal arts college located in Saint Paul, Minnesota, US?",
+    "right_answer": "Macalester College",
+    "hallucinated_answer": "Mel Duncan holds an undergraduate degree from Macalester College in Saint Paul, Minnesota."
+  },
+  {
+    "knowledge": " A resident of Portland, Oregon, she currently balances performing with her own band in venues around the country and touring with the Portland-based band Pink Martini around the world.Pink Martini is a musical group that was formed in 1994 by pianist Thomas Lauderdale in Portland, Oregon.",
+    "question": "Storm Large tours with a Portland-based band formed in what year?",
+    "right_answer": "1994",
+    "hallucinated_answer": "Storm Large currently tours with a non-Portland based band."
+  },
+  {
+    "knowledge": "Silas Stillman Soule (July 26, 1838 \u2013 April 23, 1865) was an American abolitionist, Kansas Territory Jayhawker, anti-slavery militant, and a friend of John Brown and Walt Whitman. These bands, known as \"Jayhawkers\", were guerrilla fighters who often clashed with pro-slavery groups from Missouri known at the time as \"Border Ruffians\".",
+    "question": "What was the pro-slavery group called that Silas Soule clashed with?",
+    "right_answer": "\"Border Ruffians\"",
+    "hallucinated_answer": "\"Border Raiders\""
+  },
+  {
+    "knowledge": "Colin Michael Foale, CBE (born 6 January 1957) is a British-American astrophysicist and former NASA astronaut. He is a veteran of six Space Shuttle missions and extended missions on both Mir and the International Space Station. In March 2009, aboard Soyuz TMA-14, he made a second trip to the International Space Station.",
+    "question": "Who has been on the most missions to space, Michael Foale or Charles Simonyi?",
+    "right_answer": "Michael Foale",
+    "hallucinated_answer": "Charles Simonyi has more space missions."
+  },
+  {
+    "knowledge": "Calhoun County is a county in the U.S. state of Michigan. The county was established on October 19, 1829 and named after John C. Calhoun, who was at the time Vice President under Andrew Jackson, making it one of Michigan's Cabinet counties.Andrew Jackson (March 15, 1767 \u2013 June 8, 1845) was an American soldier and statesman who served as the seventh President of the United States from 1829 to 1837.",
+    "question": "What Michigan county is named after the Vice President of the seventh President of the United States?",
+    "right_answer": "Calhoun County",
+    "hallucinated_answer": "Michigan's Cabinet counties don't name counties."
+  },
+  {
+    "knowledge": " In all versions, Dodger sings it when he first meets Oliver, after offering to get the destitute and alone boy food and lodging. He played Much the Miller's Son in \"\" (1991).",
+    "question": "What year did the actor who sings \"Consider Yourself\" to Oliver when they first meet in \"Oliver!\" play Much the Miller's Son?",
+    "right_answer": "1991",
+    "hallucinated_answer": "The actor who sang \"Consider Yourself\" in \"Oliver!\" played the Miller's Son in 1991."
+  },
+  {
+    "knowledge": "Gran Torino is a 2008 American drama film directed and produced by Clint Eastwood, who also starred in the film. The film co-stars Christopher Carley, Bee Vang and Ahney Her.Whitney Cua Her (born 1992), better known by her stage name Ahney Her, is an American actress.",
+    "question": "What is the stage name of the young female actress who starred in the 2008 American drama Gran Torino directed and produced by Clint Eastwood?",
+    "right_answer": "Ahney Her",
+    "hallucinated_answer": "The actress who starred in the 2008 movie directed by Clint Eastwood and co-starred Christopher Carley and Bee Vang is Whitney Cua Her."
+  },
+  {
+    "knowledge": "Robert Earl Wise (September 10, 1914 \u2013 September 14, 2005) was an American film director, producer and editor.He also wrote and directed the romance film \"Paradise\" in 1982, his directing debut.",
+    "question": "Were Robert Wise and Stuart Gillard both actors in films in the 20th century?",
+    "right_answer": "no",
+    "hallucinated_answer": "Stuart Gillard directed Superboy in 1988."
+  },
+  {
+    "knowledge": "John Grierson CBE (26 April 1898 \u2013 19 February 1972) was a pioneering Scottish documentary maker, often considered the father of British and Canadian documentary film.Albert Edward Sutherland (January 5, 1895 \u2013 December 31, 1973) was a film director and actor. Born in London, he was from a theatrical family.",
+    "question": "Are both John Grierson and A. Edward Sutherland from the United Kingdom?",
+    "right_answer": "yes",
+    "hallucinated_answer": "John Grierson was from the United Kingdom, but A. Edward Sutherland was from the United States."
+  },
+  {
+    "knowledge": " Her self-titled debut studio album was released on 2 June 2017.\"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album (2017).",
+    "question": "Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what year?",
+    "right_answer": "2017",
+    "hallucinated_answer": "The album was released in 2018."
+  }
+]

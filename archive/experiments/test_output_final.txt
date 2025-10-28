@@ -1,0 +1,150 @@
+================================================================================
+DOCUMENT VERIFICATION - RATIONALITY CHECK
+================================================================================
+
+📄 Document: test_retzlaff.md
+   Size: 811 characters
+
+🤖 Provider: bedrock
+   Model: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+🔧 Initializing verification pipeline...
+
+🔍 Running verification...
+   This may take 2-3 minutes depending on document length...
+   Processing steps:
+   • Extracting claims
+   • Classifying claim types
+   • Verifying mathematical consistency
+   • Checking logical contradictions
+   • Assessing confidence levels
+--------------------------------------------------------------------------------
+[DEBUG] Dynamic claims enabled, provider type: <class 'src.verification_pipeline.BedrockProvider'>
+[Dynamic Claims] Discovering time-sensitive claim patterns...
+[Dynamic Claims] Extracting document context...
+[Dynamic Claims] Context: {'domain': 'sports marketing and NIL (Name, Image, Likeness)', 'primary_subjects': ['Jake Retzlaff', 'BYU Football', 'Qualtrics', 'NIL deals'], 'time_period': '2025 season', 'geographic_focus': 'BYU (Brigham Young University, Utah)', 'document_type': 'analysis and NIL opportunity assessment'}
+[Dynamic Claims] Discovering claim patterns...
+[Dynamic Claims] Discovered 10 patterns
+[Dynamic Claims] Extracting claims based on patterns...
+[Dynamic Claims] Processing pattern 1/5: athlete_current_team_status...
+[Dynamic Claims]   Found 2 matching claims, processing top 2...
+[Dynamic Claims] Processing pattern 2/5: athlete_performance_statistics...
+[Dynamic Claims]   Found 2 matching claims, processing top 2...
+[Dynamic Claims] Processing pattern 3/5: nil_market_valuation...
+[Dynamic Claims]   Found 2 matching claims, processing top 2...
+[Dynamic Claims] Processing pattern 4/5: social_media_following...
+[Dynamic Claims]   Found 1 matching claims, processing top 1...
+[Dynamic Claims] Processing pattern 5/5: brand_partnership_projection...
+[Dynamic Claims]   Found 1 matching claims, processing top 1...
+[Dynamic Claims] Extracted 8 verifiable claims
+[Dynamic Claims] Found 8 high-priority claims for targeted verification
+  [Fact Check] Web search performed 7 searches
+
+================================================================================
+📊 VERIFICATION RESULTS
+================================================================================
+
+Total claims analyzed: 14
+  ✅ Passed: 5
+  ⚠️  Flagged: 1
+  ❌ Failed: 8
+
+Accuracy Rate: 35.7%
+
+================================================================================
+❌ FAILED CLAIMS (Require Revision)
+================================================================================
+
+1. 📍 Jake Retzlaff has 48,500 social media following (Instagram + Twitter)
+   Type: quantitative
+   Confidence: 0.90
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • Instagram shows only 21K followers, significantly less than the 48,500 claimed total
+     • Even if Twitter had similar numbers, the total would not reach 48,500
+
+2. 📍 Jake Retzlaff has 3,200 passing yards
+   Type: quantitative
+   Confidence: 0.97
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • Claimed 3,200 passing yards is incorrect
+     • Actual 2024 season total was 2,947 passing yards
+
+3. 📍 Jake Retzlaff has 28 TDs
+   Type: quantitative
+   Confidence: 0.97
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • Claimed 28 TDs is incorrect
+     • Actual 2024 season total was 20 passing touchdowns
+
+4. 📍 Jake Retzlaff is BYU's starting quarterback for the 2025 season
+   Type: factual
+   Confidence: 0.99
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • CRITICAL ERROR: Jake Retzlaff is NOT at BYU for 2025 season
+     • He transferred to Tulane in summer 2025
+
+5. 📍 Jake Retzlaff has shown exceptional leadership qualities
+   Type: interpretive
+   Confidence: 0.30
+   Recommendation: REMOVE
+   Issues:
+     • Vague and subjective terminology: 'exceptional' lacks clear criteria
+     • No measurable standards provided for 'leadership qualities'
+
+6. 📍 Match confidence for Qualtrics × Jake Retzlaff is 95%
+   Type: quantitative
+   Confidence: 0.97
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • No evidence of actual Qualtrics × Jake Retzlaff partnership
+     • 95% confidence rating is misleading if this is a projection rather than actual deal
+
+7. 📍 Deal structure is Leadership & Innovation Brand Ambassador
+   Type: factual
+   Confidence: 0.97
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • No actual Qualtrics partnership exists
+     • Deal structure describes a non-existent agreement
+
+8. 📍 Duration is 12 months (2025 season)
+   Type: factual
+   Confidence: 0.97
+   Recommendation: REVISE
+   Web Search Evidence:
+   Issues:
+     • No actual partnership exists to have a duration
+     • Reference to '2025 season' is incorrect as Retzlaff is at Tulane, not BYU
+
+================================================================================
+⚠️  FLAGGED CLAIMS (Need Additional Evidence)
+================================================================================
+
+1. 📍 Jake Retzlaff's Fair Market Value is $50K - $75K
+   Type: quantitative
+   Confidence: 0.65
+   Recommendation: FLAG_UNCERTAINTY
+   Web Search Evidence:
+   Issues:
+     • No verifiable source for the $50K-$75K valuation range
+     • Claim appears outdated as Retzlaff is no longer at BYU (transferred to Tulane in 2025)
+
+================================================================================
+📝 RECOMMENDATIONS
+================================================================================
+
+⚠️  CRITICAL: Review and revise failed claims before publishing
+   These claims have logical contradictions or unsupported assertions
+
+================================================================================
+Verification complete!
+================================================================================

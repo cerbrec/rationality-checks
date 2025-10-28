@@ -15,6 +15,14 @@ This pipeline solves these problems by:
 2. **LLM verification** for interpretive claims (contextual judgment)
 3. **Hybrid approach** that uses the right method for each claim type
 
+---
+
+**🚀 New here?** Start with the **[Quick Start Guide (QUICKSTART.md)](QUICKSTART.md)** for a 5-minute introduction.
+
+**🔬 Looking for the orchestrator?** See [orchestrator/README.md](orchestrator/README.md) for the experimental multi-step workflow system.
+
+---
+
 ## Key Features
 
 ### 1. Hybrid Verification
@@ -183,9 +191,11 @@ See [.env.example](.env.example) for complete configuration options.
 
 ### Basic Usage
 
+**For a complete guide, see [QUICKSTART.md](QUICKSTART.md)**
+
 ```python
-from integrated_verification import IntegratedVerificationPipeline
-from verification_pipeline import BedrockProvider
+from src.integrated_verification import IntegratedVerificationPipeline
+from src.verification_pipeline import BedrockProvider
 
 # Initialize with Amazon Nova Pro (recommended for best performance)
 llm = BedrockProvider(
@@ -195,7 +205,7 @@ llm = BedrockProvider(
 pipeline = IntegratedVerificationPipeline(llm)
 
 # Alternative: Use Anthropic Claude
-# from verification_pipeline import AnthropicProvider
+# from src.verification_pipeline import AnthropicProvider
 # llm = AnthropicProvider(api_key="your-api-key")
 
 # Verify an analysis
@@ -241,13 +251,13 @@ Compare multiple LLM providers on contradiction detection:
 
 ```bash
 # Quick test with Amazon Nova Pro (recommended)
-python run_comparison.py --limit 10 --models bedrock-nova-pro
+python evaluation/run_comparison.py --limit 10 --models bedrock-nova-pro
 
 # Compare Nova Pro vs others
-python run_comparison.py --limit 20 --models bedrock-nova-pro claude gpt4o
+python evaluation/run_comparison.py --limit 20 --models bedrock-nova-pro claude gpt4o
 
 # Full comparison with all models
-python run_comparison.py --limit 20 --models bedrock-nova-pro gpt4 gpt4o claude gemini
+python evaluation/run_comparison.py --limit 20 --models bedrock-nova-pro gpt4 gpt4o claude gemini
 ```
 
 See [CLI Tools](#cli-tools) for more details.
@@ -259,7 +269,7 @@ The pipeline supports multiple LLM providers. Configure via `.env` file or pass 
 ### Anthropic Claude
 
 ```python
-from verification_pipeline import AnthropicProvider
+from src.verification_pipeline import AnthropicProvider
 
 llm = AnthropicProvider(
     api_key="your-api-key",
@@ -275,7 +285,7 @@ llm = AnthropicProvider(
 ### OpenAI GPT
 
 ```python
-from verification_pipeline import OpenAIProvider
+from src.verification_pipeline import OpenAIProvider
 
 llm = OpenAIProvider(
     api_key="your-api-key",
@@ -291,7 +301,7 @@ llm = OpenAIProvider(
 ### Google Gemini
 
 ```python
-from verification_pipeline import GeminiProvider
+from src.verification_pipeline import GeminiProvider
 
 llm = GeminiProvider(
     api_key="your-api-key",
@@ -307,7 +317,7 @@ llm = GeminiProvider(
 ### AWS Bedrock
 
 ```python
-from verification_pipeline import BedrockProvider
+from src.verification_pipeline import BedrockProvider
 
 llm = BedrockProvider(
     region="us-east-1",
@@ -325,7 +335,7 @@ llm = BedrockProvider(
 ### Custom Provider
 
 ```python
-from verification_pipeline import LLMProvider
+from src.verification_pipeline import LLMProvider
 
 class CustomProvider(LLMProvider):
     def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
@@ -364,16 +374,16 @@ python examples/basic_usage.py
 - **Technical Specifications**: Validating performance metrics and calculations
 - **Custom Workflow**: Extending the pipeline for specific needs
 
-### 2. Interactive Testing (`test_interactive_verification.py`)
+### 2. Interactive Testing (`tests/test_interactive_verification.py`)
 
 Step-by-step walkthrough of the verification pipeline:
 
 ```bash
 # Interactive mode (press Enter to continue between steps)
-python test_interactive_verification.py
+python tests/test_interactive_verification.py
 
 # Automated mode (no pauses)
-python test_interactive_verification.py --auto
+python tests/test_interactive_verification.py --auto
 ```
 
 **Shows:**
@@ -522,16 +532,16 @@ Based on standardized contradiction detection benchmarks (50 examples per datase
 
 ## CLI Tools
 
-### `run_comparison.py`
+### `evaluation/run_comparison.py`
 
 Compare multiple LLM providers on contradiction detection benchmarks.
 
 ```bash
 # Basic usage
-python run_comparison.py --limit 20 --models gpt4 claude
+python evaluation/run_comparison.py --limit 20 --models gpt4 claude
 
 # Options
-python run_comparison.py \
+python evaluation/run_comparison.py \
   --limit 50 \                    # Number of test examples
   --models gpt4o claude gemini \  # Models to compare
   --datasets anli snli \          # Datasets to use (default: all)
@@ -563,7 +573,7 @@ Results are automatically saved to:
 Walk through the verification pipeline interactively:
 
 ```bash
-python test_interactive_verification.py
+python tests/test_interactive_verification.py
 ```
 
 **Features:**
@@ -576,10 +586,10 @@ python test_interactive_verification.py
 
 ```bash
 # Interactive mode (default)
-python test_interactive_verification.py
+python tests/test_interactive_verification.py
 
 # Automated mode (no pauses)
-python test_interactive_verification.py --auto
+python tests/test_interactive_verification.py --auto
 
 # Custom report
 python examples/athlete_report_test.py --report=/path/to/report.json
@@ -831,38 +841,61 @@ This README provides an overview. For detailed information, see:
 ## Project Structure
 
 ```
-rationality-llm/
-├── README.md                          # This file
+rationality-checks/
+├── README.md                          # Overview and full documentation
+├── QUICKSTART.md                      # 5-minute getting started guide
+├── TESTING.md                         # Testing guide
 ├── requirements.txt                   # Python dependencies
-├── setup.sh                           # Setup script
 ├── .env.example                       # Environment template
 │
-├── integrated_verification.py         # Main pipeline (838 lines)
-├── verification_pipeline.py           # LLM providers (424 lines)
-├── world_state_verification.py        # Formal verification (415 lines)
-├── run_comparison.py                  # CLI comparison tool (240 lines)
+├── src/                               # Core verification pipeline
+│   ├── integrated_verification.py    # Main hybrid verification system
+│   ├── verification_pipeline.py      # LLM providers (AWS, Anthropic, OpenAI, Google)
+│   ├── world_state_verification.py   # Formal mathematical verification
+│   ├── web_search.py                 # Web search integration
+│   └── dynamic_claim_types.py        # Claim classification
 │
-├── examples/
+├── examples/                          # Example usage
 │   ├── basic_usage.py                # 4 complete examples
-│   └── athlete_report_test.py        # Real-world testing
+│   ├── athlete_report_test.py        # Real-world testing
+│   └── verify_document.py            # CLI tool for document verification
 │
-├── evaluation/
+├── evaluation/                        # Benchmarking and testing
 │   ├── datasets/                     # Test datasets (600+ examples)
-│   │   ├── anli_samples.json
-│   │   ├── snli_samples.json
-│   │   ├── scitail_samples.json
-│   │   └── vitaminc_samples.json
+│   │   ├── anli_samples.json        # Adversarial NLI
+│   │   ├── snli_samples.json        # Stanford NLI
+│   │   ├── scitail_samples.json     # Scientific NLI
+│   │   └── vitaminc_samples.json    # Fact verification
 │   ├── benchmarks/                   # Benchmark implementations
-│   │   └── contradiction_benchmark.py
 │   ├── metrics/                      # Evaluation metrics
-│   │   └── accuracy_metrics.py
 │   ├── runners/                      # Comparison runners
-│   │   └── model_comparison.py
+│   ├── evaluate_halueval.py          # HaluEval evaluation script
+│   ├── evaluate_halueval_baseline.py # Baseline comparison
+│   ├── run_comparison.py             # Multi-model comparison CLI
 │   └── reports/                      # Saved results
 │
+├── orchestrator/                      # 🔬 Experimental multi-step workflow
+│   ├── README.md                     # Orchestrator documentation
+│   ├── intelligent_orchestrator.py   # 7-step workflow system
+│   ├── verification_skills.py        # Verification as reusable skills
+│   ├── domain_skills/                # Domain-specific implementations
+│   └── examples/                     # Orchestrator examples
+│       └── generate_nil_report.py    # NIL player valuation CLI
+│
+├── tests/                            # Unit tests
+│   └── test_*.py                     # Test files
+│
 ├── docs/                             # Additional documentation
-├── test_interactive_verification.py  # Interactive testing (450 lines)
-└── test_bedrock.py                   # AWS Bedrock testing
+│   ├── EVALUATION_SETUP.md          # Evaluation framework guide
+│   ├── GEMINI_SETUP.md              # Google Gemini setup
+│   ├── MODELS_REFERENCE.md          # Complete model listing
+│   ├── PYDANTIC_VALIDATION.md       # Data validation
+│   └── WEB_SEARCH_INTEGRATION.md    # Web search setup
+│
+└── archive/                          # Archived experiments and notes
+    ├── implementation_notes/         # Development history
+    ├── experiments/                  # Test scripts
+    └── results/                      # Evaluation results
 ```
 
 ## Contributing
