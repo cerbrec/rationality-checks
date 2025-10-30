@@ -23,6 +23,7 @@ import traceback
 import requests
 from pathlib import Path
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from urllib.parse import urlparse
@@ -44,6 +45,17 @@ from src.verification_pipeline import (
 # Flask app
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5MB max file size
+
+# Configure CORS
+CORS(app, origins=[
+    'https://verque-frontend.vercel.app',  # Production Vercel frontend
+    'http://localhost:3000',                # Local development (React/Next.js)
+    'http://localhost:5173',                # Local development (Vite)
+    'http://localhost:8080',                # Local development (alternative)
+],
+supports_credentials=True,
+allow_headers=['Content-Type', 'Authorization'],
+methods=['GET', 'POST', 'OPTIONS'])
 
 # Supported file extensions
 TEXT_FORMATS = {'.md', '.txt', '.csv', '.html', '.htm'}
