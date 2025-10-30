@@ -15,6 +15,7 @@ requests>=2.32.0         # For web search API calls
 
 # API server
 flask>=3.0.0             # For HTTP API endpoints
+flask-cors>=4.0.0        # For CORS support
 gunicorn>=21.2.0         # Production WSGI server for deployment
 
 # Document processing
