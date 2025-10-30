@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Add parent directory to path so we can import from src
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.integrated_verification import IntegratedVerificationPipeline
 from src.verification_pipeline import (
