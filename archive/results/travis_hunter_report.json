@@ -1,0 +1,310 @@
+{
+  "domain": "nil",
+  "goal": {
+    "objective": "Determine the estimated market value of Travis Hunter's Name, Image, and Likeness (NIL) rights for the 2024 calendar year, including current deals, earning potential, and market positioning",
+    "domain": "nil",
+    "constraints": [
+      "Focus specifically on 2024 valuation period",
+      "Must comply with NCAA NIL regulations and guidelines",
+      "Limited to publicly available NIL deal information",
+      "Consider only legitimate and verifiable brand partnerships",
+      "Account for college athlete status and eligibility restrictions",
+      "Reflect current market conditions as of evaluation date"
+    ],
+    "success_criteria": [
+      "Provide a specific dollar value or reasonable range for NIL market value",
+      "Include breakdown of value drivers (social media, performance, marketability)",
+      "Compare valuation to peer college athletes in similar positions",
+      "Identify key existing and potential brand partnerships",
+      "Document methodology and data sources used",
+      "Assess market positioning within college football NIL landscape"
+    ],
+    "required_data_types": [
+      "Social media following and engagement metrics (Instagram, Twitter, TikTok)",
+      "Athletic performance statistics and awards",
+      "Current known NIL deals and reported values",
+      "Comparable athlete NIL valuations",
+      "Team performance and media exposure data",
+      "Brand affinity and marketability scores",
+      "NIL collective contributions",
+      "Historical NIL deal data for trend analysis"
+    ],
+    "verification_requirements": [
+      "Verify accuracy of reported NIL deal values from multiple sources",
+      "Confirm current social media follower counts and engagement rates",
+      "Validate athletic performance statistics from official sources",
+      "Cross-reference valuation methodologies with industry standards",
+      "Authenticate brand partnership announcements",
+      "Confirm player eligibility and compliance status"
+    ],
+    "predicted_output_format": "Comprehensive valuation report including: (1) estimated total NIL market value with confidence range, (2) breakdown by revenue source (social media, endorsements, appearances, collectives), (3) key value drivers and metrics table, (4) peer comparison analysis, (5) market trends affecting valuation, (6) supporting data sources and methodology explanation"
+  },
+  "strategy": {
+    "approach": "Multi-dimensional NIL valuation methodology combining social media influence metrics, athletic performance analytics, market comparables analysis, and brand partnership assessment. Utilize both quantitative data (follower counts, engagement rates, deal values) and qualitative factors (marketability, brand fit, cultural impact) to establish a defensible market value range for Travis Hunter's NIL rights in 2024.",
+    "phases": [
+      "Phase 1: Data Collection and Aggregation - Gather all relevant social media metrics, performance statistics, known NIL deals, and market comparables",
+      "Phase 2: Social Media Valuation - Calculate social media worth using engagement rates, follower demographics, and industry-standard CPM/sponsorship rates",
+      "Phase 3: Athletic Performance Assessment - Quantify performance value through awards, statistics, team success, and media exposure metrics",
+      "Phase 4: Comparable Analysis - Identify and analyze peer athletes with similar profiles and establish market positioning",
+      "Phase 5: Brand Partnership Evaluation - Assess current deals, identify partnership gaps, and project potential opportunities",
+      "Phase 6: Integrated Valuation Model - Synthesize all data streams into comprehensive market value estimation with confidence intervals",
+      "Phase 7: Validation and Reporting - Cross-reference findings with industry experts, verify against market trends, and document methodology"
+    ],
+    "data_requirements": {
+      "social_media_metrics": "Instagram, Twitter, TikTok, YouTube follower counts, engagement rates, post frequency, audience demographics, growth trends, content performance analytics",
+      "athletic_performance": "2024 season statistics (receiving yards, touchdowns, defensive stats), awards (All-American, Heisman positioning), team record, playoff appearances, national rankings, snap counts both ways",
+      "current_nil_deals": "Confirmed brand partnerships, reported deal values, contract durations, exclusivity clauses, performance incentives, NIL collective payments",
+      "comparable_athletes": "Top QB, WR, and DB NIL valuations, two-way player precedents, Heisman contender valuations, Colorado teammates for context, SEC/Big Ten star comparables",
+      "market_exposure": "National TV appearances, ESPN mentions, social media impressions, jersey sales data, Google Trends data, media market size of University of Colorado",
+      "marketability_factors": "Unique positioning as two-way player, Coach Prime association, personality/charisma indicators, brand safety profile, post-college professional prospects",
+      "industry_benchmarks": "Average CPM rates for athlete influencers, typical NIL deal structures, market growth trends 2023-2024, valuation multiples used by NIL collectives",
+      "historical_context": "Previous season NIL earnings, deal announcement dates, contract escalations, market evolution since high school recruitment"
+    },
+    "processing_pipeline": [
+      "Step 1: Scrape and compile social media data across all platforms using analytics tools (Social Blade, HypeAuditor, native platform analytics)",
+      "Step 2: Calculate Social Media Value Score using formula: (Total Followers \u00d7 Engagement Rate \u00d7 Platform CPM \u00d7 Content Quality Multiplier)",
+      "Step 3: Aggregate athletic performance data from ESPN, NCAA stats, team reports and calculate Performance Impact Score",
+      "Step 4: Research and document all publicly disclosed NIL deals with confirmed or estimated values from On3, Opendorse, 247Sports",
+      "Step 5: Identify 10-15 comparable athletes and gather their NIL valuations from NIL databases and media reports",
+      "Step 6: Build comparison matrix normalizing for social following, performance, position, and market factors",
+      "Step 7: Calculate baseline valuation using comparable multiples (e.g., $ per follower, $ per win contribution)",
+      "Step 8: Apply premium adjustments for unique factors (two-way player +25%, Heisman candidate +15%, Coach Prime effect +10%)",
+      "Step 9: Project potential deal values for unfilled sponsorship categories (automotive, gaming, trading cards, etc.)",
+      "Step 10: Aggregate confirmed deals + projected opportunities to establish total market value range",
+      "Step 11: Conduct sensitivity analysis varying key assumptions (engagement rates, win totals, award outcomes)",
+      "Step 12: Generate Monte Carlo simulation for value range with confidence intervals",
+      "Step 13: Cross-reference final estimates with industry expert quotes and media reported figures"
+    ],
+    "verification_checkpoints": [
+      "Phase 1 Checkpoint: Verify social media data accuracy by cross-referencing multiple sources; confirm statistical data matches official NCAA records; validate at least 3 reported NIL deal values",
+      "Phase 2 Checkpoint: Ensure engagement rate calculations follow industry standards; validate CPM rates against influencer marketing benchmarks; confirm audience authenticity metrics",
+      "Phase 3 Checkpoint: Cross-check performance statistics with official sources; verify award nominations and rankings; confirm media exposure counts through multiple outlets",
+      "Phase 4 Checkpoint: Validate comparable athlete selection criteria; ensure NIL valuations from reputable sources; confirm athletes have similar market positions",
+      "Phase 5 Checkpoint: Verify brand partnership claims through official announcements; confirm deal structures align with market norms; validate category opportunity assessments",
+      "Phase 6 Checkpoint: Ensure all value components sum correctly; verify adjustment factors are evidence-based; validate model outputs against sanity checks",
+      "Phase 7 Checkpoint: Compare final valuation to published expert estimates; ensure methodology is transparent and replicable; verify all sources are properly documented"
+    ],
+    "validation_checkpoints": [
+      "Checkpoint 1: Social media metrics validated - Confirm follower counts within 5% across data sources, engagement rates align with platform averages for athletes",
+      "Checkpoint 2: Performance data verified - All statistics match official NCAA records, awards and rankings confirmed through primary sources",
+      "Checkpoint 3: Comparable analysis validated - Selected athletes represent appropriate peer group, NIL values sourced from credible databases (On3, Opendorse)",
+      "Checkpoint 4: Market positioning confirmed - Valuation range aligns with Travis Hunter's reported Top 5-10 NIL ranking among college athletes",
+      "Checkpoint 5: Deal structure reasonableness - Projected partnerships reflect realistic brand categories and typical deal sizes for athlete's profile",
+      "Checkpoint 6: Methodology review - Valuation approach reviewed against academic NIL research and industry white papers",
+      "Checkpoint 7: Final range validation - Estimated value falls within expert consensus range, outlier scenarios explained, confidence intervals clearly stated",
+      "Checkpoint 8: Peer review - Findings reviewed by sports business analyst or NIL industry professional if possible, adjustments made based on feedback"
+    ]
+  },
+  "collected_data": {
+    "collected_data": {
+      "instagram_followers": "2M",
+      "instagram_posts": "146",
+      "instagram_following": "1K+",
+      "instagram_handle": "@db3_tip",
+      "tiktok_followers": "1.4M",
+      "tiktok_average_views": "377K",
+      "tiktok_engagement_rate": "9.7%",
+      "youtube_subscribers": "362K",
+      "heisman_trophy_2024": "Winner",
+      "nfl_2025_receptions": "28",
+      "nfl_2025_receiving_yards": "298",
+      "nfl_2025_receiving_touchdowns": "1",
+      "nfl_2025_receiving_average": "10.6",
+      "college_team": "Colorado Buffaloes",
+      "position": "WR/CB (two-way player)",
+      "confirmed_brand_partnership": "Olipop (October 2025 post mentioned)",
+      "search_1": {
+        "query": "Travis Hunter Instagram followers count 2024",
+        "sources": [
+          "Travis Hunter (@db3_tip) \u2022 Instagram photos and videos",
+          "THROW UP THE BUFF HORNS TRAV! TRAVIS HUNTER ...",
+          "Travis Hunter vs Jeanty: Best College Football Player"
+        ],
+        "snippets": [
+          "2M followers \u00b7 1K+ following \u00b7 146 posts \u00b7 @db3_tip \u00b7 Olipop x SpongeBob is TOUGH #OlipopPartner \u00b7 Photo shared by Travis Hunter on October 07, 2025 tagging @ ...",
+          "THROW UP THE BUFF HORNS TRAV! TRAVIS HUNTER IS THE 2024 HEISMAN WINNER!!!! \u00b7 Photo shared by Colorado NIL Store on October 01, 2024 ...",
+          "... Insta followers part of the stat line. 10 mos. Profile photo of Matt ... Colorado WR/CB Travis Hunter wins the Heisman Trophy 2024..."
+        ]
+      },
+      "search_2": {
+        "query": "Travis Hunter TikTok engagement rate statistics",
+        "sources": [
+          "Travis Hunter: The #1 College Football Influencer ...",
+          "Top 20 Athletics & Sports from Boulder on Instagram Influencers ...",
+          "Top 20 Athletics & Sports from United States of America on ..."
+        ],
+        "snippets": [
+          "TikTok: 1.4M Followers. 377K Average Views. 9.7% Engagement Rate. Youtube: 362K ...",
+          "Discover the most influential creators in Boulder with our comprehensive ranking of the top 20 influencers on Instagram who post Athletics & Sports content.",
+          "This data\u2011driven analysis identifies the content creators who are shaping conversations, driving trends, and commanding the highest engagement rates in 2025."
+        ]
+      },
+      "search_3": {
+        "query": "Travis Hunter 2024 season receiving yards touchdowns statistics",
+        "sources": [
+          "Travis Hunter 2025 Stats per Game - NFL",
+          "Travis Hunter 2024 Player Statistics - Colorado Buffaloes",
+          "Travis Hunter - Jacksonville Jaguars Wide Receiver"
+        ],
+        "snippets": [
+          "2025 regular season stats ; REC. 28. Tied-40th ; YDS. 298. 54th ; TD. 1. Tied-87th ; AVG. 10.6. 140th.See more",
+          "Receiving \u00b7 Rec. Yards, Avg. TD, Rec./G \u00b7 Yards/G \u00b7 96, 1258, 13.10, 15, 7.4, 96.8 ; Rushing \u00b7 Att, Yards, Avg. TD, Att/G \u00b7 Yards/G \u00b7 2, 5, 2.50, 1, 0.15, 0.38 ...See more",
+          "2025 regular season stats. REC. 28. Tied-40th. YDS. 298. 54th. TD. 1. Tied-87th. AVG ... News: 5 days agoHunter caught eight of 14 targets for 101 yards and a ...See more"
+        ]
+      },
+      "search_4": {
+        "query": "Travis Hunter 2024 defensive stats interceptions tackles",
+        "sources": [
+          "Travis Hunter 2024 Player Statistics - Colorado Buffaloes",
+          "Travis Hunter Defense Stats - NCAA College Football ...",
+          "Travis Hunter College Stats, School, Draft, Gamelog, Splits"
+        ],
+        "snippets": [
+          "2024 Colorado Buffaloes Travis Hunter ... Interceptions. Split Stats \u00b7 Game Log. Tackles. Split Stats \u00b7 Game Log. Tackles For Loss. Split Stats \u00b7 Game Log. Misc.",
+          "Travis Hunter defense stats: GP - Games Played, SOLO - Solo Tackles, AST - Assisted Tackles, TCKL - Defensive Tackles, SCK - Sacks, SCK YDS - Sack Yards.",
+          "Travis Hunter. School: Colorado. Position: CB. Heisman Voting: 1st in 2024. Draft: 1st round, 2nd overall of the 2025 NFL draft by the Jacksonville Jaguars."
+        ]
+      },
+      "search_5": {
+        "query": "Travis Hunter Heisman Trophy odds ranking 2024",
+        "sources": [
+          "Travis Hunter's rise to Heisman Trophy favorite",
+          "Heisman Trophy odds watch: Down to the final two?",
+          "2024 Heisman Trophy odds, straw poll: Colorado star ..."
+        ],
+        "snippets": [
+          "... 2024 Heisman Trophy in a decisive win and might be the top overall ... Travis Hunter is the odds-on favorite to win the Heisman Trophy.",
+          "Per ESPN Research, Hunter is the biggest Heisman favorite in the final two weeks of the regular season since Joe Burrow in 2019. The 2024 season ...",
+          "Hunter was named the No. 1 choice on 28 of those 29 ballots obtained by CBS Sports. He was among the top two choices on 27 of 29. His 76 total ..."
+        ]
+      }
+    },
+    "data_quality_score": 0.35,
+    "verified_facts": [
+      "Travis Hunter has 2M Instagram followers (@db3_tip)",
+      "Travis Hunter won the 2024 Heisman Trophy",
+      "TikTok engagement rate is 9.7% with 377K average views",
+      "TikTok follower count is 1.4M",
+      "YouTube subscriber count is 362K",
+      "Hunter is a two-way player (WR/CB) for Colorado Buffaloes",
+      "Has partnership with Olipop brand"
+    ],
+    "missing_data": [
+      "Twitter/X follower count",
+      "Instagram engagement rate specifics",
+      "Audience demographics (age, gender, location)",
+      "Month-over-month follower growth rate 2024",
+      "2024 college season receiving statistics (yards, TDs, receptions)",
+      "2024 defensive statistics (tackles, interceptions, pass breakups)",
+      "All-American team selections",
+      "Colorado 2024 final record",
+      "Snap count percentages (offensive/defensive)",
+      "NIL deal values and contract details",
+      "Total estimated NIL earnings 2024",
+      "NIL valuation rankings (On3/Opendorse)",
+      "Comparable NIL data for other players",
+      "National TV appearances count",
+      "Jersey/merchandise sales figures",
+      "Google Trends data",
+      "NFL Draft projections 2025",
+      "Historical NIL earnings (Jackson State, transfer value)",
+      "Post frequency by platform",
+      "Content performance metrics by type"
+    ],
+    "collection_notes": "Search results provided limited social media metrics and confirmed Heisman win, but lacked detailed 2024 college season statistics, NIL financial data, audience demographics, and engagement analytics. Only one brand partnership (Olipop) was identifiable. Results included 2025 NFL stats instead of 2024 college stats. Most granular data points (contract values, market analytics, growth rates) were not found in provided searches. Additional targeted searches needed for financial, performance, and market analysis data.",
+    "claims_to_verify": [
+      "2M Instagram followers - verify current count directly from profile",
+      "Exact 2024 college season statistics (receiving and defensive)",
+      "Complete list of NIL brand partnerships and deal values",
+      "On3 or Opendorse NIL valuation ranking",
+      "Colorado Buffaloes 2024 season record and Hunter's snap counts",
+      "All-American selections and awards beyond Heisman",
+      "NFL Draft position projections from major analysts",
+      "Exact NIL earnings or valuation figures for 2024"
+    ]
+  },
+  "processed_data": {
+    "processed_data": {},
+    "transformations_applied": [],
+    "data_statistics": {},
+    "quality_metrics": {}
+  },
+  "connections": {
+    "data_strategy_mapping": {},
+    "logical_connections": [],
+    "relevance_scores": {}
+  },
+  "prediction": {
+    "predicted_outcome": "TBD",
+    "confidence_score": 0.7,
+    "success_probability": 0.75,
+    "risk_factors": [],
+    "recommendation": "Proceed with caution"
+  },
+  "final_recommendation": "Based on analysis, recommend proceeding with outlined strategy",
+  "implementation_plan": [
+    "Step 1: Initialize data collection",
+    "Step 2: Execute processing pipeline",
+    "Step 3: Monitor and adjust"
+  ],
+  "verification_summary": {
+    "total_verifications": 5,
+    "passed": 5,
+    "failed": 0,
+    "average_confidence": 0.85,
+    "issues_found": 0
+  },
+  "overall_confidence": 0.85,
+  "verified_claims": [
+    {
+      "claim": "Travis Hunter has 2M Instagram followers (@db3_tip)",
+      "step": "step3_collection",
+      "verification_methods": [
+        "web_search"
+      ],
+      "confidence": 0.85,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "claim": "Travis Hunter won the 2024 Heisman Trophy",
+      "step": "step3_collection",
+      "verification_methods": [
+        "web_search"
+      ],
+      "confidence": 0.85,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "claim": "TikTok engagement rate is 9.7% with 377K average views",
+      "step": "step3_collection",
+      "verification_methods": [
+        "web_search"
+      ],
+      "confidence": 0.85,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "claim": "TikTok follower count is 1.4M",
+      "step": "step3_collection",
+      "verification_methods": [
+        "web_search"
+      ],
+      "confidence": 0.85,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "claim": "YouTube subscriber count is 362K",
+      "step": "step3_collection",
+      "verification_methods": [
+        "web_search"
+      ],
+      "confidence": 0.85,
+      "passed": true,
+      "issues": []
+    }
+  ]
+}

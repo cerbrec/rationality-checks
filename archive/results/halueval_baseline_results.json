@@ -1,0 +1,380 @@
+{
+  "metadata": {
+    "method": "single_prompt_baseline",
+    "model": "claude-sonnet-4-5",
+    "sample_size": 40
+  },
+  "metrics": {
+    "precision": 0.9411764705882353,
+    "recall": 0.8,
+    "f1": 0.8648648648648648,
+    "accuracy": 0.875,
+    "true_positives": 16,
+    "false_positives": 1,
+    "false_negatives": 4,
+    "true_negatives": 19,
+    "total": 40
+  },
+  "results": [
+    {
+      "claim": "Q: The political party that Kayithi Narsi Reddy associates with was founded in what year?\nA: Kayithi Narsi Reddy moved to the YSRCP after founding the first modern nationalist movement in the British ",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: The political party that Kayithi Narsi Reddy associates with was founded in what year?\nA: 1885",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Watchers is a film starring which actress?\nA: Watchers is a film starring Lala Zappa.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "claim": "Q: Watchers is a film starring which actress?\nA: Lala Sloatman",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Timber! was written by a singer who had a group with his brothers, Robin and who?\nA: Timber! was written by a singer who had a group with his brothers, Robin and Barry.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Timber! was written by a singer who had a group with his brothers, Robin and who?\nA: Maurice Gibb",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: What was the second studio album of the singer featured in the Harajuku Lovers Tour?\nA: \"Harajuku Love\" was her second album.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: What was the second studio album of the singer featured in the Harajuku Lovers Tour?\nA: \"The Sweet Escape\"",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Michael Helliet Management represents the British heavyweight title holder who held the title how many times between 2000 and 2010?\nA: Michael Helliet Management represents the British heavyweight ",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Michael Helliet Management represents the British heavyweight title holder who held the title how many times between 2000 and 2010?\nA: twice",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: which film dirtected by Alex Proyas and starring Nicolas Cage was written by Juliet Snowden?\nA: Juliet Snowden co-directed Knowing with Alex Proyas.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: which film dirtected by Alex Proyas and starring Nicolas Cage was written by Juliet Snowden?\nA: Knowing",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: The Dhanush is a 155 mm towed howitzer used by which land-based branch and the largest component of the Indian Armed Forces?\nA: The Dhanush is a 155 mm towed howitzer used by the Indian Navy.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: The Dhanush is a 155 mm towed howitzer used by which land-based branch and the largest component of the Indian Armed Forces?\nA: Indian Army",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: G\u00fclhane Park and Zografeion Lyceum, are located in which country?\nA: G\u00fclhane Park and Zografeion Lyceum are located in Europe.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 0.95,
+      "correct": true
+    },
+    {
+      "claim": "Q: G\u00fclhane Park and Zografeion Lyceum, are located in which country?\nA: Turkey",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: In what 1942 British romance film did actress/singer Jane Birkin's mother star in?\nA: Jane Birkin's mother starred in Jane Eyre.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: In what 1942 British romance film did actress/singer Jane Birkin's mother star in?\nA: Breach of Promise",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: The 1955 Scottish League Cup Final was played on 22 October 1955, at Hampden Park, a football stadium in the Mount Florida area of Glasgow, in which country?\nA: The 1955 Scottish League Cup Final w",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: The 1955 Scottish League Cup Final was played on 22 October 1955, at Hampden Park, a football stadium in the Mount Florida area of Glasgow, in which country?\nA: Scotland",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Mel Duncan holds a degree from what private, coeducational liberal arts college located in Saint Paul, Minnesota, US?\nA: Mel Duncan holds an undergraduate degree from Macalester College in Saint Pa",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "claim": "Q: Mel Duncan holds a degree from what private, coeducational liberal arts college located in Saint Paul, Minnesota, US?\nA: Macalester College",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Storm Large tours with a Portland-based band formed in what year?\nA: Storm Large currently tours with a non-Portland based band.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Storm Large tours with a Portland-based band formed in what year?\nA: 1994",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: What was the pro-slavery group called that Silas Soule clashed with?\nA: \"Border Raiders\"",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 0.95,
+      "correct": true
+    },
+    {
+      "claim": "Q: What was the pro-slavery group called that Silas Soule clashed with?\nA: \"Border Ruffians\"",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Who has been on the most missions to space, Michael Foale or Charles Simonyi?\nA: Charles Simonyi has more space missions.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 0.95,
+      "correct": true
+    },
+    {
+      "claim": "Q: Who has been on the most missions to space, Michael Foale or Charles Simonyi?\nA: Michael Foale",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 0.7,
+      "correct": true
+    },
+    {
+      "claim": "Q: What Michigan county is named after the Vice President of the seventh President of the United States?\nA: Michigan's Cabinet counties don't name counties.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: What Michigan county is named after the Vice President of the seventh President of the United States?\nA: Calhoun County",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: What year did the actor who sings \"Consider Yourself\" to Oliver when they first meet in \"Oliver!\" play Much the Miller's Son?\nA: The actor who sang \"Consider Yourself\" in \"Oliver!\" played the Mille",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": false,
+      "confidence": 0.85,
+      "correct": false
+    },
+    {
+      "claim": "Q: What year did the actor who sings \"Consider Yourself\" to Oliver when they first meet in \"Oliver!\" play Much the Miller's Son?\nA: 1991",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: What is the stage name of the young female actress who starred in the 2008 American drama Gran Torino directed and produced by Clint Eastwood?\nA: The actress who starred in the 2008 movie directed ",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": false
+    },
+    {
+      "claim": "Q: What is the stage name of the young female actress who starred in the 2008 American drama Gran Torino directed and produced by Clint Eastwood?\nA: Ahney Her",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Were Robert Wise and Stuart Gillard both actors in films in the 20th century?\nA: Stuart Gillard directed Superboy in 1988.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 0.85,
+      "correct": true
+    },
+    {
+      "claim": "Q: Were Robert Wise and Stuart Gillard both actors in films in the 20th century?\nA: no",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": true,
+      "confidence": 0.9,
+      "correct": false
+    },
+    {
+      "claim": "Q: Are both John Grierson and A. Edward Sutherland from the United Kingdom?\nA: John Grierson was from the United Kingdom, but A. Edward Sutherland was from the United States.",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 0.95,
+      "correct": true
+    },
+    {
+      "claim": "Q: Are both John Grierson and A. Edward Sutherland from the United Kingdom?\nA: yes",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 0.95,
+      "correct": true
+    },
+    {
+      "claim": "Q: Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what y",
+      "category": "qa",
+      "answer_type": "hallucinated",
+      "ground_truth": true,
+      "predicted_hallucinated": true,
+      "confidence": 1.0,
+      "correct": true
+    },
+    {
+      "claim": "Q: Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what y",
+      "category": "qa",
+      "answer_type": "correct",
+      "ground_truth": false,
+      "predicted_hallucinated": false,
+      "confidence": 1.0,
+      "correct": true
+    }
+  ]
+}
