@@ -21,6 +21,7 @@ import json
 import tempfile
 import traceback
 import requests
+import logging
 from pathlib import Path
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -30,6 +31,13 @@ from urllib.parse import urlparse
 
 # Load environment variables
 load_dotenv()
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -150,6 +158,7 @@ def verify_document():
 
         # Check if this is a JSON request with raw text or URL
         if request.is_json:
+            logger.info("📥 Received JSON request")
             data = request.get_json()
 
             # Check if either 'text' or 'url' is provided
@@ -182,6 +191,7 @@ def verify_document():
                     }), 400
 
                 filename = 'raw_text_input'
+                logger.info(f"📄 Processing raw text input: {len(document_text)} characters")
 
             # Handle URL
             elif 'url' in data:
@@ -209,6 +219,7 @@ def verify_document():
 
                 # Fetch content from URL
                 try:
+                    logger.info(f"🌐 Fetching content from URL: {url}")
                     response = requests.get(url, timeout=30)
                     response.raise_for_status()
 
@@ -222,6 +233,7 @@ def verify_document():
                         }), 400
 
                     filename = f'url_fetch_{parsed_url.netloc}'
+                    logger.info(f"✅ Successfully fetched {len(document_text)} characters from URL")
 
                 except requests.exceptions.Timeout:
                     return jsonify({
@@ -246,6 +258,7 @@ def verify_document():
 
         # Otherwise handle as file upload
         elif 'document' in request.files:
+            logger.info("📁 Received file upload")
             file = request.files['document']
 
             if file.filename == '':
@@ -282,6 +295,7 @@ def verify_document():
 
                 # Check size
                 size_mb = len(document_bytes) / (1024 * 1024)
+                logger.info(f"📄 Processing binary document: {filename} ({document_format}, {size_mb:.2f} MB)")
                 if size_mb > 4.5:
                     return jsonify({
                         'error': 'File too large',
@@ -298,6 +312,7 @@ def verify_document():
             else:
                 # Text document
                 document_text = file.read().decode('utf-8')
+                logger.info(f"📄 Processing text document: {filename} ({len(document_text)} characters)")
 
         else:
             return jsonify({
@@ -306,19 +321,27 @@ def verify_document():
             }), 400
 
         # Initialize provider
+        logger.info(f"🤖 Initializing LLM provider: {provider_name}" + (f" (model: {model})" if model else ""))
         try:
             llm = get_provider(provider_name, model)
+            logger.info(f"✅ Provider initialized successfully")
         except ValueError as e:
+            logger.error(f"❌ Provider initialization failed: {e}")
             return jsonify({
                 'error': 'Provider initialization failed',
                 'message': str(e)
             }), 400
 
         # Create pipeline and run verification
+        logger.info("🔧 Creating verification pipeline...")
         pipeline = IntegratedVerificationPipeline(llm)
+        logger.info("✅ Pipeline created")
 
         # Run verification
+        logger.info("🔍 Starting verification process...")
+        logger.info("   This may take 2-3 minutes depending on document length...")
         if document_bytes is not None:
+            logger.info(f"   → Processing with document attachment ({document_format})")
             report = pipeline.verify_analysis(
                 original_output="",
                 original_query=query,
@@ -326,7 +349,10 @@ def verify_document():
                 document_format=document_format
             )
         else:
+            logger.info(f"   → Processing text content")
             report = pipeline.verify_analysis(document_text, query)
+
+        logger.info("✅ Verification complete!")
 
         # Categorize results
         passed = [a for a in report.assessments if a.recommendation == "keep"]
@@ -335,6 +361,17 @@ def verify_document():
 
         # Calculate accuracy
         accuracy_rate = (len(passed) / len(report.assessments) * 100) if report.assessments else 0
+
+        # Log results summary
+        logger.info("=" * 80)
+        logger.info("📊 VERIFICATION RESULTS")
+        logger.info("=" * 80)
+        logger.info(f"Total claims analyzed: {len(report.assessments)}")
+        logger.info(f"  ✅ Passed: {len(passed)}")
+        logger.info(f"  ⚠️  Flagged: {len(flagged)}")
+        logger.info(f"  ❌ Failed: {len(failed)}")
+        logger.info(f"Accuracy Rate: {accuracy_rate:.1f}%")
+        logger.info("=" * 80)
 
         # Build response
         response = {
