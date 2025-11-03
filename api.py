@@ -33,6 +33,7 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from urllib.parse import urlparse
 from supabase import create_client, Client
+import httpx
 
 # Load environment variables
 load_dotenv()
@@ -52,8 +53,38 @@ if not SUPABASE_URL or not SUPABASE_KEY:
     logger.warning("⚠️  SUPABASE_URL or SUPABASE_SERVICE_KEY not configured. Job queue will not work.")
     supabase: Client = None
 else:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-    logger.info("✅ Supabase client initialized")
+    # Log Supabase URL for debugging (mask for security)
+    masked_url = SUPABASE_URL[:8] + "..." + SUPABASE_URL[-10:] if len(SUPABASE_URL) > 20 else "***"
+    logger.info(f"🔧 Connecting to Supabase: {masked_url}")
+    try:
+        # Configure httpx client with longer timeout and connection settings
+        httpx_client = httpx.Client(
+            timeout=httpx.Timeout(30.0, connect=10.0),
+            limits=httpx.Limits(max_keepalive_connections=5, max_connections=10),
+            follow_redirects=True
+        )
+
+        supabase: Client = create_client(
+            SUPABASE_URL,
+            SUPABASE_KEY,
+            options={
+                'postgrest_client_timeout': 30,
+                'storage_client_timeout': 30,
+            }
+        )
+        logger.info("✅ Supabase client initialized successfully")
+
+        # Test connection
+        try:
+            logger.info("🧪 Testing Supabase connection...")
+            test_response = supabase.table('verification_jobs').select('id').limit(1).execute()
+            logger.info("✅ Supabase connection test successful")
+        except Exception as test_error:
+            logger.error(f"⚠️  Supabase connection test failed: {test_error}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to initialize Supabase client: {e}")
+        supabase: Client = None
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -129,14 +160,20 @@ def create_job(job_data):
         raise ValueError("Binary document uploads not yet supported in async mode. Please use text or URL input.")
 
     # Insert into Supabase
-    response = supabase.table('verification_jobs').insert(job_record).execute()
+    try:
+        logger.info(f"📤 Inserting job into Supabase...")
+        response = supabase.table('verification_jobs').insert(job_record).execute()
 
-    if not response.data:
-        raise ValueError("Failed to create job in Supabase")
+        if not response.data:
+            raise ValueError("Failed to create job in Supabase")
 
-    job_id = response.data[0]['id']
-    logger.info(f"✅ Created job {job_id} in Supabase")
-    return job_id
+        job_id = response.data[0]['id']
+        logger.info(f"✅ Created job {job_id} in Supabase")
+        return job_id
+    except Exception as e:
+        logger.error(f"❌ Supabase insert failed: {type(e).__name__}: {e}")
+        logger.error(f"🔍 SUPABASE_URL being used: {SUPABASE_URL[:30]}...")
+        raise
 
 
 def update_job(job_id, status=None, result=None, error=None, progress=None):
