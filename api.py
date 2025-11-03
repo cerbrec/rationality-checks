@@ -33,6 +33,7 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from urllib.parse import urlparse
 from supabase import create_client, Client
+import httpx
 
 # Load environment variables
 load_dotenv()
@@ -52,8 +53,38 @@ if not SUPABASE_URL or not SUPABASE_KEY:
     logger.warning("⚠️  SUPABASE_URL or SUPABASE_SERVICE_KEY not configured. Job queue will not work.")
     supabase: Client = None
 else:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-    logger.info("✅ Supabase client initialized")
+    # Log Supabase URL for debugging (mask for security)
+    masked_url = SUPABASE_URL[:8] + "..." + SUPABASE_URL[-10:] if len(SUPABASE_URL) > 20 else "***"
+    logger.info(f"🔧 Connecting to Supabase: {masked_url}")
+    try:
+        # Configure httpx client with longer timeout and connection settings
+        httpx_client = httpx.Client(
+            timeout=httpx.Timeout(30.0, connect=10.0),
+            limits=httpx.Limits(max_keepalive_connections=5, max_connections=10),
+            follow_redirects=True
+        )
+
+        supabase: Client = create_client(
+            SUPABASE_URL,
+            SUPABASE_KEY,
+            options={
+                'postgrest_client_timeout': 30,
+                'storage_client_timeout': 30,
+            }
+        )
+        logger.info("✅ Supabase client initialized successfully")
+
+        # Test connection
+        try:
+            logger.info("🧪 Testing Supabase connection...")
+            test_response = supabase.table('verification_jobs').select('id').limit(1).execute()
+            logger.info("✅ Supabase connection test successful")
+        except Exception as test_error:
+            logger.error(f"⚠️  Supabase connection test failed: {test_error}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to initialize Supabase client: {e}")
+        supabase: Client = None
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -129,14 +160,20 @@ def create_job(job_data):
         raise ValueError("Binary document uploads not yet supported in async mode. Please use text or URL input.")
 
     # Insert into Supabase
-    response = supabase.table('verification_jobs').insert(job_record).execute()
+    try:
+        logger.info(f"📤 Inserting job into Supabase...")
+        response = supabase.table('verification_jobs').insert(job_record).execute()
 
-    if not response.data:
-        raise ValueError("Failed to create job in Supabase")
+        if not response.data:
+            raise ValueError("Failed to create job in Supabase")
 
-    job_id = response.data[0]['id']
-    logger.info(f"✅ Created job {job_id} in Supabase")
-    return job_id
+        job_id = response.data[0]['id']
+        logger.info(f"✅ Created job {job_id} in Supabase")
+        return job_id
+    except Exception as e:
+        logger.error(f"❌ Supabase insert failed: {type(e).__name__}: {e}")
+        logger.error(f"🔍 SUPABASE_URL being used: {SUPABASE_URL[:30]}...")
+        raise
 
 
 def update_job(job_id, status=None, result=None, error=None, progress=None):
@@ -368,12 +405,20 @@ def process_verification_job(job_id):
 def poll_and_process_jobs():
     """Background thread that continuously polls for pending jobs"""
     logger.info("🔄 Starting job polling worker...")
+    poll_count = 0
 
     while True:
         try:
+            poll_count += 1
+
             if not supabase:
+                logger.warning(f"⚠️  Poll #{poll_count}: Supabase not configured, waiting...")
                 time.sleep(10)
                 continue
+
+            # Log every 12th poll (every minute) to show it's alive
+            if poll_count % 12 == 1:
+                logger.info(f"🔍 Poll #{poll_count}: Checking for pending jobs...")
 
             # Query for pending jobs (ordered by creation time)
             response = supabase.table('verification_jobs')\
@@ -383,18 +428,25 @@ def poll_and_process_jobs():
                 .limit(1)\
                 .execute()
 
+            # Log query results for debugging
+            if poll_count % 12 == 1 or (response.data and len(response.data) > 0):
+                logger.info(f"🔎 Poll #{poll_count}: Found {len(response.data)} pending job(s)")
+
             if response.data and len(response.data) > 0:
                 job_id = response.data[0]['id']
-                logger.info(f"📋 Found pending job: {job_id}")
+                logger.info(f"📋 Found pending job: {job_id} - Starting processing...")
 
                 # Process the job in this thread
                 process_verification_job(job_id)
+
+                logger.info(f"✅ Completed processing job: {job_id}")
 
             # Poll every 5 seconds
             time.sleep(5)
 
         except Exception as e:
-            logger.error(f"Error in job polling worker: {e}")
+            logger.error(f"❌ Error in job polling worker (poll #{poll_count}): {e}")
+            logger.error(f"   Traceback: {traceback.format_exc()}")
             time.sleep(10)
 
 
@@ -435,11 +487,35 @@ def get_provider(provider_name: str, model: str = None):
 
 @app.route('/health', methods=['GET'])
 def health_check():
-    """Health check endpoint"""
+    """Health check endpoint with worker status"""
+    worker_status = {
+        'configured': supabase is not None,
+        'running': False,
+        'all_threads': []
+    }
+
+    # Check if worker thread is alive
+    for thread in threading.enumerate():
+        thread_info = {
+            'name': thread.name,
+            'alive': thread.is_alive(),
+            'daemon': thread.daemon
+        }
+        worker_status['all_threads'].append(thread_info)
+
+        # Check if this is our worker thread
+        if thread.name == 'VerificationWorker' or 'poll_and_process_jobs' in str(thread):
+            worker_status['running'] = thread.is_alive()
+            worker_status['thread_name'] = thread.name
+            worker_status['is_daemon'] = thread.daemon
+
     return jsonify({
         'status': 'healthy',
         'service': 'document-verification-api',
-        'version': '1.0.0'
+        'version': '1.0.0',
+        'supabase_configured': supabase is not None,
+        'worker': worker_status,
+        'timestamp': datetime.utcnow().isoformat()
     })
 
 
@@ -935,10 +1011,18 @@ if __name__ == '__main__':
 
     # Start background job processing worker
     if supabase:
-        worker_thread = threading.Thread(target=poll_and_process_jobs, daemon=True)
+        worker_thread = threading.Thread(
+            target=poll_and_process_jobs,
+            name="VerificationWorker",
+            daemon=True
+        )
         worker_thread.start()
-        logger.info("✅ Background job worker started")
+        logger.info("✅ Background job worker thread started")
+        logger.info(f"   → Thread name: {worker_thread.name}")
+        logger.info(f"   → Thread alive: {worker_thread.is_alive()}")
+        logger.info(f"   → Polling interval: 5 seconds")
     else:
         logger.warning("⚠️  Background job worker NOT started (Supabase not configured)")
+        logger.warning("   → Check SUPABASE_URL and SUPABASE_SERVICE_KEY in environment")
 
     app.run(host=args.host, port=args.port, debug=args.debug)
