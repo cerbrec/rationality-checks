@@ -22,6 +22,16 @@ class Proposition:
     source_claim_id: str  # Which claim this came from
     metadata: Dict = field(default_factory=dict)
 
+    def to_dict(self) -> Dict:
+        """Convert to JSON-serializable dictionary"""
+        return {
+            "subject": self.subject,
+            "predicate": self.predicate,
+            "value": self.value,
+            "source_claim_id": self.source_claim_id,
+            "metadata": self.metadata
+        }
+
 
 @dataclass
 class Constraint:
@@ -32,6 +42,16 @@ class Constraint:
     source_claim_id: str
     metadata: Dict = field(default_factory=dict)
 
+    def to_dict(self) -> Dict:
+        """Convert to JSON-serializable dictionary"""
+        return {
+            "type": self.constraint_type,
+            "variables": self.variables,
+            "formula": self.formula,
+            "source_claim_id": self.source_claim_id,
+            "metadata": self.metadata
+        }
+
 
 @dataclass
 class ConsistencyIssue:
@@ -41,6 +61,20 @@ class ConsistencyIssue:
     involved_propositions: List[Proposition]
     involved_constraints: List[Constraint]
     severity: float       # 0.0-1.0
+
+    def to_dict(self) -> Dict:
+        """Convert to JSON-serializable dictionary"""
+        return {
+            "issue_type": self.issue_type,
+            "description": self.description,
+            "severity": self.severity,
+            "involved_propositions": [
+                prop.to_dict() for prop in self.involved_propositions
+            ],
+            "involved_constraints": [
+                const.to_dict() for const in self.involved_constraints
+            ]
+        }
 
 
 # ============================================================================

@@ -3,7 +3,7 @@ Integrated Verification Pipeline
 Combines world state verification (formal) with LLM verification (interpretive)
 """
 
-from typing import List, Dict, Optional, Tuple, Union
+from typing import List, Dict, Optional, Tuple, Union, Callable, Any
 from dataclasses import dataclass
 import json
 from pydantic import BaseModel, Field, validator
@@ -223,7 +223,8 @@ class IntegratedVerificationPipeline:
         enable_tool_use: bool = True,
         enable_dynamic_claims: bool = True,
         document_bytes: Optional[bytes] = None,
-        document_format: Optional[str] = None
+        document_format: Optional[str] = None,
+        progress_callback: Optional[Callable[[str, str, Dict[str, Any]], None]] = None
     ) -> VerificationReport:
         """
         Main pipeline with integrated world state verification.
@@ -245,6 +246,8 @@ class IntegratedVerificationPipeline:
             enable_dynamic_claims: Enable LLM-powered discovery of time-sensitive claims
             document_bytes: Optional document bytes for DOCX/PDF attachments
             document_format: Format of the document (e.g., 'docx', 'pdf')
+            progress_callback: Optional callback function(phase: str, step: str, data: Dict)
+                             called at key breakpoints to report progress
         """
 
         # Store document info for passing to LLM calls
@@ -276,8 +279,16 @@ class IntegratedVerificationPipeline:
                 traceback.print_exc()
                 dynamic_claims = []
 
+        # Callback: Dynamic claim discovery complete
+        if progress_callback:
+            progress_callback("dynamic_claims", "complete", {"count": len(dynamic_claims)})
+
         # Phase 1: Extract claims WITH formal structure (1 prompt)
         claims = self._extract_claims_with_structure(original_output, original_query)
+
+        # Callback: Claim extraction complete
+        if progress_callback:
+            progress_callback("extraction", "complete", {"total_claims": len(claims)})
 
         if not claims:
             return VerificationReport(
@@ -291,7 +302,7 @@ class IntegratedVerificationPipeline:
             )
 
         # Phase 2: Hybrid verification (2-3 prompts)
-        assessments = self._hybrid_verify_claims(claims, enable_tool_use, dynamic_claims)
+        assessments = self._hybrid_verify_claims(claims, enable_tool_use, dynamic_claims, progress_callback)
 
         # Phase 3: Completeness check (1 prompt)
         missing_elements = self._check_completeness(
@@ -300,12 +311,22 @@ class IntegratedVerificationPipeline:
             claims
         )
 
+        # Callback: Completeness check complete
+        if progress_callback:
+            progress_callback("completeness", "complete", {
+                "missing_elements": len(missing_elements)
+            })
+
         # Phase 4: Synthesize improvements (1 prompt)
         improved_output, summary = self._synthesize_improvements(
             original_output,
             assessments,
             missing_elements
         )
+
+        # Callback: Synthesis complete
+        if progress_callback:
+            progress_callback("synthesis", "complete", {})
 
         return VerificationReport(
             original_output=original_output,
@@ -452,7 +473,8 @@ Please try again with corrected output, paying special attention to the proposit
         self,
         claims: List[EnhancedClaim],
         enable_tool_use: bool,
-        dynamic_claims: List[Dict] = None
+        dynamic_claims: List[Dict] = None,
+        progress_callback: Optional[Callable[[str, str, Dict[str, Any]], None]] = None
     ) -> List[ClaimAssessment]:
         """
         Verify claims using appropriate method:
@@ -479,10 +501,24 @@ Please try again with corrected output, paying special attention to the proposit
         if formal_claims:
             world_results_map, world_state = self._world_state_verify(formal_claims)
 
+        # Callback: World state verification complete
+        if progress_callback:
+            issues_count = len(world_state.consistency_issues) if world_state else 0
+            progress_callback("verification", "world_state_complete", {
+                "formal_claims": len(formal_claims),
+                "issues_found": issues_count
+            })
+
         # Step 2: LLM empirical testing for interpretive claims (1 prompt)
         llm_empirical_results_map = {}
         if interpretive_claims:
             llm_empirical_results_map = self._batch_empirical_test_llm(interpretive_claims)
+
+        # Callback: Empirical testing complete
+        if progress_callback:
+            progress_callback("verification", "empirical_complete", {
+                "interpretive_claims": len(interpretive_claims)
+            })
 
         # Step 3: Fact checking for factual/quantitative claims (1 prompt)
         factual_claims = [
@@ -494,11 +530,24 @@ Please try again with corrected output, paying special attention to the proposit
             fact_check_results_map = self._batch_fact_check(
                 factual_claims,
                 enable_tool_use,
-                dynamic_claims
+                dynamic_claims,
+                progress_callback
             )
+
+        # Callback: Fact checking complete
+        if progress_callback:
+            progress_callback("fact_checking", "complete", {
+                "factual_claims": len(factual_claims)
+            })
 
         # Step 4: Adversarial review for ALL claims (1 prompt)
         adversarial_results_map = self._batch_adversarial_review(claims)
+
+        # Callback: Adversarial review complete
+        if progress_callback:
+            progress_callback("adversarial", "complete", {
+                "claims_reviewed": len(claims)
+            })
 
         # Step 5: Compile results into assessments
         assessments = []
@@ -532,6 +581,12 @@ Please try again with corrected output, paying special attention to the proposit
                 recommendation=recommendation,
                 revised_text=revised_text
             ))
+
+        # Callback: Compilation complete
+        if progress_callback:
+            progress_callback("compilation", "complete", {
+                "assessments": len(assessments)
+            })
 
         return assessments
 
@@ -598,7 +653,7 @@ Please try again with corrected output, paying special attention to the proposit
                         confidence=1.0
                     )
                 ],
-                issues_found=issues,
+                issues_found=[issue.description for issue in issues],  # Convert to strings for JSON serialization
                 suggested_revision=None
             )
 
@@ -743,7 +798,8 @@ Ensure all fields match the schema exactly. Try again with corrected output."""
         self,
         claims: List[EnhancedClaim],
         enable_tool_use: bool,
-        dynamic_claims: List[Dict] = None
+        dynamic_claims: List[Dict] = None,
+        progress_callback: Optional[Callable[[str, str, Dict[str, Any]], None]] = None
     ) -> Dict[str, VerificationResult]:
         """
         Batch fact checking with optional web search tool use.
@@ -870,6 +926,11 @@ Be thorough but efficient with your searches."""
 
                 if tool_calls:
                     print(f"  [Fact Check] Web search performed {len(tool_calls)} searches")
+                    # Callback: Web search performed
+                    if progress_callback:
+                        progress_callback("fact_checking", "web_search", {
+                            "searches_performed": len(tool_calls)
+                        })
 
             except Exception as e:
                 print(f"  [Fact Check] Tool use failed, falling back to standard generation: {e}")
