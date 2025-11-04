@@ -266,13 +266,35 @@ def process_verification_job(job_id):
         logger.info("🔧 Creating verification pipeline...")
         pipeline = IntegratedVerificationPipeline(llm)
 
+        # Define progress callback that maps pipeline phases to progress percentages
+        def update_progress(phase: str, step: str, data: dict):
+            """Map verification pipeline phases to progress percentages"""
+            progress_map = {
+                ("dynamic_claims", "complete"): 45,
+                ("extraction", "complete"): 50,
+                ("verification", "world_state_complete"): 60,
+                ("verification", "empirical_complete"): 65,
+                ("fact_checking", "web_search"): 70,  # Incremental during web searches
+                ("fact_checking", "complete"): 75,
+                ("adversarial", "complete"): 80,
+                ("compilation", "complete"): 85,
+                ("completeness", "complete"): 87,
+                ("synthesis", "complete"): 90
+            }
+
+            progress = progress_map.get((phase, step))
+            if progress:
+                update_job(job_id, progress=progress)
+
+            # Log progress for debugging
+            logger.info(f"   [{phase}] {step}: {data}")
+
         # Run verification (text only for async jobs)
         update_job(job_id, progress=40)
         logger.info("🔍 Starting verification process...")
         logger.info(f"   → Processing text content ({len(document_text)} characters)")
-        report = pipeline.verify_analysis(document_text, query)
+        report = pipeline.verify_analysis(document_text, query, progress_callback=update_progress)
 
-        update_job(job_id, progress=90)
         logger.info("✅ Verification complete!")
 
         # Categorize results
