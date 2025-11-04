@@ -33,7 +33,6 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from urllib.parse import urlparse
 from supabase import create_client, Client
-import httpx
 
 # Load environment variables
 load_dotenv()
@@ -57,20 +56,9 @@ else:
     masked_url = SUPABASE_URL[:8] + "..." + SUPABASE_URL[-10:] if len(SUPABASE_URL) > 20 else "***"
     logger.info(f"🔧 Connecting to Supabase: {masked_url}")
     try:
-        # Configure httpx client with longer timeout and connection settings
-        httpx_client = httpx.Client(
-            timeout=httpx.Timeout(30.0, connect=10.0),
-            limits=httpx.Limits(max_keepalive_connections=5, max_connections=10),
-            follow_redirects=True
-        )
-
         supabase: Client = create_client(
             SUPABASE_URL,
-            SUPABASE_KEY,
-            options={
-                'postgrest_client_timeout': 30,
-                'storage_client_timeout': 30,
-            }
+            SUPABASE_KEY
         )
         logger.info("✅ Supabase client initialized successfully")
 
@@ -984,6 +972,35 @@ print(f"Accuracy: {result['summary']['accuracy_rate']}%")
     })
 
 
+# Initialize background worker for Gunicorn
+# This runs when the module is imported, which happens for each Gunicorn worker
+def start_background_worker():
+    """Start background job processing worker thread"""
+    if not supabase:
+        logger.warning("⚠️  Background job worker NOT started (Supabase not configured)")
+        logger.warning("   → Check SUPABASE_URL and SUPABASE_SERVICE_KEY in environment")
+        return None
+
+    worker_thread = threading.Thread(
+        target=poll_and_process_jobs,
+        name=f"VerificationWorker-PID{os.getpid()}",
+        daemon=True
+    )
+    worker_thread.start()
+    logger.info(f"✅ Background job worker started in process {os.getpid()}")
+    logger.info(f"   → Thread: {worker_thread.name}")
+    logger.info(f"   → Thread alive: {worker_thread.is_alive()}")
+    logger.info(f"   → Polling interval: 5 seconds")
+
+    return worker_thread
+
+
+# Auto-start worker when module loads (for Gunicorn and other WSGI servers)
+# Note: With 16 Gunicorn workers, this creates 16 polling threads (one per worker process)
+# The database ensures each job is only processed once
+_worker_thread = start_background_worker()
+
+
 if __name__ == '__main__':
     import argparse
 
@@ -1009,20 +1026,10 @@ if __name__ == '__main__':
     -F "provider=bedrock"''')
     print("\n" + "=" * 80)
 
-    # Start background job processing worker
-    if supabase:
-        worker_thread = threading.Thread(
-            target=poll_and_process_jobs,
-            name="VerificationWorker",
-            daemon=True
-        )
-        worker_thread.start()
-        logger.info("✅ Background job worker thread started")
-        logger.info(f"   → Thread name: {worker_thread.name}")
-        logger.info(f"   → Thread alive: {worker_thread.is_alive()}")
-        logger.info(f"   → Polling interval: 5 seconds")
+    # Note: Background worker is auto-started at module level (works for both dev and production)
+    if _worker_thread:
+        logger.info("📋 Background worker already running (auto-started at module load)")
     else:
-        logger.warning("⚠️  Background job worker NOT started (Supabase not configured)")
-        logger.warning("   → Check SUPABASE_URL and SUPABASE_SERVICE_KEY in environment")
+        logger.warning("⚠️  Background worker not running - check Supabase configuration")
 
     app.run(host=args.host, port=args.port, debug=args.debug)
